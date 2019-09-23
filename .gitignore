@@ -1,0 +1,14 @@
+.Rhistory
+*.so
+*.o
+*.dll
+*.Rproj
+.Rproj.user
+*.md
+*.html
+*.sav
+figure
+.RData
+inst/doc
+vignettes/*.R
+.httr-oauth
