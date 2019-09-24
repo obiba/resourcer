@@ -12,6 +12,7 @@
 #' @docType class
 #' @format A R6 object of class ResourceResolver
 #' @import R6
+#' @import httr
 #' @export
 ResourceResolver <- R6::R6Class(
   "ResourceResolver",
@@ -22,6 +23,11 @@ ResourceResolver <- R6::R6Class(
     },
     newClient = function(x) {
       stop("Operation not implemented")
+    }
+  ),
+  private = list(
+    parseURL = function(x) {
+      httr::parse_url(x$url)
     }
   )
 )

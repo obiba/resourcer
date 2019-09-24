@@ -18,7 +18,8 @@ Description: A resource represents some data or a computation unit. It is
 License: LGPL (>= 2.1)
 LazyData: true
 Depends:
-    R6
+    R6,
+    httr
 Suggests: 
     testthat,
     knitr

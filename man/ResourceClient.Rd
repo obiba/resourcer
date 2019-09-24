@@ -9,7 +9,7 @@
 ResourceClient
 }
 \description{
-Helper class for conecting to a resource data store or a computation unit.
+Helper class for connecting to a resource data store or a computation unit.
 }
 \section{Methods}{
 

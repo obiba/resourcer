@@ -1,6 +1,6 @@
 #' Resource client
 #'
-#' Helper class for conecting to a resource data store or a computation unit.
+#' Helper class for connecting to a resource data store or a computation unit.
 #'
 #' @section Methods:
 #'
@@ -14,6 +14,7 @@
 #' @docType class
 #' @format A R6 object of class ResourceClient
 #' @import R6
+#' @import httr
 #' @export
 ResourceClient <- R6::R6Class(
   "ResourceClient",
@@ -39,6 +40,12 @@ ResourceClient <- R6::R6Class(
   ),
   private = list(
     .resource = NULL,
-    .connection = NULL
+    .connection = NULL,
+    parseURL = function() {
+      httr::parse_url(private$.resource$url)
+    },
+    setConnection = function(conn) {
+      private$.connection <- conn
+    }
   )
 )

@@ -34,13 +34,16 @@ newResource <- function(name="", url, identity = NULL, secret = NULL, clazz = NU
 #'
 #' @export
 registerResolver <- function(x) {
-  resRegistry <- list()
-  resRegistryName <- ".resourceResolvers"
-  if (exists(resRegistryName, envir = parent.frame())) {
-    resRegistry <- get(resRegistryName, envir = parent.frame())
+  if ("ResourceResolver" %in% class(x)) {
+    resRegistry <- list()
+    resRegistryName <- ".resourceResolvers"
+    if (exists(resRegistryName, envir = parent.frame())) {
+      resRegistry <- get(resRegistryName, envir = parent.frame())
+    }
+    message("Registering: ", class(x)[[1]])
+    resRegistry <- append(resRegistry, x)
+    assign(resRegistryName, resRegistry, envir = parent.frame())
   }
-  resRegistry <- append(resRegistry, x)
-  assign(resRegistryName, resRegistry, envir = parent.frame())
 }
 
 #' Find a resource resolver
@@ -57,10 +60,12 @@ resolveResource <- function(x) {
     resRegistry <- get(resRegistryName, envir = parent.frame())
   }
   resolver <- NULL
-  for (i in 1:length(resRegistry)) {
-    res <- resRegistry[[i]]
-    if (res$isFor(x)) {
-      resolver <- res
+  if (length(resRegistry)>0) {
+    for (i in 1:length(resRegistry)) {
+      res <- resRegistry[[i]]
+      if (res$isFor(x)) {
+        resolver <- res
+      }
     }
   }
   resolver
