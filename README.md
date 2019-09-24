@@ -5,6 +5,12 @@
 
 The `resourcer` package is meant for accessing resources identified by a URL in a uniform way whether it references a dataset (stored in a file, a SQL table, a MongoDB collection etc.) or a computation unit (system commands, web services etc.). Usually some credentials will be defined, and an additional data format information can be provided to help dataset coercing to a data.frame object.
 
+The main concepts are:
+
+* _Resource_, access to a resource (dataset or computation unit) is described by an object with URL and credentials properties,
+* _ResourceResolver_, a _ResourceClient_ factory based on the URL scheme and available in a resolvers registry,
+* _ResourceClient_, realizes the connection with the dataset or the computation unit described by a _Resource_.
+
 Currently supported data formats are the ones that have a reader in [tidyverse](https://www.tidyverse.org/): [readr](https://readr.tidyverse.org/) (`csv`, `csv2`, `tsv`), [haven](https://haven.tidyverse.org/) (`spss`, `sav`, `por`, `dta`, `stata`, `sas`, `xpt`), [readxl](https://readxl.tidyverse.org/) (`excel`, `xls`, `xlsx`).
 
 Usage example that reads a local SPSS file:
@@ -14,7 +20,7 @@ Usage example that reads a local SPSS file:
 res <- resourcer::newResource(
   name = "CNSIM1",
   url = "file:///data/CNSIM1.sav",
-  class = "spss"
+  clazz = "spss"
 )
 
 # coerce the csv file in the opal server to a data.frame
@@ -29,8 +35,7 @@ res <- resourcer::newResource(
   name = "supercomp1",
   url = "ssh://server1.example.org/work/dir?exec=plink,ls",
   identity = "sshaccountid",
-  secret = "sshaccountpwd",
-  class = NULL
+  secret = "sshaccountpwd"
 )
 
 # get ssh client from resource object
