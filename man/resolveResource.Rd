@@ -9,6 +9,9 @@ resolveResource(x)
 \arguments{
 \item{x}{The resource object which corresponding resolver is to be found.}
 }
+\value{
+The corresponding ResourceResolver object or NULL if none applies.
+}
 \description{
 Find the resolver that will make a client from the provided resource object.
 }

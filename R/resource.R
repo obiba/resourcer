@@ -35,14 +35,10 @@ newResource <- function(name="", url, identity = NULL, secret = NULL, clazz = NU
 #' @export
 registerResolver <- function(x) {
   if ("ResourceResolver" %in% class(x)) {
-    resRegistry <- list()
-    resRegistryName <- ".resourceResolvers"
-    if (exists(resRegistryName, envir = parent.frame())) {
-      resRegistry <- get(resRegistryName, envir = parent.frame())
-    }
+    resRegistry <- .getResolvers()
     message("Registering: ", class(x)[[1]])
     resRegistry <- append(resRegistry, x)
-    assign(resRegistryName, resRegistry, envir = parent.frame())
+    options(resourcer.resolvers = resRegistry)
   }
 }
 
@@ -52,21 +48,51 @@ registerResolver <- function(x) {
 #'
 #' @param x The resource object which corresponding resolver is to be found.
 #'
+#' @return The corresponding ResourceResolver object or NULL if none applies.
+#'
 #' @export
 resolveResource <- function(x) {
-  resRegistry <- list()
-  resRegistryName <- ".resourceResolvers"
-  if (exists(resRegistryName, envir = parent.frame())) {
-    resRegistry <- get(resRegistryName, envir = parent.frame())
-  }
   resolver <- NULL
-  if (length(resRegistry)>0) {
-    for (i in 1:length(resRegistry)) {
-      res <- resRegistry[[i]]
-      if (res$isFor(x)) {
-        resolver <- res
+  if ("resource" %in% class(x)) {
+    resRegistry <- .getResolvers()
+    if (length(resRegistry)>0) {
+      for (i in 1:length(resRegistry)) {
+        res <- resRegistry[[i]]
+        if (res$isFor(x)) {
+          resolver <- res
+        }
       }
     }
   }
   resolver
+}
+
+#' Creates a resource client
+#'
+#' From a resource object, find the corresponding resolver in the resolver registry
+#' and create a new resource client.
+#'
+#' @param x The resource object which corresponding resolver is to be found.
+#'
+#' @return The corresponding ResourceClient object or NULL if none applies.
+#'
+#' @export
+newResourceClient <- function(x) {
+  client <- NULL
+  resolver <- resolveResource(x)
+  if (!is.null(resolver)) {
+    client <- resolver$newClient(x)
+  }
+  client
+}
+
+#' Get resource resolvers registry from options
+#' @keywords internal
+.getResolvers <- function() {
+  resRegistry <- getOption("resourcer.resolvers")
+  if (is.null(resRegistry)) {
+    resRegistry <- list()
+    options(resourcer.resolvers = resRegistry)
+  }
+  resRegistry
 }

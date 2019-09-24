@@ -25,6 +25,8 @@ test_that("file resource resolver is loaded", {
   registerResolver(FileResourceResolver$new())
   resolver <- resolveResource(res)
   expect_false(is.null(resolver))
+  client <- newResourceClient(res)
+  expect_false(is.null(client))
 })
 
 test_that("file resource client factory", {
