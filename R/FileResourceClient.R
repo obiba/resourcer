@@ -26,38 +26,38 @@ FileResourceClient <- R6::R6Class(
     },
     asDataFrame = function(...) {
       path <- self$downloadFile()
-      clazz <- class(super$getResource())
-      if ("csv" %in% clazz) {
+      format <- super$getResource()$format
+      if ("csv" == format) {
         private$loadReadr()
         readr::read_csv(path)
-      } else if ("csv2" %in% clazz) {
+      } else if ("csv2" == format) {
         private$loadReadr()
         readr::read_csv2(path)
-      } else if ("tsv" %in% clazz) {
+      } else if ("tsv" == format) {
         private$loadReadr()
         readr::read_tsv(path)
-      } else if ("spss" %in% clazz) {
+      } else if ("spss" == format) {
         private$loadHaven()
         haven::read_spss(path)
-      } else if ("sav" %in% clazz) {
+      } else if ("sav" == format) {
         private$loadHaven()
         haven::read_sav(path)
-      } else if ("por" %in% clazz) {
+      } else if ("por" == format) {
         private$loadHaven()
         haven::read_por(path)
-      } else if ("dta" %in% clazz) {
-        private$loadHaven()
-        haven::read_dta(path)
-      } else if ("stata" %in% clazz) {
+      } else if ("stata" == format) {
         private$loadHaven()
         haven::read_stata(path)
-      } else if ("sas" %in% clazz) {
+      } else if ("dta" == format) {
+        private$loadHaven()
+        haven::read_dta(path)
+      } else if ("sas" == format) {
         private$loadHaven()
         haven::read_sas(path)
-      } else if ("xpt" %in% clazz) {
+      } else if ("xpt" == format) {
         private$loadHaven()
         haven::read_xpt(path)
-      } else if ("excel" %in% clazz || "xls" %in% clazz || "xlsx" %in% clazz) {
+      } else if ("excel" == format || "xls" == format || "xlsx" == format) {
         private$loadReadxl()
         readxl::read_excel(path)
       } else {

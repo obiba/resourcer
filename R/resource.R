@@ -6,20 +6,22 @@
 #' @param url URL to access the resource whether it is data or computation capability.
 #' @param identity User name or account ID (if credentials are applicable).
 #' @param secret User password or token (if credentials are applicable).
-#' @param clazz Additional class name, to help resolving data format.
+#' @param format Data format, to help resource resolver identification and coercing to other formats.
+#'  Optional, it will be both a property and an additional class name.
 #'
 #' @export
-newResource <- function(name="", url, identity = NULL, secret = NULL, clazz = NULL) {
+newResource <- function(name="", url, identity = NULL, secret = NULL, format = NULL) {
   cls <- c("resource")
-  if (!is.null(clazz)){
-    cls <- append(cls, clazz)
+  if (!is.null(format)){
+    cls <- append(cls, format)
   }
   structure(
     list(
       name = name,
       url = url,
       identity = identity,
-      secret = secret
+      secret = secret,
+      format = format
     ),
     class = cls
   )

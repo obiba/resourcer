@@ -5,7 +5,7 @@
 \title{Create a Resource}
 \usage{
 newResource(name = "", url, identity = NULL, secret = NULL,
-  clazz = NULL)
+  format = NULL)
 }
 \arguments{
 \item{name}{Otpional human friendly name that identifies the resource.}
@@ -16,7 +16,8 @@ newResource(name = "", url, identity = NULL, secret = NULL,
 
 \item{secret}{User password or token (if credentials are applicable).}
 
-\item{clazz}{Additional class name, to help resolving data format.}
+\item{format}{Data format, to help resource resolver identification and coercing to other formats.
+Optional, it will be both a property and an additional class name.}
 }
 \description{
 Creates a new Resource structure.

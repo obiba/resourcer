@@ -18,7 +18,11 @@ FileResourceResolver <- R6::R6Class(
   public = list(
     isFor = function(x) {
       if (super$isFor(x)) {
-        super$parseURL(x)$scheme == "file"
+        super$parseURL(x)$scheme == "file" && x$format %in% c("csv", "csv2", "tsv",
+                                                              "spss", "sav", "por",
+                                                              "stata", "dta",
+                                                              "sas", "xpt",
+                                                              "excel", "xls", "xlsx")
       } else {
         FALSE
       }

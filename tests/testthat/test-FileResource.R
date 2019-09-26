@@ -1,8 +1,8 @@
-.make_file_resource <- function(path = "/data/CNSIM1.csv", clazz = "csv") {
+.make_file_resource <- function(path = "/data/CNSIM1.csv", format = "csv") {
   newResource(
     name = "test",
     url = paste0("file://", path),
-    clazz = clazz
+    format = format
   )
 }
 
@@ -15,7 +15,7 @@ test_that("file resource resolver works", {
     name = "CNSIM1",
     url = "opal+https://opal-demo.obiba.org/ws/files/data/CNSIM1.csv",
     secret = "DSDFrezerFgbgBC",
-    clazz = "csv"
+    format = "csv"
   )
   expect_false(resolver$isFor(res))
 })
@@ -53,7 +53,7 @@ test_that("file resource client factory, csv file", {
 })
 
 test_that("file resource client factory, spss file", {
-  res <- .make_file_resource("./data/dataset.sav", clazz = "spss")
+  res <- .make_file_resource("./data/dataset.sav", format = "spss")
   resolver <- FileResourceResolver$new()
   client <- resolver$newClient(res)
   expect_equal(class(client), c("FileResourceClient", "ResourceClient", "R6"))
