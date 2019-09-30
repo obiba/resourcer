@@ -23,8 +23,10 @@ SshResourceClient <- R6::R6Class(
       path <- url$path
       cmd <- ""
       if (nchar(path) > 0) {
-        cmd <- paste0("cd /", path, " && ")
+        path <- paste0("/", path)
+        cmd <- paste0("cd ", path, " && ")
       }
+      private$.workDir <- path
       private$.commandPrefix <- cmd
     },
     getConnection = function() {
@@ -46,12 +48,17 @@ SshResourceClient <- R6::R6Class(
     # return the paths of the files having been downloaded
     downloadFile = function(file, to = ".", verbose = FALSE) {
       private$loadSsh()
+      rfile <- file
+      if (!startsWith(file, "/")) {
+        # file path is relative to work dir
+        rfile <- paste0(private$.workDir, "/", file)
+      }
       files0 <- list.files(path = to, recursive = FALSE, full.names = FALSE, include.dirs = TRUE)
       # do ssh copy
       conn <- self$getConnection()
-      ssh::scp_download(conn, files = file, to = to, verbose = verbose)
+      ssh::scp_download(conn, files = rfile, to = to, verbose = verbose)
       files1 <- list.files(path = to, recursive = FALSE, full.names = FALSE, include.dirs = TRUE)
-      isNotIn0 <- Vectorize(function(x) { !(x %in% f0) })
+      isNotIn0 <- Vectorize(function(x) { !(x %in% files0) })
       downloaded <- files1[isNotIn0(files1)]
       sep <- "/"
       if (endsWith(to, "/")) {
@@ -87,6 +94,7 @@ SshResourceClient <- R6::R6Class(
   private = list(
     .allowedCommands = NULL,
     .commandPrefix = "",
+    .workDir = "",
     makeCommand = function(command, params) {
       cmd <- private$.commandPrefix
       if ("*" %in% private$.allowedCommands || command %in% private$.allowedCommands) {
