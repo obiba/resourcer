@@ -32,7 +32,7 @@ test_that("ssh resource client factory, connection refused", {
   client <- resolver$newClient(res)
   expect_equal(class(client), c("SshResourceClient", "ResourceClient", "R6"))
   expect_error(client$downloadFile(), "Operation not implemented")
-  expect_error(client$getConnection(), "Connection refused")
+  expect_error(client$getConnection())
 })
 
 test_that("ssh resource client factory, connection refused", {
