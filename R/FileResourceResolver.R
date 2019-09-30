@@ -1,6 +1,8 @@
 #' File Resource resolver
 #'
-#' The resource is a local file, i.e. which URL scheme is "file".
+#' The resource is a local file, i.e. which URL scheme is "file" and data format
+#' is one of: csv (comma delimiter), csv2 (semicolon delimiter), tsv (tab delimiter),
+#' spss, sav, por, stata, dta, sas, xpt, excel, xls, xlsx.
 #'
 #' @section Methods:
 #'

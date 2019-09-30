@@ -28,10 +28,13 @@ ResourceClient <- R6::R6Class(
     getConnection = function() {
       private$.connection
     },
-    downloadFile = function(fileext = "") {
+    downloadFile = function(fileext = "", ...) {
       stop("Operation not implemented")
     },
     asDataFrame = function(...) {
+      stop("Operation not implemented")
+    },
+    exec = function(...) {
       stop("Operation not implemented")
     },
     close = function() {
