@@ -21,10 +21,10 @@ FileResourceClient <- R6::R6Class(
       }
       conn
     },
-    downloadFile = function(fileext = "") {
+    downloadFile = function() {
       super$parseURL()$path
     },
-    asDataFrame = function(...) {
+    asDataFrame = function() {
       path <- self$downloadFile()
       format <- super$getResource()$format
       if ("csv" == format) {

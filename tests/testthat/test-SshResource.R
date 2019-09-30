@@ -31,7 +31,7 @@ test_that("ssh resource client factory, connection refused", {
   resolver <- SshResourceResolver$new()
   client <- resolver$newClient(res)
   expect_equal(class(client), c("SshResourceClient", "ResourceClient", "R6"))
-  expect_error(client$downloadFile(), "Operation not implemented")
+  expect_error(client$asDataFrame(), "Operation not applicable")
   expect_error(client$getConnection())
 })
 
@@ -43,3 +43,4 @@ test_that("ssh resource client factory, connection refused", {
   expect_equal(client$exec("plink", params = "--out out.bin", test = TRUE), "cd /work/dir && plink --out out.bin")
   expect_error(client$exec("cd", "..", test = TRUE), "Shell command not allowed: cd")
 })
+

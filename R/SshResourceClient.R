@@ -42,6 +42,23 @@ SshResourceClient <- R6::R6Class(
       }
       conn
     },
+    # download one or more files (wilcard * is supported in the file name (which can be a directory))
+    # return the paths of the files having been downloaded
+    downloadFile = function(file, to = ".", verbose = FALSE) {
+      private$loadSsh()
+      files0 <- list.files(path = to, recursive = FALSE, full.names = FALSE, include.dirs = TRUE)
+      # do ssh copy
+      conn <- self$getConnection()
+      ssh::scp_download(conn, files = file, to = to, verbose = verbose)
+      files1 <- list.files(path = to, recursive = FALSE, full.names = FALSE, include.dirs = TRUE)
+      isNotIn0 <- Vectorize(function(x) { !(x %in% f0) })
+      downloaded <- files1[isNotIn0(files1)]
+      sep <- "/"
+      if (endsWith(to, "/")) {
+        sep <- ""
+      }
+      unlist(lapply(downloaded, function(x) paste0(to, sep, x)))
+    },
     exec = function(command, params = "", test = FALSE) {
       private$loadSsh()
       cmd <- private$makeCommand(command, params)
@@ -49,8 +66,15 @@ SshResourceClient <- R6::R6Class(
         cmd
       } else {
         # do ssh exec
+        conn <- self$getConnection()
+        res <- ssh::ssh_exec_internal(conn, command = cmd, error = FALSE)
+        if (res$status == 0) {
+          res$stdout <- strsplit(rawToChar(res$stdout), split = "\n")[[1]]
+        } else {
+          res$stderr <- strsplit(rawToChar(res$stderr), split = "\n")[[1]]
+        }
+        res
       }
-
     },
     close = function() {
       conn <- super$getConnection()
