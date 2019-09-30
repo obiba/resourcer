@@ -1,5 +1,9 @@
 language: r
 cache: packages
+addons:
+  apt:
+    packages:
+      - libssh-dev
 r_packages:
   - devtools
 warnings_are_errors: true
