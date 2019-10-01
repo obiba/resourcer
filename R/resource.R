@@ -27,6 +27,20 @@ newResource <- function(name="", url, identity = NULL, secret = NULL, format = N
   )
 }
 
+#' Get resource resolvers registry
+#'
+#' Get the resource resolvers registry, create it if it does not exist.
+#'
+#' @export
+getResourceResolvers <- function() {
+  resRegistry <- getOption("resourcer.resolvers")
+  if (is.null(resRegistry)) {
+    resRegistry <- list()
+    options(resourcer.resolvers = resRegistry)
+  }
+  resRegistry
+}
+
 #' Register a resource resolver
 #'
 #' Maintain an list of resource resolvers that will be called when a new
@@ -35,13 +49,30 @@ newResource <- function(name="", url, identity = NULL, secret = NULL, format = N
 #' @param x The resource resolver object to register.
 #'
 #' @export
-registerResolver <- function(x) {
+registerResourceResolver <- function(x) {
   if ("ResourceResolver" %in% class(x)) {
-    resRegistry <- .getResolvers()
-    message("Registering: ", class(x)[[1]])
-    resRegistry <- append(resRegistry, x)
-    options(resourcer.resolvers = resRegistry)
+    resRegistry <- getResourceResolvers()
+    clazz <- class(x)[[1]]
+    found <- any(unlist(lapply(resRegistry, function(res) { clazz %in% class(res) })))
+    if (!found) {
+      resRegistry <- append(resRegistry, x)
+      options(resourcer.resolvers = resRegistry)
+    }
   }
+}
+
+#' Remove a resource resolver from the registry
+#'
+#' Remove any resolvers with the provided class name.
+#'
+#' @param x The resource resolver class name to unregister.
+#'
+#' @export
+unregisterResourceResolver <- function(x) {
+  resRegistry <- getResourceResolvers()
+  hasNotClass <- Vectorize(function(res) { !(x %in% class(res)) })
+  resRegistry <- resRegistry[hasNotClass(resRegistry)]
+  options(resourcer.resolvers = resRegistry)
 }
 
 #' Find a resource resolver
@@ -56,7 +87,7 @@ registerResolver <- function(x) {
 resolveResource <- function(x) {
   resolver <- NULL
   if ("resource" %in% class(x)) {
-    resRegistry <- .getResolvers()
+    resRegistry <- getResourceResolvers()
     if (length(resRegistry)>0) {
       for (i in 1:length(resRegistry)) {
         res <- resRegistry[[i]]
@@ -86,15 +117,4 @@ newResourceClient <- function(x) {
     client <- resolver$newClient(x)
   }
   client
-}
-
-#' Get resource resolvers registry from options
-#' @keywords internal
-.getResolvers <- function() {
-  resRegistry <- getOption("resourcer.resolvers")
-  if (is.null(resRegistry)) {
-    resRegistry <- list()
-    options(resourcer.resolvers = resRegistry)
-  }
-  resRegistry
 }

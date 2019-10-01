@@ -22,7 +22,7 @@ test_that("file resource resolver works", {
 
 test_that("file resource resolver is loaded", {
   res <- .make_file_resource()
-  registerResolver(FileResourceResolver$new())
+  registerResourceResolver(FileResourceResolver$new())
   resolver <- resolveResource(res)
   expect_false(is.null(resolver))
   client <- newResourceClient(res)
@@ -67,7 +67,7 @@ test_that("file resource client factory, spss file", {
 
 test_that("csv file coercing to data.frame", {
   res <- .make_file_resource("./data/dataset.csv")
-  registerResolver(FileResourceResolver$new())
+  registerResourceResolver(FileResourceResolver$new())
   df <- as.data.frame(res)
   expect_false(is.null(df))
   expect_true("data.frame" %in% class(df))
