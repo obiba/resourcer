@@ -9,6 +9,6 @@
 FileResourceClient
 }
 \description{
-Connects to a local file.
+Base class that connects to a file using a FileResourceGetter.
 }
 \keyword{datasets}

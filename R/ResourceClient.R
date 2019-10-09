@@ -7,8 +7,9 @@
 #' \code{$new(resource)} Create new ResourceClient instance from provided resource object.
 #' \code{$getResource()} Get the resource reference object.
 #' \code{$getConnection()} Get the raw connection object to the resource.
-#' \code{$downloadFile(fileext)} Coerce the resource to a file with provided file extension.
-#' \code{$asDataFrame()} Coerce the resource to a data.frame.
+#' \code{$downloadFile(...)} Coerce the resource to a file with provided file extension.
+#' \code{$asDataFrame(...)} Coerce the resource to a data.frame.
+#' \code{$exec(...)} Execute an operation on the resource.
 #' \code{$close()} Close the connection with the resource.
 #'
 #' @docType class
@@ -52,3 +53,23 @@ ResourceClient <- R6::R6Class(
     }
   )
 )
+
+#' Creates a resource client
+#'
+#' From a resource object, find the corresponding resolver in the resolver registry
+#' and create a new resource client.
+#'
+#' @param x The resource object which corresponding resolver is to be found.
+#'
+#' @return The corresponding ResourceClient object or NULL if none applies.
+#'
+#' @export
+newResourceClient <- function(x) {
+  client <- NULL
+  resolver <- resolveResource(x)
+  if (!is.null(resolver)) {
+    client <- resolver$newClient(x)
+  }
+  client
+}
+

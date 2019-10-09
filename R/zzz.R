@@ -1,15 +1,23 @@
 # register known resolvers
 .onAttach <- function(libname, pkgname) {
-  doRegister <- function(res) {
+  doRegisterFileGetter <- function(res) {
+    clazz <- class(res)[[1]]
+    packageStartupMessage(paste0("Registering ", clazz, "..."))
+    registerFileResourceGetter(res)
+  }
+  doRegisterFileGetter(LocalFileResourceGetter$new())
+  doRegisterFileGetter(HttpFileResourceGetter$new())
+  doRegisterResolver <- function(res) {
     clazz <- class(res)[[1]]
     packageStartupMessage(paste0("Registering ", clazz, "..."))
     registerResourceResolver(res)
   }
-  doRegister(FileResourceResolver$new())
-  doRegister(SshResourceResolver$new())
+  doRegisterResolver(TidyFileResourceResolver$new())
+  doRegisterResolver(SshResourceResolver$new())
 }
 
 # unregister all resolvers
 .onDetach <- function(libpath) {
   unregisterResourceResolver("ResourceResolver")
+  unregisterFileResourceGetter("FileResourceGetter")
 }

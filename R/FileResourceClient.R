@@ -1,6 +1,6 @@
 #' File resource client
 #'
-#' Connects to a local file.
+#' Base class that connects to a file using a FileResourceGetter.
 #'
 #' @docType class
 #' @format A R6 object of class FileResourceClient
@@ -10,83 +10,32 @@ FileResourceClient <- R6::R6Class(
   "FileResourceClient",
   inherit = ResourceClient,
   public = list(
-    initialize = function(resource) {
+    initialize = function(resource, file.getter = NULL) {
       super$initialize(resource)
-    },
-    getConnection = function() {
-      conn <- super$getConnection()
-      if (is.null(conn)) {
-        conn <- base::file(self$downloadFile(), open = "r")
-        super$setConnection(conn)
+      if (is.null(file.getter)) {
+        private$.file.getter <- findFileResourceGetter(resource)
+      } else {
+        private$.file.getter <- file.getter
       }
-      conn
+      if (is.null(private$.file.getter)) {
+        stop("File resource getter cannot be found: either provide one or register one.")
+      }
     },
     downloadFile = function() {
-      super$parseURL()$path
-    },
-    asDataFrame = function() {
-      path <- self$downloadFile()
-      format <- super$getResource()$format
-      if ("csv" == format) {
-        private$loadReadr()
-        readr::read_csv(path)
-      } else if ("csv2" == format) {
-        private$loadReadr()
-        readr::read_csv2(path)
-      } else if ("tsv" == format) {
-        private$loadReadr()
-        readr::read_tsv(path)
-      } else if ("spss" == format) {
-        private$loadHaven()
-        haven::read_spss(path)
-      } else if ("sav" == format) {
-        private$loadHaven()
-        haven::read_sav(path)
-      } else if ("por" == format) {
-        private$loadHaven()
-        haven::read_por(path)
-      } else if ("stata" == format) {
-        private$loadHaven()
-        haven::read_stata(path)
-      } else if ("dta" == format) {
-        private$loadHaven()
-        haven::read_dta(path)
-      } else if ("sas" == format) {
-        private$loadHaven()
-        haven::read_sas(path)
-      } else if ("xpt" == format) {
-        private$loadHaven()
-        haven::read_xpt(path)
-      } else if ("excel" == format || "xls" == format || "xlsx" == format) {
-        private$loadReadxl()
-        readxl::read_excel(path)
-      } else {
-        NULL
+      if (is.null(private$.file.object) || !file.exists(private$.file.object$path)) {
+        private$.file.object <- private$.file.getter$downloadFile(super$getResource())
       }
+      private$.file.object$path
     },
     close = function() {
-      conn <- super$getConnection()
-      if (!is.null(conn)) {
-        base::close(conn)
-        super$setConnection(NULL)
+      # silently remove file object if it exists and if it is a temporary file
+      if (!is.null(private$.file.object) && file.exists(private$.file.object$path) && private$.file.object$temp) {
+        ignore <- tryCatch(file.remove(private$.file.object$path), error = function(e) {})
       }
     }
   ),
   private = list(
-    loadHaven = function() {
-      if (!require("haven")) {
-        install.packages("haven", repos = "https://cloud.r-project.org", dependencies = TRUE)
-      }
-    },
-    loadReadr = function() {
-      if (!require("readr")) {
-        install.packages("readr", repos = "https://cloud.r-project.org", dependencies = TRUE)
-      }
-    },
-    loadReadxl = function() {
-      if (!require("readxl")) {
-        install.packages("readxl", repos = "https://cloud.r-project.org", dependencies = TRUE)
-      }
-    }
+    .file.getter = NULL,
+    .file.object = NULL
   )
 )

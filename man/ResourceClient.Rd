@@ -17,8 +17,9 @@ Helper class for connecting to a resource data store or a computation unit.
 \code{$new(resource)} Create new ResourceClient instance from provided resource object.
 \code{$getResource()} Get the resource reference object.
 \code{$getConnection()} Get the raw connection object to the resource.
-\code{$downloadFile(fileext)} Coerce the resource to a file with provided file extension.
-\code{$asDataFrame()} Coerce the resource to a data.frame.
+\code{$downloadFile(...)} Coerce the resource to a file with provided file extension.
+\code{$asDataFrame(...)} Coerce the resource to a data.frame.
+\code{$exec(...)} Execute an operation on the resource.
 \code{$close()} Close the connection with the resource.
 }
 

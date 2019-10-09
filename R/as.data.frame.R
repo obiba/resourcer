@@ -21,3 +21,18 @@ as.data.frame.resource <- function(x, ...) {
   client$close()
   df
 }
+
+#' Coerce a ResourceClient object to a data.frame
+#'
+#' Attempt to coerce a resource object to a data.frame: find a ResourceResolver and get the
+#' ResourceClient that will connect to the described dataset and make a data.frame of it.
+#'
+#' @param x a ResourceClient object
+#' @param ... additional parameters, that may be used (or ignored) by the resource client.
+#'
+#' @return a data.frame (or a tibble)
+#'
+#' @export
+as.data.frame.ResourceClient <- function(x, ...) {
+  x$asDataFrame(...)
+}

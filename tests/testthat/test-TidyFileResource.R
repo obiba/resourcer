@@ -8,7 +8,7 @@
 
 test_that("file resource resolver works", {
   res <- .make_file_resource()
-  resolver <- FileResourceResolver$new()
+  resolver <- TidyFileResourceResolver$new()
   expect_true(resolver$isFor(res))
 
   res <- newResource(
@@ -22,7 +22,7 @@ test_that("file resource resolver works", {
 
 test_that("file resource resolver is loaded", {
   res <- .make_file_resource()
-  registerResourceResolver(FileResourceResolver$new())
+  registerResourceResolver(TidyFileResourceResolver$new())
   resolver <- resolveResource(res)
   expect_false(is.null(resolver))
   client <- newResourceClient(res)
@@ -31,19 +31,19 @@ test_that("file resource resolver is loaded", {
 
 test_that("file resource client factory, file not found", {
   res <- .make_file_resource()
-  resolver <- FileResourceResolver$new()
+  resolver <- TidyFileResourceResolver$new()
   client <- resolver$newClient(res)
-  expect_equal(class(client), c("FileResourceClient", "ResourceClient", "R6"))
+  expect_equal(class(client), c("TidyFileResourceClient", "FileResourceClient", "ResourceClient", "R6"))
   expect_equal(client$downloadFile(), "/data/CNSIM1.csv")
   # no such file or directory
-  expect_error(client$getConnection())
+  expect_error(client$asDataFrame())
 })
 
 test_that("file resource client factory, csv file", {
   res <- .make_file_resource("./data/dataset.csv")
-  resolver <- FileResourceResolver$new()
+  resolver <- TidyFileResourceResolver$new()
   client <- resolver$newClient(res)
-  expect_equal(class(client), c("FileResourceClient", "ResourceClient", "R6"))
+  expect_equal(class(client), c("TidyFileResourceClient", "FileResourceClient", "ResourceClient", "R6"))
   expect_equal(client$downloadFile(), "data/dataset.csv")
   df <- client$asDataFrame()
   expect_false(is.null(df))
@@ -54,9 +54,9 @@ test_that("file resource client factory, csv file", {
 
 test_that("file resource client factory, spss file", {
   res <- .make_file_resource("./data/dataset.sav", format = "spss")
-  resolver <- FileResourceResolver$new()
+  resolver <- TidyFileResourceResolver$new()
   client <- resolver$newClient(res)
-  expect_equal(class(client), c("FileResourceClient", "ResourceClient", "R6"))
+  expect_equal(class(client), c("TidyFileResourceClient", "FileResourceClient", "ResourceClient", "R6"))
   expect_equal(client$downloadFile(), "data/dataset.sav")
   df <- client$asDataFrame()
   expect_false(is.null(df))
@@ -65,10 +65,20 @@ test_that("file resource client factory, spss file", {
   client$close()
 })
 
-test_that("csv file coercing to data.frame", {
+test_that("csv file resource coercing to data.frame", {
   res <- .make_file_resource("./data/dataset.csv")
-  registerResourceResolver(FileResourceResolver$new())
+  registerResourceResolver(TidyFileResourceResolver$new())
   df <- as.data.frame(res)
+  expect_false(is.null(df))
+  expect_true("data.frame" %in% class(df))
+  expect_true("tbl" %in% class(df))
+})
+
+test_that("csv file resource client coercing to data.frame", {
+  res <- .make_file_resource("./data/dataset.csv")
+  registerResourceResolver(TidyFileResourceResolver$new())
+  client <- newResourceClient(res)
+  df <- as.data.frame(client)
   expect_false(is.null(df))
   expect_true("data.frame" %in% class(df))
   expect_true("tbl" %in% class(df))
