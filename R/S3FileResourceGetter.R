@@ -1,28 +1,26 @@
-#' HTTP file resource getter
+#' AWS S3 file resource getter
 #'
-#' Access a file that is stored at a HTTP(S) address. Use Basic authentication header if both
-#' resource's identity and secret are defined.
+#' Access a file that is in the Amazon Web Services S3 file store. The host name is the bucket name. Credentials may apply.
 #'
 #' @section Methods:
 #'
-#' \code{$new(resource)} Create new HttpFileResourceGetter instance from provided resource object.
+#' \code{$new(resource)} Create new S3FileResourceGetter instance from provided resource object.
 #' \code{$isFor(resource)} Get a logical that indicates that the file getter is applicable to the provided resource object.
 #' \code{$downloadFile(resource)} Get the file described by the provided resource. Release the connection when done.
 #'
 #' @docType class
-#' @format A R6 object of class HttpFileResourceGetter
+#' @format A R6 object of class S3FileResourceGetter
 #' @import R6
-#' @import httr
 #' @export
-HttpFileResourceGetter <- R6::R6Class(
-  "HttpFileResourceGetter",
+S3FileResourceGetter <- R6::R6Class(
+  "S3FileResourceGetter",
   inherit = FileResourceGetter,
   public = list(
     initialize = function() {},
     isFor = function(resource) {
       if (super$isFor(resource)) {
         scheme <- super$parseURL(resource)$scheme
-        scheme == "http" || scheme == "https"
+        scheme == "s3" || scheme == "aws"
       } else {
         FALSE
       }
@@ -32,7 +30,10 @@ HttpFileResourceGetter <- R6::R6Class(
         fileName <- super$extractFileName(resource)
         downloadDir <- super$makeDownloadDir(resource)
         path <- file.path(downloadDir, fileName)
-        httr::GET(resource$url, private$addHeaders(resource), write_disk(path, overwrite = TRUE))
+
+        private$loadS3()
+        aws.s3::save_object(url$path, bucket = url$host, file = path, overwrite = TRUE,
+                            key = resource$identity, secret = resource$secret)
         super$newFileObject(path, temp = TRUE)
       } else {
         NULL
@@ -40,12 +41,9 @@ HttpFileResourceGetter <- R6::R6Class(
     }
   ),
   private = list(
-    # add basic auth header if there are credentials
-    addHeaders = function(resource) {
-      if (nchar(resource$identity)>0 && nchar(resource$secret)>0) {
-        httr::add_headers(Authorization = jsonlite::base64_enc(paste0("Basic ", resource$identity, ":", resource$secret)))
-      } else {
-        httr::add_headers()
+    loadS3 = function() {
+      if (!require("aws.s3")) {
+        install.packages("aws.s3", repos = "https://cloud.r-project.org", dependencies = TRUE)
       }
     }
   )

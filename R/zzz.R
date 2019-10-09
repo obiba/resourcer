@@ -7,6 +7,10 @@
   }
   doRegisterFileGetter(LocalFileResourceGetter$new())
   doRegisterFileGetter(HttpFileResourceGetter$new())
+  doRegisterFileGetter(ScpFileResourceGetter$new())
+  doRegisterFileGetter(S3FileResourceGetter$new())
+  doRegisterFileGetter(GridFsFileResourceGetter$new())
+  doRegisterFileGetter(OpalFileResourceGetter$new())
   doRegisterResolver <- function(res) {
     clazz <- class(res)[[1]]
     packageStartupMessage(paste0("Registering ", clazz, "..."))

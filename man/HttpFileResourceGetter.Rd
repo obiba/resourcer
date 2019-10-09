@@ -9,7 +9,8 @@
 HttpFileResourceGetter
 }
 \description{
-Access a file that is stored at a HTTP(S) address. Use Basic authentication header if both resource identity and secret are defined.
+Access a file that is stored at a HTTP(S) address. Use Basic authentication header if both
+resource's identity and secret are defined.
 }
 \section{Methods}{
 

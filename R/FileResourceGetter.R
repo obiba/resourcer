@@ -27,9 +27,7 @@ FileResourceGetter <- R6::R6Class(
     },
     extractFileName = function(resource) {
       path <- private$parseURL(resource)$path
-      segments <- strsplit(path, split = "/")[[1]]
-      fileName <- segments[[length(segments)]]
-      fileName
+      basename(path)
     },
     # create a temp dir in the session's temp dir
     makeDownloadDir = function(resource) {
@@ -41,6 +39,9 @@ FileResourceGetter <- R6::R6Class(
   private = list(
     parseURL = function(resource) {
       httr::parse_url(resource$url)
+    },
+    buildURL = function(url) {
+      httr::build_url(url)
     },
     newFileObject = function(path, temp = FALSE) {
       structure(list(

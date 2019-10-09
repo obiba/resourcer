@@ -13,7 +13,7 @@ test_that("file resource resolver works", {
 
   res <- newResource(
     name = "CNSIM1",
-    url = "opal+https://opal-demo.obiba.org/ws/files/data/CNSIM1.csv",
+    url = "app+https://app.example.org/files/data/CNSIM1.csv",
     secret = "DSDFrezerFgbgBC",
     format = "csv"
   )
