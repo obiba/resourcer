@@ -20,6 +20,7 @@
   doRegisterResolver(ShellResourceResolver$new())
   doRegisterResolver(SshResourceResolver$new())
   doRegisterResolver(RDataFileResourceResolver$new())
+  doRegisterResolver(SQLResourceResolver$new())
 }
 
 # unregister all resolvers
