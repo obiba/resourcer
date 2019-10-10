@@ -2,6 +2,7 @@
 
 S3method(as.data.frame,ResourceClient)
 S3method(as.data.frame,resource)
+export(CommandResourceClient)
 export(FileResourceClient)
 export(FileResourceGetter)
 export(GridFsFileResourceGetter)

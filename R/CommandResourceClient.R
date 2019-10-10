@@ -1,0 +1,35 @@
+#' Command resource client
+#'
+#' Base class for resource clients issuing commands and get a result with the status of the execution,
+#' the output and the error messages.
+#'
+#' @docType class
+#' @format A R6 object of class CommandResourceClient
+#' @import R6
+#' @export
+CommandResourceClient <- R6::R6Class(
+  "CommandResourceClient",
+  inherit = ResourceClient,
+  public = list(
+    initialize = function(resource) {
+      super$initialize(resource)
+    }
+  ),
+  private = list(
+    newResultObject = function(status, output, error, raw = TRUE) {
+      outstr <- output
+      if (!is.null(output) && raw) {
+        outstr <- strsplit(rawToChar(output), split = "\n")[[1]]
+      }
+      errstr <- error
+      if (!is.null(error) && raw) {
+        errstr <- strsplit(rawToChar(error), split = "\n")[[1]]
+      }
+      structure(list(
+        status = status,
+        output = outstr,
+        error = errstr),
+        class = "resource.exec")
+    }
+  )
+)

@@ -25,7 +25,7 @@ test_that("shell resource client factory", {
   res <- .make_shell_resource()
   resolver <- ShellResourceResolver$new()
   client <- resolver$newClient(res)
-  expect_equal(class(client), c("ShellResourceClient", "ResourceClient", "R6"))
+  expect_equal(class(client), c("ShellResourceClient", "CommandResourceClient", "ResourceClient", "R6"))
   expect_error(client$asDataFrame(), "Operation not applicable")
 })
 
@@ -38,3 +38,13 @@ test_that("shell resource client commands", {
   expect_error(client$exec("cd", "..", test = TRUE), "Shell command not allowed: cd")
 })
 
+test_that("shell resource client exec output", {
+  res <- .make_shell_resource(path = "/", exec = "pwd")
+  resolver <- ShellResourceResolver$new()
+  client <- resolver$newClient(res)
+  res <- client$exec("pwd")
+  expect_equal(res$status, 0)
+  expect_true(length(res$output)>0)
+  expect_equal(res$output, "/")
+  expect_equal(length(res$error), 0)
+})

@@ -8,7 +8,7 @@
 #' @export
 ShellResourceClient <- R6::R6Class(
   "ShellResourceClient",
-  inherit = ResourceClient,
+  inherit = CommandResourceClient,
   public = list(
     initialize = function(resource) {
       super$initialize(resource)
@@ -46,13 +46,8 @@ ShellResourceClient <- R6::R6Class(
         owd <- getwd()
         setwd(private$.workDir)
         res <- sys::exec_internal(cmd = command, args = params, error = FALSE)
-        if (res$status == 0) {
-          res$stdout <- strsplit(rawToChar(res$stdout), split = "\n")[[1]]
-        } else {
-          res$stderr <- strsplit(rawToChar(res$stderr), split = "\n")[[1]]
-        }
         setwd(owd)
-        res
+        super$newResultObject(status = res$status, output = res$stdout, error = res$stderr)
       }
     }
   ),

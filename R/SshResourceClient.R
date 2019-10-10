@@ -8,7 +8,7 @@
 #' @export
 SshResourceClient <- R6::R6Class(
   "SshResourceClient",
-  inherit = ResourceClient,
+  inherit = CommandResourceClient,
   public = list(
     initialize = function(resource) {
       super$initialize(resource)
@@ -75,12 +75,7 @@ SshResourceClient <- R6::R6Class(
         # do ssh exec
         conn <- self$getConnection()
         res <- ssh::ssh_exec_internal(conn, command = cmd, error = FALSE)
-        if (res$status == 0) {
-          res$stdout <- strsplit(rawToChar(res$stdout), split = "\n")[[1]]
-        } else {
-          res$stderr <- strsplit(rawToChar(res$stderr), split = "\n")[[1]]
-        }
-        res
+        super$newResultObject(status = res$status, output = res$stdout, error = res$stderr)
       }
     },
     close = function() {

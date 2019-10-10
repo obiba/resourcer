@@ -30,7 +30,7 @@ test_that("ssh resource client factory, connection refused", {
   res <- .make_ssh_resource()
   resolver <- SshResourceResolver$new()
   client <- resolver$newClient(res)
-  expect_equal(class(client), c("SshResourceClient", "ResourceClient", "R6"))
+  expect_equal(class(client), c("SshResourceClient", "CommandResourceClient", "ResourceClient", "R6"))
   expect_error(client$asDataFrame(), "Operation not applicable")
   expect_error(client$getConnection())
 })
