@@ -19,6 +19,7 @@
   doRegisterResolver(TidyFileResourceResolver$new())
   doRegisterResolver(ShellResourceResolver$new())
   doRegisterResolver(SshResourceResolver$new())
+  doRegisterResolver(RDataFileResourceResolver$new())
 }
 
 # unregister all resolvers

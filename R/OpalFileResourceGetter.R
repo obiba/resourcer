@@ -53,9 +53,9 @@ OpalFileResourceGetter <- R6::R6Class(
   private = list(
     # add auth header or token header if there are credentials
     addHeaders = function(resource) {
-      if (nchar(resource$identity)>0 && nchar(resource$secret)>0) {
+      if (!is.null(resource$identity) && nchar(resource$identity)>0 && !is.null(resource$secret) && nchar(resource$secret)>0) {
         httr::add_headers(Authorization = jsonlite::base64_enc(paste0("X-Opal-Auth ", resource$identity, ":", resource$secret)))
-      } else if (nchar(resource$secret)>0) {
+      } else if (!is.null(resource$secret) && nchar(resource$secret)>0) {
         httr::add_headers("X-Opal-Auth" = resource$secret)
       } else {
         httr::add_headers()
