@@ -66,7 +66,7 @@ SshResourceClient <- R6::R6Class(
       }
       unlist(lapply(downloaded, function(x) paste0(to, sep, x)))
     },
-    exec = function(command, params = "", test = FALSE) {
+    exec = function(command, params = NULL, test = FALSE) {
       private$loadSsh()
       cmd <- private$makeCommand(command, params)
       if (test) {
@@ -99,9 +99,7 @@ SshResourceClient <- R6::R6Class(
       cmd <- private$.commandPrefix
       if ("*" %in% private$.allowedCommands || command %in% private$.allowedCommands) {
         cmd <- paste0(cmd, command)
-        if (nchar(params) > 0) {
-          cmd <- paste0(cmd, " ", params)
-        }
+        cmd <- paste(append(cmd, params), collapse = " ")
       } else {
         stop("Shell command not allowed: ", command)
       }

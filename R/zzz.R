@@ -17,6 +17,7 @@
     registerResourceResolver(res)
   }
   doRegisterResolver(TidyFileResourceResolver$new())
+  doRegisterResolver(ShellResourceResolver$new())
   doRegisterResolver(SshResourceResolver$new())
 }
 

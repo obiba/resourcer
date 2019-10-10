@@ -22,7 +22,7 @@ GridFsFileResourceGetter <- R6::R6Class(
         url <- super$parseURL(resource)
         scheme <- url$scheme
         query <- url$query
-        scheme == "gridfs" || ((scheme == "mongodb" || scheme == "mongodb+srv") && query$prefix == "fs")
+        scheme == "gridfs" || (scheme %in% c("mongodb", "mongodb+srv") && query$prefix == "fs")
       } else {
         FALSE
       }

@@ -21,8 +21,7 @@ HttpFileResourceGetter <- R6::R6Class(
     initialize = function() {},
     isFor = function(resource) {
       if (super$isFor(resource)) {
-        scheme <- super$parseURL(resource)$scheme
-        scheme == "http" || scheme == "https"
+        super$parseURL(resource)$scheme %in% c("http", "https")
       } else {
         FALSE
       }

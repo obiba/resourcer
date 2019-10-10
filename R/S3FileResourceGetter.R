@@ -19,8 +19,7 @@ S3FileResourceGetter <- R6::R6Class(
     initialize = function() {},
     isFor = function(resource) {
       if (super$isFor(resource)) {
-        scheme <- super$parseURL(resource)$scheme
-        scheme == "s3" || scheme == "aws"
+        super$parseURL(resource)$scheme %in% c("s3", "aws")
       } else {
         FALSE
       }

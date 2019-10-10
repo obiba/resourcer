@@ -27,6 +27,7 @@ Suggests:
     readr,
     readxl,
     ssh,
+    sys,
     aws.s3,
     mongolite
 BugReports: https://github.com/obiba/resourcer

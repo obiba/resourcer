@@ -50,8 +50,7 @@ res <- resourcer::newResource(
 )
 
 # get ssh client from resource object
-resolver <- SshResolver$new()
-client <- resolver$newClient(res) # does a ssh::ssh_connect()
+client <- resourcer::newResourceClient(res) # does a ssh::ssh_connect()
 
 # execute commands
 files <- client$exec("ls") # exec 'cd /work/dir && ls'
