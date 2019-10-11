@@ -21,22 +21,11 @@ SQLResourceClient <- R6::R6Class(
       }
       conn
     },
-    # as.tbl means as dplyr::tbl
-    asDataFrame = function(table = NULL, as.tbl = FALSE) {
-      conn <- self$getConnection()
-      tableName <- self$getTableName()
-      if (is.null(tableName)) {
-        if (is.null(table)) {
-          private$loadTibble()
-          tibble::tibble(table = DBI::dbListTables(conn))
-        } else {
-          private$readTable(table, as.tbl)
-        }
-      } else if (!is.null(table) && table != tableName) {
-        stop("Table not accessible: ", table, call. = FALSE)
-      } else {
-        private$readTable(tableName, as.tbl)
-      }
+    asDataFrame = function(table = NULL) {
+      private$asTable(table, FALSE)
+    },
+    asTbl = function(table = NULL) {
+      private$asTable(table, TRUE)
     },
     getDatabaseName = function() {
       url <- super$parseURL()
@@ -55,20 +44,41 @@ SQLResourceClient <- R6::R6Class(
     close = function() {
       conn <- super$getConnection()
       if (!is.null(conn)) {
-        DBI::dbDisconnect(conn)
+        if ("spark_connection" %in% class(conn)) {
+          sparklyr::spark_disconnect(conn)
+        } else {
+          DBI::dbDisconnect(conn)
+        }
         super$setConnection(NULL)
       }
     }
   ),
   private = list(
-    readTable = function(table, as.tbl) {
+    # use.dplyr means returning a "table" convenient for dplyr processing
+    asTable = function(table = NULL, use.dplyr = FALSE) {
       conn <- self$getConnection()
-      if (!as.tbl) {
+      tableName <- self$getTableName()
+      if (is.null(tableName)) {
+        if (is.null(table)) {
+          private$loadTibble()
+          tibble::tibble(table = DBI::dbListTables(conn))
+        } else {
+          private$readTable(table, use.dplyr)
+        }
+      } else if (!is.null(table) && table != tableName) {
+        stop("Table not accessible: ", table, call. = FALSE)
+      } else {
+        private$readTable(tableName, use.dplyr)
+      }
+    },
+    readTable = function(table, use.dplyr) {
+      conn <- self$getConnection()
+      if (!use.dplyr) {
         private$loadTibble()
         tibble::as_tibble(DBI::dbReadTable(conn, table))
       } else {
         private$loadDBPlyr()
-        tbl(conn, table)
+        dplyr::tbl(conn, table)
       }
     },
     getDBIConnection = function() {
@@ -86,6 +96,15 @@ SQLResourceClient <- R6::R6Class(
         conn <- DBI::dbConnect(RPostgres::Postgres(), host = url$host, port = url$port,
                                user = resource$identity, password = resource$secret,
                                dbname = self$getDatabaseName())
+      } else if (identical(url$scheme, "sparksql")) {
+        private$loadSparklyr()
+        if (identical(url$host, "local")) {
+          conn <- sparklyr::spark_connect(master = "local")
+        } else {
+          master <- paste0("http://", url$host, ":", url:port)
+          config <- sparklyr::livy_config(username=resource$identity, password=resource$secret)
+          conn <- sparklyr::spark_connect(master = master, method = "livy", config = config)
+        }
       } else {
         stop("Unknown SQL database: ", url$scheme, call. = FALSE)
       }
@@ -103,6 +122,11 @@ SQLResourceClient <- R6::R6Class(
     loadRPostgres = function() {
       if (!require("RPostgres")) {
         install.packages("RPostgres", repos = "https://cloud.r-project.org", dependencies = TRUE)
+      }
+    },
+    loadSparklyr = function() {
+      if (!require("sparklyr")) {
+        install.packages("sparklyr", repos = "https://cloud.r-project.org", dependencies = TRUE)
       }
     },
     loadTibble = function() {

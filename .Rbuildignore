@@ -13,3 +13,5 @@
 ^appveyor\.yml$
 ^\.httr-oauth$
 ^LICENSE*
+^derby.log$
+^logs$

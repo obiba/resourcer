@@ -10,3 +10,5 @@ figure
 inst/doc
 vignettes/*.R
 .httr-oauth
+derby.log
+logs

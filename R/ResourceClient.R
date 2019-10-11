@@ -35,6 +35,10 @@ ResourceClient <- R6::R6Class(
     asDataFrame = function(...) {
       stop("Operation not applicable")
     },
+    asTbl = function(...) {
+      private$loadDPlyr()
+      dplyr::as.tbl(self$asDataFrame())
+    },
     exec = function(...) {
       stop("Operation not applicable")
     },
@@ -50,6 +54,11 @@ ResourceClient <- R6::R6Class(
     },
     setConnection = function(conn) {
       private$.connection <- conn
+    },
+    loadDPlyr = function() {
+      if (!require("dplyr")) {
+        install.packages("dplyr", repos = "https://cloud.r-project.org", dependencies = TRUE)
+      }
     }
   )
 )

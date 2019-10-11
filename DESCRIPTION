@@ -34,7 +34,8 @@ Suggests:
     dbplyr,
     DBI,
     RMariaDB,
-    RPostgres
+    RPostgres,
+    sparklyr
 BugReports: https://github.com/obiba/resourcer
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
