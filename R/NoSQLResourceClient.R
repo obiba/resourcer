@@ -86,17 +86,6 @@ NoSQLResourceClient <- R6::R6Class(
       if (!require("tibble")) {
         install.packages("tibble", repos = "https://cloud.r-project.org", dependencies = TRUE)
       }
-    },
-    loadDPlyr = function() {
-      if (!require("dplyr")) {
-        install.packages("dplyr", repos = "https://cloud.r-project.org", dependencies = TRUE)
-      }
-    },
-    loadDBPlyr = function() {
-      private$loadDPlyr()
-      if (!require("dbplyr")) {
-        install.packages("dbplyr", repos = "https://cloud.r-project.org", dependencies = TRUE)
-      }
     }
   )
 )
