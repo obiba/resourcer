@@ -21,6 +21,7 @@
   doRegisterResolver(SshResourceResolver$new())
   doRegisterResolver(RDataFileResourceResolver$new())
   doRegisterResolver(SQLResourceResolver$new())
+  doRegisterResolver(NoSQLResourceResolver$new())
 }
 
 # unregister all resolvers
