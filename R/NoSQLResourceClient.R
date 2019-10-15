@@ -66,8 +66,12 @@ NoSQLResourceClient <- R6::R6Class(
           stop("MongoDB collection name is required", call. = FALSE)
         }
         url$path <- dbname # skip collection
-        url$username <- resource$identity
-        url$password <- resource$secret
+        if (!is.null(resource$identity) && !identical(resource$identity, "")) {
+          url$username <- resource$identity
+        }
+        if (!is.null(resource$secret) && !identical(resource$secret, "")) {
+          url$password <- resource$secret
+        }
         murl <- httr::build_url(url)
         nodbi::src_mongo(collection = colname, db = dbname, url = murl)
       } else {
