@@ -16,7 +16,7 @@ CommandResourceClient <- R6::R6Class(
     }
   ),
   private = list(
-    newResultObject = function(status, output, error, raw = TRUE) {
+    newResultObject = function(status, output, error, command, raw = TRUE) {
       outstr <- output
       if (!is.null(output) && raw) {
         outstr <- strsplit(rawToChar(output), split = "\n")[[1]]
@@ -28,7 +28,8 @@ CommandResourceClient <- R6::R6Class(
       structure(list(
         status = status,
         output = outstr,
-        error = errstr),
+        error = errstr,
+        command = command),
         class = "resource.exec")
     }
   )

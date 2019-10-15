@@ -75,7 +75,7 @@ SshResourceClient <- R6::R6Class(
         # do ssh exec
         conn <- self$getConnection()
         res <- ssh::ssh_exec_internal(conn, command = cmd, error = FALSE)
-        super$newResultObject(status = res$status, output = res$stdout, error = res$stderr)
+        super$newResultObject(status = res$status, output = res$stdout, error = res$stderr, command = cmd)
       }
     },
     close = function() {

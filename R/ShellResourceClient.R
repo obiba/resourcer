@@ -39,15 +39,16 @@ ShellResourceClient <- R6::R6Class(
     exec = function(command, params = NULL, test = FALSE) {
       private$loadSys()
       private$checkCommand(command)
+      cmdStr <- paste(append(command, params), collapse = " ")
       if (test) {
-        paste(append(command, params), collapse = " ")
+        cmdStr
       } else {
         # do shell exec
         owd <- getwd()
         setwd(private$.workDir)
         res <- sys::exec_internal(cmd = command, args = params, error = FALSE)
         setwd(owd)
-        super$newResultObject(status = res$status, output = res$stdout, error = res$stderr)
+        super$newResultObject(status = res$status, output = res$stdout, error = res$stderr, command = cmdStr)
       }
     }
   ),
