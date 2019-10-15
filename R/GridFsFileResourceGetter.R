@@ -41,6 +41,8 @@ GridFsFileResourceGetter <- R6::R6Class(
         rpath <- url$path
         db <- strsplit(rpath)[[1]]
         url$path <- db
+        url$username <- resource$identity
+        url$password <- resource$secret
         urlstr <- super$buildURL(url)
 
         private$loadMongoLite()
