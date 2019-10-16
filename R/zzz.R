@@ -19,7 +19,7 @@
   }
   doRegisterDBIConnector(MariaDBResourceConnector$new())
   doRegisterDBIConnector(PostgresResourceConnector$new())
-  doRegisterDBIConnector(SparkSQLResourceConnector$new())
+  doRegisterDBIConnector(SparkResourceConnector$new())
   doRegisterDBIConnector(PrestoResourceConnector$new())
 
   doRegisterResolver <- function(res) {

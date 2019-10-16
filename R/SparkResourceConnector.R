@@ -1,26 +1,26 @@
-#' SparkSQL DBI resource connector
+#' Spark DBI resource connector
 #'
-#' Makes a SparkSQL DBI connection from a resource description.
+#' Makes a Spark connection object, that is also a DBI connection object, from a resource description.
 #'
 #' @section Methods:
 #'
-#' \code{$new()} Create new SparkSQLResourceConnector instance.
+#' \code{$new()} Create new SparkResourceConnector instance.
 #' \code{$isFor(resource)} Get a logical that indicates that the DBI connector is applicable to the provided resource object.
 #' \code{$createDBIConnection(resource, ...)} Get the DBI connection object described by the provided resource.
 #' \code{$closeDBIConnection(conn)} Release the DBI connection when done.
 #'
 #' @docType class
-#' @format A R6 object of class SparkSQLResourceConnector
+#' @format A R6 object of class SparkResourceConnector
 #' @import R6
 #' @import httr
 #' @export
-SparkSQLResourceConnector <- R6::R6Class(
-  "SparkSQLResourceConnector",
+SparkResourceConnector <- R6::R6Class(
+  "SparkResourceConnector",
   inherit = DBIResourceConnector,
   public = list(
     initialize = function() {},
     isFor = function(resource) {
-      super$isFor(resource) && super$parseURL(resource)$scheme %in% c("sparksql", "sparksql+http", "sparksql+https")
+      super$isFor(resource) && super$parseURL(resource)$scheme %in% c("spark", "spark+http", "spark+https")
     },
     createDBIConnection = function(resource) {
       super$loadDBI()
