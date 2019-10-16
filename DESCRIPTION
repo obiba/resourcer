@@ -36,6 +36,7 @@ Suggests:
     RMariaDB,
     RPostgres,
     sparklyr,
+    RPresto,
     nodbi
 BugReports: https://github.com/obiba/resourcer
 RoxygenNote: 6.1.1
