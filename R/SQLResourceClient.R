@@ -10,13 +10,22 @@ SQLResourceClient <- R6::R6Class(
   "SQLResourceClient",
   inherit = ResourceClient,
   public = list(
-    initialize = function(resource, file.getter = NULL) {
+    initialize = function(resource, dbi.connector = NULL) {
       super$initialize(resource)
+      if (is.null(dbi.connector)) {
+        private$.dbi.connector <- findDBIResourceConnector(resource)
+      } else {
+        private$.dbi.connector <- dbi.connector
+      }
+      if (is.null(private$.dbi.connector)) {
+        stop("DBI resource connector cannot be found: either provide one or register one.")
+      }
     },
     getConnection = function() {
       conn <- super$getConnection()
       if (is.null(conn)) {
-        conn <- private$getDBIConnection()
+        resource <- super$getResource()
+        conn <- private$.dbi.connector$createDBIConnection(resource)
         super$setConnection(conn)
       }
       conn
@@ -44,16 +53,13 @@ SQLResourceClient <- R6::R6Class(
     close = function() {
       conn <- super$getConnection()
       if (!is.null(conn)) {
-        if ("spark_connection" %in% class(conn)) {
-          sparklyr::spark_disconnect(conn)
-        } else {
-          DBI::dbDisconnect(conn)
-        }
+        private$.dbi.connector$closeDBIConnection(conn)
         super$setConnection(NULL)
       }
     }
   ),
   private = list(
+    .dbi.connector = NULL,
     # use.dplyr means returning a "table" convenient for dplyr processing
     asTable = function(table = NULL, use.dplyr = FALSE) {
       conn <- self$getConnection()
@@ -79,54 +85,6 @@ SQLResourceClient <- R6::R6Class(
       } else {
         private$loadDBPlyr()
         dplyr::tbl(conn, table)
-      }
-    },
-    getDBIConnection = function() {
-      resource <- super$getResource()
-      url <- super$parseURL()
-      # TODO use query to set additional connection arguments
-      private$loadDBI()
-      if (url$scheme %in% c("mysql", "mariadb")) {
-        private$loadRMariaDB()
-        conn <- DBI::dbConnect(RMariaDB::MariaDB(), host = url$host, port = url$port,
-                               username = resource$identity, password = resource$secret,
-                               dbname = self$getDatabaseName())
-      } else if (url$scheme %in% c("postgres", "postgresql")) {
-        private$loadRPostgres()
-        conn <- DBI::dbConnect(RPostgres::Postgres(), host = url$host, port = url$port,
-                               user = resource$identity, password = resource$secret,
-                               dbname = self$getDatabaseName())
-      } else if (identical(url$scheme, "sparksql")) {
-        private$loadSparklyr()
-        if (identical(url$host, "local")) {
-          conn <- sparklyr::spark_connect(master = "local")
-        } else {
-          master <- paste0("http://", url$host, ":", url:port)
-          config <- sparklyr::livy_config(username=resource$identity, password=resource$secret)
-          conn <- sparklyr::spark_connect(master = master, method = "livy", config = config)
-        }
-      } else {
-        stop("Unknown SQL database: ", url$scheme, call. = FALSE)
-      }
-    },
-    loadDBI = function() {
-      if (!require("DBI")) {
-        install.packages("DBI", repos = "https://cloud.r-project.org", dependencies = TRUE)
-      }
-    },
-    loadRMariaDB = function() {
-      if (!require("RMariaDB")) {
-        install.packages("RMariaDB", repos = "https://cloud.r-project.org", dependencies = TRUE)
-      }
-    },
-    loadRPostgres = function() {
-      if (!require("RPostgres")) {
-        install.packages("RPostgres", repos = "https://cloud.r-project.org", dependencies = TRUE)
-      }
-    },
-    loadSparklyr = function() {
-      if (!require("sparklyr")) {
-        install.packages("sparklyr", repos = "https://cloud.r-project.org", dependencies = TRUE)
       }
     },
     loadTibble = function() {

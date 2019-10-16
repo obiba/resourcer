@@ -18,7 +18,7 @@ SQLResourceResolver <- R6::R6Class(
   public = list(
     isFor = function(x) {
       if (super$isFor(x)) {
-        super$parseURL(x)$scheme %in% c("mysql", "mariadb", "postgres", "postgresql", "sparksql") && is.null(x$format)
+        !is.null(findDBIResourceConnector(x)) && is.null(x$format)
       } else {
         FALSE
       }

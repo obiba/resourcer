@@ -11,6 +11,17 @@
   doRegisterFileGetter(S3FileResourceGetter$new())
   doRegisterFileGetter(GridFsFileResourceGetter$new())
   doRegisterFileGetter(OpalFileResourceGetter$new())
+
+  doRegisterDBIConnector <- function(res) {
+    clazz <- class(res)[[1]]
+    packageStartupMessage(paste0("Registering ", clazz, "..."))
+    registerDBIResourceConnector(res)
+  }
+  doRegisterDBIConnector(MariaDBResourceConnector$new())
+  doRegisterDBIConnector(PostgresResourceConnector$new())
+  doRegisterDBIConnector(SparkSQLResourceConnector$new())
+  doRegisterDBIConnector(PrestoResourceConnector$new())
+
   doRegisterResolver <- function(res) {
     clazz <- class(res)[[1]]
     packageStartupMessage(paste0("Registering ", clazz, "..."))
@@ -28,4 +39,5 @@
 .onDetach <- function(libpath) {
   unregisterResourceResolver("ResourceResolver")
   unregisterFileResourceGetter("FileResourceGetter")
+  unregisterDBIResourceConnector("DBIResourceConnector")
 }
