@@ -1,4 +1,4 @@
-# register known resolvers
+# register known file getters, DBI connectors and resolvers
 .onAttach <- function(libname, pkgname) {
   doRegisterFileGetter <- function(res) {
     clazz <- class(res)[[1]]

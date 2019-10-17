@@ -36,18 +36,12 @@ SQLResourceClient <- R6::R6Class(
     asTbl = function(table = NULL) {
       private$asTable(table, TRUE)
     },
-    getDatabaseName = function() {
-      url <- super$parseURL()
-      strsplit(url$path, split = "/")[[1]][1]
-    },
     getTableName = function() {
       url <- super$parseURL()
-      name <- basename(url$path)
-      if (name == url$path) {
-        # database name only
+      if (is.null(url$path)) {
         NULL
       } else {
-        name
+        basename(url$path)
       }
     },
     close = function() {
