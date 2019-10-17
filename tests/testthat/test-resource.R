@@ -11,7 +11,7 @@ test_that("resource builder works", {
   expect_equal(res$identity, "administrator")
   expect_equal(res$secret, "password")
   expect_equal(res$format, "csv")
-  expect_equal(class(res), c("resource", "csv"))
+  expect_equal(class(res), "resource")
 
   res <- newResource(
     name = "CNSIM1",

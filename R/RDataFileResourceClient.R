@@ -13,8 +13,9 @@ RDataFileResourceClient <- R6::R6Class(
     initialize = function(resource) {
       super$initialize(resource)
     },
-    asDataFrame = function() {
+    asDataFrame = function(...) {
       private$ensureSymbol()
+      # TODO as.data.frame parameters
       private$eval(paste0("as.data.frame(", private$.symbol, ")"))
     },
     getValue = function() {

@@ -13,7 +13,7 @@ TidyFileResourceClient <- R6::R6Class(
     initialize = function(resource) {
       super$initialize(resource)
     },
-    asDataFrame = function() {
+    asDataFrame = function(...) {
       path <- super$downloadFile()
       format <- super$getResource()$format
       if ("csv" == format) {

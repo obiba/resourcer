@@ -30,11 +30,11 @@ SQLResourceClient <- R6::R6Class(
       }
       conn
     },
-    asDataFrame = function(table = NULL) {
-      private$asTable(table, FALSE)
+    asDataFrame = function(...) {
+      private$asTable(FALSE)
     },
-    asTbl = function(table = NULL) {
-      private$asTable(table, TRUE)
+    asTbl = function() {
+      private$asTable(TRUE)
     },
     getTableName = function() {
       url <- super$parseURL()
@@ -55,18 +55,11 @@ SQLResourceClient <- R6::R6Class(
   private = list(
     .dbi.connector = NULL,
     # use.dplyr means returning a "table" convenient for dplyr processing
-    asTable = function(table = NULL, use.dplyr = FALSE) {
+    asTable = function(use.dplyr = FALSE) {
       conn <- self$getConnection()
       tableName <- self$getTableName()
       if (is.null(tableName)) {
-        if (is.null(table)) {
-          private$loadTibble()
-          tibble::tibble(table = DBI::dbListTables(conn))
-        } else {
-          private$readTable(table, use.dplyr)
-        }
-      } else if (!is.null(table) && table != tableName) {
-        stop("Table not accessible: ", table, call. = FALSE)
+        stop("No table defined", call. = FALSE)
       } else {
         private$readTable(tableName, use.dplyr)
       }

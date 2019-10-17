@@ -16,8 +16,7 @@ newResource(name = "", url, identity = NULL, secret = NULL,
 
 \item{secret}{User password or token (if credentials are applicable).}
 
-\item{format}{Data format, to help resource resolver identification and coercing to other formats.
-Optional, it will be both a property and an additional class name.}
+\item{format}{Data format, to help resource resolver identification and coercing to other formats, optional.}
 }
 \description{
 Creates a new Resource structure.
