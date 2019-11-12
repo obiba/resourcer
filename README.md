@@ -17,9 +17,26 @@ The main concepts are:
 
 These are resources describing a file. If the file is in a remote location, it must be downloaded before being read. The data format specification of the resource helps to find the appropriate file reader.
 
-The supported file locations are: `file` (local file system), `http`(s) (web address, basic authentication), `gridfs` (MongoDB file store), `s3` (Amazon Web Services S3 file store), `scp` (file copy through SSH) and `opal` (Opal file store). This can be easily applied to other file locations by extending the _FileResourceGetter_ class.
+### File Getter
 
-Currently supported data formats are:
+The supported file locations are: 
+
+* `file` (local file system), 
+* `http`(s) (web address, basic authentication), 
+* `gridfs` (MongoDB file store), 
+* `s3` or `aws` (Amazon Web Services S3 file store), 
+* `scp` (file copy through SSH),
+* `opal` (Opal file store). 
+
+This can be easily applied to other file locations by extending the _FileResourceGetter_ class. An instance of the new file resource getter is to be registered so that the _FileResourceResolver_ can operate as expected.
+
+```
+registerFileResourceGetter(MyFileLocationResourceGetter()$new())
+```
+
+### File Data Format
+
+The data format specified within the _Resource_ object, helps at finding the appropriate file reader. Currently supported data formats are:
 
 * the data formats that have a reader in [tidyverse](https://www.tidyverse.org/): [readr](https://readr.tidyverse.org/) (`csv`, `csv2`, `tsv`), [haven](https://haven.tidyverse.org/) (`spss`, `sav`, `por`, `dta`, `stata`, `sas`, `xpt`), [readxl](https://readxl.tidyverse.org/) (`excel`, `xls`, `xlsx`). This can be easily applied to other data file formats by extending the _FileResourceClient_ class.
 * the R data format that can be loaded in a child R environment from which object of interest will be retrieved.
@@ -37,6 +54,38 @@ res <- resourcer::newResource(
 # coerce the csv file in the opal server to a data.frame
 df <- as.data.frame(res)
 ```
+
+To support other file data format, extend the _FileResourceClient_ class with the new data format reader implementation. Associate factory class, an extension of the _ResourceResolver_ class is also to be implemented and registered.
+
+```
+registerResourceResolver(MyFileFormatResourceResolver$new())
+```
+
+## Database Resources
+
+### DBI Connectors
+
+[DBI](https://www.r-dbi.org/) is a set of virtual classes that are are used to abstract the SQL database connections and operations within R. Then any DBI implementation can be used to access to a SQL table. Which DBI connector to be used is an information that can be extracted from the scheme part of the resource's URL. For instance a resource URL starting with `postgres://` will require the [RPostgres](https://rpostgres.r-dbi.org/) driver. To separate the DBI connector instanciation from the DBI interface interactions in the _SQLResourceClient_, a _DBIResourceConnector_ registry is to be populated. The currently supported SQL database connectors are:
+
+* `mariadb` MariaDB connector,
+* `mysql` MySQL connector,
+* `postgres` or `postgresql` Postgres connector,
+* `presto`, `presto+http` or `presto+https` [Presto](https://prestodb.io/) connector,
+* `spark`, `spark+http` or `spark+https` [Spark](https://spark.apache.org/) connector.
+
+To support another SQL database having a DBI driver, extend the _DBIResourceConnector_ class and register it:
+
+```
+registerDBIResourceConnector(MyDBResourceConnector$new())
+```
+
+### Use dplyr
+
+Having the data stored in the database allows to handle large (common SQL databases) to big (PrestoDB, Spark) datasets using [dplyr](https://dplyr.tidyverse.org/) which will delegate as much as possible operations to the database.
+
+### Document Databases
+
+No SQL databases can be described by a resource. The [nodbi](https://docs.ropensci.org/nodbi/) can be used here. Currently only connection to MongoDB database is supported using URL scheme `mongodb` or `mongodb+srv`.
 
 ## Computation Resources
 
