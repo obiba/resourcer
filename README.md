@@ -85,7 +85,7 @@ Having the data stored in the database allows to handle large (common SQL databa
 
 ### Document Databases
 
-No SQL databases can be described by a resource. The [nodbi](https://docs.ropensci.org/nodbi/) can be used here. Currently only connection to MongoDB database is supported using URL scheme `mongodb` or `mongodb+srv`.
+NoSQL databases can be described by a resource. The [nodbi](https://docs.ropensci.org/nodbi/) can be used here. Currently only connection to MongoDB database is supported using URL scheme `mongodb` or `mongodb+srv`.
 
 ## Computation Resources
 
