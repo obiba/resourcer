@@ -7,7 +7,7 @@ The `resourcer` package is meant for accessing resources identified by a URL in 
 
 The main concepts are:
 
-* _Resource_, access to a resource (dataset or computation unit) is described by an object with URL and credentials properties,
+* _Resource_, access to a resource (dataset or computation unit) is described by an object with URL, optional credentials and optional data format properties,
 * _ResourceResolver_, a _ResourceClient_ factory based on the URL scheme and available in a resolvers registry,
 * _ResourceClient_, realizes the connection with the dataset or the computation unit described by a _Resource_,
 * _FileResourceGetter_, connect to a file described by a resource,
@@ -38,7 +38,7 @@ registerFileResourceGetter(MyFileLocationResourceGetter()$new())
 
 The data format specified within the _Resource_ object, helps at finding the appropriate file reader. Currently supported data formats are:
 
-* the data formats that have a reader in [tidyverse](https://www.tidyverse.org/): [readr](https://readr.tidyverse.org/) (`csv`, `csv2`, `tsv`), [haven](https://haven.tidyverse.org/) (`spss`, `sav`, `por`, `dta`, `stata`, `sas`, `xpt`), [readxl](https://readxl.tidyverse.org/) (`excel`, `xls`, `xlsx`). This can be easily applied to other data file formats by extending the _FileResourceClient_ class.
+* the data formats that have a reader in [tidyverse](https://www.tidyverse.org/): [readr](https://readr.tidyverse.org/) (`csv`, `csv2`, `tsv`, `ssv`, `delim`), [haven](https://haven.tidyverse.org/) (`spss`, `sav`, `por`, `dta`, `stata`, `sas`, `xpt`), [readxl](https://readxl.tidyverse.org/) (`excel`, `xls`, `xlsx`). This can be easily applied to other data file formats by extending the _FileResourceClient_ class.
 * the R data format that can be loaded in a child R environment from which object of interest will be retrieved.
 
 Usage example that reads a local SPSS file:

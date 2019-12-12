@@ -1,8 +1,9 @@
 #' Tidy file Resource resolver
 #'
 #' The resource is a file and data format is handled by a reader from tidyverse.
-#' The data format is one of: csv (comma delimiter), csv2 (semicolon delimiter), tsv (tab delimiter),
-#' spss, sav, por, stata, dta, sas, xpt, excel, xls, xlsx.
+#' The data format is one of: csv (comma delimiter), csv2 (semicolon delimiter), tsv (tab delimiter), ssv (space delimiter),
+#' delim (delim parameter to be specified in the URL, default is space char), spss, sav, por, stata, dta, sas, xpt,
+#' excel, xls, xlsx.
 #'
 #' @section Methods:
 #'
@@ -20,11 +21,10 @@ TidyFileResourceResolver <- R6::R6Class(
   public = list(
     isFor = function(x) {
       if (super$isFor(x)) {
-        !is.null(findFileResourceGetter(x)) && x$format %in% c("csv", "csv2", "tsv",
-                                                              "spss", "sav", "por",
-                                                              "stata", "dta",
-                                                              "sas", "xpt",
-                                                              "excel", "xls", "xlsx")
+        !is.null(findFileResourceGetter(x)) && tolower(x$format) %in% c("csv", "csv2", "tsv", "delim", "ssv",
+                                                                        "spss", "sav", "por", "stata", "dta",
+                                                                        "sas", "xpt",
+                                                                        "excel", "xls", "xlsx")
       } else {
         FALSE
       }

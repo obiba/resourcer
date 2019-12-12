@@ -52,6 +52,9 @@ ResourceClient <- R6::R6Class(
     parseURL = function() {
       httr::parse_url(private$.resource$url)
     },
+    parseQuery = function() {
+      private$parseURL()$query
+    },
     setConnection = function(conn) {
       private$.connection <- conn
     },

@@ -25,6 +25,17 @@ TidyFileResourceClient <- R6::R6Class(
       } else if ("tsv" == format) {
         private$loadReadr()
         readr::read_tsv(path)
+      } else if ("ssv" == format) {
+        private$loadReadr()
+        readr::read_delim(path, delim = " ")
+      } else if ("delim" == format) {
+        private$loadReadr()
+        query <- super$parseQuery()
+        delim <- " "
+        if (!is.null(query) && !is.null(query$delim)) {
+          delim <- as.character(query$delim)
+        }
+        readr::read_delim(path, delim = delim)
       } else if ("spss" == format) {
         private$loadHaven()
         haven::read_spss(path)
