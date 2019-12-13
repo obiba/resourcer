@@ -91,7 +91,9 @@ unregisterResourceResolver <- function(x) {
 #' @export
 resolveResource <- function(x) {
   resolver <- NULL
-  if ("resource" %in% class(x)) {
+  if (is.null(x)) {
+    stop("Resource object is NULL")
+  } else if ("resource" %in% class(x)) {
     resRegistry <- getResourceResolvers()
     if (length(resRegistry)>0) {
       for (i in 1:length(resRegistry)) {
@@ -101,6 +103,11 @@ resolveResource <- function(x) {
         }
       }
     }
+  } else  {
+    stop("Not a 'resource' object")
+  }
+  if (is.null(resolver)) {
+    stop("No resolver could be found for resource: ", x$url)
   }
   resolver
 }

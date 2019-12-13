@@ -5,9 +5,6 @@
 \alias{OpalFileResourceGetter}
 \title{Opal file resource getter}
 \format{A R6 object of class OpalFileResourceGetter}
-\usage{
-OpalFileResourceGetter
-}
 \description{
 Access a file that is stored in a Opal server. Use Basic authentication header if both
 resource's identity and secret are defined, token authentication if secret only is defined.
@@ -20,4 +17,65 @@ resource's identity and secret are defined, token authentication if secret only 
 \code{$downloadFile(resource)} Get the file described by the provided resource. Release the connection when done.
 }
 
-\keyword{datasets}
+\section{Super class}{
+\code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{OpalFileResourceGetter}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{OpalFileResourceGetter$new()}}
+\item \href{#method-isFor}{\code{OpalFileResourceGetter$isFor()}}
+\item \href{#method-downloadFile}{\code{OpalFileResourceGetter$downloadFile()}}
+\item \href{#method-clone}{\code{OpalFileResourceGetter$clone()}}
+}
+}
+\if{html}{
+\out{<details open ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName">}\href{../../resourcer/html/FileResourceGetter.html#method-extractFileName}{\code{resourcer::FileResourceGetter$extractFileName()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="getFileObject">}\href{../../resourcer/html/FileResourceGetter.html#method-getFileObject}{\code{resourcer::FileResourceGetter$getFileObject()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir">}\href{../../resourcer/html/FileResourceGetter.html#method-makeDownloadDir}{\code{resourcer::FileResourceGetter$makeDownloadDir()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\subsection{Method \code{new()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{OpalFileResourceGetter$new()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-isFor"></a>}}
+\subsection{Method \code{isFor()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{OpalFileResourceGetter$isFor(resource)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-downloadFile"></a>}}
+\subsection{Method \code{downloadFile()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{OpalFileResourceGetter$downloadFile(resource, ...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{OpalFileResourceGetter$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

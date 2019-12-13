@@ -5,9 +5,6 @@
 \alias{SparkResourceConnector}
 \title{Spark DBI resource connector}
 \format{A R6 object of class SparkResourceConnector}
-\usage{
-SparkResourceConnector
-}
 \description{
 Makes a Spark connection object, that is also a DBI connection object, from a resource description.
 }
@@ -20,4 +17,71 @@ Makes a Spark connection object, that is also a DBI connection object, from a re
 \code{$closeDBIConnection(conn)} Release the DBI connection when done.
 }
 
-\keyword{datasets}
+\section{Super class}{
+\code{\link[resourcer:DBIResourceConnector]{resourcer::DBIResourceConnector}} -> \code{SparkResourceConnector}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{SparkResourceConnector$new()}}
+\item \href{#method-isFor}{\code{SparkResourceConnector$isFor()}}
+\item \href{#method-createDBIConnection}{\code{SparkResourceConnector$createDBIConnection()}}
+\item \href{#method-closeDBIConnection}{\code{SparkResourceConnector$closeDBIConnection()}}
+\item \href{#method-clone}{\code{SparkResourceConnector$clone()}}
+}
+}
+\if{html}{
+\out{<details open ><summary>Inherited methods</summary>}
+\itemize{
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\subsection{Method \code{new()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$new()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-isFor"></a>}}
+\subsection{Method \code{isFor()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$isFor(resource)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-createDBIConnection"></a>}}
+\subsection{Method \code{createDBIConnection()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$createDBIConnection(resource)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-closeDBIConnection"></a>}}
+\subsection{Method \code{closeDBIConnection()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$closeDBIConnection(conn)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

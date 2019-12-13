@@ -5,9 +5,6 @@
 \alias{ShellResourceResolver}
 \title{Shell Resource resolver}
 \format{A R6 object of class ShellResourceResolver}
-\usage{
-ShellResourceResolver
-}
 \description{
 The resource is a computation unit, accessible by issuing local system commands, i.e. which URL scheme is "sh".
 }
@@ -19,4 +16,54 @@ The resource is a computation unit, accessible by issuing local system commands,
 \code{$newClient()} Make a client for the provided resource.
 }
 
-\keyword{datasets}
+\section{Super class}{
+\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{ShellResourceResolver}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-isFor}{\code{ShellResourceResolver$isFor()}}
+\item \href{#method-newClient}{\code{ShellResourceResolver$newClient()}}
+\item \href{#method-clone}{\code{ShellResourceResolver$clone()}}
+}
+}
+\if{html}{
+\out{<details open ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize">}\href{../../resourcer/html/ResourceResolver.html#method-initialize}{\code{resourcer::ResourceResolver$initialize()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-isFor"></a>}}
+\subsection{Method \code{isFor()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ShellResourceResolver$isFor(x)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-newClient"></a>}}
+\subsection{Method \code{newClient()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ShellResourceResolver$newClient(x)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ShellResourceResolver$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

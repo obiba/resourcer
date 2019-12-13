@@ -5,10 +5,71 @@
 \alias{RDataFileResourceClient}
 \title{R data file resource client}
 \format{A R6 object of class TidyFileResourceClient}
-\usage{
-RDataFileResourceClient
-}
 \description{
 Connects to a R data file and loads it in a controlled environment.
 }
-\keyword{datasets}
+\section{Super classes}{
+\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{\link[resourcer:FileResourceClient]{resourcer::FileResourceClient}} -> \code{RDataFileResourceClient}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{RDataFileResourceClient$new()}}
+\item \href{#method-asDataFrame}{\code{RDataFileResourceClient$asDataFrame()}}
+\item \href{#method-getValue}{\code{RDataFileResourceClient$getValue()}}
+\item \href{#method-clone}{\code{RDataFileResourceClient$clone()}}
+}
+}
+\if{html}{
+\out{<details ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl">}\href{../../resourcer/html/ResourceClient.html#method-asTbl}{\code{resourcer::ResourceClient$asTbl()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec">}\href{../../resourcer/html/ResourceClient.html#method-exec}{\code{resourcer::ResourceClient$exec()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection">}\href{../../resourcer/html/ResourceClient.html#method-getConnection}{\code{resourcer::ResourceClient$getConnection()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource">}\href{../../resourcer/html/ResourceClient.html#method-getResource}{\code{resourcer::ResourceClient$getResource()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="close">}\href{../../resourcer/html/FileResourceClient.html#method-close}{\code{resourcer::FileResourceClient$close()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="downloadFile">}\href{../../resourcer/html/FileResourceClient.html#method-downloadFile}{\code{resourcer::FileResourceClient$downloadFile()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\subsection{Method \code{new()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceClient$new(resource)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-asDataFrame"></a>}}
+\subsection{Method \code{asDataFrame()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceClient$asDataFrame(...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getValue"></a>}}
+\subsection{Method \code{getValue()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceClient$getValue()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

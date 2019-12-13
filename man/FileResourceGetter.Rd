@@ -5,9 +5,6 @@
 \alias{FileResourceGetter}
 \title{File resource getter}
 \format{A R6 object of class FileResourceGetter}
-\usage{
-FileResourceGetter
-}
 \description{
 Helper base class for getting the file described by the resource object. ResourceClient class implementations
 can use this utility to retrieve files from any locations before processing them according to the declared
@@ -21,4 +18,71 @@ data format.
 \code{$getFileObject(resource, ...)} Get the file described by the provided resource. Release the connection when done.
 }
 
-\keyword{datasets}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{FileResourceGetter$new()}}
+\item \href{#method-isFor}{\code{FileResourceGetter$isFor()}}
+\item \href{#method-getFileObject}{\code{FileResourceGetter$getFileObject()}}
+\item \href{#method-extractFileName}{\code{FileResourceGetter$extractFileName()}}
+\item \href{#method-makeDownloadDir}{\code{FileResourceGetter$makeDownloadDir()}}
+\item \href{#method-clone}{\code{FileResourceGetter$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\subsection{Method \code{new()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$new()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-isFor"></a>}}
+\subsection{Method \code{isFor()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$isFor(resource)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getFileObject"></a>}}
+\subsection{Method \code{getFileObject()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$getFileObject(resource, ...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-extractFileName"></a>}}
+\subsection{Method \code{extractFileName()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$extractFileName(resource)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-makeDownloadDir"></a>}}
+\subsection{Method \code{makeDownloadDir()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$makeDownloadDir(resource)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

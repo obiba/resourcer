@@ -5,9 +5,6 @@
 \alias{ResourceResolver}
 \title{Resource resolver}
 \format{A R6 object of class ResourceResolver}
-\usage{
-ResourceResolver
-}
 \description{
 Helper class for building a Client that implements the access to the data or the
 computation unit.
@@ -20,4 +17,53 @@ computation unit.
 \code{$newClient()} Make a client for the provided resource.
 }
 
-\keyword{datasets}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{ResourceResolver$new()}}
+\item \href{#method-isFor}{\code{ResourceResolver$isFor()}}
+\item \href{#method-newClient}{\code{ResourceResolver$newClient()}}
+\item \href{#method-clone}{\code{ResourceResolver$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\subsection{Method \code{new()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceResolver$new()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-isFor"></a>}}
+\subsection{Method \code{isFor()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceResolver$isFor(x)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-newClient"></a>}}
+\subsection{Method \code{newClient()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceResolver$newClient(x)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceResolver$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

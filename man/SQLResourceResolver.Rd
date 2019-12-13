@@ -5,9 +5,6 @@
 \alias{SQLResourceResolver}
 \title{SQL Database Resource resolver}
 \format{A R6 object of class SQLResourceResolver}
-\usage{
-SQLResourceResolver
-}
 \description{
 The resource is SQL database.
 }
@@ -19,4 +16,54 @@ The resource is SQL database.
 \code{$newClient()} Make a client for the provided resource.
 }
 
-\keyword{datasets}
+\section{Super class}{
+\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{SQLResourceResolver}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-isFor}{\code{SQLResourceResolver$isFor()}}
+\item \href{#method-newClient}{\code{SQLResourceResolver$newClient()}}
+\item \href{#method-clone}{\code{SQLResourceResolver$clone()}}
+}
+}
+\if{html}{
+\out{<details open ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize">}\href{../../resourcer/html/ResourceResolver.html#method-initialize}{\code{resourcer::ResourceResolver$initialize()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-isFor"></a>}}
+\subsection{Method \code{isFor()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SQLResourceResolver$isFor(x)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-newClient"></a>}}
+\subsection{Method \code{newClient()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SQLResourceResolver$newClient(x)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SQLResourceResolver$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

@@ -5,9 +5,6 @@
 \alias{NoSQLResourceResolver}
 \title{NoSQL Database Resource resolver}
 \format{A R6 object of class NoSQLResourceResolver}
-\usage{
-NoSQLResourceResolver
-}
 \description{
 The resource is NoSQL database such as mongodb, elasticsearch, redis, couchdb, sqlite.
 }
@@ -19,4 +16,54 @@ The resource is NoSQL database such as mongodb, elasticsearch, redis, couchdb, s
 \code{$newClient()} Make a client for the provided resource.
 }
 
-\keyword{datasets}
+\section{Super class}{
+\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{NoSQLResourceResolver}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-isFor}{\code{NoSQLResourceResolver$isFor()}}
+\item \href{#method-newClient}{\code{NoSQLResourceResolver$newClient()}}
+\item \href{#method-clone}{\code{NoSQLResourceResolver$clone()}}
+}
+}
+\if{html}{
+\out{<details open ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize">}\href{../../resourcer/html/ResourceResolver.html#method-initialize}{\code{resourcer::ResourceResolver$initialize()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-isFor"></a>}}
+\subsection{Method \code{isFor()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceResolver$isFor(x)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-newClient"></a>}}
+\subsection{Method \code{newClient()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceResolver$newClient(x)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceResolver$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

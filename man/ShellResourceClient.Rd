@@ -5,10 +5,70 @@
 \alias{ShellResourceClient}
 \title{Shell resource client}
 \format{A R6 object of class ShellResourceClient}
-\usage{
-ShellResourceClient
-}
 \description{
 Executes local system shell commands.
 }
-\keyword{datasets}
+\section{Super classes}{
+\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{\link[resourcer:CommandResourceClient]{resourcer::CommandResourceClient}} -> \code{ShellResourceClient}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{ShellResourceClient$new()}}
+\item \href{#method-downloadFile}{\code{ShellResourceClient$downloadFile()}}
+\item \href{#method-exec}{\code{ShellResourceClient$exec()}}
+\item \href{#method-clone}{\code{ShellResourceClient$clone()}}
+}
+}
+\if{html}{
+\out{<details open ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame">}\href{../../resourcer/html/ResourceClient.html#method-asDataFrame}{\code{resourcer::ResourceClient$asDataFrame()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl">}\href{../../resourcer/html/ResourceClient.html#method-asTbl}{\code{resourcer::ResourceClient$asTbl()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="close">}\href{../../resourcer/html/ResourceClient.html#method-close}{\code{resourcer::ResourceClient$close()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection">}\href{../../resourcer/html/ResourceClient.html#method-getConnection}{\code{resourcer::ResourceClient$getConnection()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource">}\href{../../resourcer/html/ResourceClient.html#method-getResource}{\code{resourcer::ResourceClient$getResource()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\subsection{Method \code{new()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$new(resource)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-downloadFile"></a>}}
+\subsection{Method \code{downloadFile()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$downloadFile(file, to = ".", verbose = FALSE)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-exec"></a>}}
+\subsection{Method \code{exec()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$exec(command, params = NULL, test = FALSE)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

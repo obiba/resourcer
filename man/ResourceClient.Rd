@@ -5,9 +5,6 @@
 \alias{ResourceClient}
 \title{Resource client}
 \format{A R6 object of class ResourceClient}
-\usage{
-ResourceClient
-}
 \description{
 Helper class for connecting to a resource data store or a computation unit.
 }
@@ -23,4 +20,98 @@ Helper class for connecting to a resource data store or a computation unit.
 \code{$close()} Close the connection with the resource.
 }
 
-\keyword{datasets}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{ResourceClient$new()}}
+\item \href{#method-getResource}{\code{ResourceClient$getResource()}}
+\item \href{#method-getConnection}{\code{ResourceClient$getConnection()}}
+\item \href{#method-downloadFile}{\code{ResourceClient$downloadFile()}}
+\item \href{#method-asDataFrame}{\code{ResourceClient$asDataFrame()}}
+\item \href{#method-asTbl}{\code{ResourceClient$asTbl()}}
+\item \href{#method-exec}{\code{ResourceClient$exec()}}
+\item \href{#method-close}{\code{ResourceClient$close()}}
+\item \href{#method-clone}{\code{ResourceClient$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\subsection{Method \code{new()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$new(resource)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getResource"></a>}}
+\subsection{Method \code{getResource()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$getResource()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getConnection"></a>}}
+\subsection{Method \code{getConnection()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$getConnection()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-downloadFile"></a>}}
+\subsection{Method \code{downloadFile()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$downloadFile(...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-asDataFrame"></a>}}
+\subsection{Method \code{asDataFrame()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$asDataFrame(...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-asTbl"></a>}}
+\subsection{Method \code{asTbl()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$asTbl(...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-exec"></a>}}
+\subsection{Method \code{exec()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$exec(...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-close"></a>}}
+\subsection{Method \code{close()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$close()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

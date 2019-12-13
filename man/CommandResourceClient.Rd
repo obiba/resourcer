@@ -5,11 +5,55 @@
 \alias{CommandResourceClient}
 \title{Command resource client}
 \format{A R6 object of class CommandResourceClient}
-\usage{
-CommandResourceClient
-}
 \description{
 Base class for resource clients issuing commands and get a result with the status of the execution,
 the output and the error messages.
 }
-\keyword{datasets}
+\section{Super class}{
+\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{CommandResourceClient}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{CommandResourceClient$new()}}
+\item \href{#method-clone}{\code{CommandResourceClient$clone()}}
+}
+}
+\if{html}{
+\out{<details ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame">}\href{../../resourcer/html/ResourceClient.html#method-asDataFrame}{\code{resourcer::ResourceClient$asDataFrame()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl">}\href{../../resourcer/html/ResourceClient.html#method-asTbl}{\code{resourcer::ResourceClient$asTbl()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="close">}\href{../../resourcer/html/ResourceClient.html#method-close}{\code{resourcer::ResourceClient$close()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile">}\href{../../resourcer/html/ResourceClient.html#method-downloadFile}{\code{resourcer::ResourceClient$downloadFile()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec">}\href{../../resourcer/html/ResourceClient.html#method-exec}{\code{resourcer::ResourceClient$exec()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection">}\href{../../resourcer/html/ResourceClient.html#method-getConnection}{\code{resourcer::ResourceClient$getConnection()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource">}\href{../../resourcer/html/ResourceClient.html#method-getResource}{\code{resourcer::ResourceClient$getResource()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\subsection{Method \code{new()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{CommandResourceClient$new(resource)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{CommandResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

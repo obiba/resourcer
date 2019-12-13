@@ -5,10 +5,95 @@
 \alias{SQLResourceClient}
 \title{SQL database resource client}
 \format{A R6 object of class SQLResourceClient}
-\usage{
-SQLResourceClient
-}
 \description{
 Resource client that connects to a SQL database supported by DBI.
 }
-\keyword{datasets}
+\section{Super class}{
+\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{SQLResourceClient}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{SQLResourceClient$new()}}
+\item \href{#method-getConnection}{\code{SQLResourceClient$getConnection()}}
+\item \href{#method-asDataFrame}{\code{SQLResourceClient$asDataFrame()}}
+\item \href{#method-asTbl}{\code{SQLResourceClient$asTbl()}}
+\item \href{#method-getTableName}{\code{SQLResourceClient$getTableName()}}
+\item \href{#method-close}{\code{SQLResourceClient$close()}}
+\item \href{#method-clone}{\code{SQLResourceClient$clone()}}
+}
+}
+\if{html}{
+\out{<details open ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile">}\href{../../resourcer/html/ResourceClient.html#method-downloadFile}{\code{resourcer::ResourceClient$downloadFile()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec">}\href{../../resourcer/html/ResourceClient.html#method-exec}{\code{resourcer::ResourceClient$exec()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource">}\href{../../resourcer/html/ResourceClient.html#method-getResource}{\code{resourcer::ResourceClient$getResource()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\subsection{Method \code{new()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$new(resource, dbi.connector = NULL)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getConnection"></a>}}
+\subsection{Method \code{getConnection()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$getConnection()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-asDataFrame"></a>}}
+\subsection{Method \code{asDataFrame()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$asDataFrame(...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-asTbl"></a>}}
+\subsection{Method \code{asTbl()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$asTbl()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getTableName"></a>}}
+\subsection{Method \code{getTableName()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$getTableName()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-close"></a>}}
+\subsection{Method \code{close()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$close()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

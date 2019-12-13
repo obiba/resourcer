@@ -4,8 +4,7 @@
 \alias{newResource}
 \title{Create a Resource}
 \usage{
-newResource(name = "", url, identity = NULL, secret = NULL,
-  format = NULL)
+newResource(name = "", url, identity = NULL, secret = NULL, format = NULL)
 }
 \arguments{
 \item{name}{Otpional human friendly name that identifies the resource.}
