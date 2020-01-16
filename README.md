@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/obiba/resourcer.svg?branch=master)](https://travis-ci.com/obiba/resourcer)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/resourcer)](https://cran.r-project.org/package=resourcer)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fobiba%2Fresourcer.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fobiba%2Fresourcer?ref=badge_shield)
 
 The `resourcer` package is meant for accessing resources identified by a URL in a uniform way whether it references a dataset (stored in a file, a SQL table, a MongoDB collection etc.) or a computation unit (system commands, web services etc.). Usually some credentials will be defined, and an additional data format information can be provided to help dataset coercing to a data.frame object.
 
@@ -122,3 +123,7 @@ There are several ways to extend the Resources handling. These are based on diff
 
 The design of the URL that will describe your new resource should not overlap an existing one, otherwise the different registries will return the first instance for which the `isFor(resource)` is `TRUE`. In order to distinguish resource locations, the URL's scheme can be extended, for instance the scheme for accessing a file in a Opal server is `opal+https` so that the credentials be applied as needed by Opal.
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fobiba%2Fresourcer.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fobiba%2Fresourcer?ref=badge_large)
