@@ -23,8 +23,7 @@ The supported file locations are:
 
 * `file` (local file system), 
 * `http`(s) (web address, basic authentication), 
-* `gridfs` (MongoDB file store), 
-* `s3` or `aws` (Amazon Web Services S3 file store), 
+* `gridfs` (MongoDB file store),
 * `scp` (file copy through SSH),
 * `opal` (Opal file store). 
 

@@ -1,6 +1,6 @@
 Package: resourcer
 Type: Package
-Title: Resource resolver
+Title: Resource Resolver
 Version: 0.8.0
 Authors@R: 
     c(person(given = "Yannick",
@@ -28,7 +28,6 @@ Suggests:
     readxl,
     ssh,
     sys,
-    aws.s3,
     mongolite,
     dplyr,
     dbplyr,
