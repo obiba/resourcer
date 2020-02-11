@@ -10,6 +10,10 @@ ShellResourceClient <- R6::R6Class(
   "ShellResourceClient",
   inherit = CommandResourceClient,
   public = list(
+
+    #' @description Create a ShellResourceClient instance. This client will interact wtih a computation resource using shell commands.
+    #' @param resource The computation resource.
+    #' @return The ShellResourceClient object.
     initialize = function(resource) {
       super$initialize(resource)
       url <- super$parseURL()
@@ -25,8 +29,12 @@ ShellResourceClient <- R6::R6Class(
         private$.workDir <- path
       }
     },
-    # download one or more files (wilcard * is supported in the file name (which can be a directory))
-    # return the paths of the files having been downloaded
+
+    #' @description Copy one or more files (wilcard * is supported in the file name (which can be a directory))
+    #' @param file The file to copy.
+    #' @param to The copy destination.
+    #' @param verbose If TRUE, details the file operations on the console output.
+    #' @return The path to the files having been copied.
     downloadFile = function(file, to = ".", verbose = FALSE) {
       fileName <- basename(file)
       dirName <- normalizePath(dirname(file))
@@ -36,6 +44,12 @@ ShellResourceClient <- R6::R6Class(
       }
       file.path(toDirName, fileName)
     },
+
+    #' @description Executes a shell command.
+    #' @param command The command name.
+    #' @param params A named list of parameters.
+    #' @param test If TRUE, the command is printed but not executed (for debugging).
+    #' @return The command execution result object.
     exec = function(command, params = NULL, test = FALSE) {
       private$loadSys()
       private$checkCommand(command)
@@ -51,6 +65,7 @@ ShellResourceClient <- R6::R6Class(
         super$newResultObject(status = res$status, output = res$stdout, error = res$stderr, command = cmdStr)
       }
     }
+
   ),
   private = list(
     .allowedCommands = NULL,

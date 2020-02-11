@@ -2,12 +2,6 @@
 #'
 #' Access a file that is stored on a server accessible through SSH. Credentials apply.
 #'
-#' @section Methods:
-#'
-#' \code{$new(resource)} Create new ScpFileResourceGetter instance from provided resource object.
-#' \code{$isFor(resource)} Get a logical that indicates that the file getter is applicable to the provided resource object.
-#' \code{$downloadFile(resource)} Get the file described by the provided resource. Release the connection when done.
-#'
 #' @docType class
 #' @format A R6 object of class ScpFileResourceGetter
 #' @import R6
@@ -16,7 +10,14 @@ ScpFileResourceGetter <- R6::R6Class(
   "ScpFileResourceGetter",
   inherit = FileResourceGetter,
   public = list(
+
+    #' @description Creates a ScpFileResourceGetter instance.
+    #' @return The ScpFileResourceGetter object.
     initialize = function() {},
+
+    #' @description Check that the provided resource is a file accessible by SCP: the resource URL scheme must be "scp".
+    #' @param resource The resource object to evaluate.
+    #' @return A logical.
     isFor = function(resource) {
       if (super$isFor(resource)) {
         super$parseURL(resource)$scheme == "scp"
@@ -24,10 +25,15 @@ ScpFileResourceGetter <- R6::R6Class(
         FALSE
       }
     },
+
+    #' @description Download the file described by the resource over an SSH connection.
+    #' @param resource The resource that identifies the file.
+    #' @param ... Additional parameters (not used).
+    #' @return The "resource.file" object.
     downloadFile = function(resource, ...) {
       if (self$isFor(resource)) {
         fileName <- super$extractFileName(resource)
-        downloadDir <- super$makeDownloadDir(resource)
+        downloadDir <- super$makeDownloadDir()
         path <- file.path(downloadDir, fileName)
 
         url <- super$parseURL(resource)
@@ -45,6 +51,7 @@ ScpFileResourceGetter <- R6::R6Class(
         NULL
       }
     }
+
   ),
   private = list(
     loadSsh = function() {

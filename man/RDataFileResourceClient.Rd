@@ -6,6 +6,11 @@
 \title{R data file resource client}
 \format{A R6 object of class TidyFileResourceClient}
 \description{
+R data file resource client
+
+R data file resource client
+}
+\details{
 Connects to a R data file and loads it in a controlled environment.
 }
 \section{Super classes}{
@@ -35,26 +40,52 @@ Connects to a R data file and loads it in a controlled environment.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Creates a new RDataFileResourceClient instance.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceClient$new(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A RDataFileResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asDataFrame"></a>}}
 \subsection{Method \code{asDataFrame()}}{
+Coerce the resource value extracted from the R data file to a data.frame.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceClient$asDataFrame(...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Additional parameters to as.data.frame (not used yet).}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A data.frame.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getValue"></a>}}
 \subsection{Method \code{getValue()}}{
+Get the resource value extracted from the R data file.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceClient$getValue()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+The resource value.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

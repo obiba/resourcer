@@ -6,16 +6,13 @@
 \title{Shell Resource resolver}
 \format{A R6 object of class ShellResourceResolver}
 \description{
+Shell Resource resolver
+
+Shell Resource resolver
+}
+\details{
 The resource is a computation unit, accessible by issuing local system commands, i.e. which URL scheme is "sh".
 }
-\section{Methods}{
-
-
-\code{$new()} Create new ShellResourceResolver instance.
-\code{$isFor(x)} Get a logical that indicates that the resolver is applicable to the provided resource object.
-\code{$newClient()} Make a client for the provided resource.
-}
-
 \section{Super class}{
 \code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{ShellResourceResolver}
 }
@@ -37,18 +34,40 @@ The resource is a computation unit, accessible by issuing local system commands,
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check that the provided resource is a computation resource accessible by shell commands. The resource URL scheme must be "sh" or "shell".
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ShellResourceResolver$isFor(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{The resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
 \subsection{Method \code{newClient()}}{
+Create a ShellResourceClient instance from the provided resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ShellResourceResolver$newClient(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A ShellResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

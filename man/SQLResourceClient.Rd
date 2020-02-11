@@ -6,6 +6,11 @@
 \title{SQL database resource client}
 \format{A R6 object of class SQLResourceClient}
 \description{
+SQL database resource client
+
+SQL database resource client
+}
+\details{
 Resource client that connects to a SQL database supported by DBI.
 }
 \section{Super class}{
@@ -35,46 +40,83 @@ Resource client that connects to a SQL database supported by DBI.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Creates a SQLResourceClient from a resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$new(resource, dbi.connector = NULL)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{The resource object.}
+
+\item{\code{dbi.connector}}{An optional DBIResourceConnector object. If not provided, it will be looked up in the DBIResourceConnector registry.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The SQLResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getConnection"></a>}}
 \subsection{Method \code{getConnection()}}{
+Get or create the DBI connection object that will access the resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$getConnection()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+The DBI connection object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asDataFrame"></a>}}
 \subsection{Method \code{asDataFrame()}}{
+Coerce the SQL table to a data.frame.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$asDataFrame(...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Additional parameters (not used).}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A data.frame (more specifically a tibble).
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asTbl"></a>}}
 \subsection{Method \code{asTbl()}}{
+Get the SQL table as a dplyr's tbl.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$asTbl()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+A dplyr's tbl object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getTableName"></a>}}
 \subsection{Method \code{getTableName()}}{
+Get the SQL table name from the resource URL.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$getTableName()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+The SQL table name.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-close"></a>}}
 \subsection{Method \code{close()}}{
+Silently close the DBI connection.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$close()}\if{html}{\out{</div>}}
 }

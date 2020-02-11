@@ -2,12 +2,6 @@
 #'
 #' The resource is SQL database.
 #'
-#' @section Methods:
-#'
-#' \code{$new()} Create new SQLResourceResolver instance.
-#' \code{$isFor(x)} Get a logical that indicates that the resolver is applicable to the provided resource object.
-#' \code{$newClient()} Make a client for the provided resource.
-#'
 #' @docType class
 #' @format A R6 object of class SQLResourceResolver
 #' @import R6
@@ -16,6 +10,10 @@ SQLResourceResolver <- R6::R6Class(
   "SQLResourceResolver",
   inherit = ResourceResolver,
   public = list(
+
+    #' @description Check that the provided resource has a registered DBIResourceConnector.
+    #' @param x The resource object to evaluate.
+    #' @return A logical.
     isFor = function(x) {
       if (super$isFor(x)) {
         !is.null(findDBIResourceConnector(x)) && is.null(x$format)
@@ -23,6 +21,10 @@ SQLResourceResolver <- R6::R6Class(
         FALSE
       }
     },
+
+    #' @description Creates a SQLResourceClient instance from provided resource.
+    #' @param x A valid resource object.
+    #' @return A SQLResourceClient object.
     newClient = function(x) {
       if (self$isFor(x)) {
         SQLResourceClient$new(x)
@@ -30,5 +32,6 @@ SQLResourceResolver <- R6::R6Class(
         NULL
       }
     }
+
   )
 )

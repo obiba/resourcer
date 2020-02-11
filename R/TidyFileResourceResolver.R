@@ -19,6 +19,12 @@ TidyFileResourceResolver <- R6::R6Class(
   "TidyFileResourceResolver",
   inherit = ResourceResolver,
   public = list(
+
+    #' @description Check that the provided resource has a URL that locates a tidy data file: the resource can be accessed as a file and
+    #'  the resource format is one of "csv", "csv2", "tsv", "delim", "ssv", "spss", "sav", "por", "stata", "dta", "sas", "xpt",
+    #'  "excel", "xls" or "xlsx" (case is ignored).
+    #' @param x The resource object to validate.
+    #' @return A logical.
     isFor = function(x) {
       if (super$isFor(x)) {
         !is.null(findFileResourceGetter(x)) && tolower(x$format) %in% c("csv", "csv2", "tsv", "delim", "ssv",
@@ -29,11 +35,15 @@ TidyFileResourceResolver <- R6::R6Class(
         FALSE
       }
     },
+
+    #' @description Creates a TidyFileResourceClient instance from provided resource.
+    #' @param x A valid resource object.
+    #' @return A TidyFileResourceClient object.
     newClient = function(x) {
       if (self$isFor(x)) {
         TidyFileResourceClient$new(x)
       } else {
-        NULL
+        stop("Resource is not a tidy data file")
       }
     }
   )

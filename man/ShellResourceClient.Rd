@@ -6,6 +6,11 @@
 \title{Shell resource client}
 \format{A R6 object of class ShellResourceClient}
 \description{
+Shell resource client
+
+Shell resource client
+}
+\details{
 Executes local system shell commands.
 }
 \section{Super classes}{
@@ -34,26 +39,67 @@ Executes local system shell commands.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Create a ShellResourceClient instance. This client will interact wtih a computation resource using shell commands.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$new(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{The computation resource.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The ShellResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
 \subsection{Method \code{downloadFile()}}{
+Copy one or more files (wilcard * is supported in the file name (which can be a directory))
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$downloadFile(file, to = ".", verbose = FALSE)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{file}}{The file to copy.}
+
+\item{\code{to}}{The copy destination.}
+
+\item{\code{verbose}}{If TRUE, details the file operations on the console output.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The path to the files having been copied.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-exec"></a>}}
 \subsection{Method \code{exec()}}{
+Executes a shell command.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$exec(command, params = NULL, test = FALSE)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{command}}{The command name.}
+
+\item{\code{params}}{A named list of parameters.}
+
+\item{\code{test}}{If TRUE, the command is printed but not executed (for debugging).}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The command execution result object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

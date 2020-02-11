@@ -1,12 +1,6 @@
 #' NoSQL Database Resource resolver
 #'
-#' The resource is NoSQL database such as mongodb, elasticsearch, redis, couchdb, sqlite.
-#'
-#' @section Methods:
-#'
-#' \code{$new()} Create new NoSQLResourceResolver instance.
-#' \code{$isFor(x)} Get a logical that indicates that the resolver is applicable to the provided resource object.
-#' \code{$newClient()} Make a client for the provided resource.
+#' The resource is NoSQL database such as mongodb (elasticsearch, redis, couchdb, sqlite are not supported yet).
 #'
 #' @docType class
 #' @format A R6 object of class NoSQLResourceResolver
@@ -16,18 +10,26 @@ NoSQLResourceResolver <- R6::R6Class(
   "NoSQLResourceResolver",
   inherit = ResourceResolver,
   public = list(
+
+    #' @description Check that the provided resource has a URL that locates a nodbi object: the URL scheme must be one of "mongodb", "mongodb+srv". Other NoSQL databases "elasticsearch", "redis", "couchdb", "sqlite" are not supported yet.
+    #' @param x The resource object to validate.
+    #' @return A logical.
     isFor = function(x) {
       if (super$isFor(x)) {
-        super$parseURL(x)$scheme %in% c("mongodb", "mongodb+srv", "elasticsearch", "es", "redis", "couchdb", "sqlite") && is.null(x$format)
+        super$parseURL(x)$scheme %in% c("mongodb", "mongodb+srv") && is.null(x$format)
       } else {
         FALSE
       }
     },
+
+    #' @description Creates a NoSQLResourceClient instance from provided resource.
+    #' @param x A valid resource object.
+    #' @return A NoSQLResourceClient object.
     newClient = function(x) {
       if (self$isFor(x)) {
         NoSQLResourceClient$new(x)
       } else {
-        NULL
+        stop("Resource is not located in NoSQL database")
       }
     }
   )

@@ -4,12 +4,6 @@
 #' can use this utility to retrieve files from any locations before processing them according to the declared
 #' data format.
 #'
-#' @section Methods:
-#'
-#' \code{$new()} Create new FileResourceGetter instance.
-#' \code{$isFor(resource)} Get a logical that indicates that the file getter is applicable to the provided resource object.
-#' \code{$getFileObject(resource, ...)} Get the file described by the provided resource. Release the connection when done.
-#'
 #' @docType class
 #' @format A R6 object of class FileResourceGetter
 #' @import R6
@@ -18,23 +12,42 @@
 FileResourceGetter <- R6::R6Class(
   "FileResourceGetter",
   public = list(
+
+    #' @description Creates a new FileResourceGetter instance.
+    #' @return A FileResourceGetter object.
     initialize = function() {},
+
+    #' @description Check that the provided parameter is of class "resource" and has a format defined.
+    #' @param resource The resource object to validate.
+    #' @return A logical.
     isFor = function(resource) {
       "resource" %in% class(resource) && !is.null(resource$format)
     },
-    getFileObject = function(resource, ...) {
+
+    #' @description Stub function which subclasses will implement to make a "resource.file" object from a resource.
+    #' @param resource A valid resource object.
+    #' @param ... Additional parameters that may be relevant for FileResourceGetter subclasses.
+    #' @return A "resource.file" object.
+    downloadFile = function(resource, ...) {
       stop("Operation not applicable")
     },
+
+    #' @description Utility to get the base name from the file path.
+    #' @param resource A valid resource object.
+    #' @return The file base name.
     extractFileName = function(resource) {
       path <- private$parseURL(resource)$path
       basename(path)
     },
-    # create a temp dir in the session's temp dir
-    makeDownloadDir = function(resource) {
+
+    #' @description Creates a directory where to download file in the R session's temporary directory. This directory will be flushed when the R session ends.
+    #' @return The path to the download directory.
+    makeDownloadDir = function() {
       tmpdir <- file.path(tempdir(), sample(1000000:9999999, 1))
       dir.create(tmpdir, recursive = TRUE)
       tmpdir
     }
+
   ),
   private = list(
     parseURL = function(resource) {

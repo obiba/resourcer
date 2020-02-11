@@ -2,16 +2,6 @@
 #'
 #' Helper class for connecting to a resource data store or a computation unit.
 #'
-#' @section Methods:
-#'
-#' \code{$new(resource)} Create new ResourceClient instance from provided resource object.
-#' \code{$getResource()} Get the resource reference object.
-#' \code{$getConnection()} Get the raw connection object to the resource.
-#' \code{$downloadFile(...)} Coerce the resource to a file with provided file extension.
-#' \code{$asDataFrame(...)} Coerce the resource to a data.frame.
-#' \code{$exec(...)} Execute an operation on the resource.
-#' \code{$close()} Close the connection with the resource.
-#'
 #' @docType class
 #' @format A R6 object of class ResourceClient
 #' @import R6
@@ -20,28 +10,56 @@
 ResourceClient <- R6::R6Class(
   "ResourceClient",
   public = list(
+
+    #' @description Creates a ResourceClient instance.
+    #' @param resource The resource object to be interprated.
+    #' @return A ResourceClient object.
     initialize = function(resource) {
       private$.resource <- resource
     },
+
+    #' @description Get the resource object.
+    #' @return The resource object.
     getResource = function() {
       private$.resource
     },
+
+    #' @description Get the implementation-specific object that connects to the resource
+    #' @return The connection object.
     getConnection = function() {
       private$.connection
     },
+
+    #' @description Stub function to be implemented by subclasses if relevant. Get the resource as a local file.
+    #' @param ... Additional parameters.
+    #' @return The path to the local file.
     downloadFile = function(...) {
       stop("Operation not applicable")
     },
+
+    #' @description Stub function to be implemented by subclasses if relevant. Coerce the resource as a data.frame.
+    #' @param ... Additional parameters.
+    #' @return A data.frame object (can also be a tibble).
     asDataFrame = function(...) {
       stop("Operation not applicable")
     },
+
+    #' @description Stub function to be implemented by subclasses if relevant. Coerce the resource as a dplyr's tbl.
+    #' @param ... Additional parameters.
+    #' @return A dplyr's tbl object.
     asTbl = function(...) {
       private$loadDPlyr()
       dplyr::as.tbl(self$asDataFrame())
     },
+
+    #' @description Stub function to be implemented by subclasses if relevant. Executes a command on a computation resource.
+    #' @param ... Additional parameters that will represent the command to execute.
+    #' @return A command execution result object.
     exec = function(...) {
       stop("Operation not applicable")
     },
+
+    #' @description Silently closes the connection to the resource
     close = function() {
       # no-op
     }

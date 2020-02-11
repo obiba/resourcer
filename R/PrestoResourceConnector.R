@@ -2,13 +2,6 @@
 #'
 #' Makes a Presto DBI connection from a resource description.
 #'
-#' @section Methods:
-#'
-#' \code{$new()} Create new PrestoResourceConnector instance.
-#' \code{$isFor(resource)} Get a logical that indicates that the DBI connector is applicable to the provided resource object.
-#' \code{$createDBIConnection(resource, ...)} Get the DBI connection object described by the provided resource.
-#' \code{$closeDBIConnection(conn)} Release the DBI connection when done.
-#'
 #' @docType class
 #' @format A R6 object of class PrestoResourceConnector
 #' @import R6
@@ -18,11 +11,23 @@ PrestoResourceConnector <- R6::R6Class(
   "PrestoResourceConnector",
   inherit = DBIResourceConnector,
   public = list(
+
+    #' @description Creates a new PrestoResourceConnector instance.
+    #' @return A PrestoResourceConnector object.
     initialize = function() {},
+
+    #' @description Check that the provided resource has a URL that locates a MySQL or MariaDB object: the URL scheme must be "presto", "presto+http" or "presto+https".
+    #' @param resource The resource object to validate.
+    #' @return A logical.
     isFor = function(resource) {
       super$isFor(resource) && super$parseURL(resource)$scheme %in% c("presto", "presto+http", "presto+https")
     },
+
+    #' @description Creates a DBI connection object from a resource.
+    #' @param resource A valid resource object.
+    #' @return A DBI connection object.
     createDBIConnection = function(resource) {
+      if (self$isFor(resource)) {
       super$loadDBI()
       private$loadRPresto()
       url <- super$parseURL(resource)
@@ -47,7 +52,11 @@ PrestoResourceConnector <- R6::R6Class(
       }
       conn <- DBI::dbConnect(RPresto::Presto(), host = paste0(protocol, "://", url$host), port = url$port,
                              user = user, catalog = dbname[1], schema = dbname[2]) # TODO: , httr_authenticate = auth)
+      } else {
+        stop("Resource is not located in a Presto database")
+      }
     }
+
   ),
   private = list(
     loadRPresto = function() {

@@ -3,12 +3,6 @@
 #' Access a file that is stored at a HTTP(S) address. Use Basic authentication header if both
 #' resource's identity and secret are defined.
 #'
-#' @section Methods:
-#'
-#' \code{$new(resource)} Create new HttpFileResourceGetter instance from provided resource object.
-#' \code{$isFor(resource)} Get a logical that indicates that the file getter is applicable to the provided resource object.
-#' \code{$downloadFile(resource)} Get the file described by the provided resource. Release the connection when done.
-#'
 #' @docType class
 #' @format A R6 object of class HttpFileResourceGetter
 #' @import R6
@@ -18,7 +12,14 @@ HttpFileResourceGetter <- R6::R6Class(
   "HttpFileResourceGetter",
   inherit = FileResourceGetter,
   public = list(
+
+    #' @description Creates a new HttpFileResourceGetter instance.
+    #' @return A HttpFileResourceGetter object.
     initialize = function() {},
+
+    #' @description Check that the provided resource has a URL that locates a file accessible through "http" or "https".
+    #' @param resource The resource object to validate.
+    #' @return A logical.
     isFor = function(resource) {
       if (super$isFor(resource)) {
         super$parseURL(resource)$scheme %in% c("http", "https")
@@ -26,15 +27,20 @@ HttpFileResourceGetter <- R6::R6Class(
         FALSE
       }
     },
+
+    #' @description Download the file from the remote address in a temporary location. Applies Basic authentication if credentials are provided in the resource.
+    #' @param resource A valid resource object.
+    #' @param ... Unused additional parameters.
+    #' @return The "resource.file" object.
     downloadFile = function(resource, ...) {
       if (self$isFor(resource)) {
         fileName <- super$extractFileName(resource)
-        downloadDir <- super$makeDownloadDir(resource)
+        downloadDir <- super$makeDownloadDir()
         path <- file.path(downloadDir, fileName)
         httr::GET(resource$url, private$addHeaders(resource), write_disk(path, overwrite = TRUE))
         super$newFileObject(path, temp = TRUE)
       } else {
-        NULL
+        stop("Resource file is not located in a HTTP server")
       }
     }
   ),

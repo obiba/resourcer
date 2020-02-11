@@ -6,6 +6,11 @@
 \title{SSH resource client}
 \format{A R6 object of class SshResourceClient}
 \description{
+SSH resource client
+
+SSH resource client
+}
+\details{
 Connects to a SSH server.
 }
 \section{Super classes}{
@@ -34,38 +39,84 @@ Connects to a SSH server.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Create a SshResourceClient instance. This client will interact wtih a computation resource using ssh commands.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$new(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{The computation resource.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The SshResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getConnection"></a>}}
 \subsection{Method \code{getConnection()}}{
+Get or create the SSH connection object, for raw interaction.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$getConnection()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+The SSH connection object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
 \subsection{Method \code{downloadFile()}}{
+Download one or more files (wilcard * is supported in the file name (which can be a directory))
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$downloadFile(file, to = ".", verbose = FALSE)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{file}}{The file to download.}
+
+\item{\code{to}}{The download destination.}
+
+\item{\code{verbose}}{If TRUE, details the file operations on the console output.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The paths of the files having been downloaded.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-exec"></a>}}
 \subsection{Method \code{exec()}}{
+Executes a ssh command.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$exec(command, params = NULL, test = FALSE)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{command}}{The command name.}
+
+\item{\code{params}}{A named list of parameters.}
+
+\item{\code{test}}{If TRUE, the command is printed but not executed (for debugging).}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The command execution result object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-close"></a>}}
 \subsection{Method \code{close()}}{
+Close the SSH connection.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$close()}\if{html}{\out{</div>}}
 }

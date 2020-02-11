@@ -6,17 +6,14 @@
 \title{Resource resolver}
 \format{A R6 object of class ResourceResolver}
 \description{
+Resource resolver
+
+Resource resolver
+}
+\details{
 Helper class for building a Client that implements the access to the data or the
 computation unit.
 }
-\section{Methods}{
-
-
-\code{$new()} Create new ResourceResolver instance.
-\code{$isFor(x)} Get a logical that indicates that the resolver is applicable to the provided resource object.
-\code{$newClient()} Make a client for the provided resource.
-}
-
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
@@ -29,26 +26,52 @@ computation unit.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Creates a new ResourceResolver instance.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ResourceResolver$new()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+A ResourceResolver object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check that the provided object is of class "resource".
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ResourceResolver$isFor(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{The resource object to evaluate.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
 \subsection{Method \code{newClient()}}{
+Stub function to be implemented by subclasses. Makes an object which class inherits from ResourceClient.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ResourceResolver$newClient(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{The resource object to evaluate.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The ResourceClient object that will access the provided resource.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

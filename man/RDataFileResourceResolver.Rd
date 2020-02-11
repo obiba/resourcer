@@ -6,16 +6,13 @@
 \title{R data file Resource resolver}
 \format{A R6 object of class RDataFileResourceResolver}
 \description{
+R data file Resource resolver
+
+R data file Resource resolver
+}
+\details{
 The resource is a R data file and data format is the class of the symbol that will be loaded.
 }
-\section{Methods}{
-
-
-\code{$new()} Create new RDataFileResourceResolver instance.
-\code{$isFor(x)} Get a logical that indicates that the resolver is applicable to the provided resource object.
-\code{$newClient()} Make a client for the provided resource.
-}
-
 \section{Super class}{
 \code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{RDataFileResourceResolver}
 }
@@ -37,18 +34,42 @@ The resource is a R data file and data format is the class of the symbol that wi
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check that the provided resource has a URL that locates a R data file: the resource can be accessed as a file and
+ the resource URL path ends with ".rda" or ".rdata" (case ignored), or the resource format is prefixed with "r:" or "rda:" (a kind of
+ namespace to qualify the R object class).
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceResolver$isFor(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{The resource object to validate.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
 \subsection{Method \code{newClient()}}{
+Creates a RDataFileResourceClient instance from provided resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceResolver$newClient(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A RDataFileResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

@@ -3,20 +3,16 @@
 \docType{class}
 \name{SparkResourceConnector}
 \alias{SparkResourceConnector}
-\title{Spark DBI resource connector}
+\title{Apache Spark DBI resource connector}
 \format{A R6 object of class SparkResourceConnector}
 \description{
-Makes a Spark connection object, that is also a DBI connection object, from a resource description.
+Apache Spark DBI resource connector
+
+Apache Spark DBI resource connector
 }
-\section{Methods}{
-
-
-\code{$new()} Create new SparkResourceConnector instance.
-\code{$isFor(resource)} Get a logical that indicates that the DBI connector is applicable to the provided resource object.
-\code{$createDBIConnection(resource, ...)} Get the DBI connection object described by the provided resource.
-\code{$closeDBIConnection(conn)} Release the DBI connection when done.
+\details{
+Makes a Apache Spark connection object, that is also a DBI connection object, from a resource description.
 }
-
 \section{Super class}{
 \code{\link[resourcer:DBIResourceConnector]{resourcer::DBIResourceConnector}} -> \code{SparkResourceConnector}
 }
@@ -39,34 +35,69 @@ Makes a Spark connection object, that is also a DBI connection object, from a re
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Create a SparkResourceConnector instance.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$new()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+A SparkResourceConnector object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check if the provided resource applies to a Apache Spark server.
+  The resource URL scheme must be one of "spark", "spark+http" or "spark+https".
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$isFor(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{The resource object to validate.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-createDBIConnection"></a>}}
 \subsection{Method \code{createDBIConnection()}}{
+Creates a DBI connection object from a Apache Spark resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$createDBIConnection(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A DBI connection object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-closeDBIConnection"></a>}}
 \subsection{Method \code{closeDBIConnection()}}{
+Close the DBI connection to Apache Spark.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$closeDBIConnection(conn)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{conn}}{A DBI connection object.}
+}
+\if{html}{\out{</div>}}
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

@@ -10,22 +10,30 @@ RDataFileResourceClient <- R6::R6Class(
   "RDataFileResourceClient",
   inherit = FileResourceClient,
   public = list(
+
+    #' @description Creates a new RDataFileResourceClient instance.
+    #' @param resource A valid resource object.
+    #' @return A RDataFileResourceClient object.
     initialize = function(resource) {
       super$initialize(resource)
     },
+
+    #' @description Coerce the resource value extracted from the R data file to a data.frame.
+    #' @param ... Additional parameters to as.data.frame (not used yet).
+    #' @return A data.frame.
     asDataFrame = function(...) {
       private$ensureSymbol()
       # TODO as.data.frame parameters
       private$eval(paste0("as.data.frame(", private$.symbol, ")"))
     },
+
+    #' @description Get the resource value extracted from the R data file.
+    #' @return The resource value.
     getValue = function() {
       private$ensureSymbol()
-      if (is.null(private$.symbol)) {
-        NULL
-      } else {
-        get(private$.symbol, envir = private$.env)
-      }
+      get(private$.symbol, envir = private$.env)
     }
+
   ),
   private = list(
     .env = NULL,
@@ -38,6 +46,11 @@ RDataFileResourceClient <- R6::R6Class(
         path <- super$downloadFile()
         resource <- super$getResource()
         format <- resource$format
+        if (startsWith(tolower(format), "r:")) {
+          format <- substring(format, 3)
+        } else if (startsWith(tolower(format), "rda:")) {
+          format <- substring(format, 5)
+        }
         private$.env <- new.env()
         load(path, envir = private$.env)
         symbols <- ls(envir = private$.env)

@@ -3,12 +3,6 @@
 #' Access a file that is stored in a Opal server. Use Basic authentication header if both
 #' resource's identity and secret are defined, token authentication if secret only is defined.
 #'
-#' @section Methods:
-#'
-#' \code{$new(resource)} Create new OpalFileResourceGetter instance from provided resource object.
-#' \code{$isFor(resource)} Get a logical that indicates that the file getter is applicable to the provided resource object.
-#' \code{$downloadFile(resource)} Get the file described by the provided resource. Release the connection when done.
-#'
 #' @docType class
 #' @format A R6 object of class OpalFileResourceGetter
 #' @import R6
@@ -18,7 +12,14 @@ OpalFileResourceGetter <- R6::R6Class(
   "OpalFileResourceGetter",
   inherit = FileResourceGetter,
   public = list(
+
+    #' @description Creates a new OpalFileResourceGetter instance.
+    #' @return A OpalFileResourceGetter object.
     initialize = function() {},
+
+    #' @description Check that the provided resource has a URL that locates a Opal file: the URL scheme must be "opal+http" or "opal+https" and the path must designate a file web service entry point (i.e. starts with "ws/files/").
+    #' @param resource The resource object to validate.
+    #' @return A logical.
     isFor = function(resource) {
       if (super$isFor(resource)) {
         url <- super$parseURL(resource)
@@ -29,10 +30,15 @@ OpalFileResourceGetter <- R6::R6Class(
         FALSE
       }
     },
+
+    #' @description Download the file from the Opal file system in a temporary location.
+    #' @param resource A valid resource object.
+    #' @param ... Unused additional parameters.
+    #' @return The "resource.file" object.
     downloadFile = function(resource, ...) {
       if (self$isFor(resource)) {
         fileName <- super$extractFileName(resource)
-        downloadDir <- super$makeDownloadDir(resource)
+        downloadDir <- super$makeDownloadDir()
         path <- file.path(downloadDir, fileName)
 
         url <- super$parseURL(resource)
@@ -49,6 +55,7 @@ OpalFileResourceGetter <- R6::R6Class(
         NULL
       }
     }
+
   ),
   private = list(
     # add auth header or token header if there are credentials

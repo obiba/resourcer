@@ -6,16 +6,13 @@
 \title{SCP file resource getter}
 \format{A R6 object of class ScpFileResourceGetter}
 \description{
+SCP file resource getter
+
+SCP file resource getter
+}
+\details{
 Access a file that is stored on a server accessible through SSH. Credentials apply.
 }
-\section{Methods}{
-
-
-\code{$new(resource)} Create new ScpFileResourceGetter instance from provided resource object.
-\code{$isFor(resource)} Get a logical that indicates that the file getter is applicable to the provided resource object.
-\code{$downloadFile(resource)} Get the file described by the provided resource. Release the connection when done.
-}
-
 \section{Super class}{
 \code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{ScpFileResourceGetter}
 }
@@ -32,7 +29,6 @@ Access a file that is stored on a server accessible through SSH. Credentials app
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
 \item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName">}\href{../../resourcer/html/FileResourceGetter.html#method-extractFileName}{\code{resourcer::FileResourceGetter$extractFileName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="getFileObject">}\href{../../resourcer/html/FileResourceGetter.html#method-getFileObject}{\code{resourcer::FileResourceGetter$getFileObject()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir">}\href{../../resourcer/html/FileResourceGetter.html#method-makeDownloadDir}{\code{resourcer::FileResourceGetter$makeDownloadDir()}}\out{</span>}
 }
 \out{</details>}
@@ -40,26 +36,54 @@ Access a file that is stored on a server accessible through SSH. Credentials app
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Creates a ScpFileResourceGetter instance.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ScpFileResourceGetter$new()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+The ScpFileResourceGetter object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check that the provided resource is a file accessible by SCP: the resource URL scheme must be "scp".
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ScpFileResourceGetter$isFor(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{The resource object to evaluate.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
 \subsection{Method \code{downloadFile()}}{
+Download the file described by the resource over an SSH connection.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ScpFileResourceGetter$downloadFile(resource, ...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{The resource that identifies the file.}
+
+\item{\code{...}}{Additional parameters (not used).}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The "resource.file" object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

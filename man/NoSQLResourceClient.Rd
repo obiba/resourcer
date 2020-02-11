@@ -6,6 +6,11 @@
 \title{NoSQL database resource client}
 \format{A R6 object of class NoSQLResourceClient}
 \description{
+NoSQL database resource client
+
+NoSQL database resource client
+}
+\details{
 Resource client that connects to a NoSQL database supported by nodbi.
 }
 \section{Super class}{
@@ -36,46 +41,74 @@ Resource client that connects to a NoSQL database supported by nodbi.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Creates a new NoSQLResourceClient instance.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$new(resource, file.getter = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$new(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A NoSQLResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getConnection"></a>}}
 \subsection{Method \code{getConnection()}}{
+Creates the nodbi connection object if it does not exist.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$getConnection()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+The nodbi connection object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asDataFrame"></a>}}
 \subsection{Method \code{asDataFrame()}}{
+Makes a data.frame from the remote database table.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$asDataFrame()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+A tibble.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getDatabaseName"></a>}}
 \subsection{Method \code{getDatabaseName()}}{
+Extract the database name from the resource URL.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$getDatabaseName()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+The database name.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getTableName"></a>}}
 \subsection{Method \code{getTableName()}}{
+Extract the database table name from the resource URL.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$getTableName()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+The database table name.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-close"></a>}}
 \subsection{Method \code{close()}}{
+Close the nodbi connection.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$close()}\if{html}{\out{</div>}}
 }

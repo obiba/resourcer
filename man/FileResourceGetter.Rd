@@ -6,24 +6,21 @@
 \title{File resource getter}
 \format{A R6 object of class FileResourceGetter}
 \description{
+File resource getter
+
+File resource getter
+}
+\details{
 Helper base class for getting the file described by the resource object. ResourceClient class implementations
 can use this utility to retrieve files from any locations before processing them according to the declared
 data format.
 }
 \section{Methods}{
-
-
-\code{$new()} Create new FileResourceGetter instance.
-\code{$isFor(resource)} Get a logical that indicates that the file getter is applicable to the provided resource object.
-\code{$getFileObject(resource, ...)} Get the file described by the provided resource. Release the connection when done.
-}
-
-\section{Methods}{
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-new}{\code{FileResourceGetter$new()}}
 \item \href{#method-isFor}{\code{FileResourceGetter$isFor()}}
-\item \href{#method-getFileObject}{\code{FileResourceGetter$getFileObject()}}
+\item \href{#method-downloadFile}{\code{FileResourceGetter$downloadFile()}}
 \item \href{#method-extractFileName}{\code{FileResourceGetter$extractFileName()}}
 \item \href{#method-makeDownloadDir}{\code{FileResourceGetter$makeDownloadDir()}}
 \item \href{#method-clone}{\code{FileResourceGetter$clone()}}
@@ -32,42 +29,85 @@ data format.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Creates a new FileResourceGetter instance.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$new()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+A FileResourceGetter object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check that the provided parameter is of class "resource" and has a format defined.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$isFor(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{The resource object to validate.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getFileObject"></a>}}
-\subsection{Method \code{getFileObject()}}{
+\if{html}{\out{<a id="method-downloadFile"></a>}}
+\subsection{Method \code{downloadFile()}}{
+Stub function which subclasses will implement to make a "resource.file" object from a resource.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$getFileObject(resource, ...)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$downloadFile(resource, ...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{A valid resource object.}
+
+\item{\code{...}}{Additional parameters that may be relevant for FileResourceGetter subclasses.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A "resource.file" object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-extractFileName"></a>}}
 \subsection{Method \code{extractFileName()}}{
+Utility to get the base name from the file path.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$extractFileName(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The file base name.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-makeDownloadDir"></a>}}
 \subsection{Method \code{makeDownloadDir()}}{
+Creates a directory where to download file in the R session's temporary directory. This directory will be flushed when the R session ends.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$makeDownloadDir(resource)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$makeDownloadDir()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+The path to the download directory.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

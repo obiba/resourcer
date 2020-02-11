@@ -10,9 +10,16 @@ NoSQLResourceClient <- R6::R6Class(
   "NoSQLResourceClient",
   inherit = ResourceClient,
   public = list(
-    initialize = function(resource, file.getter = NULL) {
+
+    #' @description Creates a new NoSQLResourceClient instance.
+    #' @param resource A valid resource object.
+    #' @return A NoSQLResourceClient object.
+    initialize = function(resource) {
       super$initialize(resource)
     },
+
+    #' @description Creates the nodbi connection object if it does not exist.
+    #' @return The nodbi connection object.
     getConnection = function() {
       conn <- super$getConnection()
       if (is.null(conn)) {
@@ -21,16 +28,25 @@ NoSQLResourceClient <- R6::R6Class(
       }
       conn
     },
+
+    #' @description Makes a data.frame from the remote database table.
+    #' @return A tibble.
     asDataFrame = function() {
       conn <- self$getConnection()
       table <- self$getTableName()
       private$loadTibble()
       tibble::as_tibble(nodbi::docdb_get(conn, table))
     },
+
+    #' @description Extract the database name from the resource URL.
+    #' @return The database name.
     getDatabaseName = function() {
       url <- super$parseURL()
       strsplit(url$path, split = "/")[[1]][1]
     },
+
+    #' @description Extract the database table name from the resource URL.
+    #' @return The database table name.
     getTableName = function() {
       url <- super$parseURL()
       name <- basename(url$path)
@@ -41,6 +57,8 @@ NoSQLResourceClient <- R6::R6Class(
         name
       }
     },
+
+    #' @description Close the nodbi connection.
     close = function() {
       conn <- super$getConnection()
       if (!is.null(conn)) {
@@ -51,6 +69,7 @@ NoSQLResourceClient <- R6::R6Class(
         super$setConnection(NULL)
       }
     }
+
   ),
   private = list(
     getNoDBIConnection = function() {

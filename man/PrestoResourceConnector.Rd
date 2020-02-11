@@ -6,17 +6,13 @@
 \title{Presto DBI resource connector}
 \format{A R6 object of class PrestoResourceConnector}
 \description{
+Presto DBI resource connector
+
+Presto DBI resource connector
+}
+\details{
 Makes a Presto DBI connection from a resource description.
 }
-\section{Methods}{
-
-
-\code{$new()} Create new PrestoResourceConnector instance.
-\code{$isFor(resource)} Get a logical that indicates that the DBI connector is applicable to the provided resource object.
-\code{$createDBIConnection(resource, ...)} Get the DBI connection object described by the provided resource.
-\code{$closeDBIConnection(conn)} Release the DBI connection when done.
-}
-
 \section{Super class}{
 \code{\link[resourcer:DBIResourceConnector]{resourcer::DBIResourceConnector}} -> \code{PrestoResourceConnector}
 }
@@ -39,26 +35,52 @@ Makes a Presto DBI connection from a resource description.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Creates a new PrestoResourceConnector instance.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{PrestoResourceConnector$new()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+A PrestoResourceConnector object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check that the provided resource has a URL that locates a MySQL or MariaDB object: the URL scheme must be "presto", "presto+http" or "presto+https".
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{PrestoResourceConnector$isFor(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{The resource object to validate.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-createDBIConnection"></a>}}
 \subsection{Method \code{createDBIConnection()}}{
+Creates a DBI connection object from a resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{PrestoResourceConnector$createDBIConnection(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A DBI connection object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

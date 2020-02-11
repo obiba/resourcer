@@ -6,6 +6,11 @@
 \title{File resource client}
 \format{A R6 object of class FileResourceClient}
 \description{
+File resource client
+
+File resource client
+}
+\details{
 Base class that connects to a file using a FileResourceGetter.
 }
 \section{Super class}{
@@ -34,22 +39,40 @@ Base class that connects to a file using a FileResourceGetter.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Creates a new FileResourceClient instance.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{FileResourceClient$new(resource, file.getter = NULL)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{A valid resource object.}
+
+\item{\code{file.getter}}{A FileResourceGetter object, optional. If not provided, it will be looked up in the FileResourceGetters registry. The operation will fail if none can be found.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A FileResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
 \subsection{Method \code{downloadFile()}}{
+Performs the file download, if it does not already exists locally.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{FileResourceClient$downloadFile()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+The local path to the downloaded file.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-close"></a>}}
 \subsection{Method \code{close()}}{
+Removes the file if it was downloaded. A local file resource will remain untouched.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{FileResourceClient$close()}\if{html}{\out{</div>}}
 }

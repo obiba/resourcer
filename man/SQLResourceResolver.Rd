@@ -6,16 +6,13 @@
 \title{SQL Database Resource resolver}
 \format{A R6 object of class SQLResourceResolver}
 \description{
+SQL Database Resource resolver
+
+SQL Database Resource resolver
+}
+\details{
 The resource is SQL database.
 }
-\section{Methods}{
-
-
-\code{$new()} Create new SQLResourceResolver instance.
-\code{$isFor(x)} Get a logical that indicates that the resolver is applicable to the provided resource object.
-\code{$newClient()} Make a client for the provided resource.
-}
-
 \section{Super class}{
 \code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{SQLResourceResolver}
 }
@@ -37,18 +34,40 @@ The resource is SQL database.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check that the provided resource has a registered DBIResourceConnector.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SQLResourceResolver$isFor(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{The resource object to evaluate.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
 \subsection{Method \code{newClient()}}{
+Creates a SQLResourceClient instance from provided resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SQLResourceResolver$newClient(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A SQLResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

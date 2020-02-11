@@ -2,13 +2,6 @@
 #'
 #' Makes a DBI connection from a resource description, used in SQLResourceClient that is based on DBI.
 #'
-#' @section Methods:
-#'
-#' \code{$new()} Create new DBIResourceConnector instance.
-#' \code{$isFor(resource)} Get a logical that indicates that the DBI connector is applicable to the provided resource object.
-#' \code{$createDBIConnection(resource, ...)} Get the DBI connection object described by the provided resource.
-#' \code{$closeDBIConnection(conn)} Release the DBI connection when done.
-#'
 #' @docType class
 #' @format A R6 object of class DBIResourceConnector
 #' @import R6
@@ -17,16 +10,30 @@
 DBIResourceConnector <- R6::R6Class(
   "DBIResourceConnector",
   public = list(
+
+    #' @description Creates a new DBIResourceConnector instance
+    #' @return A DBIResourceConnector object.
     initialize = function() {},
+
+    #' @description Check that the provided parameter is of class "resource".
+    #' @param resource The resource object to validate.
+    #' @return A logical.
     isFor = function(resource) {
       "resource" %in% class(resource)
     },
+
+    #' @description Stub function which subclasses will implement to create a DBI connection object from a resource.
+    #' @param resource A valid resource object.
     createDBIConnection = function(resource) {
       stop("Operation not applicable")
     },
+
+    #' @description Disconnect the DBI connection.
+    #' @param conn A DBI connection object.
     closeDBIConnection = function(conn) {
       DBI::dbDisconnect(conn)
     }
+
   ),
   private = list(
     loadDBI = function() {

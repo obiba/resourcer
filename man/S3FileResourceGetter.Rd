@@ -6,16 +6,13 @@
 \title{AWS S3 file resource getter}
 \format{A R6 object of class S3FileResourceGetter}
 \description{
+AWS S3 file resource getter
+
+AWS S3 file resource getter
+}
+\details{
 Access a file that is in the Amazon Web Services S3 file store. The host name is the bucket name. Credentials may apply.
 }
-\section{Methods}{
-
-
-\code{$new(resource)} Create new S3FileResourceGetter instance from provided resource object.
-\code{$isFor(resource)} Get a logical that indicates that the file getter is applicable to the provided resource object.
-\code{$downloadFile(resource)} Get the file described by the provided resource. Release the connection when done.
-}
-
 \section{Super class}{
 \code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{S3FileResourceGetter}
 }
@@ -32,7 +29,6 @@ Access a file that is in the Amazon Web Services S3 file store. The host name is
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
 \item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName">}\href{../../resourcer/html/FileResourceGetter.html#method-extractFileName}{\code{resourcer::FileResourceGetter$extractFileName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="getFileObject">}\href{../../resourcer/html/FileResourceGetter.html#method-getFileObject}{\code{resourcer::FileResourceGetter$getFileObject()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir">}\href{../../resourcer/html/FileResourceGetter.html#method-makeDownloadDir}{\code{resourcer::FileResourceGetter$makeDownloadDir()}}\out{</span>}
 }
 \out{</details>}
@@ -40,26 +36,54 @@ Access a file that is in the Amazon Web Services S3 file store. The host name is
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Creates a new S3FileResourceGetter instance.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{S3FileResourceGetter$new()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+A S3FileResourceGetter object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check that the provided resource has a URL that locates a file accessible through "s3" or "aws" protocol (i.e. using AWS S3 file store API).
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{S3FileResourceGetter$isFor(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{The resource object to validate.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
 \subsection{Method \code{downloadFile()}}{
+Download the file from the remote address in a temporary location. Applies authentication if credentials are provided in the resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{S3FileResourceGetter$downloadFile(resource, ...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{A valid resource object.}
+
+\item{\code{...}}{Unused additional parameters.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The "resource.file" object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

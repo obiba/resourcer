@@ -10,6 +10,10 @@ SshResourceClient <- R6::R6Class(
   "SshResourceClient",
   inherit = CommandResourceClient,
   public = list(
+
+    #' @description Create a SshResourceClient instance. This client will interact wtih a computation resource using ssh commands.
+    #' @param resource The computation resource.
+    #' @return The SshResourceClient object.
     initialize = function(resource) {
       super$initialize(resource)
       url <- super$parseURL()
@@ -29,6 +33,9 @@ SshResourceClient <- R6::R6Class(
       private$.workDir <- path
       private$.commandPrefix <- cmd
     },
+
+    #' @description Get or create the SSH connection object, for raw interaction.
+    #' @return The SSH connection object.
     getConnection = function() {
       conn <- super$getConnection()
       if (is.null(conn)) {
@@ -44,8 +51,12 @@ SshResourceClient <- R6::R6Class(
       }
       conn
     },
-    # download one or more files (wilcard * is supported in the file name (which can be a directory))
-    # return the paths of the files having been downloaded
+
+    #' @description Download one or more files (wilcard * is supported in the file name (which can be a directory))
+    #' @param file The file to download.
+    #' @param to The download destination.
+    #' @param verbose If TRUE, details the file operations on the console output.
+    #' @return The paths of the files having been downloaded.
     downloadFile = function(file, to = ".", verbose = FALSE) {
       private$loadSsh()
       rfile <- file
@@ -66,6 +77,12 @@ SshResourceClient <- R6::R6Class(
       }
       unlist(lapply(downloaded, function(x) paste0(to, sep, x)))
     },
+
+    #' @description Executes a ssh command.
+    #' @param command The command name.
+    #' @param params A named list of parameters.
+    #' @param test If TRUE, the command is printed but not executed (for debugging).
+    #' @return The command execution result object.
     exec = function(command, params = NULL, test = FALSE) {
       private$loadSsh()
       cmd <- private$makeCommand(command, params)
@@ -78,6 +95,8 @@ SshResourceClient <- R6::R6Class(
         super$newResultObject(status = res$status, output = res$stdout, error = res$stderr, command = cmd)
       }
     },
+
+    #' @description Close the SSH connection.
     close = function() {
       conn <- super$getConnection()
       if (!is.null(conn)) {

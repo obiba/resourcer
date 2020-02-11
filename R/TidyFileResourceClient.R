@@ -10,9 +10,17 @@ TidyFileResourceClient <- R6::R6Class(
   "TidyFileResourceClient",
   inherit = FileResourceClient,
   public = list(
+
+    #' @description Create a TidyFileResourceClient instance.
+    #' @param resource A valid resource object.
+    #' @return A TidyFileResourceClient object.
     initialize = function(resource) {
       super$initialize(resource)
     },
+
+    #' @description Coerce the resource value extracted from the file in tidy format to a data.frame.
+    #' @param ... Additional parameters to as.data.frame (not used yet).
+    #' @return A data.frame (more specifically a tibble).
     asDataFrame = function(...) {
       path <- super$downloadFile()
       format <- super$getResource()$format
@@ -61,9 +69,10 @@ TidyFileResourceClient <- R6::R6Class(
         private$loadReadxl()
         readxl::read_excel(path)
       } else {
-        NULL
+        stop("Resource tidy format is unknown: ", format)
       }
     }
+
   ),
   private = list(
     loadHaven = function() {

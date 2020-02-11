@@ -6,16 +6,13 @@
 \title{SSH Resource resolver}
 \format{A R6 object of class SshResourceResolver}
 \description{
+SSH Resource resolver
+
+SSH Resource resolver
+}
+\details{
 The resource is a computation unit, accessible through SSH, i.e. which URL scheme is "ssh".
 }
-\section{Methods}{
-
-
-\code{$new()} Create new SshResourceResolver instance.
-\code{$isFor(x)} Get a logical that indicates that the resolver is applicable to the provided resource object.
-\code{$newClient()} Make a client for the provided resource.
-}
-
 \section{Super class}{
 \code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{SshResourceResolver}
 }
@@ -37,18 +34,40 @@ The resource is a computation unit, accessible through SSH, i.e. which URL schem
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check that the provided resource is a computation resource accessible by ssh commands. The resource URL scheme is expected to be "ssh".
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SshResourceResolver$isFor(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{The resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
 \subsection{Method \code{newClient()}}{
+Create a SshResourceClient instance from the provided resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SshResourceResolver$newClient(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A SshResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

@@ -6,6 +6,11 @@
 \title{Tidy file resource client}
 \format{A R6 object of class TidyFileResourceClient}
 \description{
+Tidy file resource client
+
+Tidy file resource client
+}
+\details{
 Connects to a file and use one of the tidyverse reader.
 }
 \section{Super classes}{
@@ -34,18 +39,40 @@ Connects to a file and use one of the tidyverse reader.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Create a TidyFileResourceClient instance.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{TidyFileResourceClient$new(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A TidyFileResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asDataFrame"></a>}}
 \subsection{Method \code{asDataFrame()}}{
+Coerce the resource value extracted from the file in tidy format to a data.frame.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{TidyFileResourceClient$asDataFrame(...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Additional parameters to as.data.frame (not used yet).}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A data.frame (more specifically a tibble).
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

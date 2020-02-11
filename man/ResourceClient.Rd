@@ -6,20 +6,13 @@
 \title{Resource client}
 \format{A R6 object of class ResourceClient}
 \description{
+Resource client
+
+Resource client
+}
+\details{
 Helper class for connecting to a resource data store or a computation unit.
 }
-\section{Methods}{
-
-
-\code{$new(resource)} Create new ResourceClient instance from provided resource object.
-\code{$getResource()} Get the resource reference object.
-\code{$getConnection()} Get the raw connection object to the resource.
-\code{$downloadFile(...)} Coerce the resource to a file with provided file extension.
-\code{$asDataFrame(...)} Coerce the resource to a data.frame.
-\code{$exec(...)} Execute an operation on the resource.
-\code{$close()} Close the connection with the resource.
-}
-
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
@@ -37,62 +30,126 @@ Helper class for connecting to a resource data store or a computation unit.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Creates a ResourceClient instance.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ResourceClient$new(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{The resource object to be interprated.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A ResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getResource"></a>}}
 \subsection{Method \code{getResource()}}{
+Get the resource object.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ResourceClient$getResource()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+The resource object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getConnection"></a>}}
 \subsection{Method \code{getConnection()}}{
+Get the implementation-specific object that connects to the resource
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ResourceClient$getConnection()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+The connection object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
 \subsection{Method \code{downloadFile()}}{
+Stub function to be implemented by subclasses if relevant. Get the resource as a local file.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ResourceClient$downloadFile(...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Additional parameters.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The path to the local file.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asDataFrame"></a>}}
 \subsection{Method \code{asDataFrame()}}{
+Stub function to be implemented by subclasses if relevant. Coerce the resource as a data.frame.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ResourceClient$asDataFrame(...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Additional parameters.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A data.frame object (can also be a tibble).
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asTbl"></a>}}
 \subsection{Method \code{asTbl()}}{
+Stub function to be implemented by subclasses if relevant. Coerce the resource as a dplyr's tbl.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ResourceClient$asTbl(...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Additional parameters.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A dplyr's tbl object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-exec"></a>}}
 \subsection{Method \code{exec()}}{
+Stub function to be implemented by subclasses if relevant. Executes a command on a computation resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ResourceClient$exec(...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Additional parameters that will represent the command to execute.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A command execution result object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-close"></a>}}
 \subsection{Method \code{close()}}{
+Silently closes the connection to the resource
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ResourceClient$close()}\if{html}{\out{</div>}}
 }

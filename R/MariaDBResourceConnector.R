@@ -2,13 +2,6 @@
 #'
 #' Makes a MariaDB/MySQL DBI connection from a resource description.
 #'
-#' @section Methods:
-#'
-#' \code{$new()} Create new MariaDBResourceConnector instance.
-#' \code{$isFor(resource)} Get a logical that indicates that the DBI connector is applicable to the provided resource object.
-#' \code{$createDBIConnection(resource, ...)} Get the DBI connection object described by the provided resource.
-#' \code{$closeDBIConnection(conn)} Release the DBI connection when done.
-#'
 #' @docType class
 #' @format A R6 object of class MariaDBResourceConnector
 #' @import R6
@@ -18,18 +11,34 @@ MariaDBResourceConnector <- R6::R6Class(
   "MariaDBResourceConnector",
   inherit = DBIResourceConnector,
   public = list(
+
+    #' @description Creates a new MariaDBResourceConnector instance.
+    #' @return A MariaDBResourceConnector object.
     initialize = function() {},
+
+    #' @description Check that the provided resource has a URL that locates a MySQL or MariaDB object: the URL scheme must be "mysql" or "mariadb".
+    #' @param resource The resource object to validate.
+    #' @return A logical.
     isFor = function(resource) {
       super$isFor(resource) && super$parseURL(resource)$scheme %in% c("mysql", "mariadb")
     },
+
+    #' @description Creates a DBI connection object from a resource.
+    #' @param resource A valid resource object.
+    #' @return A DBI connection object.
     createDBIConnection = function(resource) {
-      super$loadDBI()
-      private$loadRMariaDB()
-      url <- super$parseURL(resource)
-      DBI::dbConnect(RMariaDB::MariaDB(), host = url$host, port = url$port,
-                     username = resource$identity, password = resource$secret,
-                     dbname = super$getDatabaseName(url))
+      if (self$isFor(resource)) {
+        super$loadDBI()
+        private$loadRMariaDB()
+        url <- super$parseURL(resource)
+        DBI::dbConnect(RMariaDB::MariaDB(), host = url$host, port = url$port,
+                       username = resource$identity, password = resource$secret,
+                       dbname = super$getDatabaseName(url))
+      } else {
+        stop("Resource is not located in a MySQL/MariaDB database")
+      }
     }
+
   ),
   private = list(
     loadRMariaDB = function() {

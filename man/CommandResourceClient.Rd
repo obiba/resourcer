@@ -6,6 +6,11 @@
 \title{Command resource client}
 \format{A R6 object of class CommandResourceClient}
 \description{
+Command resource client
+
+Command resource client
+}
+\details{
 Base class for resource clients issuing commands and get a result with the status of the execution,
 the output and the error messages.
 }
@@ -35,10 +40,21 @@ the output and the error messages.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Creates a new CommandResourceClient instance
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{CommandResourceClient$new(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A CommandResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

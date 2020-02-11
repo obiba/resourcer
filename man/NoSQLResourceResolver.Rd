@@ -6,16 +6,13 @@
 \title{NoSQL Database Resource resolver}
 \format{A R6 object of class NoSQLResourceResolver}
 \description{
-The resource is NoSQL database such as mongodb, elasticsearch, redis, couchdb, sqlite.
+NoSQL Database Resource resolver
+
+NoSQL Database Resource resolver
 }
-\section{Methods}{
-
-
-\code{$new()} Create new NoSQLResourceResolver instance.
-\code{$isFor(x)} Get a logical that indicates that the resolver is applicable to the provided resource object.
-\code{$newClient()} Make a client for the provided resource.
+\details{
+The resource is NoSQL database such as mongodb (elasticsearch, redis, couchdb, sqlite are not supported yet).
 }
-
 \section{Super class}{
 \code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{NoSQLResourceResolver}
 }
@@ -37,18 +34,40 @@ The resource is NoSQL database such as mongodb, elasticsearch, redis, couchdb, s
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check that the provided resource has a URL that locates a nodbi object: the URL scheme must be one of "mongodb", "mongodb+srv". Other NoSQL databases "elasticsearch", "redis", "couchdb", "sqlite" are not supported yet.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceResolver$isFor(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{The resource object to validate.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
 \subsection{Method \code{newClient()}}{
+Creates a NoSQLResourceClient instance from provided resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceResolver$newClient(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A NoSQLResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

@@ -6,17 +6,13 @@
 \title{DBI resource connector}
 \format{A R6 object of class DBIResourceConnector}
 \description{
+DBI resource connector
+
+DBI resource connector
+}
+\details{
 Makes a DBI connection from a resource description, used in SQLResourceClient that is based on DBI.
 }
-\section{Methods}{
-
-
-\code{$new()} Create new DBIResourceConnector instance.
-\code{$isFor(resource)} Get a logical that indicates that the DBI connector is applicable to the provided resource object.
-\code{$createDBIConnection(resource, ...)} Get the DBI connection object described by the provided resource.
-\code{$closeDBIConnection(conn)} Release the DBI connection when done.
-}
-
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
@@ -30,34 +26,65 @@ Makes a DBI connection from a resource description, used in SQLResourceClient th
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
 \subsection{Method \code{new()}}{
+Creates a new DBIResourceConnector instance
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$new()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+A DBIResourceConnector object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check that the provided parameter is of class "resource".
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$isFor(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{The resource object to validate.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-createDBIConnection"></a>}}
 \subsection{Method \code{createDBIConnection()}}{
+Stub function which subclasses will implement to create a DBI connection object from a resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$createDBIConnection(resource)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-closeDBIConnection"></a>}}
 \subsection{Method \code{closeDBIConnection()}}{
+Disconnect the DBI connection.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$closeDBIConnection(conn)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{conn}}{A DBI connection object.}
+}
+\if{html}{\out{</div>}}
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

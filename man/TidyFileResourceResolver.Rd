@@ -6,6 +6,11 @@
 \title{Tidy file Resource resolver}
 \format{A R6 object of class TidyFileResourceResolver}
 \description{
+Tidy file Resource resolver
+
+Tidy file Resource resolver
+}
+\details{
 The resource is a file and data format is handled by a reader from tidyverse.
 The data format is one of: csv (comma delimiter), csv2 (semicolon delimiter), tsv (tab delimiter), ssv (space delimiter),
 delim (delim parameter to be specified in the URL, default is space char), spss, sav, por, stata, dta, sas, xpt,
@@ -40,18 +45,42 @@ excel, xls, xlsx.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
 \subsection{Method \code{isFor()}}{
+Check that the provided resource has a URL that locates a tidy data file: the resource can be accessed as a file and
+ the resource format is one of "csv", "csv2", "tsv", "delim", "ssv", "spss", "sav", "por", "stata", "dta", "sas", "xpt",
+ "excel", "xls" or "xlsx" (case is ignored).
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{TidyFileResourceResolver$isFor(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{The resource object to validate.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A logical.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
 \subsection{Method \code{newClient()}}{
+Creates a TidyFileResourceClient instance from provided resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{TidyFileResourceResolver$newClient(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A TidyFileResourceClient object.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

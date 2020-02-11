@@ -11,9 +11,14 @@ CommandResourceClient <- R6::R6Class(
   "CommandResourceClient",
   inherit = ResourceClient,
   public = list(
+
+    #' @description Creates a new CommandResourceClient instance
+    #' @param resource A valid resource object.
+    #' @return A CommandResourceClient object.
     initialize = function(resource) {
       super$initialize(resource)
     }
+
   ),
   private = list(
     newResultObject = function(status, output, error, command, raw = TRUE) {

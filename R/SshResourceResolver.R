@@ -2,12 +2,6 @@
 #'
 #' The resource is a computation unit, accessible through SSH, i.e. which URL scheme is "ssh".
 #'
-#' @section Methods:
-#'
-#' \code{$new()} Create new SshResourceResolver instance.
-#' \code{$isFor(x)} Get a logical that indicates that the resolver is applicable to the provided resource object.
-#' \code{$newClient()} Make a client for the provided resource.
-#'
 #' @docType class
 #' @format A R6 object of class SshResourceResolver
 #' @import R6
@@ -16,6 +10,10 @@ SshResourceResolver <- R6::R6Class(
   "SshResourceResolver",
   inherit = ResourceResolver,
   public = list(
+
+    #' @description Check that the provided resource is a computation resource accessible by ssh commands. The resource URL scheme is expected to be "ssh".
+    #' @param x The resource object.
+    #' @return A logical.
     isFor = function(x) {
       if (super$isFor(x)) {
         super$parseURL(x)$scheme == "ssh" && is.null(x$format)
@@ -23,6 +21,10 @@ SshResourceResolver <- R6::R6Class(
         FALSE
       }
     },
+
+    #' @description Create a SshResourceClient instance from the provided resource.
+    #' @param x A valid resource object.
+    #' @return A SshResourceClient object.
     newClient = function(x) {
       if (self$isFor(x)) {
         SshResourceClient$new(x)
