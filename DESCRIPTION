@@ -13,7 +13,7 @@ Authors@R:
              email="info@obiba.org"))
 Description: A resource represents some data or a computation unit. It is 
     described by a URL and credentials. This package proposes a Resource model
-    with resolvers and clients to facilitate the access and the usage of the 
+    with "resolver" and "client" classes to facilitate the access and the usage of the 
     resources.
 License: LGPL (>= 2.1)
 LazyData: true
