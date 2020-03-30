@@ -1,7 +1,7 @@
 Package: resourcer
 Type: Package
 Title: Resource Resolver
-Version: 0.8.0
+Version: 1.0.0
 Authors@R: 
     c(person(given = "Yannick",
              family = "Marcon",
@@ -41,3 +41,7 @@ BugReports: https://github.com/obiba/resourcer
 RoxygenNote: 7.0.2
 VignetteBuilder: knitr
 Encoding: UTF-8
+AssignMethods:
+    as.resource.data.frame,
+    as.resource.object,
+    as.resource.tbl
