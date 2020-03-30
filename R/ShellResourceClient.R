@@ -60,9 +60,14 @@ ShellResourceClient <- R6::R6Class(
         # do shell exec
         owd <- getwd()
         setwd(private$.workDir)
-        res <- sys::exec_internal(cmd = command, args = params, error = FALSE)
-        setwd(owd)
-        super$newResultObject(status = res$status, output = res$stdout, error = res$stderr, command = cmdStr)
+        tryCatch({
+          res <- sys::exec_internal(cmd = command, args = params, error = FALSE)
+          super$newResultObject(status = res$status, output = res$stdout, error = res$stderr, command = cmdStr)
+        }, error = function(msg) {
+          super$newResultObject(status = -1, output = NULL, error = msg, command = cmdStr, raw = FALSE)
+        }, finally = {
+          setwd(owd)
+        })
       }
     }
 

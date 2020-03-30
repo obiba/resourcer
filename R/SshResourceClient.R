@@ -91,8 +91,14 @@ SshResourceClient <- R6::R6Class(
       } else {
         # do ssh exec
         conn <- self$getConnection()
-        res <- ssh::ssh_exec_internal(conn, command = cmd, error = FALSE)
-        super$newResultObject(status = res$status, output = res$stdout, error = res$stderr, command = cmd)
+        tryCatch({
+          res <- ssh::ssh_exec_internal(conn, command = cmd, error = FALSE)
+          super$newResultObject(status = res$status, output = res$stdout, error = res$stderr, command = cmd)
+        }, error = function(msg) {
+          super$newResultObject(status = -1, output = NULL, error = msg, command = cmdStr, raw = FALSE)
+        }, finally = {
+          setwd(owd)
+        })
       }
     },
 

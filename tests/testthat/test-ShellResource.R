@@ -38,13 +38,24 @@ test_that("shell resource client commands", {
   expect_error(client$exec("cd", "..", test = TRUE), "Shell command not allowed: cd")
 })
 
+test_that("shell resource client unknown command", {
+  res <- .make_shell_resource(path = "/", exec = "unknown")
+  resolver <- ShellResourceResolver$new()
+  client <- resolver$newClient(res)
+  res <- client$exec("unknown")
+  expect_equal(res$status, -1)
+  expect_equal(length(res$output), 0)
+  expect_true(length(res$error)>0)
+})
+
 test_that("shell resource client exec output", {
   res <- .make_shell_resource(path = "/", exec = "pwd")
   resolver <- ShellResourceResolver$new()
   client <- resolver$newClient(res)
   res <- client$exec("pwd")
-  expect_equal(res$status, 0)
-  expect_true(length(res$output)>0)
-  expect_equal(res$output, "/")
-  expect_equal(length(res$error), 0)
+  if (res$status == 0) {
+    expect_true(length(res$output)>0)
+    expect_equal(res$output, "/")
+    expect_equal(length(res$error), 0)
+  }
 })
