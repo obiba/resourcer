@@ -9,3 +9,9 @@ getResourceResolvers()
 \description{
 Get the resource resolvers registry, create it if it does not exist.
 }
+\examples{
+{
+resourcer::getResourceResolvers()
+}
+
+}

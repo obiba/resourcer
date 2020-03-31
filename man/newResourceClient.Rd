@@ -16,3 +16,15 @@ The corresponding ResourceClient object or NULL if none applies.
 From a resource object, find the corresponding resolver in the resolver registry
 and create a new resource client.
 }
+\examples{
+\donttest{
+library(resourcer)
+res <- newResource(
+  name = "CNSIM1",
+  url = "file:///data/CNSIM1.sav",
+  format = "spss"
+)
+client <- newResourceClient(res)
+}
+
+}

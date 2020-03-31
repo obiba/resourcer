@@ -12,3 +12,9 @@ unregisterResourceResolver(x)
 \description{
 Remove any resolvers with the provided class name.
 }
+\examples{
+\donttest{
+resourcer::unregisterResourceResolver("MyFileFormatResourceResolver")
+}
+
+}

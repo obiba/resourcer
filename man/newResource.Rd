@@ -20,3 +20,14 @@ newResource(name = "", url, identity = NULL, secret = NULL, format = NULL)
 \description{
 Creates a new Resource structure.
 }
+\examples{
+{
+# make a SPSS file resource
+res <- resourcer::newResource(
+  name = "CNSIM1",
+  url = "file:///data/CNSIM1.sav",
+  format = "spss"
+)
+}
+
+}

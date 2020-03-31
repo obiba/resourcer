@@ -15,3 +15,15 @@ The corresponding ResourceResolver object or NULL if none applies.
 \description{
 Find the resolver that will make a client from the provided resource object.
 }
+\examples{
+\donttest{
+library(resourcer)
+res <- newResource(
+  name = "CNSIM1",
+  url = "file:///data/CNSIM1.sav",
+  format = "spss"
+)
+resolver <- resolveResource(res)
+}
+
+}

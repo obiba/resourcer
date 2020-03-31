@@ -13,3 +13,9 @@ registerResourceResolver(x)
 Maintain an list of resource resolvers that will be called when a new
 resource is to be resolved.
 }
+\examples{
+\donttest{
+resourcer::registerResourceResolver(MyFileFormatResourceResolver$new())
+}
+
+}

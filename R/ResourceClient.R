@@ -93,6 +93,17 @@ ResourceClient <- R6::R6Class(
 #'
 #' @return The corresponding ResourceClient object or NULL if none applies.
 #'
+#' @examples
+#' \donttest{
+#' library(resourcer)
+#' res <- newResource(
+#'   name = "CNSIM1",
+#'   url = "file:///data/CNSIM1.sav",
+#'   format = "spss"
+#' )
+#' client <- newResourceClient(res)
+#' }
+#'
 #' @export
 newResourceClient <- function(x) {
   client <- NULL

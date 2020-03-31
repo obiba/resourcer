@@ -42,6 +42,10 @@ ResourceResolver <- R6::R6Class(
 #'
 #' Get the resource resolvers registry, create it if it does not exist.
 #'
+#' @examples {
+#' resourcer::getResourceResolvers()
+#' }
+#'
 #' @export
 getResourceResolvers <- function() {
   resRegistry <- getOption("resourcer.resolvers")
@@ -58,6 +62,11 @@ getResourceResolvers <- function() {
 #' resource is to be resolved.
 #'
 #' @param x The resource resolver object to register.
+#'
+#' @examples
+#' \donttest{
+#' resourcer::registerResourceResolver(MyFileFormatResourceResolver$new())
+#' }
 #'
 #' @export
 registerResourceResolver <- function(x) {
@@ -78,6 +87,11 @@ registerResourceResolver <- function(x) {
 #'
 #' @param x The resource resolver class name to unregister.
 #'
+#' @examples
+#' \donttest{
+#' resourcer::unregisterResourceResolver("MyFileFormatResourceResolver")
+#' }
+#'
 #' @export
 unregisterResourceResolver <- function(x) {
   resRegistry <- getResourceResolvers()
@@ -93,6 +107,17 @@ unregisterResourceResolver <- function(x) {
 #' @param x The resource object which corresponding resolver is to be found.
 #'
 #' @return The corresponding ResourceResolver object or NULL if none applies.
+#'
+#' @examples
+#' \donttest{
+#' library(resourcer)
+#' res <- newResource(
+#'   name = "CNSIM1",
+#'   url = "file:///data/CNSIM1.sav",
+#'   format = "spss"
+#' )
+#' resolver <- resolveResource(res)
+#' }
 #'
 #' @export
 resolveResource <- function(x) {
