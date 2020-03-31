@@ -42,7 +42,3 @@ BugReports: https://github.com/obiba/resourcer
 RoxygenNote: 7.0.2
 VignetteBuilder: knitr
 Encoding: UTF-8
-AssignMethods:
-    as.resource.data.frame,
-    as.resource.object,
-    as.resource.tbl

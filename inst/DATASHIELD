@@ -1,0 +1,7 @@
+AssignMethods:
+  as.resource.data.frame,
+  as.resource.object,
+  as.resource.tbl
+Options:
+    datashield.privacyLevel=5,
+    default.nfilter.glm=0.33
