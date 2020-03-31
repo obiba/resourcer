@@ -36,7 +36,8 @@ Suggests:
     RPostgres,
     sparklyr,
     RPresto,
-    nodbi
+    nodbi,
+    rmarkdown
 BugReports: https://github.com/obiba/resourcer
 RoxygenNote: 7.0.2
 VignetteBuilder: knitr

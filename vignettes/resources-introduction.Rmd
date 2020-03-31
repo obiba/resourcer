@@ -1,7 +1,18 @@
-# Resource R
+---
+title: "Introduction to Resources"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to Resources}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
 
-[![Build Status](https://travis-ci.com/obiba/resourcer.svg?branch=master)](https://travis-ci.com/obiba/resourcer)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/resourcer)](https://cran.r-project.org/package=resourcer)
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
 The `resourcer` package is meant to access resources identified by a URL in a uniform way whether it references a dataset (stored in a file, a SQL table, a MongoDB collection etc.) or a computation unit (system commands, web services etc.). Usually some credentials will be defined, and an additional data format information can be provided to help dataset coercing to a data.frame object.
 
@@ -29,8 +40,8 @@ The file locations supported by default are:
 
 This can be easily applied to other file locations by extending the _FileResourceGetter_ class. An instance of the new file resource getter is to be registered so that the _FileResourceResolver_ can operate as expected.
 
-```
-registerFileResourceGetter(MyFileLocationResourceGetter()$new())
+```{r eval=FALSE}
+resourcer::registerFileResourceGetter(MyFileLocationResourceGetter()$new())
 ```
 
 ### File Data Format
@@ -42,7 +53,7 @@ The data format specified within the _Resource_ object, helps at finding the app
 
 Usage example that reads a local SPSS file:
 
-```r
+```{r eval=FALSE}
 # make a SPSS file resource
 res <- resourcer::newResource(
   name = "CNSIM1",
@@ -56,8 +67,8 @@ df <- as.data.frame(res)
 
 To support other file data format, extend the _FileResourceClient_ class with the new data format reader implementation. Associate factory class, an extension of the _ResourceResolver_ class is also to be implemented and registered.
 
-```
-registerResourceResolver(MyFileFormatResourceResolver$new())
+```{r eval=FALSE}
+resourcer::registerResourceResolver(MyFileFormatResourceResolver$new())
 ```
 
 ## Database Resources
@@ -74,8 +85,8 @@ registerResourceResolver(MyFileFormatResourceResolver$new())
 
 To support another SQL database having a DBI driver, extend the _DBIResourceConnector_ class and register it:
 
-```
-registerDBIResourceConnector(MyDBResourceConnector$new())
+```{r eval=FALSE}
+resourcer::registerDBIResourceConnector(MyDBResourceConnector$new())
 ```
 
 ### Use dplyr
@@ -92,7 +103,7 @@ Computation resources are resources on which tasks/commands can be triggerred an
 
 Example of computation resource that connects to a server through SSH:
 
-```r
+```{r eval=FALSE}
 # make an application resource on a ssh server
 res <- resourcer::newResource(
   name = "supercomp1",
