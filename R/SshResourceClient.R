@@ -96,8 +96,6 @@ SshResourceClient <- R6::R6Class(
           super$newResultObject(status = res$status, output = res$stdout, error = res$stderr, command = cmd)
         }, error = function(msg) {
           super$newResultObject(status = -1, output = NULL, error = msg, command = cmdStr, raw = FALSE)
-        }, finally = {
-          setwd(owd)
         })
       }
     },

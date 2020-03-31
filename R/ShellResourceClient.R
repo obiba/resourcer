@@ -45,7 +45,7 @@ ShellResourceClient <- R6::R6Class(
       file.path(toDirName, fileName)
     },
 
-    #' @description Executes a shell command.
+    #' @description Executes a shell command in the working directory specified in the resource's URL.
     #' @param command The command name.
     #' @param params A named list of parameters.
     #' @param test If TRUE, the command is printed but not executed (for debugging).

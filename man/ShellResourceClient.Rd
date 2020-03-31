@@ -81,7 +81,7 @@ The path to the files having been copied.
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-exec"></a>}}
 \subsection{Method \code{exec()}}{
-Executes a shell command.
+Executes a shell command in the working directory specified in the resource's URL.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$exec(command, params = NULL, test = FALSE)}\if{html}{\out{</div>}}
 }
