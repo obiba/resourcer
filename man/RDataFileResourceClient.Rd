@@ -4,7 +4,9 @@
 \name{RDataFileResourceClient}
 \alias{RDataFileResourceClient}
 \title{R data file resource client}
-\format{A R6 object of class TidyFileResourceClient}
+\format{
+A R6 object of class TidyFileResourceClient
+}
 \description{
 R data file resource client
 
@@ -39,6 +41,7 @@ Connects to a R data file and loads it in a controlled environment.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new RDataFileResourceClient instance.
 \subsection{Usage}{
@@ -58,6 +61,7 @@ A RDataFileResourceClient object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asDataFrame"></a>}}
+\if{latex}{\out{\hypertarget{method-asDataFrame}{}}}
 \subsection{Method \code{asDataFrame()}}{
 Coerce the resource value extracted from the R data file to a data.frame.
 \subsection{Usage}{
@@ -77,6 +81,7 @@ A data.frame.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getValue"></a>}}
+\if{latex}{\out{\hypertarget{method-getValue}{}}}
 \subsection{Method \code{getValue()}}{
 Get the resource value extracted from the R data file.
 \subsection{Usage}{
@@ -89,6 +94,7 @@ The resource value.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

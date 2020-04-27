@@ -4,7 +4,9 @@
 \name{ScpFileResourceGetter}
 \alias{ScpFileResourceGetter}
 \title{SCP file resource getter}
-\format{A R6 object of class ScpFileResourceGetter}
+\format{
+A R6 object of class ScpFileResourceGetter
+}
 \description{
 SCP file resource getter
 
@@ -35,6 +37,7 @@ Access a file that is stored on a server accessible through SSH. Credentials app
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a ScpFileResourceGetter instance.
 \subsection{Usage}{
@@ -47,6 +50,7 @@ The ScpFileResourceGetter object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource is a file accessible by SCP: the resource URL scheme must be "scp".
 \subsection{Usage}{
@@ -66,6 +70,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Download the file described by the resource over an SSH connection.
 \subsection{Usage}{
@@ -87,6 +92,7 @@ The "resource.file" object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

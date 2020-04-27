@@ -4,7 +4,9 @@
 \name{SQLResourceClient}
 \alias{SQLResourceClient}
 \title{SQL database resource client}
-\format{A R6 object of class SQLResourceClient}
+\format{
+A R6 object of class SQLResourceClient
+}
 \description{
 SQL database resource client
 
@@ -39,6 +41,7 @@ Resource client that connects to a SQL database supported by DBI.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a SQLResourceClient from a resource.
 \subsection{Usage}{
@@ -60,6 +63,7 @@ The SQLResourceClient object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-getConnection}{}}}
 \subsection{Method \code{getConnection()}}{
 Get or create the DBI connection object that will access the resource.
 \subsection{Usage}{
@@ -72,6 +76,7 @@ The DBI connection object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asDataFrame"></a>}}
+\if{latex}{\out{\hypertarget{method-asDataFrame}{}}}
 \subsection{Method \code{asDataFrame()}}{
 Coerce the SQL table to a data.frame.
 \subsection{Usage}{
@@ -91,6 +96,7 @@ A data.frame (more specifically a tibble).
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asTbl"></a>}}
+\if{latex}{\out{\hypertarget{method-asTbl}{}}}
 \subsection{Method \code{asTbl()}}{
 Get the SQL table as a dplyr's tbl.
 \subsection{Usage}{
@@ -103,6 +109,7 @@ A dplyr's tbl object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getTableName"></a>}}
+\if{latex}{\out{\hypertarget{method-getTableName}{}}}
 \subsection{Method \code{getTableName()}}{
 Get the SQL table name from the resource URL.
 \subsection{Usage}{
@@ -115,6 +122,7 @@ The SQL table name.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-close"></a>}}
+\if{latex}{\out{\hypertarget{method-close}{}}}
 \subsection{Method \code{close()}}{
 Silently close the DBI connection.
 \subsection{Usage}{
@@ -124,6 +132,7 @@ Silently close the DBI connection.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

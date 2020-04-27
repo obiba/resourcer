@@ -30,6 +30,12 @@ ShellResourceClient <- R6::R6Class(
       }
     },
 
+    #' @description Get the command names that can be executed.
+    #' @return A character vector
+    getAllowedCommands = function() {
+      private$.allowedCommands
+    },
+
     #' @description Copy one or more files (wilcard * is supported in the file name (which can be a directory))
     #' @param file The file to copy.
     #' @param to The copy destination.
@@ -47,7 +53,7 @@ ShellResourceClient <- R6::R6Class(
 
     #' @description Executes a shell command in the working directory specified in the resource's URL.
     #' @param command The command name.
-    #' @param params A named list of parameters.
+    #' @param params A character vector of arguments to pass.
     #' @param test If TRUE, the command is printed but not executed (for debugging).
     #' @return The command execution result object.
     exec = function(command, params = NULL, test = FALSE) {

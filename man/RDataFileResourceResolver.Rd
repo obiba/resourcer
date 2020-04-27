@@ -4,7 +4,9 @@
 \name{RDataFileResourceResolver}
 \alias{RDataFileResourceResolver}
 \title{R data file Resource resolver}
-\format{A R6 object of class RDataFileResourceResolver}
+\format{
+A R6 object of class RDataFileResourceResolver
+}
 \description{
 R data file Resource resolver
 
@@ -33,6 +35,7 @@ The resource is a R data file and data format is the class of the symbol that wi
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a R data file: the resource can be accessed as a file and
  the resource URL path ends with ".rda" or ".rdata" (case ignored), or the resource format is prefixed with "r:" or "rda:" (a kind of
@@ -54,6 +57,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Creates a RDataFileResourceClient instance from provided resource.
 \subsection{Usage}{
@@ -73,6 +77,7 @@ A RDataFileResourceClient object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

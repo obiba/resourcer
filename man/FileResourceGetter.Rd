@@ -4,7 +4,9 @@
 \name{FileResourceGetter}
 \alias{FileResourceGetter}
 \title{File resource getter}
-\format{A R6 object of class FileResourceGetter}
+\format{
+A R6 object of class FileResourceGetter
+}
 \description{
 File resource getter
 
@@ -28,6 +30,7 @@ data format.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new FileResourceGetter instance.
 \subsection{Usage}{
@@ -40,6 +43,7 @@ A FileResourceGetter object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided parameter is of class "resource" and has a format defined.
 \subsection{Usage}{
@@ -59,6 +63,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Stub function which subclasses will implement to make a "resource.file" object from a resource.
 \subsection{Usage}{
@@ -80,6 +85,7 @@ A "resource.file" object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-extractFileName"></a>}}
+\if{latex}{\out{\hypertarget{method-extractFileName}{}}}
 \subsection{Method \code{extractFileName()}}{
 Utility to get the base name from the file path.
 \subsection{Usage}{
@@ -99,6 +105,7 @@ The file base name.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-makeDownloadDir"></a>}}
+\if{latex}{\out{\hypertarget{method-makeDownloadDir}{}}}
 \subsection{Method \code{makeDownloadDir()}}{
 Creates a directory where to download file in the R session's temporary directory. This directory will be flushed when the R session ends.
 \subsection{Usage}{
@@ -111,6 +118,7 @@ The path to the download directory.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

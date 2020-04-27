@@ -4,7 +4,9 @@
 \name{TidyFileResourceClient}
 \alias{TidyFileResourceClient}
 \title{Tidy file resource client}
-\format{A R6 object of class TidyFileResourceClient}
+\format{
+A R6 object of class TidyFileResourceClient
+}
 \description{
 Tidy file resource client
 
@@ -38,6 +40,7 @@ Connects to a file and use one of the tidyverse reader.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Create a TidyFileResourceClient instance.
 \subsection{Usage}{
@@ -57,6 +60,7 @@ A TidyFileResourceClient object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asDataFrame"></a>}}
+\if{latex}{\out{\hypertarget{method-asDataFrame}{}}}
 \subsection{Method \code{asDataFrame()}}{
 Coerce the resource value extracted from the file in tidy format to a data.frame.
 \subsection{Usage}{
@@ -76,6 +80,7 @@ A data.frame (more specifically a tibble).
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

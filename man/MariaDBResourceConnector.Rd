@@ -4,7 +4,9 @@
 \name{MariaDBResourceConnector}
 \alias{MariaDBResourceConnector}
 \title{MariaDB DBI resource connector}
-\format{A R6 object of class MariaDBResourceConnector}
+\format{
+A R6 object of class MariaDBResourceConnector
+}
 \description{
 MariaDB DBI resource connector
 
@@ -34,6 +36,7 @@ Makes a MariaDB/MySQL DBI connection from a resource description.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new MariaDBResourceConnector instance.
 \subsection{Usage}{
@@ -46,6 +49,7 @@ A MariaDBResourceConnector object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a MySQL or MariaDB object: the URL scheme must be "mysql" or "mariadb".
 \subsection{Usage}{
@@ -65,6 +69,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-createDBIConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-createDBIConnection}{}}}
 \subsection{Method \code{createDBIConnection()}}{
 Creates a DBI connection object from a resource.
 \subsection{Usage}{
@@ -84,6 +89,7 @@ A DBI connection object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

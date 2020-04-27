@@ -4,7 +4,9 @@
 \name{FileResourceClient}
 \alias{FileResourceClient}
 \title{File resource client}
-\format{A R6 object of class FileResourceClient}
+\format{
+A R6 object of class FileResourceClient
+}
 \description{
 File resource client
 
@@ -38,6 +40,7 @@ Base class that connects to a file using a FileResourceGetter.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new FileResourceClient instance.
 \subsection{Usage}{
@@ -59,6 +62,7 @@ A FileResourceClient object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Performs the file download, if it does not already exists locally.
 \subsection{Usage}{
@@ -71,6 +75,7 @@ The local path to the downloaded file.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-close"></a>}}
+\if{latex}{\out{\hypertarget{method-close}{}}}
 \subsection{Method \code{close()}}{
 Removes the file if it was downloaded. A local file resource will remain untouched.
 \subsection{Usage}{
@@ -80,6 +85,7 @@ Removes the file if it was downloaded. A local file resource will remain untouch
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

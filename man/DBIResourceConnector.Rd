@@ -4,7 +4,9 @@
 \name{DBIResourceConnector}
 \alias{DBIResourceConnector}
 \title{DBI resource connector}
-\format{A R6 object of class DBIResourceConnector}
+\format{
+A R6 object of class DBIResourceConnector
+}
 \description{
 DBI resource connector
 
@@ -25,6 +27,7 @@ Makes a DBI connection from a resource description, used in SQLResourceClient th
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new DBIResourceConnector instance
 \subsection{Usage}{
@@ -37,6 +40,7 @@ A DBIResourceConnector object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided parameter is of class "resource".
 \subsection{Usage}{
@@ -56,6 +60,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-createDBIConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-createDBIConnection}{}}}
 \subsection{Method \code{createDBIConnection()}}{
 Stub function which subclasses will implement to create a DBI connection object from a resource.
 \subsection{Usage}{
@@ -72,6 +77,7 @@ Stub function which subclasses will implement to create a DBI connection object 
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-closeDBIConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-closeDBIConnection}{}}}
 \subsection{Method \code{closeDBIConnection()}}{
 Disconnect the DBI connection.
 \subsection{Usage}{
@@ -88,6 +94,7 @@ Disconnect the DBI connection.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

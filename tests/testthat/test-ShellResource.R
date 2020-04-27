@@ -33,6 +33,7 @@ test_that("shell resource client commands", {
   res <- .make_shell_resource()
   resolver <- ShellResourceResolver$new()
   client <- resolver$newClient(res)
+  expect_equal(client$getAllowedCommands(), c("plink","ls"))
   expect_equal(client$exec("ls", test = TRUE), "ls")
   expect_equal(client$exec("plink", params = c("--compress", "--out out.bin"), test = TRUE), "plink --compress --out out.bin")
   expect_error(client$exec("cd", "..", test = TRUE), "Shell command not allowed: cd")

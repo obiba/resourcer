@@ -4,7 +4,9 @@
 \name{ResourceClient}
 \alias{ResourceClient}
 \title{Resource client}
-\format{A R6 object of class ResourceClient}
+\format{
+A R6 object of class ResourceClient
+}
 \description{
 Resource client
 
@@ -29,6 +31,7 @@ Helper class for connecting to a resource data store or a computation unit.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a ResourceClient instance.
 \subsection{Usage}{
@@ -48,6 +51,7 @@ A ResourceClient object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getResource"></a>}}
+\if{latex}{\out{\hypertarget{method-getResource}{}}}
 \subsection{Method \code{getResource()}}{
 Get the resource object.
 \subsection{Usage}{
@@ -60,6 +64,7 @@ The resource object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-getConnection}{}}}
 \subsection{Method \code{getConnection()}}{
 Get the implementation-specific object that connects to the resource
 \subsection{Usage}{
@@ -72,6 +77,7 @@ The connection object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Stub function to be implemented by subclasses if relevant. Get the resource as a local file.
 \subsection{Usage}{
@@ -91,6 +97,7 @@ The path to the local file.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asDataFrame"></a>}}
+\if{latex}{\out{\hypertarget{method-asDataFrame}{}}}
 \subsection{Method \code{asDataFrame()}}{
 Stub function to be implemented by subclasses if relevant. Coerce the resource as a data.frame.
 \subsection{Usage}{
@@ -110,6 +117,7 @@ A data.frame object (can also be a tibble).
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asTbl"></a>}}
+\if{latex}{\out{\hypertarget{method-asTbl}{}}}
 \subsection{Method \code{asTbl()}}{
 Stub function to be implemented by subclasses if relevant. Coerce the resource as a dplyr's tbl.
 \subsection{Usage}{
@@ -129,6 +137,7 @@ A dplyr's tbl object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-exec"></a>}}
+\if{latex}{\out{\hypertarget{method-exec}{}}}
 \subsection{Method \code{exec()}}{
 Stub function to be implemented by subclasses if relevant. Executes a command on a computation resource.
 \subsection{Usage}{
@@ -148,6 +157,7 @@ A command execution result object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-close"></a>}}
+\if{latex}{\out{\hypertarget{method-close}{}}}
 \subsection{Method \code{close()}}{
 Silently closes the connection to the resource
 \subsection{Usage}{
@@ -157,6 +167,7 @@ Silently closes the connection to the resource
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

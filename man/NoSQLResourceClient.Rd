@@ -4,7 +4,9 @@
 \name{NoSQLResourceClient}
 \alias{NoSQLResourceClient}
 \title{NoSQL database resource client}
-\format{A R6 object of class NoSQLResourceClient}
+\format{
+A R6 object of class NoSQLResourceClient
+}
 \description{
 NoSQL database resource client
 
@@ -40,6 +42,7 @@ Resource client that connects to a NoSQL database supported by nodbi.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new NoSQLResourceClient instance.
 \subsection{Usage}{
@@ -59,6 +62,7 @@ A NoSQLResourceClient object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-getConnection}{}}}
 \subsection{Method \code{getConnection()}}{
 Creates the nodbi connection object if it does not exist.
 \subsection{Usage}{
@@ -71,6 +75,7 @@ The nodbi connection object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-asDataFrame"></a>}}
+\if{latex}{\out{\hypertarget{method-asDataFrame}{}}}
 \subsection{Method \code{asDataFrame()}}{
 Makes a data.frame from the remote database table.
 \subsection{Usage}{
@@ -83,6 +88,7 @@ A tibble.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getDatabaseName"></a>}}
+\if{latex}{\out{\hypertarget{method-getDatabaseName}{}}}
 \subsection{Method \code{getDatabaseName()}}{
 Extract the database name from the resource URL.
 \subsection{Usage}{
@@ -95,6 +101,7 @@ The database name.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-getTableName"></a>}}
+\if{latex}{\out{\hypertarget{method-getTableName}{}}}
 \subsection{Method \code{getTableName()}}{
 Extract the database table name from the resource URL.
 \subsection{Usage}{
@@ -107,6 +114,7 @@ The database table name.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-close"></a>}}
+\if{latex}{\out{\hypertarget{method-close}{}}}
 \subsection{Method \code{close()}}{
 Close the nodbi connection.
 \subsection{Usage}{
@@ -116,6 +124,7 @@ Close the nodbi connection.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

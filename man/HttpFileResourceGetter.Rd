@@ -4,7 +4,9 @@
 \name{HttpFileResourceGetter}
 \alias{HttpFileResourceGetter}
 \title{HTTP file resource getter}
-\format{A R6 object of class HttpFileResourceGetter}
+\format{
+A R6 object of class HttpFileResourceGetter
+}
 \description{
 HTTP file resource getter
 
@@ -36,6 +38,7 @@ resource's identity and secret are defined.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new HttpFileResourceGetter instance.
 \subsection{Usage}{
@@ -48,6 +51,7 @@ A HttpFileResourceGetter object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a file accessible through "http" or "https".
 \subsection{Usage}{
@@ -67,6 +71,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Download the file from the remote address in a temporary location. Applies Basic authentication if credentials are provided in the resource.
 \subsection{Usage}{
@@ -88,6 +93,7 @@ The "resource.file" object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

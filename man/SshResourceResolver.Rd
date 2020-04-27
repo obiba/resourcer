@@ -4,7 +4,9 @@
 \name{SshResourceResolver}
 \alias{SshResourceResolver}
 \title{SSH Resource resolver}
-\format{A R6 object of class SshResourceResolver}
+\format{
+A R6 object of class SshResourceResolver
+}
 \description{
 SSH Resource resolver
 
@@ -33,6 +35,7 @@ The resource is a computation unit, accessible through SSH, i.e. which URL schem
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource is a computation resource accessible by ssh commands. The resource URL scheme is expected to be "ssh".
 \subsection{Usage}{
@@ -52,6 +55,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Create a SshResourceClient instance from the provided resource.
 \subsection{Usage}{
@@ -71,6 +75,7 @@ A SshResourceClient object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{
