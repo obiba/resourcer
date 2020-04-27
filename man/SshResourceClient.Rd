@@ -25,6 +25,7 @@ Connects to a SSH server.
 \item \href{#method-getAllowedCommands}{\code{SshResourceClient$getAllowedCommands()}}
 \item \href{#method-getConnection}{\code{SshResourceClient$getConnection()}}
 \item \href{#method-downloadFile}{\code{SshResourceClient$downloadFile()}}
+\item \href{#method-uploadFile}{\code{SshResourceClient$uploadFile()}}
 \item \href{#method-exec}{\code{SshResourceClient$exec()}}
 \item \href{#method-close}{\code{SshResourceClient$close()}}
 \item \href{#method-clone}{\code{SshResourceClient$clone()}}
@@ -97,7 +98,7 @@ Download one or more files (wilcard * is supported in the file name (which can b
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{file}}{The file to download.}
+\item{\code{file}}{The file path(s) to download, either absolute or relative to the working directory.}
 
 \item{\code{to}}{The download destination.}
 
@@ -107,6 +108,30 @@ Download one or more files (wilcard * is supported in the file name (which can b
 }
 \subsection{Returns}{
 The paths of the files having been downloaded.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-uploadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-uploadFile}{}}}
+\subsection{Method \code{uploadFile()}}{
+Upload one or more files
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$uploadFile(file, to = ".", verbose = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{file}}{The file or vector of files to upload.}
+
+\item{\code{to}}{The upload destination, either absolute or relative to working directory.}
+
+\item{\code{verbose}}{If TRUE, details the file operations on the console output.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The paths of the files having been uploaded.
 }
 }
 \if{html}{\out{<hr>}}
