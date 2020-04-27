@@ -4,7 +4,9 @@
 \name{SparkResourceConnector}
 \alias{SparkResourceConnector}
 \title{Apache Spark DBI resource connector}
-\format{A R6 object of class SparkResourceConnector}
+\format{
+A R6 object of class SparkResourceConnector
+}
 \description{
 Apache Spark DBI resource connector
 
@@ -34,6 +36,7 @@ Makes a Apache Spark connection object, that is also a DBI connection object, fr
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Create a SparkResourceConnector instance.
 \subsection{Usage}{
@@ -46,6 +49,7 @@ A SparkResourceConnector object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check if the provided resource applies to a Apache Spark server.
   The resource URL scheme must be one of "spark", "spark+http" or "spark+https".
@@ -66,6 +70,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-createDBIConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-createDBIConnection}{}}}
 \subsection{Method \code{createDBIConnection()}}{
 Creates a DBI connection object from a Apache Spark resource.
 \subsection{Usage}{
@@ -85,6 +90,7 @@ A DBI connection object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-closeDBIConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-closeDBIConnection}{}}}
 \subsection{Method \code{closeDBIConnection()}}{
 Close the DBI connection to Apache Spark.
 \subsection{Usage}{
@@ -101,6 +107,7 @@ Close the DBI connection to Apache Spark.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

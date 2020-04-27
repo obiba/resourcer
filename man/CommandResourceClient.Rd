@@ -4,7 +4,9 @@
 \name{CommandResourceClient}
 \alias{CommandResourceClient}
 \title{Command resource client}
-\format{A R6 object of class CommandResourceClient}
+\format{
+A R6 object of class CommandResourceClient
+}
 \description{
 Command resource client
 
@@ -39,6 +41,7 @@ the output and the error messages.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new CommandResourceClient instance
 \subsection{Usage}{
@@ -58,6 +61,7 @@ A CommandResourceClient object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

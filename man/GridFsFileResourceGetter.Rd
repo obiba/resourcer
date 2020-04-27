@@ -4,7 +4,9 @@
 \name{GridFsFileResourceGetter}
 \alias{GridFsFileResourceGetter}
 \title{GridFS file resource getter}
-\format{A R6 object of class GridFsFileResourceGetter}
+\format{
+A R6 object of class GridFsFileResourceGetter
+}
 \description{
 GridFS file resource getter
 
@@ -35,6 +37,7 @@ Access a file that is in the MongoDB file store (GridFS). Credentials may apply.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new GridFsFileResourceGetter instance.
 \subsection{Usage}{
@@ -47,6 +50,7 @@ A GridFsFileResourceGetter object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a GridFS object: either the URL scheme is "gridfs" or it is "mongodb"/"mongodb+srv" with a query parameter "prefix=fs" (that identifies GridFS collection names).
 \subsection{Usage}{
@@ -66,6 +70,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Download the file from the MongoDB file store in a temporary location.
 \subsection{Usage}{
@@ -87,6 +92,7 @@ The "resource.file" object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

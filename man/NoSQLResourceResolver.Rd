@@ -4,7 +4,9 @@
 \name{NoSQLResourceResolver}
 \alias{NoSQLResourceResolver}
 \title{NoSQL Database Resource resolver}
-\format{A R6 object of class NoSQLResourceResolver}
+\format{
+A R6 object of class NoSQLResourceResolver
+}
 \description{
 NoSQL Database Resource resolver
 
@@ -33,6 +35,7 @@ The resource is NoSQL database such as mongodb (elasticsearch, redis, couchdb, s
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a nodbi object: the URL scheme must be one of "mongodb", "mongodb+srv". Other NoSQL databases "elasticsearch", "redis", "couchdb", "sqlite" are not supported yet.
 \subsection{Usage}{
@@ -52,6 +55,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Creates a NoSQLResourceClient instance from provided resource.
 \subsection{Usage}{
@@ -71,6 +75,7 @@ A NoSQLResourceClient object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

@@ -4,7 +4,9 @@
 \name{OpalFileResourceGetter}
 \alias{OpalFileResourceGetter}
 \title{Opal file resource getter}
-\format{A R6 object of class OpalFileResourceGetter}
+\format{
+A R6 object of class OpalFileResourceGetter
+}
 \description{
 Opal file resource getter
 
@@ -36,6 +38,7 @@ resource's identity and secret are defined, token authentication if secret only 
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new OpalFileResourceGetter instance.
 \subsection{Usage}{
@@ -48,6 +51,7 @@ A OpalFileResourceGetter object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a Opal file: the URL scheme must be "opal+http" or "opal+https" and the path must designate a file web service entry point (i.e. starts with "ws/files/").
 \subsection{Usage}{
@@ -67,6 +71,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Download the file from the Opal file system in a temporary location.
 \subsection{Usage}{
@@ -88,6 +93,7 @@ The "resource.file" object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

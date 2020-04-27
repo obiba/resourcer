@@ -4,7 +4,9 @@
 \name{TidyFileResourceResolver}
 \alias{TidyFileResourceResolver}
 \title{Tidy file Resource resolver}
-\format{A R6 object of class TidyFileResourceResolver}
+\format{
+A R6 object of class TidyFileResourceResolver
+}
 \description{
 Tidy file Resource resolver
 
@@ -44,6 +46,7 @@ excel, xls, xlsx.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a tidy data file: the resource can be accessed as a file and
  the resource format is one of "csv", "csv2", "tsv", "delim", "ssv", "spss", "sav", "por", "stata", "dta", "sas", "xpt",
@@ -65,6 +68,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Creates a TidyFileResourceClient instance from provided resource.
 \subsection{Usage}{
@@ -84,6 +88,7 @@ A TidyFileResourceClient object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

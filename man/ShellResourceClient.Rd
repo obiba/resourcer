@@ -4,7 +4,9 @@
 \name{ShellResourceClient}
 \alias{ShellResourceClient}
 \title{Shell resource client}
-\format{A R6 object of class ShellResourceClient}
+\format{
+A R6 object of class ShellResourceClient
+}
 \description{
 Shell resource client
 
@@ -20,6 +22,7 @@ Executes local system shell commands.
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-new}{\code{ShellResourceClient$new()}}
+\item \href{#method-getAllowedCommands}{\code{ShellResourceClient$getAllowedCommands()}}
 \item \href{#method-downloadFile}{\code{ShellResourceClient$downloadFile()}}
 \item \href{#method-exec}{\code{ShellResourceClient$exec()}}
 \item \href{#method-clone}{\code{ShellResourceClient$clone()}}
@@ -38,6 +41,7 @@ Executes local system shell commands.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Create a ShellResourceClient instance. This client will interact wtih a computation resource using shell commands.
 \subsection{Usage}{
@@ -56,7 +60,21 @@ The ShellResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getAllowedCommands"></a>}}
+\if{latex}{\out{\hypertarget{method-getAllowedCommands}{}}}
+\subsection{Method \code{getAllowedCommands()}}{
+Get the command names that can be executed.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$getAllowedCommands()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+A character vector
+}
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Copy one or more files (wilcard * is supported in the file name (which can be a directory))
 \subsection{Usage}{
@@ -80,6 +98,7 @@ The path to the files having been copied.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-exec"></a>}}
+\if{latex}{\out{\hypertarget{method-exec}{}}}
 \subsection{Method \code{exec()}}{
 Executes a shell command in the working directory specified in the resource's URL.
 \subsection{Usage}{
@@ -91,7 +110,7 @@ Executes a shell command in the working directory specified in the resource's UR
 \describe{
 \item{\code{command}}{The command name.}
 
-\item{\code{params}}{A named list of parameters.}
+\item{\code{params}}{A character vector of arguments to pass.}
 
 \item{\code{test}}{If TRUE, the command is printed but not executed (for debugging).}
 }
@@ -103,6 +122,7 @@ The command execution result object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

@@ -4,7 +4,9 @@
 \name{ResourceResolver}
 \alias{ResourceResolver}
 \title{Resource resolver}
-\format{A R6 object of class ResourceResolver}
+\format{
+A R6 object of class ResourceResolver
+}
 \description{
 Resource resolver
 
@@ -25,6 +27,7 @@ computation unit.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new ResourceResolver instance.
 \subsection{Usage}{
@@ -37,6 +40,7 @@ A ResourceResolver object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided object is of class "resource".
 \subsection{Usage}{
@@ -56,6 +60,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Stub function to be implemented by subclasses. Makes an object which class inherits from ResourceClient.
 \subsection{Usage}{
@@ -75,6 +80,7 @@ The ResourceClient object that will access the provided resource.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

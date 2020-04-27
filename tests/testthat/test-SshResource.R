@@ -39,6 +39,7 @@ test_that("ssh resource client factory, connection refused", {
   res <- .make_ssh_resource()
   resolver <- SshResourceResolver$new()
   client <- resolver$newClient(res)
+  expect_equal(client$getAllowedCommands(), c("plink","ls"))
   expect_equal(client$exec("ls", test = TRUE), "cd /work/dir && ls")
   expect_equal(client$exec("plink", params = c("--compress", "--out out.bin"), test = TRUE), "cd /work/dir && plink --compress --out out.bin")
   expect_error(client$exec("cd", "..", test = TRUE), "Shell command not allowed: cd")

@@ -4,7 +4,9 @@
 \name{LocalFileResourceGetter}
 \alias{LocalFileResourceGetter}
 \title{Local file resource getter}
-\format{A R6 object of class LocalFileResourceGetter}
+\format{
+A R6 object of class LocalFileResourceGetter
+}
 \description{
 Local file resource getter
 
@@ -35,6 +37,7 @@ Access a file that is stored in the local file system. No credentials apply.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new LocalFileResourceGetter instance.
 \subsection{Usage}{
@@ -47,6 +50,7 @@ A LocalFileResourceGetter object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a file stored in the local file system.
 \subsection{Usage}{
@@ -66,6 +70,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Make a "resource.file" object from a local file resource.
 \subsection{Usage}{
@@ -87,6 +92,7 @@ The "resource.file" object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

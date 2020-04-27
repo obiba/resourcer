@@ -34,6 +34,12 @@ SshResourceClient <- R6::R6Class(
       private$.commandPrefix <- cmd
     },
 
+    #' @description Get the command names that can be executed.
+    #' @return A character vector
+    getAllowedCommands = function() {
+      private$.allowedCommands
+    },
+
     #' @description Get or create the SSH connection object, for raw interaction.
     #' @return The SSH connection object.
     getConnection = function() {
@@ -80,7 +86,7 @@ SshResourceClient <- R6::R6Class(
 
     #' @description Executes a ssh command.
     #' @param command The command name.
-    #' @param params A named list of parameters.
+    #' @param params A character vector of arguments to pass.
     #' @param test If TRUE, the command is printed but not executed (for debugging).
     #' @return The command execution result object.
     exec = function(command, params = NULL, test = FALSE) {

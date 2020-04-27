@@ -4,7 +4,9 @@
 \name{SQLResourceResolver}
 \alias{SQLResourceResolver}
 \title{SQL Database Resource resolver}
-\format{A R6 object of class SQLResourceResolver}
+\format{
+A R6 object of class SQLResourceResolver
+}
 \description{
 SQL Database Resource resolver
 
@@ -33,6 +35,7 @@ The resource is SQL database.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a registered DBIResourceConnector.
 \subsection{Usage}{
@@ -52,6 +55,7 @@ A logical.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Creates a SQLResourceClient instance from provided resource.
 \subsection{Usage}{
@@ -71,6 +75,7 @@ A SQLResourceClient object.
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{
