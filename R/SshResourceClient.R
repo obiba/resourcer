@@ -59,7 +59,7 @@ SshResourceClient <- R6::R6Class(
     },
 
     #' @description Download one or more files (wilcard * is supported in the file name (which can be a directory))
-    #' @param file The file to download.
+    #' @param file The file path(s) to download, either absolute or relative to the working directory.
     #' @param to The download destination.
     #' @param verbose If TRUE, details the file operations on the console output.
     #' @return The paths of the files having been downloaded.
@@ -82,6 +82,26 @@ SshResourceClient <- R6::R6Class(
         sep <- ""
       }
       unlist(lapply(downloaded, function(x) paste0(to, sep, x)))
+    },
+
+    #' @description Upload one or more files
+    #' @param file The file or vector of files to upload.
+    #' @param to The upload destination, either absolute or relative to working directory.
+    #' @param verbose If TRUE, details the file operations on the console output.
+    #' @return The paths of the files having been uploaded.
+    uploadFile = function(file, to = ".", verbose = FALSE) {
+      private$loadSsh()
+      rto <- to
+      if (!startsWith(to, "/")) {
+        # destination path is relative to work dir
+        rto <- paste0(private$.workDir, "/", to)
+      }
+      # do ssh copy
+      conn <- self$getConnection()
+      ssh::scp_upload(conn, files = file, to = rto, verbose = verbose)
+      unlist(lapply(file, function(f) {
+        paste0(to, '/', basename(f))
+      }))
     },
 
     #' @description Executes a ssh command.
