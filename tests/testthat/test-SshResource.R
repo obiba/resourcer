@@ -41,7 +41,12 @@ test_that("ssh resource client factory, connection refused", {
   client <- resolver$newClient(res)
   expect_equal(client$getAllowedCommands(), c("plink","ls"))
   expect_equal(client$exec("ls", test = TRUE), "cd /work/dir && ls")
-  expect_equal(client$exec("plink", params = c("--compress", "--out out.bin"), test = TRUE), "cd /work/dir && plink --compress --out out.bin")
+  expect_equal(client$exec("plink", params = c("--compress", "--out", "out.bin"), test = TRUE), "cd /work/dir && plink --compress --out out.bin")
   expect_error(client$exec("cd", "..", test = TRUE), "Shell command not allowed: cd")
+  expect_error(client$exec("ls", "-la .", test = TRUE), "Invalid characters in the parameters")
+  expect_error(client$exec("ls", "-la&ls ", test = TRUE), "Invalid characters in the parameters")
+  expect_error(client$exec("ls", "-la|ls ", test = TRUE), "Invalid characters in the parameters")
+  expect_error(client$exec("ls", "-la;ls ", test = TRUE), "Invalid characters in the parameters")
+  expect_error(client$exec("ls", "-la#ls ", test = TRUE), "Invalid characters in the parameters")
 })
 

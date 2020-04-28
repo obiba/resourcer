@@ -169,12 +169,22 @@ SshResourceClient <- R6::R6Class(
     makeCommand = function(command, params) {
       cmd <- private$.commandPrefix
       if ("*" %in% private$.allowedCommands || command %in% private$.allowedCommands) {
+        private$checkCommandParameters(params)
         cmd <- paste0(cmd, command)
         cmd <- paste(append(cmd, params), collapse = " ")
       } else {
         stop("Shell command not allowed: ", command)
       }
       cmd
+    },
+    # verify that there is no minimal shell code injection in the parameters
+    checkCommandParameters = function(params) {
+      if (!is.null(params)) {
+        pattern <- "[[:space:]\\|;&#]"
+        if (any(grepl(pattern, params))) {
+          stop("Invalid characters in the parameters")
+        }
+      }
     },
     loadSsh = function() {
       if (!require("ssh")) {
