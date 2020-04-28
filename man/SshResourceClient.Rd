@@ -26,6 +26,8 @@ Connects to a SSH server.
 \item \href{#method-getConnection}{\code{SshResourceClient$getConnection()}}
 \item \href{#method-downloadFile}{\code{SshResourceClient$downloadFile()}}
 \item \href{#method-uploadFile}{\code{SshResourceClient$uploadFile()}}
+\item \href{#method-tempDir}{\code{SshResourceClient$tempDir()}}
+\item \href{#method-removeTempDir}{\code{SshResourceClient$removeTempDir()}}
 \item \href{#method-exec}{\code{SshResourceClient$exec()}}
 \item \href{#method-close}{\code{SshResourceClient$close()}}
 \item \href{#method-clone}{\code{SshResourceClient$clone()}}
@@ -133,6 +135,29 @@ Upload one or more files
 \subsection{Returns}{
 The paths of the files having been uploaded.
 }
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-tempDir"></a>}}
+\if{latex}{\out{\hypertarget{method-tempDir}{}}}
+\subsection{Method \code{tempDir()}}{
+Get connection's temporary directory in the remote server, create it if it does not exists.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$tempDir()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+The path to the temporary directory.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-removeTempDir"></a>}}
+\if{latex}{\out{\hypertarget{method-removeTempDir}{}}}
+\subsection{Method \code{removeTempDir()}}{
+Remove the connection's temporary directory from the remote server, if it was defined.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$removeTempDir()}\if{html}{\out{</div>}}
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-exec"></a>}}

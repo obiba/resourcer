@@ -104,6 +104,31 @@ SshResourceClient <- R6::R6Class(
       }))
     },
 
+    #' @description Get connection's temporary directory in the remote server, create it if it does not exists.
+    #' @return The path to the temporary directory.
+    tempDir = function() {
+      if (is.null(private$.tempDir)) {
+        private$.tempDir <- paste0("/tmp/ssh-", as.character(sample(1000:9999, 1)))
+        # do ssh exec
+        conn <- self$getConnection()
+        res <- ssh::ssh_exec_internal(conn, command = paste0("mkdir -p ", private$.tempDir), error = FALSE)
+        if (res$status != 0) {
+          stop("Cannot make temporary directory: ", private$.tempDir)
+        }
+      }
+      private$.tempDir
+    },
+
+    #' @description Remove the connection's temporary directory from the remote server, if it was defined.
+    removeTempDir = function() {
+      if (!is.null(private$.tempDir)) {
+        # do ssh exec
+        conn <- self$getConnection()
+        res <- ssh::ssh_exec_internal(conn, command = paste0("rm -rf ", private$.tempDir), error = FALSE)
+        private$.tempDir <- NULL
+      }
+    },
+
     #' @description Executes a ssh command.
     #' @param command The command name.
     #' @param params A character vector of arguments to pass.
@@ -130,12 +155,14 @@ SshResourceClient <- R6::R6Class(
     close = function() {
       conn <- super$getConnection()
       if (!is.null(conn)) {
+        self$removeTempDir()
         ssh::ssh_disconnect(conn)
         super$setConnection(NULL)
       }
     }
   ),
   private = list(
+    .tempDir = NULL,
     .allowedCommands = NULL,
     .commandPrefix = "",
     .workDir = "",
