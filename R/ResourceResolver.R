@@ -64,7 +64,7 @@ getResourceResolvers <- function() {
 #' @param x The resource resolver object to register.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' resourcer::registerResourceResolver(MyFileFormatResourceResolver$new())
 #' }
 #'
@@ -88,7 +88,7 @@ registerResourceResolver <- function(x) {
 #' @param x The resource resolver class name to unregister.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' resourcer::unregisterResourceResolver("MyFileFormatResourceResolver")
 #' }
 #'
