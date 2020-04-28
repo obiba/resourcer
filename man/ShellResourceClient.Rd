@@ -23,17 +23,18 @@ Executes local system shell commands.
 \itemize{
 \item \href{#method-new}{\code{ShellResourceClient$new()}}
 \item \href{#method-getAllowedCommands}{\code{ShellResourceClient$getAllowedCommands()}}
-\item \href{#method-downloadFile}{\code{ShellResourceClient$downloadFile()}}
+\item \href{#method-copyFile}{\code{ShellResourceClient$copyFile()}}
 \item \href{#method-exec}{\code{ShellResourceClient$exec()}}
 \item \href{#method-clone}{\code{ShellResourceClient$clone()}}
 }
 }
 \if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
+\out{<details ><summary>Inherited methods</summary>}
 \itemize{
 \item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame">}\href{../../resourcer/html/ResourceClient.html#method-asDataFrame}{\code{resourcer::ResourceClient$asDataFrame()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl">}\href{../../resourcer/html/ResourceClient.html#method-asTbl}{\code{resourcer::ResourceClient$asTbl()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="close">}\href{../../resourcer/html/ResourceClient.html#method-close}{\code{resourcer::ResourceClient$close()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile">}\href{../../resourcer/html/ResourceClient.html#method-downloadFile}{\code{resourcer::ResourceClient$downloadFile()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection">}\href{../../resourcer/html/ResourceClient.html#method-getConnection}{\code{resourcer::ResourceClient$getConnection()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource">}\href{../../resourcer/html/ResourceClient.html#method-getResource}{\code{resourcer::ResourceClient$getResource()}}\out{</span>}
 }
@@ -73,12 +74,12 @@ A character vector
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-downloadFile"></a>}}
-\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
-\subsection{Method \code{downloadFile()}}{
+\if{html}{\out{<a id="method-copyFile"></a>}}
+\if{latex}{\out{\hypertarget{method-copyFile}{}}}
+\subsection{Method \code{copyFile()}}{
 Copy one or more files (wilcard * is supported in the file name (which can be a directory))
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$downloadFile(file, to = ".", verbose = FALSE)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$copyFile(file, to = ".", verbose = FALSE)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

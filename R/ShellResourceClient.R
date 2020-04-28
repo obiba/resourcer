@@ -41,7 +41,7 @@ ShellResourceClient <- R6::R6Class(
     #' @param to The copy destination.
     #' @param verbose If TRUE, details the file operations on the console output.
     #' @return The path to the files having been copied.
-    downloadFile = function(file, to = ".", verbose = FALSE) {
+    copyFile = function(file, to = ".", verbose = FALSE) {
       fileName <- basename(file)
       dirName <- normalizePath(dirname(file))
       toDirName <- normalizePath(to)
