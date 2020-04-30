@@ -180,7 +180,7 @@ SshResourceClient <- R6::R6Class(
     # verify that there is no minimal shell code injection in the parameters
     checkCommandParameters = function(params) {
       if (!is.null(params)) {
-        pattern <- "[[:space:]\\|;&#]"
+        pattern <- "[[:space:]\\|;&#`\\$]"
         if (any(grepl(pattern, params))) {
           stop("Invalid characters in the parameters")
         }

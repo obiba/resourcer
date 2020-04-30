@@ -58,7 +58,7 @@ ShellResourceClient <- R6::R6Class(
     #' @return The command execution result object.
     exec = function(command, params = NULL, test = FALSE) {
       private$loadSys()
-      private$checkCommand(command)
+      private$checkCommand(command, params)
       cmdStr <- paste(append(command, params), collapse = " ")
       if (test) {
         cmdStr
@@ -81,9 +81,19 @@ ShellResourceClient <- R6::R6Class(
   private = list(
     .allowedCommands = NULL,
     .workDir = ".",
-    checkCommand = function(command) {
+    checkCommand = function(command, params) {
       if (!(command %in% private$.allowedCommands) && !("*" %in% private$.allowedCommands)) {
         stop("Shell command not allowed: ", command)
+      }
+      private$checkCommandParameters(params)
+    },
+    # verify that there is no minimal shell code injection in the parameters
+    checkCommandParameters = function(params) {
+      if (!is.null(params)) {
+        pattern <- "[[:space:]\\|;&#`\\$]"
+        if (any(grepl(pattern, params))) {
+          stop("Invalid characters in the parameters")
+        }
       }
     },
     loadSys = function() {
