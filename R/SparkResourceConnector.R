@@ -36,7 +36,7 @@ SparkResourceConnector <- R6::R6Class(
           conn <- sparklyr::spark_connect(master = "local")
         } else {
           protocol <- "http"
-          if (identical(url$scheme, "sparksql+https")) {
+          if (identical(url$scheme, "spark+https")) {
             protocol <- "https"
           }
           master <- paste0(protocol, "://", url$host, ":", url:port)
