@@ -121,3 +121,50 @@ There are several ways to extend the Resources handling. These are based on diff
 
 The design of the URL that will describe your new resource should not overlap an existing one, otherwise the different registries will return the first instance for which the `isFor(resource)` is `TRUE`. In order to distinguish resource locations, the URL's scheme can be extended, for instance the scheme for accessing a file in a Opal server is `opal+https` so that the credentials be applied as needed by Opal.
 
+## Resource Forms
+
+As it can be error prone to define a new resource, when a URL is complex, or there is a limited choice of formats or when credentials can be on different types, it is recommended to declare the resources forms and factory functions within the R package. This resource declaration is to be done in javascript, as this is a very commonly used language for building graphical user interfaces. These javascript files are:
+
+* `resource-forms.json`, a JSON file that contains the description and the documentation of the web forms (based on the [json-schema](http://json-schema.org) specification).
+* `resource.js`, contains to a javascript function that will convert the data captured from one of the declared web forms into a data structure representing the `resource` object.
+
+These files are expected to be installed at the root of the package folder (then in the source code of the R package, they will be declared in the `inst` folder), so that an external application can lookup statically the packages having declared some resources. 
+
+The specifications for the `resource-forms.json` file are the following:
+
+* root object:
+
+Property | Type | Description
+--- | --- | ---
+**title** | `string` | The title of the set of resources.
+**description** | `string` | The description of the set of resources.
+**tags** | `array` of `object` | A list of `tag` objects which are used to categorize the declared resources in terms of resource location, format, usage etc.
+**forms** | `array` of `object` | A list of `form` objects which contains a description of the parameters and credential forms for each type of resource.
+
+* `tag` object:
+
+Property | Type | Description
+--- | --- | ---
+**name** | `string` | The name of the tag that will be applied to each resource `form`, must be unique.
+**title** | `string` | The title of the category tag.
+**description** | `string` | The description of the category tag.
+
+* `form` object:
+
+Property | Type | Description
+--- | --- | ---
+**name** | `string` | The identifying name of the resource, must be unique.
+**title** | `string` | The title of the resource.
+**description** | `string` | The description of the resource form.
+**tags** | `array` of `string` | The `tag` names that are applied to the resource form.
+**parameters** | `object` | The form that will be used to capture the parameters to build the *url* and the *format* properties of the resource (based on the [json-schema](http://json-schema.org) specification).
+**credentials** | `object` | The form that will be used to capture the access credentials to build the *identity* and the *secret* properties of the resource (based on the [json-schema](http://json-schema.org) specification).
+
+The specification for the `resource.js` file is the following:
+
+* it must contain a javascript function which signature is `function(type, name, params, credentials)` where:
+  * `type`, the form name used to capture the resource parameters and credentials,
+  * `name`, the name to apply to the resource,
+  * `params`, the captured parameters,
+  * `credentials`, the captured credentials.
+* the name of this function must follow the pattern: `<R package>_resource`.
