@@ -126,7 +126,7 @@ The design of the URL that will describe your new resource should not overlap an
 As it can be error prone to define a new resource, when a URL is complex, or there is a limited choice of formats or when credentials can be on different types, it is recommended to declare the resources forms and factory functions within the R package. This resource declaration is to be done in javascript, as this is a very commonly used language for building graphical user interfaces. These javascript files are:
 
 * `resource-forms.json`, a JSON file that contains the description and the documentation of the web forms (based on the [json-schema](http://json-schema.org) specification).
-* `resource.js`, contains to a javascript function that will convert the data captured from one of the declared web forms into a data structure representing the `resource` object.
+* `resource.js`, contains a javascript function that will convert the data captured from one of the declared web forms into a data structure representing the `resource` object.
 
 These files are expected to be installed at the root of the package folder (then in the source code of the R package, they will be declared in the `inst` folder), so that an external application can lookup statically the packages having declared some resources. 
 

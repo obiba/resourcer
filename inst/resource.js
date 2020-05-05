@@ -1,9 +1,9 @@
-const resourcer_resource = function(type, name, params, credentials) {
+var resourcer_resource = function(type, name, params, credentials) {
 
   //
   // Resource factory functions to be reused
   //
-  const toGridfsResource = function(name, params, credentials) {
+  var toGridfsResource = function(name, params, credentials) {
       return {
           name: name,
           url: "gridfs://" + params.host + ":" + params.port + "/" + params.db + "/" + params.file,
@@ -13,7 +13,7 @@ const resourcer_resource = function(type, name, params, credentials) {
       };
   };
 
-  const toHttpResource = function(name, params, credentials) {
+  var toHttpResource = function(name, params, credentials) {
       return {
           name: name,
           url: params.url,
@@ -23,7 +23,7 @@ const resourcer_resource = function(type, name, params, credentials) {
       };
   };
 
-  const toLocalResource = function(name, params, credentials) {
+  var toLocalResource = function(name, params, credentials) {
     return {
       name: name,
       url: "file://" + params.path,
@@ -31,7 +31,7 @@ const resourcer_resource = function(type, name, params, credentials) {
     };
   };
 
-  const toOpalResource = function(name, params, credentials) {
+  var toOpalResource = function(name, params, credentials) {
       return {
           name: name,
           url: "opal+" + params.url + "/ws/files" + params.path,
@@ -41,7 +41,7 @@ const resourcer_resource = function(type, name, params, credentials) {
       }
   };
 
-  const toScpResource = function(name, params, credentials) {
+  var toScpResource = function(name, params, credentials) {
       var port = params.port;
       if (!port || port<=0) {
           port = 22;
@@ -59,34 +59,33 @@ const resourcer_resource = function(type, name, params, credentials) {
       }
   };
 
-  const toRdataFormat = function(params) {
-    var rparams = {
-      url: params.url,
-      format: "r:" + params.format
-    };
-    return rparams;
+  var toRdataFormat = function(resource) {
+    if (resource.format && !resource.url.toLowerCase().endsWith(".rda") && !resource.url.toLowerCase().endsWith(".rdata")) {
+      resource.format = "R:" + resource.format;
+    }
+    return resource;
   }
 
   //
   // Resource factory functions by resource form type
   //
-  const toResourceFactories = {
+  var toResourceFactories = {
     "gridfs-generic-file": toGridfsResource,
     "gridfs-rdata-file": function(name, params, credentials) {
-        return toGridfsResource(name, toRdataFormat(params), credentials);
+        return toRdataFormat(toGridfsResource(name, params, credentials));
     },
     "gridfs-tidy-file": toGridfsResource,
     "http-generic-file": toHttpResource,
     "http-rdata-file": function(name, params, credentials) {
-        return toHttpResource(name, toRdataFormat(params), credentials);
+        return toRdataFormat(toHttpResource(name, params, credentials));
     },
     "http-tidy-file": toHttpResource,
     "local-generic-file": toLocalResource,
     "local-rdata-file": function(name, params, credentials) {
-      return toLocalResource(name, toRdataFormat(params), credentials);
+      return toRdataFormat(toLocalResource(name, params, credentials));
     },
     "local-tidy-file": toLocalResource,
-    "nosql-database": function(name, params, credentials) {
+    "nosql": function(name, params, credentials) {
         return {
             name: name,
             url: params.driver + "://" + params.host + ":" + params.port + "/" + params.db + "/" + params.collection,
@@ -96,7 +95,7 @@ const resourcer_resource = function(type, name, params, credentials) {
     },
     "opal-generic-file": toOpalResource,
     "opal-rdata-file": function(name, params, credentials) {
-        return toOpalResource(name, toRdataFormat(params), credentials);
+        return toRdataFormat(toOpalResource(name, params, credentials));
     },
     "opal-tidy-file": toOpalResource,
     "presto": function(name, params, credentials) {
@@ -113,10 +112,10 @@ const resourcer_resource = function(type, name, params, credentials) {
     },
     "scp-generic-file": toScpResource,
     "scp-rdata-file": function(name, params, credentials) {
-        return toScpResource(name, toRdataFormat(params), credentials);
+        return toRdataFormat(toScpResource(name, params, credentials));
     },
     "scp-tidy-file": toScpResource,
-    "shell": function(name, params, credentials) {
+    "sh": function(name, params, credentials) {
         var workDir = params.workDir;
         if (workDir) {
             if (!workDir.startsWith("/")) {
@@ -153,7 +152,7 @@ const resourcer_resource = function(type, name, params, credentials) {
             secret: credentials.password
         }
     },
-    "sql-database": function(name, params, credentials) {
+    "sql": function(name, params, credentials) {
         return {
             name: name,
             url: params.driver + "://" + params.host + ":" + params.port + "/" + params.db + "/" + params.table,
