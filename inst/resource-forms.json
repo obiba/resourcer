@@ -25,17 +25,12 @@
     {
       "name": "tidy-format",
       "title": "Tidy format",
-      "description": "Data are structured in a tidy format that a reader in the [tidyverse](https://www.tidyverse.org) ecosystem."
+      "description": "Data are structured in a tidy format having a reader in the [tidyverse](https://www.tidyverse.org) ecosystem."
     },
     {
       "name": "rdata-format",
-      "title": "R data",
+      "title": "R data format",
       "description": "Data are stored in R data format."
-    },
-    {
-      "name": "generic-format",
-      "title": "Generic format",
-      "description": "Default data or computation resource, which ."
     },
     {
       "name": "opal",
@@ -64,78 +59,6 @@
     }
   ],
   "forms": [
-    {
-      "name": "gridfs-generic-file",
-      "title": "Generic data file - MongoDB GridFS",
-      "description": "File resource in an open data format. The file will be downloaded from the GridFS file store of a MongoDB server.",
-      "tags": ["gridfs", "data-file", "generic-format"],
-      "parameters": {
-        "$schema": "http://json-schema.org/schema#",
-        "type": "array",
-        "items": [
-          {
-            "key": "host",
-            "type": "string",
-            "title": "Host",
-            "description": "Remote host name or IP address of the MongoDB server."
-          },
-          {
-            "key": "port",
-            "type": "integer",
-            "title": "Port",
-            "default": 27017,
-            "description": "MongoDB port number."
-          },
-          {
-            "key": "db",
-            "type": "string",
-            "title": "Database",
-            "description": "MongoDB database name."
-          },
-          {
-            "key": "file",
-            "type": "string",
-            "title": "File",
-            "description": "File name."
-          },
-          {
-            "key": "format",
-            "type": "string",
-            "title": "Format",
-            "description": "Specification of the file format, to be used by the corresponding R resource resolver and client."
-          },
-          {
-            "key": "_package",
-            "type": "string",
-            "title": "R Package",
-            "description": "R package to be loaded prior to the resource R object resolution."
-          }
-        ],
-        "required": [
-          "host", "port", "db", "file", "format"
-        ]
-      },
-      "credentials": {
-        "$schema": "http://json-schema.org/schema#",
-        "type": "array",
-        "description": "Credentials are optional.",
-        "items": [
-          {
-            "key": "username",
-            "type": "string",
-            "title": "User name",
-            "description": "Valid MongoDB user name."
-          },
-          {
-            "key": "password",
-            "type": "string",
-            "title": "Password",
-            "format": "password",
-            "description": "The user's password."
-          }
-        ]
-      }
-    },
     {
       "name": "gridfs-rdata-file",
       "title": "R data file - MongoDB GridFS",
@@ -327,59 +250,6 @@
       }
     },
     {
-      "name": "http-generic-file",
-      "title": "Generic data file - HTTP",
-      "description": "File resource in an open data format. The file will be downloaded from a HTTP server.",
-      "tags": ["http", "data-file", "generic-format"],
-      "parameters": {
-        "$schema": "http://json-schema.org/schema#",
-        "type": "array",
-        "items": [
-          {
-            "key": "url",
-            "type": "string",
-            "title": "URL",
-            "description": "Address to download the file."
-          },
-          {
-            "key": "format",
-            "type": "string",
-            "title": "Format",
-            "description": "Specification of the file format, to be used by the corresponding R resource resolver and client."
-          },
-          {
-            "key": "_package",
-            "type": "string",
-            "title": "R Package",
-            "description": "R package to be loaded prior to the resource R object resolution."
-          }
-        ],
-        "required": [
-          "url", "format"
-        ]
-      },
-      "credentials": {
-        "$schema": "http://json-schema.org/schema#",
-        "type": "array",
-        "description": "Credentials are optional. If provided, `Basic` authorization header is applied.",
-        "items": [
-          {
-            "key": "username",
-            "type": "string",
-            "title": "User name",
-            "description": "Valid user name."
-          },
-          {
-            "key": "password",
-            "type": "string",
-            "title": "Password",
-            "format": "password",
-            "description": "The user's password."
-          }
-        ]
-      }
-    },
-    {
       "name": "http-rdata-file",
       "title": "R data file - HTTP",
       "description": "File resource in R data format. The file will be downloaded from a HTTP server.",
@@ -529,43 +399,6 @@
             "description": "The user's password."
           }
         ]
-      }
-    },
-    {
-      "name": "local-generic-file",
-      "title": "Generic data file - local",
-      "description": "File resource in an open data format. The file is located in the R server file system.",
-      "tags": ["local", "data-file", "generic-format"],
-      "parameters": {
-        "$schema": "http://json-schema.org/schema#",
-        "type": "array",
-        "items": [
-          {
-            "key": "path",
-            "type": "string",
-            "title": "Path",
-            "description": "Path to the file. There are no restrictions regarding the file name suffix."
-          },
-          {
-            "key": "format",
-            "type": "string",
-            "title": "Format",
-            "description": "Specification of the file format, to be used by the corresponding R resource resolver and client."
-          },
-          {
-            "key": "_package",
-            "type": "string",
-            "title": "R Package",
-            "description": "R package to be loaded prior to the resource R object resolution."
-          }
-        ],
-        "required": [
-          "path", "format"
-        ]
-      },
-      "credentials": {
-        "$schema": "http://json-schema.org/schema#",
-        "description": "No credentials required: the file must be accessible from the R server."
       }
     },
     {
@@ -768,62 +601,6 @@
             "format": "password",
             "description": "The user's password."
           }
-        ]
-      }
-    },
-    {
-      "name": "opal-generic-file",
-      "title": "Generic data file - Opal",
-      "description": "File resource in an open data format. The file will be downloaded from the file store of a Opal server.",
-      "tags": ["opal", "data-file", "generic-format"],
-      "parameters": {
-        "$schema": "http://json-schema.org/schema#",
-        "type": "array",
-        "items": [
-          {
-            "key": "url",
-            "type": "string",
-            "title": "URL",
-            "description": "Opal server base URL."
-          },
-          {
-            "key": "path",
-            "type": "string",
-            "title": "Path",
-            "description": "Path to the file in the Opal server."
-          },
-          {
-            "key": "format",
-            "type": "string",
-            "title": "Format",
-            "description": "Specification of the file format, to be used by the corresponding R resource resolver and client."
-          },
-          {
-            "key": "_package",
-            "type": "string",
-            "title": "R Package",
-            "description": "R package to be loaded prior to the resource R object resolution."
-          }
-        ],
-        "required": [
-          "url", "path", "format"
-        ]
-      },
-      "credentials": {
-        "$schema": "http://json-schema.org/schema#",
-        "type": "array",
-        "description": "Credentials are required and is a [personal API access token](http://opaldoc.obiba.org/en/latest/web-user-guide/my-profile.html#personal-access-tokens).",
-        "items": [
-          {
-            "key": "token",
-            "type": "string",
-            "format": "password",
-            "title": "Token",
-            "description": "Personal access token, granting read access to the file."
-          }
-        ],
-        "required": [
-          "token"
         ]
       }
     },
@@ -1057,74 +834,6 @@
       }
     },
     {
-      "name": "scp-generic-file",
-      "title": "Generic data file - SSH",
-      "description": "File resource in an open data format. The file will be downloaded from a server accessible through SSH.",
-      "tags": ["ssh", "data-file", "generic-format"],
-      "parameters": {
-        "$schema": "http://json-schema.org/schema#",
-        "type": "array",
-        "items": [
-          {
-            "key": "host",
-            "type": "string",
-            "title": "Host",
-            "description": "Remote host name or IP address that exposes SSH entry point."
-          },
-          {
-            "key": "port",
-            "type": "integer",
-            "title": "Port",
-            "default": 22,
-            "description": "SSH port number (default is 22)."
-          },
-          {
-            "key": "path",
-            "type": "string",
-            "title": "Path",
-            "description": "Path to the file in the remote server."
-          },
-          {
-            "key": "format",
-            "type": "string",
-            "title": "Format",
-            "description": "Specification of the file format, to be used by the corresponding R resource resolver and client."
-          },
-          {
-            "key": "_package",
-            "type": "string",
-            "title": "R Package",
-            "description": "R package to be loaded prior to the resource R object resolution."
-          }
-        ],
-        "required": [
-          "host", "path", "format"
-        ]
-      },
-      "credentials": {
-        "$schema": "http://json-schema.org/schema#",
-        "type": "array",
-        "items": [
-          {
-            "key": "username",
-            "type": "string",
-            "title": "User name",
-            "description": "Valid user name having SSH access."
-          },
-          {
-            "key": "password",
-            "type": "string",
-            "title": "Password",
-            "format": "password",
-            "description": "The user's password."
-          }
-        ],
-        "required": [
-          "username", "password"
-        ]
-      }
-    },
-    {
       "name": "scp-rdata-file",
       "title": "R data file - SSH",
       "description": "File resource in R data format. The file will be downloaded from a server accessible through SSH.",
@@ -1310,7 +1019,7 @@
       "name": "sh",
       "title": "Shell",
       "description": "Access to a computation unit through system commands. Work directory and allowed shell commands can be specified.",
-      "tags": ["command"],
+      "tags": ["commands"],
       "parameters": {
         "$schema": "http://json-schema.org/schema#",
         "type": "array",
@@ -1346,7 +1055,7 @@
     },
     {
       "name": "spark",
-      "title": "Spark",
+      "title": "Apache Spark",
       "description": "Resource is a distributed dataset accessible through [Spark](https://spark.apache.org/). Spark has a SQL interface using [DBI](https://www.r-dbi.org). The data can be read as a standard `data.frame` or as a [dbplyr](https://dbplyr.tidyverse.org/)'s `tbl`. Spark is also a unified analytics engine for large-scale data processing, including many [machine learning functions](https://spark.rstudio.com/mlib/).",
       "tags": ["database", "analytics"],
       "parameters": {
