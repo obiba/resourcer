@@ -91,7 +91,7 @@
             "key": "file",
             "type": "string",
             "title": "File",
-            "description": "File name. The file name extension is expected to be `.rdata` or `.rda` (case is ignored)."
+            "description": "File name."
           },
           {
             "key": "format",
@@ -262,7 +262,7 @@
             "key": "url",
             "type": "string",
             "title": "URL",
-            "description": "Address to download the file. The file name extension is expected to be `.rdata` or `.rda` (case is ignored)."
+            "description": "Address to download the file."
           },
           {
             "key": "format",
@@ -414,7 +414,7 @@
             "key": "path",
             "type": "string",
             "title": "Path",
-            "description": "Path to the file. The file name extension is expected to be `.rdata` or `.rda` (case is ignored)."
+            "description": "Path to the file."
           },
           {
             "key": "format",
@@ -623,7 +623,7 @@
             "key": "path",
             "type": "string",
             "title": "Path",
-            "description": "Path to the file in the Opal server. The file name extension is expected to be `.rdata` or `.rda` (case is ignored)."
+            "description": "Path to the file in the Opal server."
           },
           {
             "key": "format",
@@ -859,7 +859,7 @@
             "key": "path",
             "type": "string",
             "title": "Path",
-            "description": "Path to the file in the remote server. The file name extension is expected to be `.rdata` or `.rda` (case is ignored)."
+            "description": "Path to the file in the remote server."
           },
           {
             "key": "format",
