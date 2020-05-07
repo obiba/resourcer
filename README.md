@@ -123,33 +123,77 @@ The design of the URL that will describe your new resource should not overlap an
 
 ## Resource Forms
 
-As it can be error prone to define a new resource, when a URL is complex, or there is a limited choice of formats or when credentials can be on different types, it is recommended to declare the resources forms and factory functions within the R package. This resource declaration is to be done in javascript, as this is a very commonly used language for building graphical user interfaces. These javascript files are:
+As it can be error prone to define a new resource, when a URL is complex, or when there is a limited choice of formats or when credentials can be on different types, it is recommended to declare the resources forms and factory functions within the R package. This resource declaration is to be done in javascript, as this is a very commonly used language for building graphical user interfaces.
 
-* `resource-forms.json`, a JSON file that contains the description and the documentation of the web forms (based on the [json-schema](http://json-schema.org) specification).
-* `resource.js`, contains a javascript function that will convert the data captured from one of the declared web forms into a data structure representing the `resource` object.
+These files are expected to be installed at the root of the package folder (then in the source code of the R package, they will be declared in the `inst/resources` folder), so that an external application can lookup statically the packages having declared some resources.
 
-These files are expected to be installed at the root of the package folder (then in the source code of the R package, they will be declared in the `inst` folder), so that an external application can lookup statically the packages having declared some resources. 
+The configuration file `inst/resources/resource.js` is a javascript file which contains an object with the properties:
 
-The specifications for the `resource-forms.json` file are the following:
+* `settings`, a JSON object that contains the description and the documentation of the web forms (based on the [json-schema](http://json-schema.org) specification).
+* `asResource`, a javascript function that will convert the data captured from one of the declared web forms into a data structure representing the `resource` object.
 
-* root object:
+As an example (see also [resourcer's resource.js](https://github.com/obiba/resourcer/blob/master/inst/resources/resource.js)):
+
+```
+var myPackage = {
+  settings: {
+    "title": "MyPackage resources",
+    "description": "MyPackage resources are for etc.",
+    "web": "https://github.com/org/myPackage",
+    "categories": [
+      {
+        "name": "my-format",
+        "title": "My data format",
+        "description": "Data are files in my format, that will be read by myPackage etc."
+      }
+    ],
+    "types": [
+      {
+        "name": "my-format-http",
+        "title": "My data format - HTTP",
+        "description": "Data are files in my format, that will be downloaded from a HTTP server etc.",
+        "tags": ["my-format", "http"],
+        "parameters": {},
+        "credentials": {}
+      }
+    ]
+  },
+  asResource: function(type, name, params, credentials) {
+    // make a resource object from arguments, using type to drive 
+    // what params/credentials properties are to be used
+    // a basic example of resource object:
+    return {
+      "name": name,
+      "url": params.url,
+      "format": params.format,
+      "identity": credentials.username,
+      "secret": credentials.password
+    };
+  }
+}
+```
+
+The specifications for the `resource.js` file are the following:
+
+* `settings` object:
 
 Property | Type | Description
 --- | --- | ---
 **title** | `string` | The title of the set of resources.
 **description** | `string` | The description of the set of resources.
-**tags** | `array` of `object` | A list of `tag` objects which are used to categorize the declared resources in terms of resource location, format, usage etc.
-**forms** | `array` of `object` | A list of `form` objects which contains a description of the parameters and credential forms for each type of resource.
+**web** | `string` | A web link that describes the resources.
+**categories** | `array` of `object` | A list of `category` objects which are used to categorize the declared resources in terms of resource location, format, usage etc.
+**types** | `array` of `object` | A list of `type` objects which contains a description of the parameters and credentials forms for each type of resource.
 
-* `tag` object:
+* `category` object:
 
 Property | Type | Description
 --- | --- | ---
-**name** | `string` | The name of the tag that will be applied to each resource `form`, must be unique.
-**title** | `string` | The title of the category tag.
-**description** | `string` | The description of the category tag.
+**name** | `string` | The name of the category that will be applied to each resource `type`, must be unique.
+**title** | `string` | The title of the category.
+**description** | `string` | The description of the category.
 
-* `form` object:
+* `type` object:
 
 Property | Type | Description
 --- | --- | ---
@@ -160,11 +204,10 @@ Property | Type | Description
 **parameters** | `object` | The form that will be used to capture the parameters to build the *url* and the *format* properties of the resource (based on the [json-schema](http://json-schema.org) specification).
 **credentials** | `object` | The form that will be used to capture the access credentials to build the *identity* and the *secret* properties of the resource (based on the [json-schema](http://json-schema.org) specification).
 
-The specification for the `resource.js` file is the following:
-
-* it must contain a javascript function which signature is `function(type, name, params, credentials)` where:
+* `asResource` function: a javascript function which signature is `function(type, name, params, credentials)` where:
   * `type`, the form name used to capture the resource parameters and credentials,
   * `name`, the name to apply to the resource,
   * `params`, the captured parameters,
   * `credentials`, the captured credentials.
-* the name of this function must follow the pattern: `<R package>_resource`.
+  
+The name of the root object must follow the pattern: `<R package>` (note that any dots (`.`) in the R package name are to be replaced by underscores (`_`)).
