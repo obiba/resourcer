@@ -2,12 +2,19 @@
 #'
 #' Coerce a ResourceClient object to a data.frame.
 #'
-#' @param x The ResourceClient object to coerce to a data.frame
+#' @param x The ResourceClient object to coerce to a data.frame.
+#' @param strict logical whether the resulting object must be strictly of class data.frame or if it can be a tibble.
 #'
+#' @return a data.frame (or a tibble)
 #' @export
-as.resource.data.frame <- function(x) {
+as.resource.data.frame <- function(x, strict = FALSE) {
   if ("ResourceClient" %in% class(x)) {
-    x$asDataFrame()
+    df <- x$asDataFrame()
+    if (strict) {
+      as.data.frame(df)
+    } else {
+      df
+    }
   } else {
     stop("Trying to coerce to data.frame an object that is not a ResourceClient: ", paste0(class(x), collapse = ", "))
   }
@@ -19,8 +26,9 @@ as.resource.data.frame <- function(x) {
 #' it can be a data connection object (like a DBI connection to a SQL database),
 #' or the actual data structure (when a resource is a R object extracted from a R data file for instance).
 #'
-#' @param x The ResourceClient object to coerce to a data.frame
+#' @param x The ResourceClient object to coerce to a data.frame.
 #'
+#' @return the internal data object.
 #' @export
 as.resource.object <- function(x) {
   if ("ResourceClient" %in% class(x)) {
@@ -37,6 +45,7 @@ as.resource.object <- function(x) {
 #'
 #' @param x The ResourceClient object to coerce to a data.frame
 #'
+#' @return a dplyr's tbl
 #' @export
 as.resource.tbl <- function(x) {
   if ("ResourceClient" %in% class(x)) {

@@ -7,7 +7,7 @@
 \method{as.data.frame}{resource}(x, ...)
 }
 \arguments{
-\item{x}{a resource object}
+\item{x}{a resource object.}
 
 \item{...}{additional parameters, that may be used (or ignored) by the resource client.}
 }

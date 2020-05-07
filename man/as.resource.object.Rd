@@ -7,7 +7,10 @@
 as.resource.object(x)
 }
 \arguments{
-\item{x}{The ResourceClient object to coerce to a data.frame}
+\item{x}{The ResourceClient object to coerce to a data.frame.}
+}
+\value{
+the internal data object.
 }
 \description{
 Coerce a ResourceClient object to internal data object: depending on the implementation of the ResourceClient,

@@ -9,6 +9,9 @@ as.resource.tbl(x)
 \arguments{
 \item{x}{The ResourceClient object to coerce to a data.frame}
 }
+\value{
+a dplyr's tbl
+}
 \description{
 Coerce a ResourceClient object to a dplyr's tbl.
 }
