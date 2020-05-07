@@ -3,7 +3,7 @@
 #' Attempt to coerce a resource object to a data.frame: find a ResourceResolver and get the
 #' ResourceClient that will connect to the described dataset and make a data.frame of it.
 #'
-#' @param x a resource object
+#' @param x a resource object.
 #' @param ... additional parameters, that may be used (or ignored) by the resource client.
 #'
 #' @return a data.frame (or a tibble)
