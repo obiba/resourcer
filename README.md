@@ -201,7 +201,7 @@ Property | Type | Description
 **title** | `string` | The title of the resource.
 **description** | `string` | The description of the resource form.
 **tags** | `array` of `string` | The `tag` names that are applied to the resource form.
-**parameters** | `object` | The form that will be used to capture the parameters to build the *url* and the *format* properties of the resource (based on the [json-schema](http://json-schema.org) specification).
+**parameters** | `object` | The form that will be used to capture the parameters to build the *url* and the *format* properties of the resource (based on the [json-schema](http://json-schema.org) specification). Some specific fields can be used: `_package` to capture the R package name or `_packages` to capture an array of R package names to be loaded prior to the resource assignment. 
 **credentials** | `object` | The form that will be used to capture the access credentials to build the *identity* and the *secret* properties of the resource (based on the [json-schema](http://json-schema.org) specification).
 
 * `asResource` function: a javascript function which signature is `function(type, name, params, credentials)` where:
