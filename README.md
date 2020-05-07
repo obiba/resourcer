@@ -134,7 +134,7 @@ The configuration file `inst/resources/resource.js` is a javascript file which c
 
 As an example (see also [resourcer's resource.js](https://github.com/obiba/resourcer/blob/master/inst/resources/resource.js)):
 
-```
+```javascript
 var myPackage = {
   settings: {
     "title": "MyPackage resources",
