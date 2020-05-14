@@ -63,7 +63,7 @@ test_that("shell resource client exec output", {
   res <- client$exec("pwd")
   if (res$status == 0) {
     expect_true(length(res$output)>0)
-    expect_equal(res$output, "/")
+    expect_match(res$output, "^/[a-z]{0,1}$") # case test on windows
     expect_equal(length(res$error), 0)
   }
 })
