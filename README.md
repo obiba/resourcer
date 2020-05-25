@@ -30,7 +30,7 @@ The file locations supported by default are:
 This can be easily applied to other file locations by extending the _FileResourceGetter_ class. An instance of the new file resource getter is to be registered so that the _FileResourceResolver_ can operate as expected.
 
 ```
-registerFileResourceGetter(MyFileLocationResourceGetter()$new())
+registerFileResourceGetter(MyFileLocationResourceGetter$new())
 ```
 
 ### File Data Format
