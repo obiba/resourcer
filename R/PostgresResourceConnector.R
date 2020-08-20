@@ -33,7 +33,7 @@ PostgresResourceConnector <- R6::R6Class(
         url <- super$parseURL(resource)
         conn <- DBI::dbConnect(RPostgres::Postgres(), host = url$host, port = url$port,
                                user = resource$identity, password = resource$secret,
-                               dbname = super$getDatabaseName())
+                               dbname = super$getDatabaseName(url))
       } else {
         stop("Resource is not located in a Postgres database")
       }
