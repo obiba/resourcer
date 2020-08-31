@@ -39,6 +39,6 @@ Suggests:
     nodbi,
     rmarkdown
 BugReports: https://github.com/obiba/resourcer
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 Encoding: UTF-8

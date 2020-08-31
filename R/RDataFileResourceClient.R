@@ -3,7 +3,7 @@
 #' Connects to a R data file and loads it in a controlled environment.
 #'
 #' @docType class
-#' @format A R6 object of class TidyFileResourceClient
+#' @format A R6 object of class RDSFileResourceClient
 #' @import R6
 #' @export
 RDataFileResourceClient <- R6::R6Class(

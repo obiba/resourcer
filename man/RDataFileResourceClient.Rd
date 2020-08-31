@@ -5,7 +5,7 @@
 \alias{RDataFileResourceClient}
 \title{R data file resource client}
 \format{
-A R6 object of class TidyFileResourceClient
+A R6 object of class RDSFileResourceClient
 }
 \description{
 R data file resource client

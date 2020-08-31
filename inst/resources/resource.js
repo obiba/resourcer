@@ -186,6 +186,72 @@ var resourcer = {
         }
       },
       {
+        "name": "gridfs-rds-file",
+        "title": "RDS file - MongoDB GridFS",
+        "description": "File resource in RDS format (serialized single R object). The file will be downloaded from the GridFS file store of a MongoDB server.",
+        "tags": ["gridfs", "data-file", "rdata-format"],
+        "parameters": {
+          "$schema": "http://json-schema.org/schema#",
+          "type": "array",
+          "items": [
+            {
+              "key": "host",
+              "type": "string",
+              "title": "Host",
+              "description": "Remote host name or IP address of the MongoDB server."
+            },
+            {
+              "key": "port",
+              "type": "integer",
+              "title": "Port",
+              "default": 27017,
+              "description": "MongoDB port number."
+            },
+            {
+              "key": "db",
+              "type": "string",
+              "title": "Database",
+              "description": "MongoDB database name."
+            },
+            {
+              "key": "file",
+              "type": "string",
+              "title": "File",
+              "description": "File name."
+            },
+            {
+              "key": "format",
+              "type": "string",
+              "title": "R object class",
+              "description": "The primary class of the R object that is being loaded from the RDS file."
+            }
+          ],
+          "required": [
+            "host", "port", "db", "file", "format"
+          ]
+        },
+        "credentials": {
+          "$schema": "http://json-schema.org/schema#",
+          "type": "array",
+          "description": "Credentials are optional.",
+          "items": [
+            {
+              "key": "username",
+              "type": "string",
+              "title": "User name",
+              "description": "Valid MongoDB user name."
+            },
+            {
+              "key": "password",
+              "type": "string",
+              "title": "Password",
+              "format": "password",
+              "description": "The user's password."
+            }
+          ]
+        }
+      },
+      {
         "name": "gridfs-tidy-file",
         "title": "Tidy data file - MongoDB GridFS",
         "description": "File resource in tidy format, having a reader in the [tidyverse](https://www.tidyverse.org) ecosystem. The file will be downloaded from the GridFS file store of a MongoDB server.",
@@ -357,6 +423,53 @@ var resourcer = {
         }
       },
       {
+        "name": "http-rds-file",
+        "title": "RDS file - HTTP",
+        "description": "File resource in RDS format (serialized single R object). The file will be downloaded from a HTTP server.",
+        "tags": ["http", "data-file", "rdata-format"],
+        "parameters": {
+          "$schema": "http://json-schema.org/schema#",
+          "type": "array",
+          "items": [
+            {
+              "key": "url",
+              "type": "string",
+              "title": "URL",
+              "description": "Address to download the file."
+            },
+            {
+              "key": "format",
+              "type": "string",
+              "title": "R object class",
+              "description": "The primary class of the R object that is being loaded from the RDS file."
+            }
+          ],
+          "required": [
+            "url", "format"
+          ]
+        },
+        "credentials": {
+          "$schema": "http://json-schema.org/schema#",
+          "type": "array",
+          "description": "Credentials are optional. If provided, `Basic` authorization header is applied.",
+          "items": [
+            {
+              "key": "username",
+              "type": "string",
+              "title": "User name",
+              "description": "Valid user name."
+            },
+            {
+              "key": "password",
+              "type": "string",
+              "title": "Password",
+              "format": "password",
+              "description": "The user's password."
+            }
+          ]
+        }
+      },
+      {
         "name": "http-tidy-file",
         "title": "Tidy data file - HTTP",
         "description": "File resource in tidy format, having a reader in the [tidyverse](https://www.tidyverse.org) ecosystem. The file will be downloaded from a HTTP server.",
@@ -465,6 +578,37 @@ var resourcer = {
         "name": "local-rdata-file",
         "title": "R data file - local",
         "description": "File resource in R data format. The file is located in the R server file system.",
+        "tags": ["local", "data-file", "rdata-format"],
+        "parameters": {
+          "$schema": "http://json-schema.org/schema#",
+          "type": "array",
+          "items": [
+            {
+              "key": "path",
+              "type": "string",
+              "title": "Path",
+              "description": "Path to the file."
+            },
+            {
+              "key": "format",
+              "type": "string",
+              "title": "R object class",
+              "description": "The primary class of the R object that is being loaded from the R data file. When there are several objects of this class, the one with the symbol with same name as the resource is chosen, otherwise the first one is selected."
+            }
+          ],
+          "required": [
+            "path"
+          ]
+        },
+        "credentials": {
+          "$schema": "http://json-schema.org/schema#",
+          "description": "No credentials required: the file must be accessible from the R server."
+        }
+      },
+      {
+        "name": "local-rds-file",
+        "title": "RDS file - local",
+        "description": "File resource in RDS format (serialized single R object). The file is located in the R server file system.",
         "tags": ["local", "data-file", "rdata-format"],
         "parameters": {
           "$schema": "http://json-schema.org/schema#",
@@ -715,6 +859,56 @@ var resourcer = {
         }
       },
       {
+        "name": "opal-rds-file",
+        "title": "RDS file - Opal",
+        "description": "File resource in RDS format (serialized single R object). The file will be downloaded from the file store of a Opal server.",
+        "tags": ["opal", "data-file", "rdata-format"],
+        "parameters": {
+          "$schema": "http://json-schema.org/schema#",
+          "type": "array",
+          "items": [
+            {
+              "key": "url",
+              "type": "string",
+              "title": "URL",
+              "description": "Opal server base URL."
+            },
+            {
+              "key": "path",
+              "type": "string",
+              "title": "Path",
+              "description": "Path to the file in the Opal server."
+            },
+            {
+              "key": "format",
+              "type": "string",
+              "title": "R object class",
+              "description": "The primary class of the R object that is being loaded from the RDS file."
+            }
+          ],
+          "required": [
+            "url", "path", "format"
+          ]
+        },
+        "credentials": {
+          "$schema": "http://json-schema.org/schema#",
+          "type": "array",
+          "description": "Credentials are required and is a [personal API access token](http://opaldoc.obiba.org/en/latest/web-user-guide/my-profile.html#personal-access-tokens).",
+          "items": [
+            {
+              "key": "token",
+              "type": "string",
+              "format": "password",
+              "title": "Token",
+              "description": "Personal access token, granting read access to the file."
+            }
+          ],
+          "required": [
+            "token"
+          ]
+        }
+      },
+      {
         "name": "opal-tidy-file",
         "title": "Tidy data file - Opal",
         "description": "File resource in tidy format, having a reader in the [tidyverse](https://www.tidyverse.org) ecosystem. The file will be downloaded from the file store of a Opal server.",
@@ -926,6 +1120,68 @@ var resourcer = {
               "type": "string",
               "title": "R object class",
               "description": "The primary class of the R object that is being loaded from the R data file. When there are several objects of this class, the one with the symbol with same name as the resource is chosen, otherwise the first one is selected."
+            }
+          ],
+          "required": [
+            "host", "path", "format"
+          ]
+        },
+        "credentials": {
+          "$schema": "http://json-schema.org/schema#",
+          "type": "array",
+          "items": [
+            {
+              "key": "username",
+              "type": "string",
+              "title": "User name",
+              "description": "Valid user name having SSH access."
+            },
+            {
+              "key": "password",
+              "type": "string",
+              "title": "Password",
+              "format": "password",
+              "description": "The user's password."
+            }
+          ],
+          "required": [
+            "username", "password"
+          ]
+        }
+      },
+      {
+        "name": "scp-rds-file",
+        "title": "RDS file - SSH",
+        "description": "File resource in RDS format (serialized single R object). The file will be downloaded from a server accessible through SSH.",
+        "tags": ["ssh", "data-file", "rdata-format"],
+        "parameters": {
+          "$schema": "http://json-schema.org/schema#",
+          "type": "array",
+          "items": [
+            {
+              "key": "host",
+              "type": "string",
+              "title": "Host",
+              "description": "Remote host name or IP address that exposes SSH entry point."
+            },
+            {
+              "key": "port",
+              "type": "integer",
+              "title": "Port",
+              "default": 22,
+              "description": "SSH port number (default is 22)."
+            },
+            {
+              "key": "path",
+              "type": "string",
+              "title": "Path",
+              "description": "Path to the file in the remote server."
+            },
+            {
+              "key": "format",
+              "type": "string",
+              "title": "R object class",
+              "description": "The primary class of the R object that is being loaded from the RDS file."
             }
           ],
           "required": [
@@ -1392,7 +1648,14 @@ var resourcer = {
         resource.format = "R:" + resource.format;
       }
       return resource;
-    }
+    };
+
+    var toRDSFormat = function(resource) {
+      if (resource.format && !resource.url.toLowerCase().endsWith(".rds")) {
+        resource.format = "RDS:" + resource.format;
+      }
+      return resource;
+    };
 
     //
     // Resource factory functions by resource form type
@@ -1403,15 +1666,24 @@ var resourcer = {
       "gridfs-rdata-file": function(name, params, credentials) {
           return toRdataFormat(toGridfsResource(name, params, credentials));
       },
+      "gridfs-rds-file": function(name, params, credentials) {
+          return toRDSFormat(toGridfsResource(name, params, credentials));
+      },
       "gridfs-tidy-file": toGridfsResource,
       "http-generic-file": toHttpResource,
       "http-rdata-file": function(name, params, credentials) {
           return toRdataFormat(toHttpResource(name, params, credentials));
       },
+      "http-rds-file": function(name, params, credentials) {
+          return toRDSFormat(toHttpResource(name, params, credentials));
+      },
       "http-tidy-file": toHttpResource,
       "local-generic-file": toLocalResource,
       "local-rdata-file": function(name, params, credentials) {
         return toRdataFormat(toLocalResource(name, params, credentials));
+      },
+      "local-rds-file": function(name, params, credentials) {
+        return toRDSFormat(toLocalResource(name, params, credentials));
       },
       "local-tidy-file": toLocalResource,
       "nosql": function(name, params, credentials) {
@@ -1425,6 +1697,9 @@ var resourcer = {
       "opal-generic-file": toOpalResource,
       "opal-rdata-file": function(name, params, credentials) {
           return toRdataFormat(toOpalResource(name, params, credentials));
+      },
+      "opal-rds-file": function(name, params, credentials) {
+          return toRDSFormat(toOpalResource(name, params, credentials));
       },
       "opal-tidy-file": toOpalResource,
       "presto": function(name, params, credentials) {
@@ -1442,6 +1717,9 @@ var resourcer = {
       "scp-generic-file": toScpResource,
       "scp-rdata-file": function(name, params, credentials) {
           return toRdataFormat(toScpResource(name, params, credentials));
+      },
+      "scp-rds-file": function(name, params, credentials) {
+          return toRDSFormat(toScpResource(name, params, credentials));
       },
       "scp-tidy-file": toScpResource,
       "sh": function(name, params, credentials) {
