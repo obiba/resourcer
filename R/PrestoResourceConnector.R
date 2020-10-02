@@ -16,7 +16,7 @@ PrestoResourceConnector <- R6::R6Class(
     #' @return A PrestoResourceConnector object.
     initialize = function() {},
 
-    #' @description Check that the provided resource has a URL that locates a MySQL or MariaDB object: the URL scheme must be "presto", "presto+http" or "presto+https".
+    #' @description Check that the provided resource has a URL that locates a Presto object: the URL scheme must be "presto", "presto+http" or "presto+https".
     #' @param resource The resource object to validate.
     #' @return A logical.
     isFor = function(resource) {

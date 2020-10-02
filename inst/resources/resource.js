@@ -1,7 +1,7 @@
 var resourcer = {
   settings: {
     "title": "Base Resources",
-    "description": "Provides some of the most common resources: file, mysql, mariadb, postgresql, mongodb, ssh, scp.",
+    "description": "Provides some of the most common resources: file, mysql, mariadb, postgresql, mongodb, ssh, scp and more.",
     "web": "https://github.com/obiba/resourcer",
     "categories": [
       {
@@ -723,6 +723,65 @@ var resourcer = {
         "credentials": {
           "$schema": "http://json-schema.org/schema#",
           "description": "No credentials required: the file must be accessible from the R server."
+        }
+      },
+      {
+        "name": "odbc",
+        "title": "ODBC Connector",
+        "description": "The resource is accessible through a ODBC driver (experimental).",
+        "tags": ["database"],
+        "parameters": {
+          "$schema": "http://json-schema.org/schema#",
+          "type": "array",
+          "items": [
+            {
+              "key": "driver",
+              "type": "string",
+              "title": "ODBC driver",
+              "description": "Database engine that is accessible through the ODBC protocol.",
+              "enum": [
+                {
+                  "key": "dremio",
+                  "title":"Dremio"
+                }
+              ]
+            },
+            {
+              "key": "host",
+              "type": "string",
+              "title": "Host",
+              "description": "Remote host name or IP address of the database server."
+            },
+            {
+              "key": "port",
+              "type": "integer",
+              "title": "Port",
+              "description": "Database port number."
+            }
+          ],
+          "required": [
+            "driver", "host", "port"
+          ]
+        },
+        "credentials": {
+          "$schema": "http://json-schema.org/schema#",
+          "type": "array",
+          "description": "Credentials are optional.",
+          "items": [
+            {
+              "key": "username",
+              "type": "string",
+              "title": "User name",
+              "description": "Valid database user name."
+            },
+            {
+              "key": "password",
+              "type": "string",
+              "title": "Password",
+              "format": "password",
+              "description": "The user's password."
+            }
+          ]
         }
       },
       {
@@ -1702,6 +1761,14 @@ var resourcer = {
           return toRDSFormat(toOpalResource(name, params, credentials));
       },
       "opal-tidy-file": toOpalResource,
+      "odbc": function(name, params, credentials) {
+          return {
+              name: name,
+              url: "odbc+" + params.driver + "://" + params.host + ":" + params.port,
+              identity: credentials.username,
+              secret: credentials.password
+          }
+      },
       "presto": function(name, params, credentials) {
           var query = "";
           if (credentials.username) {

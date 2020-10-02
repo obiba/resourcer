@@ -16,7 +16,7 @@ PostgresResourceConnector <- R6::R6Class(
     #' @return A PostgresResourceConnector object.
     initialize = function() {},
 
-    #' @description Check that the provided resource has a URL that locates a MySQL or MariaDB object: the URL scheme must be "postgres" or "postgresql".
+    #' @description Check that the provided resource has a URL that locates a Postgres object: the URL scheme must be "postgres" or "postgresql".
     #' @param resource The resource object to validate.
     #' @return A logical.
     isFor = function(resource) {

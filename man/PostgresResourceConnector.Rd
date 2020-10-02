@@ -51,7 +51,7 @@ A PostgresResourceConnector object.
 \if{html}{\out{<a id="method-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-isFor}{}}}
 \subsection{Method \code{isFor()}}{
-Check that the provided resource has a URL that locates a MySQL or MariaDB object: the URL scheme must be "postgres" or "postgresql".
+Check that the provided resource has a URL that locates a Postgres object: the URL scheme must be "postgres" or "postgresql".
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{PostgresResourceConnector$isFor(resource)}\if{html}{\out{</div>}}
 }
