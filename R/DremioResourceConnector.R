@@ -29,8 +29,9 @@ DremioResourceConnector <- R6::R6Class(
     getConnectionString = function(resource) {
       url <- super$parseURL(resource)
       # example https://docs.dremio.com/client-applications/r.html
-      connStr <- sprintf("DRIVER=Dremio Connector;HOST=%s;PORT=%s;UID=%s;PWD=%s;AUTHENTICATIONTYPE=Basic Authentication;CONNECTIONTYPE=Direct", 
+      connStr <- sprintf("DRIVER=Dremio;HOST=%s;PORT=%s;UID=%s;PWD=%s;AUTHENTICATIONTYPE=Basic Authentication;CONNECTIONTYPE=Direct", 
                          url$host, url$port, resource$identity, resource$secret)
+      connStr
     }
   )
 )

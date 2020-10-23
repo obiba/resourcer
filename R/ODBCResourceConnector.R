@@ -30,7 +30,7 @@ ODBCResourceConnector <- R6::R6Class(
       if (self$isFor(resource)) {
         super$loadDBI()
         private$loadRODBC()
-        conn <- DBI::dbConnect(RODBC::ODBC(), connection = self$getConnectionString(resource))
+        conn <- DBI::dbConnect(RODBCDBI::ODBC(), dsn = "", connection = self$getConnectionString(resource), case = "nochange")
       } else {
         stop("Resource is not located in a ODBC database")
       }
