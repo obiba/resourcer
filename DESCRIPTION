@@ -35,7 +35,6 @@ Suggests:
     DBI,
     RMariaDB,
     RPostgres,
-    RODBCDBI,
     sparklyr,
     RPresto,
     nodbi,

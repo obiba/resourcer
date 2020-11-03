@@ -59,7 +59,7 @@ SQLResourceClient <- R6::R6Class(
       if (is.null(url$path)) {
         NULL
       } else {
-        basename(url$path)
+        URLdecode(basename(url$path))
       }
     },
 
