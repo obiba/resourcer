@@ -28,8 +28,9 @@ RDataFileResourceClient <- R6::R6Class(
     },
 
     #' @description Get the resource value extracted from the R data file.
+    #' @param ... Additional parameters to get the value object (not used yet).
     #' @return The resource value.
-    getValue = function() {
+    getValue = function(...) {
       private$ensureSymbol()
       get(private$.symbol, envir = private$.env)
     }

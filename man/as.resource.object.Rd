@@ -4,10 +4,12 @@
 \alias{as.resource.object}
 \title{Coerce resource client to the internal data object}
 \usage{
-as.resource.object(x)
+as.resource.object(x, ...)
 }
 \arguments{
 \item{x}{The ResourceClient object to coerce to a data.frame.}
+
+\item{...}{Additional parameters, that may be used (or ignored) by the resource client.}
 }
 \value{
 the internal data object.
