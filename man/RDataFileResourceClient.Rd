@@ -85,9 +85,16 @@ A data.frame.
 \subsection{Method \code{getValue()}}{
 Get the resource value extracted from the R data file.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceClient$getValue()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceClient$getValue(...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Additional parameters to get the value object (not used yet).}
+}
+\if{html}{\out{</div>}}
+}
 \subsection{Returns}{
 The resource value.
 }

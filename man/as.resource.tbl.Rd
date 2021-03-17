@@ -4,10 +4,12 @@
 \alias{as.resource.tbl}
 \title{Coerce resource client to a tbl}
 \usage{
-as.resource.tbl(x)
+as.resource.tbl(x, ...)
 }
 \arguments{
 \item{x}{The ResourceClient object to coerce to a data.frame}
+
+\item{...}{Additional parameters, that may be used (or ignored) by the resource client.}
 }
 \value{
 a dplyr's tbl

@@ -4,12 +4,14 @@
 \alias{as.resource.data.frame}
 \title{Coerce resource client to a data.frame}
 \usage{
-as.resource.data.frame(x, strict = FALSE)
+as.resource.data.frame(x, strict = FALSE, ...)
 }
 \arguments{
 \item{x}{The ResourceClient object to coerce to a data.frame.}
 
 \item{strict}{logical whether the resulting object must be strictly of class data.frame or if it can be a tibble.}
+
+\item{...}{Additional parameters, that may be used (or ignored) by the resource client.}
 }
 \value{
 a data.frame (or a tibble)
