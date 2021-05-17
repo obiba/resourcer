@@ -46,7 +46,23 @@ ShellResourceClient <- R6::R6Class(
       dirName <- normalizePath(dirname(file))
       toDirName <- normalizePath(to)
       if (dirName != toDirName) {
-        file.copy(file, to, overwrite = TRUE)
+        if (grepl("*", fileName, fixed = TRUE)) {
+          files <- list.files(dirName, pattern = fileName, full.names = TRUE)
+          if (length(files)>0) {
+            for (i in 1:length(files)) {
+              ffile <- files[i]
+              if (verbose) {
+                message("Copying ", ffile, " ...")
+              }
+              file.copy(ffile, to, overwrite = TRUE, recursive = TRUE)
+            }
+          }
+        } else {
+          if (verbose) {
+            message("Copying ", file, " ...")
+          }
+          file.copy(file, to, overwrite = TRUE, recursive = TRUE)  
+        }
       }
       file.path(toDirName, fileName)
     },
