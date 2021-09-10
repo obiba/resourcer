@@ -4,12 +4,11 @@
 *.dll
 *.Rproj
 .Rproj.user
-*.html
+*.md
+*.sav
 figure
 .RData
 inst/doc
 vignettes/*.R
+vignettes/*.html
 .httr-oauth
-derby.log
-logs
-docs
