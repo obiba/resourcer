@@ -12,3 +12,4 @@ vignettes/*.R
 .httr-oauth
 derby.log
 logs
+docs
