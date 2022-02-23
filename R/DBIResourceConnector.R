@@ -27,7 +27,40 @@ DBIResourceConnector <- R6::R6Class(
     createDBIConnection = function(resource) {
       stop("Operation not applicable")
     },
-
+    
+    #' @description Get the SQL table name from the resource URL.
+    #' @param resource A valid resource object.
+    #' @return The SQL table name.
+    getTableName = function(resource) {
+      url <- httr::parse_url(resource$url)
+      if (is.null(url$path)) {
+        stop("No database table name")
+      } else {
+        # usually path is made of <db_name>/<table_name>
+        URLdecode(basename(url$path))
+      }
+    },
+    
+    #' @description Read a table as a vanilla tibble using DBI connection object.
+    #' @param conn A DBI connection object.
+    #' @param resource A valid resource object.
+    #' @return A vanilla tibble.
+    readDBTable = function(conn, resource) {
+      table <- self$getTableName(resource)
+      private$loadTibble()
+      tibble::as_tibble(DBI::dbReadTable(conn, table))
+    },
+    
+    #' @description Read a table as a SQL tibble using DBI connection object.
+    #' @param conn A DBI connection object.
+    #' @param resource A valid resource object.
+    #' @return A SQL tibble.
+    readDBTibble = function(conn, resource) {
+      table <- self$getTableName(resource)
+      private$loadDBPlyr()
+      dplyr::tbl(conn, table)
+    },
+    
     #' @description Disconnect the DBI connection.
     #' @param conn A DBI connection object.
     closeDBIConnection = function(conn) {
@@ -38,7 +71,20 @@ DBIResourceConnector <- R6::R6Class(
   private = list(
     loadDBI = function() {
       if (!require("DBI")) {
-        install.packages("DBI", repos = "https://cloud.r-project.org", dependencies = TRUE)
+        install.packages("DBI", repos = "https://cloud.r-project.org")
+      }
+    },
+    loadTibble = function() {
+      if (!require("tibble")) {
+        install.packages("tibble", repos = "https://cloud.r-project.org")
+      }
+    },
+    loadDBPlyr = function() {
+      if (!require("dplyr")) {
+        install.packages("dplyr", repos = "https://cloud.r-project.org")
+      }
+      if (!require("dbplyr")) {
+        install.packages("dbplyr", repos = "https://cloud.r-project.org")
       }
     },
     getDatabaseName = function(url) {

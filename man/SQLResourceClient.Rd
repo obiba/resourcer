@@ -25,7 +25,6 @@ Resource client that connects to a SQL database supported by DBI.
 \item \href{#method-getConnection}{\code{SQLResourceClient$getConnection()}}
 \item \href{#method-asDataFrame}{\code{SQLResourceClient$asDataFrame()}}
 \item \href{#method-asTbl}{\code{SQLResourceClient$asTbl()}}
-\item \href{#method-getTableName}{\code{SQLResourceClient$getTableName()}}
 \item \href{#method-close}{\code{SQLResourceClient$close()}}
 \item \href{#method-clone}{\code{SQLResourceClient$clone()}}
 }
@@ -105,19 +104,6 @@ Get the SQL table as a dplyr's tbl.
 
 \subsection{Returns}{
 A dplyr's tbl object.
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getTableName"></a>}}
-\if{latex}{\out{\hypertarget{method-getTableName}{}}}
-\subsection{Method \code{getTableName()}}{
-Get the SQL table name from the resource URL.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$getTableName()}\if{html}{\out{</div>}}
-}
-
-\subsection{Returns}{
-The SQL table name.
 }
 }
 \if{html}{\out{<hr>}}

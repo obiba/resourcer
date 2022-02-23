@@ -43,24 +43,15 @@ SQLResourceClient <- R6::R6Class(
     #' @param ... Additional parameters (not used).
     #' @return A data.frame (more specifically a tibble).
     asDataFrame = function(...) {
-      private$asTable(FALSE)
+      conn <- self$getConnection()
+      private$.dbi.connector$readDBTable(conn, private$.resource)
     },
 
     #' @description Get the SQL table as a dplyr's tbl.
     #' @return A dplyr's tbl object.
     asTbl = function() {
-      private$asTable(TRUE)
-    },
-
-    #' @description Get the SQL table name from the resource URL.
-    #' @return The SQL table name.
-    getTableName = function() {
-      url <- super$parseURL()
-      if (is.null(url$path)) {
-        NULL
-      } else {
-        URLdecode(basename(url$path))
-      }
+      conn <- self$getConnection()
+      private$.dbi.connector$readDBTibble(conn, private$.resource)
     },
 
     #' @description Silently close the DBI connection.
@@ -74,39 +65,6 @@ SQLResourceClient <- R6::R6Class(
 
   ),
   private = list(
-    .dbi.connector = NULL,
-    # use.dplyr means returning a "table" convenient for dplyr processing
-    asTable = function(use.dplyr = FALSE) {
-      conn <- self$getConnection()
-      tableName <- self$getTableName()
-      if (is.null(tableName)) {
-        stop("No table defined", call. = FALSE)
-      } else {
-        private$readTable(tableName, use.dplyr)
-      }
-    },
-    readTable = function(table, use.dplyr) {
-      conn <- self$getConnection()
-      if (!use.dplyr) {
-        private$loadTibble()
-        tibble::as_tibble(DBI::dbReadTable(conn, table))
-      } else {
-        private$loadDBPlyr()
-        dplyr::tbl(conn, table)
-      }
-    },
-    loadTibble = function() {
-      if (!require("tibble")) {
-        install.packages("tibble", repos = "https://cloud.r-project.org", dependencies = TRUE)
-      }
-    },
-    loadDBPlyr = function() {
-      if (!require("dplyr")) {
-        install.packages("dplyr", repos = "https://cloud.r-project.org", dependencies = TRUE)
-      }
-      if (!require("dbplyr")) {
-        install.packages("dbplyr", repos = "https://cloud.r-project.org", dependencies = TRUE)
-      }
-    }
+    .dbi.connector = NULL
   )
 )

@@ -21,6 +21,9 @@ Makes a DBI connection from a resource description, used in SQLResourceClient th
 \item \href{#method-new}{\code{DBIResourceConnector$new()}}
 \item \href{#method-isFor}{\code{DBIResourceConnector$isFor()}}
 \item \href{#method-createDBIConnection}{\code{DBIResourceConnector$createDBIConnection()}}
+\item \href{#method-getTableName}{\code{DBIResourceConnector$getTableName()}}
+\item \href{#method-readDBTable}{\code{DBIResourceConnector$readDBTable()}}
+\item \href{#method-readDBTibble}{\code{DBIResourceConnector$readDBTibble()}}
 \item \href{#method-closeDBIConnection}{\code{DBIResourceConnector$closeDBIConnection()}}
 \item \href{#method-clone}{\code{DBIResourceConnector$clone()}}
 }
@@ -73,6 +76,70 @@ Stub function which subclasses will implement to create a DBI connection object 
 \item{\code{resource}}{A valid resource object.}
 }
 \if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getTableName"></a>}}
+\if{latex}{\out{\hypertarget{method-getTableName}{}}}
+\subsection{Method \code{getTableName()}}{
+Get the SQL table name from the resource URL.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$getTableName(resource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The SQL table name.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-readDBTable"></a>}}
+\if{latex}{\out{\hypertarget{method-readDBTable}{}}}
+\subsection{Method \code{readDBTable()}}{
+Read a table as a vanilla tibble using DBI connection object.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$readDBTable(conn, resource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{conn}}{A DBI connection object.}
+
+\item{\code{resource}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A vanilla tibble.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-readDBTibble"></a>}}
+\if{latex}{\out{\hypertarget{method-readDBTibble}{}}}
+\subsection{Method \code{readDBTibble()}}{
+Read a table as a SQL tibble using DBI connection object.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$readDBTibble(conn, resource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{conn}}{A DBI connection object.}
+
+\item{\code{resource}}{A valid resource object.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A SQL tibble.
 }
 }
 \if{html}{\out{<hr>}}

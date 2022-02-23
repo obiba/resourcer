@@ -31,6 +31,9 @@ Makes a Presto DBI connection from a resource description.
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
 \item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="closeDBIConnection">}\href{../../resourcer/html/DBIResourceConnector.html#method-closeDBIConnection}{\code{resourcer::DBIResourceConnector$closeDBIConnection()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName">}\href{../../resourcer/html/DBIResourceConnector.html#method-getTableName}{\code{resourcer::DBIResourceConnector$getTableName()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable">}\href{../../resourcer/html/DBIResourceConnector.html#method-readDBTable}{\code{resourcer::DBIResourceConnector$readDBTable()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble">}\href{../../resourcer/html/DBIResourceConnector.html#method-readDBTibble}{\code{resourcer::DBIResourceConnector$readDBTibble()}}\out{</span>}
 }
 \out{</details>}
 }
