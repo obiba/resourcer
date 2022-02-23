@@ -4,6 +4,7 @@ addons:
   apt:
     packages:
       - libssh-dev
+      - libjq-dev
 r_packages:
   - devtools
 warnings_are_errors: true
