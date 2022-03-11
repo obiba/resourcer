@@ -25,7 +25,7 @@ OpalFileResourceGetter <- R6::R6Class(
         url <- super$parseURL(resource)
         scheme <- url$scheme
         path <- url$path
-        (scheme == "opal+http" || scheme == "opal+https") && startsWith(path, "ws/files/")
+        (scheme == "opal+http" || scheme == "opal+https") && length(strsplit(path, "ws/files/")[[1]]) == 2
       } else {
         FALSE
       }
