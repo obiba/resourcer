@@ -19,15 +19,15 @@ computation unit.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{ResourceResolver$new()}}
-\item \href{#method-isFor}{\code{ResourceResolver$isFor()}}
-\item \href{#method-newClient}{\code{ResourceResolver$newClient()}}
-\item \href{#method-clone}{\code{ResourceResolver$clone()}}
+\item \href{#method-ResourceResolver-new}{\code{ResourceResolver$new()}}
+\item \href{#method-ResourceResolver-isFor}{\code{ResourceResolver$isFor()}}
+\item \href{#method-ResourceResolver-newClient}{\code{ResourceResolver$newClient()}}
+\item \href{#method-ResourceResolver-clone}{\code{ResourceResolver$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-ResourceResolver-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ResourceResolver-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new ResourceResolver instance.
 \subsection{Usage}{
@@ -39,8 +39,8 @@ A ResourceResolver object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-ResourceResolver-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-ResourceResolver-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided object is of class "resource".
 \subsection{Usage}{
@@ -59,8 +59,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-newClient"></a>}}
-\if{latex}{\out{\hypertarget{method-newClient}{}}}
+\if{html}{\out{<a id="method-ResourceResolver-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-ResourceResolver-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Stub function to be implemented by subclasses. Makes an object which class inherits from ResourceClient.
 \subsection{Usage}{
@@ -79,8 +79,8 @@ The ResourceClient object that will access the provided resource.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-ResourceResolver-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ResourceResolver-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

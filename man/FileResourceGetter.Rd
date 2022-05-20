@@ -20,17 +20,17 @@ data format.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{FileResourceGetter$new()}}
-\item \href{#method-isFor}{\code{FileResourceGetter$isFor()}}
-\item \href{#method-downloadFile}{\code{FileResourceGetter$downloadFile()}}
-\item \href{#method-extractFileName}{\code{FileResourceGetter$extractFileName()}}
-\item \href{#method-makeDownloadDir}{\code{FileResourceGetter$makeDownloadDir()}}
-\item \href{#method-clone}{\code{FileResourceGetter$clone()}}
+\item \href{#method-FileResourceGetter-new}{\code{FileResourceGetter$new()}}
+\item \href{#method-FileResourceGetter-isFor}{\code{FileResourceGetter$isFor()}}
+\item \href{#method-FileResourceGetter-downloadFile}{\code{FileResourceGetter$downloadFile()}}
+\item \href{#method-FileResourceGetter-extractFileName}{\code{FileResourceGetter$extractFileName()}}
+\item \href{#method-FileResourceGetter-makeDownloadDir}{\code{FileResourceGetter$makeDownloadDir()}}
+\item \href{#method-FileResourceGetter-clone}{\code{FileResourceGetter$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-FileResourceGetter-new"></a>}}
+\if{latex}{\out{\hypertarget{method-FileResourceGetter-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new FileResourceGetter instance.
 \subsection{Usage}{
@@ -42,8 +42,8 @@ A FileResourceGetter object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-FileResourceGetter-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-FileResourceGetter-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided parameter is of class "resource" and has a format defined.
 \subsection{Usage}{
@@ -62,8 +62,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-downloadFile"></a>}}
-\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
+\if{html}{\out{<a id="method-FileResourceGetter-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-FileResourceGetter-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Stub function which subclasses will implement to make a "resource.file" object from a resource.
 \subsection{Usage}{
@@ -84,8 +84,8 @@ A "resource.file" object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-extractFileName"></a>}}
-\if{latex}{\out{\hypertarget{method-extractFileName}{}}}
+\if{html}{\out{<a id="method-FileResourceGetter-extractFileName"></a>}}
+\if{latex}{\out{\hypertarget{method-FileResourceGetter-extractFileName}{}}}
 \subsection{Method \code{extractFileName()}}{
 Utility to get the base name from the file path.
 \subsection{Usage}{
@@ -104,8 +104,8 @@ The file base name.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-makeDownloadDir"></a>}}
-\if{latex}{\out{\hypertarget{method-makeDownloadDir}{}}}
+\if{html}{\out{<a id="method-FileResourceGetter-makeDownloadDir"></a>}}
+\if{latex}{\out{\hypertarget{method-FileResourceGetter-makeDownloadDir}{}}}
 \subsection{Method \code{makeDownloadDir()}}{
 Creates a directory where to download file in the R session's temporary directory. This directory will be flushed when the R session ends.
 \subsection{Usage}{
@@ -117,8 +117,8 @@ The path to the download directory.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-FileResourceGetter-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-FileResourceGetter-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{
