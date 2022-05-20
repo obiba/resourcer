@@ -28,30 +28,39 @@ PrestoResourceConnector <- R6::R6Class(
     #' @return A DBI connection object.
     createDBIConnection = function(resource) {
       if (self$isFor(resource)) {
-      super$loadDBI()
-      private$loadRPresto()
-      url <- super$parseURL(resource)
-      dbname <- strsplit(super$getDatabaseName(), split = "\\.")[[1]]
-      protocol <- "http"
-      if (identical(url$scheme, "presto+https")) {
-        protocol <- "https"
-      }
-      # presto user (might be different from the one that authenticate)
-      user <- resource$identity
-      if (!is.null(url$query) && !is.null(url$query$user)) {
-        user <- url$query$user
-      }
-      # authentication header as supported by httr
-      auth <- NULL
-      if (!is.null(resource$identity)) {
-        authType <- "basic"
-        if (!is.null(url$query) && !is.null(url$query$auth_type)) {
-          authType <- url$query$auth_type
+        super$loadDBI()
+        private$loadRPresto()
+        url <- super$parseURL(resource)
+        dbname <- strsplit(super$getDatabaseName(url), split = "\\.")[[1]]
+        protocol <- "http"
+        if (identical(url$scheme, "presto+https")) {
+          protocol <- "https"
         }
-        auth <- httr::authenticate(user = resource$identity, password = resource$secret, type = authType)
-      }
-      conn <- DBI::dbConnect(RPresto::Presto(), host = paste0(protocol, "://", url$host), port = url$port,
-                             user = user, catalog = dbname[1], schema = dbname[2]) # TODO: , httr_authenticate = auth)
+        # presto user (might be different from the one that authenticate)
+        user <- resource$identity
+        if (!is.null(url$query) && !is.null(url$query$user)) {
+          user <- url$query$user
+        }
+        if (is.null(user)) {
+          user <- "x" # better anything than nothing
+        }
+        if (!is.null(url$query) && url$query$flavor == "trino") {
+          conn <- DBI::dbConnect(RPresto::Presto(), 
+                                 host = paste0(protocol, "://", url$host), 
+                                 port = url$port,
+                                 use.trino.headers=TRUE,
+                                 user = user, 
+                                 catalog = dbname[1], 
+                                 schema = dbname[2]) 
+        } 
+        else {
+          conn <- DBI::dbConnect(RPresto::Presto(), 
+                                 host = paste0(protocol, "://", url$host), 
+                                 port = url$port,
+                                 user = user, 
+                                 catalog = dbname[1], 
+                                 schema = dbname[2])
+        }
       } else {
         stop("Resource is not located in a Presto database")
       }

@@ -1026,6 +1026,22 @@ var resourcer = {
           "type": "array",
           "items": [
             {
+              "key": "flavor",
+              "type": "string",
+              "title": "Presto DB Type",
+              "description": "There are different flavors of Presto databases.",
+              "enum": [
+                {
+                  "key": "trino",
+                  "title": "Trino (former PrestoSQL)"
+                }, 
+                {
+                  "key": "prestodb",
+                  "title": "PrestoDB"
+                }
+              ]
+            },
+            {
               "key": "url",
               "type": "string",
               "title": "URL",
@@ -1059,15 +1075,6 @@ var resourcer = {
           "type": "array",
           "description": "Credentials are required.",
           "items": [
-            {
-              "key": "authType",
-              "type": "string",
-              "title": "Authentication type",
-              "description": "The HTTP authentication type.",
-              "enum": [
-                "basic", "digest", "digest_ie", "gssnegotiate", "ntlm", "any"
-              ]
-            },
             {
               "key": "username",
               "type": "string",
@@ -1705,7 +1712,7 @@ var resourcer = {
       "presto": function(name, params, credentials) {
           var query = "";
           if (credentials.username) {
-            query = "?auth_type=" + params.authType;
+            query = "?flavor=" + params.flavor;
           }
           return {
               name: name,
