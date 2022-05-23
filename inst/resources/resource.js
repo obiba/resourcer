@@ -1019,7 +1019,7 @@ var resourcer = {
       {
         "name": "presto",
         "title": "Presto",
-        "description": "Resource is a distributed SQL table accessible through [Presto](https://prestodb.io) using [DBI](https://www.r-dbi.org). The data can be read as a standard `data.frame` or as a [dbplyr](https://dbplyr.tidyverse.org/)'s `tbl`.",
+        "description": "Resource is a distributed SQL table accessible through [PrestoDB](https://prestodb.io) or [Trino](https://trino.io) using [DBI](https://www.r-dbi.org). The data can be read as a standard `data.frame` or as a [dbplyr](https://dbplyr.tidyverse.org/)'s `tbl`.",
         "tags": ["database"],
         "parameters": {
           "$schema": "http://json-schema.org/schema#",
@@ -1073,24 +1073,14 @@ var resourcer = {
         "credentials": {
           "$schema": "http://json-schema.org/schema#",
           "type": "array",
-          "description": "Credentials are required.",
+          "description": "A user name can be provided to the database driver.",
           "items": [
             {
               "key": "username",
               "type": "string",
               "title": "User name",
               "description": "Valid database user name."
-            },
-            {
-              "key": "password",
-              "type": "string",
-              "title": "Password",
-              "format": "password",
-              "description": "The user's password."
             }
-          ],
-          "required": [
-            "username", "password"
           ]
         }
       },
@@ -1711,14 +1701,13 @@ var resourcer = {
       "opal-tidy-file": toOpalResource,
       "presto": function(name, params, credentials) {
           var query = "";
-          if (credentials.username) {
+          if (params.flavor) {
             query = "?flavor=" + params.flavor;
           }
           return {
               name: name,
               url: "presto+" + params.url + "/" + params.catalog + "." + params.schema + "/" + params.table + query,
-              identity: credentials.username,
-              secret: credentials.password
+              identity: credentials.username
           }
       },
       "scp-generic-file": toScpResource,

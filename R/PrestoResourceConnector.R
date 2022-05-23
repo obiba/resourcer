@@ -36,19 +36,18 @@ PrestoResourceConnector <- R6::R6Class(
         if (identical(url$scheme, "presto+https")) {
           protocol <- "https"
         }
-        # presto user (might be different from the one that authenticate)
+        # presto user
         user <- resource$identity
-        if (!is.null(url$query) && !is.null(url$query$user)) {
-          user <- url$query$user
+        if (is.null(user) || nchar(user) == 0) {
+          user <- Sys.getenv('USER')
         }
-        if (is.null(user)) {
+        if (is.null(user) || nchar(user) == 0) {
           user <- "x" # better anything than nothing
         }
-        if (!is.null(url$query) && url$query$flavor == "trino") {
+        if (!is.null(url$query) && url$query$flavor == "prestodb") {
           conn <- DBI::dbConnect(RPresto::Presto(), 
                                  host = paste0(protocol, "://", url$host), 
                                  port = url$port,
-                                 use.trino.headers=TRUE,
                                  user = user, 
                                  catalog = dbname[1], 
                                  schema = dbname[2]) 
@@ -57,6 +56,7 @@ PrestoResourceConnector <- R6::R6Class(
           conn <- DBI::dbConnect(RPresto::Presto(), 
                                  host = paste0(protocol, "://", url$host), 
                                  port = url$port,
+                                 use.trino.headers=TRUE,
                                  user = user, 
                                  catalog = dbname[1], 
                                  schema = dbname[2])
