@@ -21,21 +21,21 @@ The resource is a computation unit, accessible through SSH, i.e. which URL schem
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-isFor}{\code{SshResourceResolver$isFor()}}
-\item \href{#method-newClient}{\code{SshResourceResolver$newClient()}}
-\item \href{#method-clone}{\code{SshResourceResolver$clone()}}
+\item \href{#method-SshResourceResolver-isFor}{\code{SshResourceResolver$isFor()}}
+\item \href{#method-SshResourceResolver-newClient}{\code{SshResourceResolver$newClient()}}
+\item \href{#method-SshResourceResolver-clone}{\code{SshResourceResolver$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize">}\href{../../resourcer/html/ResourceResolver.html#method-initialize}{\code{resourcer::ResourceResolver$initialize()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-SshResourceResolver-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceResolver-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource is a computation resource accessible by ssh commands. The resource URL scheme is expected to be "ssh".
 \subsection{Usage}{
@@ -54,8 +54,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-newClient"></a>}}
-\if{latex}{\out{\hypertarget{method-newClient}{}}}
+\if{html}{\out{<a id="method-SshResourceResolver-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceResolver-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Create a SshResourceClient instance from the provided resource.
 \subsection{Usage}{
@@ -74,8 +74,8 @@ A SshResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-SshResourceResolver-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceResolver-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

@@ -32,21 +32,21 @@ excel, xls, xlsx.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-isFor}{\code{TidyFileResourceResolver$isFor()}}
-\item \href{#method-newClient}{\code{TidyFileResourceResolver$newClient()}}
-\item \href{#method-clone}{\code{TidyFileResourceResolver$clone()}}
+\item \href{#method-TidyFileResourceResolver-isFor}{\code{TidyFileResourceResolver$isFor()}}
+\item \href{#method-TidyFileResourceResolver-newClient}{\code{TidyFileResourceResolver$newClient()}}
+\item \href{#method-TidyFileResourceResolver-clone}{\code{TidyFileResourceResolver$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize">}\href{../../resourcer/html/ResourceResolver.html#method-initialize}{\code{resourcer::ResourceResolver$initialize()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-TidyFileResourceResolver-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-TidyFileResourceResolver-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a tidy data file: the resource can be accessed as a file and
  the resource format is one of "csv", "csv2", "tsv", "delim", "ssv", "spss", "sav", "por", "stata", "dta", "sas", "xpt",
@@ -67,8 +67,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-newClient"></a>}}
-\if{latex}{\out{\hypertarget{method-newClient}{}}}
+\if{html}{\out{<a id="method-TidyFileResourceResolver-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-TidyFileResourceResolver-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Creates a TidyFileResourceClient instance from provided resource.
 \subsection{Usage}{
@@ -87,8 +87,8 @@ A TidyFileResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-TidyFileResourceResolver-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-TidyFileResourceResolver-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

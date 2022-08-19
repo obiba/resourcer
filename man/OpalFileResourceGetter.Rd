@@ -22,23 +22,23 @@ resource's identity and secret are defined, token authentication if secret only 
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{OpalFileResourceGetter$new()}}
-\item \href{#method-isFor}{\code{OpalFileResourceGetter$isFor()}}
-\item \href{#method-downloadFile}{\code{OpalFileResourceGetter$downloadFile()}}
-\item \href{#method-clone}{\code{OpalFileResourceGetter$clone()}}
+\item \href{#method-OpalFileResourceGetter-new}{\code{OpalFileResourceGetter$new()}}
+\item \href{#method-OpalFileResourceGetter-isFor}{\code{OpalFileResourceGetter$isFor()}}
+\item \href{#method-OpalFileResourceGetter-downloadFile}{\code{OpalFileResourceGetter$downloadFile()}}
+\item \href{#method-OpalFileResourceGetter-clone}{\code{OpalFileResourceGetter$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName">}\href{../../resourcer/html/FileResourceGetter.html#method-extractFileName}{\code{resourcer::FileResourceGetter$extractFileName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir">}\href{../../resourcer/html/FileResourceGetter.html#method-makeDownloadDir}{\code{resourcer::FileResourceGetter$makeDownloadDir()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>resourcer::FileResourceGetter$extractFileName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>resourcer::FileResourceGetter$makeDownloadDir()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-OpalFileResourceGetter-new"></a>}}
+\if{latex}{\out{\hypertarget{method-OpalFileResourceGetter-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new OpalFileResourceGetter instance.
 \subsection{Usage}{
@@ -50,8 +50,8 @@ A OpalFileResourceGetter object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-OpalFileResourceGetter-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-OpalFileResourceGetter-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a Opal file: the URL scheme must be "opal+http" or "opal+https" and the path must designate a file web service entry point (i.e. starts with "ws/files/").
 \subsection{Usage}{
@@ -70,8 +70,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-downloadFile"></a>}}
-\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
+\if{html}{\out{<a id="method-OpalFileResourceGetter-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-OpalFileResourceGetter-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Download the file from the Opal file system in a temporary location.
 \subsection{Usage}{
@@ -92,8 +92,8 @@ The "resource.file" object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-OpalFileResourceGetter-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-OpalFileResourceGetter-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

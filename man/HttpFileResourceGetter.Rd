@@ -22,23 +22,23 @@ resource's identity and secret are defined.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{HttpFileResourceGetter$new()}}
-\item \href{#method-isFor}{\code{HttpFileResourceGetter$isFor()}}
-\item \href{#method-downloadFile}{\code{HttpFileResourceGetter$downloadFile()}}
-\item \href{#method-clone}{\code{HttpFileResourceGetter$clone()}}
+\item \href{#method-HttpFileResourceGetter-new}{\code{HttpFileResourceGetter$new()}}
+\item \href{#method-HttpFileResourceGetter-isFor}{\code{HttpFileResourceGetter$isFor()}}
+\item \href{#method-HttpFileResourceGetter-downloadFile}{\code{HttpFileResourceGetter$downloadFile()}}
+\item \href{#method-HttpFileResourceGetter-clone}{\code{HttpFileResourceGetter$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName">}\href{../../resourcer/html/FileResourceGetter.html#method-extractFileName}{\code{resourcer::FileResourceGetter$extractFileName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir">}\href{../../resourcer/html/FileResourceGetter.html#method-makeDownloadDir}{\code{resourcer::FileResourceGetter$makeDownloadDir()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>resourcer::FileResourceGetter$extractFileName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>resourcer::FileResourceGetter$makeDownloadDir()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-HttpFileResourceGetter-new"></a>}}
+\if{latex}{\out{\hypertarget{method-HttpFileResourceGetter-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new HttpFileResourceGetter instance.
 \subsection{Usage}{
@@ -50,8 +50,8 @@ A HttpFileResourceGetter object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-HttpFileResourceGetter-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-HttpFileResourceGetter-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a file accessible through "http" or "https".
 \subsection{Usage}{
@@ -70,8 +70,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-downloadFile"></a>}}
-\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
+\if{html}{\out{<a id="method-HttpFileResourceGetter-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-HttpFileResourceGetter-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Download the file from the remote address in a temporary location. Applies Basic authentication if credentials are provided in the resource.
 \subsection{Usage}{
@@ -92,8 +92,8 @@ The "resource.file" object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-HttpFileResourceGetter-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-HttpFileResourceGetter-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

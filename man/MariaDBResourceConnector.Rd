@@ -21,25 +21,25 @@ Makes a MariaDB/MySQL DBI connection from a resource description.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{MariaDBResourceConnector$new()}}
-\item \href{#method-isFor}{\code{MariaDBResourceConnector$isFor()}}
-\item \href{#method-createDBIConnection}{\code{MariaDBResourceConnector$createDBIConnection()}}
-\item \href{#method-clone}{\code{MariaDBResourceConnector$clone()}}
+\item \href{#method-MariaDBResourceConnector-new}{\code{MariaDBResourceConnector$new()}}
+\item \href{#method-MariaDBResourceConnector-isFor}{\code{MariaDBResourceConnector$isFor()}}
+\item \href{#method-MariaDBResourceConnector-createDBIConnection}{\code{MariaDBResourceConnector$createDBIConnection()}}
+\item \href{#method-MariaDBResourceConnector-clone}{\code{MariaDBResourceConnector$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="closeDBIConnection">}\href{../../resourcer/html/DBIResourceConnector.html#method-closeDBIConnection}{\code{resourcer::DBIResourceConnector$closeDBIConnection()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName">}\href{../../resourcer/html/DBIResourceConnector.html#method-getTableName}{\code{resourcer::DBIResourceConnector$getTableName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable">}\href{../../resourcer/html/DBIResourceConnector.html#method-readDBTable}{\code{resourcer::DBIResourceConnector$readDBTable()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble">}\href{../../resourcer/html/DBIResourceConnector.html#method-readDBTibble}{\code{resourcer::DBIResourceConnector$readDBTibble()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="closeDBIConnection"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-closeDBIConnection'><code>resourcer::DBIResourceConnector$closeDBIConnection()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-getTableName'><code>resourcer::DBIResourceConnector$getTableName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTable'><code>resourcer::DBIResourceConnector$readDBTable()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTibble'><code>resourcer::DBIResourceConnector$readDBTibble()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-MariaDBResourceConnector-new"></a>}}
+\if{latex}{\out{\hypertarget{method-MariaDBResourceConnector-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new MariaDBResourceConnector instance.
 \subsection{Usage}{
@@ -51,8 +51,8 @@ A MariaDBResourceConnector object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-MariaDBResourceConnector-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-MariaDBResourceConnector-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a MySQL or MariaDB object: the URL scheme must be "mysql" or "mariadb".
 \subsection{Usage}{
@@ -71,8 +71,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-createDBIConnection"></a>}}
-\if{latex}{\out{\hypertarget{method-createDBIConnection}{}}}
+\if{html}{\out{<a id="method-MariaDBResourceConnector-createDBIConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-MariaDBResourceConnector-createDBIConnection}{}}}
 \subsection{Method \code{createDBIConnection()}}{
 Creates a DBI connection object from a resource.
 \subsection{Usage}{
@@ -91,8 +91,8 @@ A DBI connection object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-MariaDBResourceConnector-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-MariaDBResourceConnector-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

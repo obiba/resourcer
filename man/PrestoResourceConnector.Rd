@@ -21,25 +21,25 @@ Makes a Presto DBI connection from a resource description.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{PrestoResourceConnector$new()}}
-\item \href{#method-isFor}{\code{PrestoResourceConnector$isFor()}}
-\item \href{#method-createDBIConnection}{\code{PrestoResourceConnector$createDBIConnection()}}
-\item \href{#method-clone}{\code{PrestoResourceConnector$clone()}}
+\item \href{#method-PrestoResourceConnector-new}{\code{PrestoResourceConnector$new()}}
+\item \href{#method-PrestoResourceConnector-isFor}{\code{PrestoResourceConnector$isFor()}}
+\item \href{#method-PrestoResourceConnector-createDBIConnection}{\code{PrestoResourceConnector$createDBIConnection()}}
+\item \href{#method-PrestoResourceConnector-clone}{\code{PrestoResourceConnector$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="closeDBIConnection">}\href{../../resourcer/html/DBIResourceConnector.html#method-closeDBIConnection}{\code{resourcer::DBIResourceConnector$closeDBIConnection()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName">}\href{../../resourcer/html/DBIResourceConnector.html#method-getTableName}{\code{resourcer::DBIResourceConnector$getTableName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable">}\href{../../resourcer/html/DBIResourceConnector.html#method-readDBTable}{\code{resourcer::DBIResourceConnector$readDBTable()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble">}\href{../../resourcer/html/DBIResourceConnector.html#method-readDBTibble}{\code{resourcer::DBIResourceConnector$readDBTibble()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="closeDBIConnection"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-closeDBIConnection'><code>resourcer::DBIResourceConnector$closeDBIConnection()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-getTableName'><code>resourcer::DBIResourceConnector$getTableName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTable'><code>resourcer::DBIResourceConnector$readDBTable()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTibble'><code>resourcer::DBIResourceConnector$readDBTibble()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-PrestoResourceConnector-new"></a>}}
+\if{latex}{\out{\hypertarget{method-PrestoResourceConnector-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new PrestoResourceConnector instance.
 \subsection{Usage}{
@@ -51,8 +51,8 @@ A PrestoResourceConnector object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-PrestoResourceConnector-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-PrestoResourceConnector-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a Presto object: the URL scheme must be "presto", "presto+http" or "presto+https".
 \subsection{Usage}{
@@ -71,8 +71,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-createDBIConnection"></a>}}
-\if{latex}{\out{\hypertarget{method-createDBIConnection}{}}}
+\if{html}{\out{<a id="method-PrestoResourceConnector-createDBIConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-PrestoResourceConnector-createDBIConnection}{}}}
 \subsection{Method \code{createDBIConnection()}}{
 Creates a DBI connection object from a resource.
 \subsection{Usage}{
@@ -91,8 +91,8 @@ A DBI connection object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-PrestoResourceConnector-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-PrestoResourceConnector-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

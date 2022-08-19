@@ -21,26 +21,26 @@ Resource client that connects to a SQL database supported by DBI.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{SQLResourceClient$new()}}
-\item \href{#method-getConnection}{\code{SQLResourceClient$getConnection()}}
-\item \href{#method-asDataFrame}{\code{SQLResourceClient$asDataFrame()}}
-\item \href{#method-asTbl}{\code{SQLResourceClient$asTbl()}}
-\item \href{#method-close}{\code{SQLResourceClient$close()}}
-\item \href{#method-clone}{\code{SQLResourceClient$clone()}}
+\item \href{#method-SQLResourceClient-new}{\code{SQLResourceClient$new()}}
+\item \href{#method-SQLResourceClient-getConnection}{\code{SQLResourceClient$getConnection()}}
+\item \href{#method-SQLResourceClient-asDataFrame}{\code{SQLResourceClient$asDataFrame()}}
+\item \href{#method-SQLResourceClient-asTbl}{\code{SQLResourceClient$asTbl()}}
+\item \href{#method-SQLResourceClient-close}{\code{SQLResourceClient$close()}}
+\item \href{#method-SQLResourceClient-clone}{\code{SQLResourceClient$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile">}\href{../../resourcer/html/ResourceClient.html#method-downloadFile}{\code{resourcer::ResourceClient$downloadFile()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec">}\href{../../resourcer/html/ResourceClient.html#method-exec}{\code{resourcer::ResourceClient$exec()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource">}\href{../../resourcer/html/ResourceClient.html#method-getResource}{\code{resourcer::ResourceClient$getResource()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-downloadFile'><code>resourcer::ResourceClient$downloadFile()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>resourcer::ResourceClient$exec()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-SQLResourceClient-new"></a>}}
+\if{latex}{\out{\hypertarget{method-SQLResourceClient-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a SQLResourceClient from a resource.
 \subsection{Usage}{
@@ -61,8 +61,8 @@ The SQLResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getConnection"></a>}}
-\if{latex}{\out{\hypertarget{method-getConnection}{}}}
+\if{html}{\out{<a id="method-SQLResourceClient-getConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-SQLResourceClient-getConnection}{}}}
 \subsection{Method \code{getConnection()}}{
 Get or create the DBI connection object that will access the resource.
 \subsection{Usage}{
@@ -74,8 +74,8 @@ The DBI connection object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-asDataFrame"></a>}}
-\if{latex}{\out{\hypertarget{method-asDataFrame}{}}}
+\if{html}{\out{<a id="method-SQLResourceClient-asDataFrame"></a>}}
+\if{latex}{\out{\hypertarget{method-SQLResourceClient-asDataFrame}{}}}
 \subsection{Method \code{asDataFrame()}}{
 Coerce the SQL table to a data.frame.
 \subsection{Usage}{
@@ -94,8 +94,8 @@ A data.frame (more specifically a tibble).
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-asTbl"></a>}}
-\if{latex}{\out{\hypertarget{method-asTbl}{}}}
+\if{html}{\out{<a id="method-SQLResourceClient-asTbl"></a>}}
+\if{latex}{\out{\hypertarget{method-SQLResourceClient-asTbl}{}}}
 \subsection{Method \code{asTbl()}}{
 Get the SQL table as a dplyr's tbl.
 \subsection{Usage}{
@@ -107,8 +107,8 @@ A dplyr's tbl object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-close"></a>}}
-\if{latex}{\out{\hypertarget{method-close}{}}}
+\if{html}{\out{<a id="method-SQLResourceClient-close"></a>}}
+\if{latex}{\out{\hypertarget{method-SQLResourceClient-close}{}}}
 \subsection{Method \code{close()}}{
 Silently close the DBI connection.
 \subsection{Usage}{
@@ -117,8 +117,8 @@ Silently close the DBI connection.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-SQLResourceClient-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-SQLResourceClient-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

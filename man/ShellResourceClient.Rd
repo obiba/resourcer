@@ -21,28 +21,28 @@ Executes local system shell commands.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{ShellResourceClient$new()}}
-\item \href{#method-getAllowedCommands}{\code{ShellResourceClient$getAllowedCommands()}}
-\item \href{#method-copyFile}{\code{ShellResourceClient$copyFile()}}
-\item \href{#method-exec}{\code{ShellResourceClient$exec()}}
-\item \href{#method-clone}{\code{ShellResourceClient$clone()}}
+\item \href{#method-ShellResourceClient-new}{\code{ShellResourceClient$new()}}
+\item \href{#method-ShellResourceClient-getAllowedCommands}{\code{ShellResourceClient$getAllowedCommands()}}
+\item \href{#method-ShellResourceClient-copyFile}{\code{ShellResourceClient$copyFile()}}
+\item \href{#method-ShellResourceClient-exec}{\code{ShellResourceClient$exec()}}
+\item \href{#method-ShellResourceClient-clone}{\code{ShellResourceClient$clone()}}
 }
 }
-\if{html}{
-\out{<details ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame">}\href{../../resourcer/html/ResourceClient.html#method-asDataFrame}{\code{resourcer::ResourceClient$asDataFrame()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl">}\href{../../resourcer/html/ResourceClient.html#method-asTbl}{\code{resourcer::ResourceClient$asTbl()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="close">}\href{../../resourcer/html/ResourceClient.html#method-close}{\code{resourcer::ResourceClient$close()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile">}\href{../../resourcer/html/ResourceClient.html#method-downloadFile}{\code{resourcer::ResourceClient$downloadFile()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection">}\href{../../resourcer/html/ResourceClient.html#method-getConnection}{\code{resourcer::ResourceClient$getConnection()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource">}\href{../../resourcer/html/ResourceClient.html#method-getResource}{\code{resourcer::ResourceClient$getResource()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>resourcer::ResourceClient$asDataFrame()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="close"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-close'><code>resourcer::ResourceClient$close()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-downloadFile'><code>resourcer::ResourceClient$downloadFile()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>resourcer::ResourceClient$getConnection()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-ShellResourceClient-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ShellResourceClient-new}{}}}
 \subsection{Method \code{new()}}{
 Create a ShellResourceClient instance. This client will interact wtih a computation resource using shell commands.
 \subsection{Usage}{
@@ -61,8 +61,8 @@ The ShellResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getAllowedCommands"></a>}}
-\if{latex}{\out{\hypertarget{method-getAllowedCommands}{}}}
+\if{html}{\out{<a id="method-ShellResourceClient-getAllowedCommands"></a>}}
+\if{latex}{\out{\hypertarget{method-ShellResourceClient-getAllowedCommands}{}}}
 \subsection{Method \code{getAllowedCommands()}}{
 Get the command names that can be executed.
 \subsection{Usage}{
@@ -74,8 +74,8 @@ A character vector
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-copyFile"></a>}}
-\if{latex}{\out{\hypertarget{method-copyFile}{}}}
+\if{html}{\out{<a id="method-ShellResourceClient-copyFile"></a>}}
+\if{latex}{\out{\hypertarget{method-ShellResourceClient-copyFile}{}}}
 \subsection{Method \code{copyFile()}}{
 Copy one or more files (wilcard * is supported in the file name (which can be a directory))
 \subsection{Usage}{
@@ -98,8 +98,8 @@ The path to the files having been copied.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-exec"></a>}}
-\if{latex}{\out{\hypertarget{method-exec}{}}}
+\if{html}{\out{<a id="method-ShellResourceClient-exec"></a>}}
+\if{latex}{\out{\hypertarget{method-ShellResourceClient-exec}{}}}
 \subsection{Method \code{exec()}}{
 Executes a shell command in the working directory specified in the resource's URL.
 \subsection{Usage}{
@@ -122,8 +122,8 @@ The command execution result object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-ShellResourceClient-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ShellResourceClient-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

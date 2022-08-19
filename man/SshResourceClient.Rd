@@ -21,30 +21,30 @@ Connects to a SSH server.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{SshResourceClient$new()}}
-\item \href{#method-getAllowedCommands}{\code{SshResourceClient$getAllowedCommands()}}
-\item \href{#method-getConnection}{\code{SshResourceClient$getConnection()}}
-\item \href{#method-downloadFile}{\code{SshResourceClient$downloadFile()}}
-\item \href{#method-uploadFile}{\code{SshResourceClient$uploadFile()}}
-\item \href{#method-tempDir}{\code{SshResourceClient$tempDir()}}
-\item \href{#method-removeTempDir}{\code{SshResourceClient$removeTempDir()}}
-\item \href{#method-exec}{\code{SshResourceClient$exec()}}
-\item \href{#method-close}{\code{SshResourceClient$close()}}
-\item \href{#method-clone}{\code{SshResourceClient$clone()}}
+\item \href{#method-SshResourceClient-new}{\code{SshResourceClient$new()}}
+\item \href{#method-SshResourceClient-getAllowedCommands}{\code{SshResourceClient$getAllowedCommands()}}
+\item \href{#method-SshResourceClient-getConnection}{\code{SshResourceClient$getConnection()}}
+\item \href{#method-SshResourceClient-downloadFile}{\code{SshResourceClient$downloadFile()}}
+\item \href{#method-SshResourceClient-uploadFile}{\code{SshResourceClient$uploadFile()}}
+\item \href{#method-SshResourceClient-tempDir}{\code{SshResourceClient$tempDir()}}
+\item \href{#method-SshResourceClient-removeTempDir}{\code{SshResourceClient$removeTempDir()}}
+\item \href{#method-SshResourceClient-exec}{\code{SshResourceClient$exec()}}
+\item \href{#method-SshResourceClient-close}{\code{SshResourceClient$close()}}
+\item \href{#method-SshResourceClient-clone}{\code{SshResourceClient$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame">}\href{../../resourcer/html/ResourceClient.html#method-asDataFrame}{\code{resourcer::ResourceClient$asDataFrame()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl">}\href{../../resourcer/html/ResourceClient.html#method-asTbl}{\code{resourcer::ResourceClient$asTbl()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource">}\href{../../resourcer/html/ResourceClient.html#method-getResource}{\code{resourcer::ResourceClient$getResource()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>resourcer::ResourceClient$asDataFrame()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-SshResourceClient-new"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceClient-new}{}}}
 \subsection{Method \code{new()}}{
 Create a SshResourceClient instance. This client will interact wtih a computation resource using ssh commands.
 \subsection{Usage}{
@@ -63,8 +63,8 @@ The SshResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getAllowedCommands"></a>}}
-\if{latex}{\out{\hypertarget{method-getAllowedCommands}{}}}
+\if{html}{\out{<a id="method-SshResourceClient-getAllowedCommands"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceClient-getAllowedCommands}{}}}
 \subsection{Method \code{getAllowedCommands()}}{
 Get the command names that can be executed.
 \subsection{Usage}{
@@ -76,8 +76,8 @@ A character vector
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getConnection"></a>}}
-\if{latex}{\out{\hypertarget{method-getConnection}{}}}
+\if{html}{\out{<a id="method-SshResourceClient-getConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceClient-getConnection}{}}}
 \subsection{Method \code{getConnection()}}{
 Get or create the SSH connection object, for raw interaction.
 \subsection{Usage}{
@@ -89,8 +89,8 @@ The SSH connection object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-downloadFile"></a>}}
-\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
+\if{html}{\out{<a id="method-SshResourceClient-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceClient-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Download one or more files (wilcard * is supported in the file name (which can be a directory))
 \subsection{Usage}{
@@ -113,8 +113,8 @@ The paths of the files having been downloaded.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-uploadFile"></a>}}
-\if{latex}{\out{\hypertarget{method-uploadFile}{}}}
+\if{html}{\out{<a id="method-SshResourceClient-uploadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceClient-uploadFile}{}}}
 \subsection{Method \code{uploadFile()}}{
 Upload one or more files
 \subsection{Usage}{
@@ -137,8 +137,8 @@ The paths of the files having been uploaded.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-tempDir"></a>}}
-\if{latex}{\out{\hypertarget{method-tempDir}{}}}
+\if{html}{\out{<a id="method-SshResourceClient-tempDir"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceClient-tempDir}{}}}
 \subsection{Method \code{tempDir()}}{
 Get connection's temporary directory in the remote server, create it if it does not exists.
 \subsection{Usage}{
@@ -150,8 +150,8 @@ The path to the temporary directory.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-removeTempDir"></a>}}
-\if{latex}{\out{\hypertarget{method-removeTempDir}{}}}
+\if{html}{\out{<a id="method-SshResourceClient-removeTempDir"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceClient-removeTempDir}{}}}
 \subsection{Method \code{removeTempDir()}}{
 Remove the connection's temporary directory from the remote server, if it was defined.
 \subsection{Usage}{
@@ -160,8 +160,8 @@ Remove the connection's temporary directory from the remote server, if it was de
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-exec"></a>}}
-\if{latex}{\out{\hypertarget{method-exec}{}}}
+\if{html}{\out{<a id="method-SshResourceClient-exec"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceClient-exec}{}}}
 \subsection{Method \code{exec()}}{
 Executes a ssh command.
 \subsection{Usage}{
@@ -184,8 +184,8 @@ The command execution result object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-close"></a>}}
-\if{latex}{\out{\hypertarget{method-close}{}}}
+\if{html}{\out{<a id="method-SshResourceClient-close"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceClient-close}{}}}
 \subsection{Method \code{close()}}{
 Close the SSH connection.
 \subsection{Usage}{
@@ -194,8 +194,8 @@ Close the SSH connection.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-SshResourceClient-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceClient-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

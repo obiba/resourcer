@@ -21,21 +21,21 @@ The resource is a computation unit, accessible by issuing local system commands,
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-isFor}{\code{ShellResourceResolver$isFor()}}
-\item \href{#method-newClient}{\code{ShellResourceResolver$newClient()}}
-\item \href{#method-clone}{\code{ShellResourceResolver$clone()}}
+\item \href{#method-ShellResourceResolver-isFor}{\code{ShellResourceResolver$isFor()}}
+\item \href{#method-ShellResourceResolver-newClient}{\code{ShellResourceResolver$newClient()}}
+\item \href{#method-ShellResourceResolver-clone}{\code{ShellResourceResolver$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize">}\href{../../resourcer/html/ResourceResolver.html#method-initialize}{\code{resourcer::ResourceResolver$initialize()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-ShellResourceResolver-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-ShellResourceResolver-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource is a computation resource accessible by shell commands. The resource URL scheme must be "sh" or "shell".
 \subsection{Usage}{
@@ -54,8 +54,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-newClient"></a>}}
-\if{latex}{\out{\hypertarget{method-newClient}{}}}
+\if{html}{\out{<a id="method-ShellResourceResolver-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-ShellResourceResolver-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Create a ShellResourceClient instance from the provided resource.
 \subsection{Usage}{
@@ -74,8 +74,8 @@ A ShellResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-ShellResourceResolver-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ShellResourceResolver-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

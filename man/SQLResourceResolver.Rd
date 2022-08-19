@@ -21,21 +21,21 @@ The resource is SQL database.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-isFor}{\code{SQLResourceResolver$isFor()}}
-\item \href{#method-newClient}{\code{SQLResourceResolver$newClient()}}
-\item \href{#method-clone}{\code{SQLResourceResolver$clone()}}
+\item \href{#method-SQLResourceResolver-isFor}{\code{SQLResourceResolver$isFor()}}
+\item \href{#method-SQLResourceResolver-newClient}{\code{SQLResourceResolver$newClient()}}
+\item \href{#method-SQLResourceResolver-clone}{\code{SQLResourceResolver$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize">}\href{../../resourcer/html/ResourceResolver.html#method-initialize}{\code{resourcer::ResourceResolver$initialize()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-SQLResourceResolver-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-SQLResourceResolver-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a registered DBIResourceConnector.
 \subsection{Usage}{
@@ -54,8 +54,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-newClient"></a>}}
-\if{latex}{\out{\hypertarget{method-newClient}{}}}
+\if{html}{\out{<a id="method-SQLResourceResolver-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-SQLResourceResolver-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Creates a SQLResourceClient instance from provided resource.
 \subsection{Usage}{
@@ -74,8 +74,8 @@ A SQLResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-SQLResourceResolver-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-SQLResourceResolver-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

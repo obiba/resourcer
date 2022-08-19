@@ -18,19 +18,19 @@ Makes a DBI connection from a resource description, used in SQLResourceClient th
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{DBIResourceConnector$new()}}
-\item \href{#method-isFor}{\code{DBIResourceConnector$isFor()}}
-\item \href{#method-createDBIConnection}{\code{DBIResourceConnector$createDBIConnection()}}
-\item \href{#method-getTableName}{\code{DBIResourceConnector$getTableName()}}
-\item \href{#method-readDBTable}{\code{DBIResourceConnector$readDBTable()}}
-\item \href{#method-readDBTibble}{\code{DBIResourceConnector$readDBTibble()}}
-\item \href{#method-closeDBIConnection}{\code{DBIResourceConnector$closeDBIConnection()}}
-\item \href{#method-clone}{\code{DBIResourceConnector$clone()}}
+\item \href{#method-DBIResourceConnector-new}{\code{DBIResourceConnector$new()}}
+\item \href{#method-DBIResourceConnector-isFor}{\code{DBIResourceConnector$isFor()}}
+\item \href{#method-DBIResourceConnector-createDBIConnection}{\code{DBIResourceConnector$createDBIConnection()}}
+\item \href{#method-DBIResourceConnector-getTableName}{\code{DBIResourceConnector$getTableName()}}
+\item \href{#method-DBIResourceConnector-readDBTable}{\code{DBIResourceConnector$readDBTable()}}
+\item \href{#method-DBIResourceConnector-readDBTibble}{\code{DBIResourceConnector$readDBTibble()}}
+\item \href{#method-DBIResourceConnector-closeDBIConnection}{\code{DBIResourceConnector$closeDBIConnection()}}
+\item \href{#method-DBIResourceConnector-clone}{\code{DBIResourceConnector$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-DBIResourceConnector-new"></a>}}
+\if{latex}{\out{\hypertarget{method-DBIResourceConnector-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new DBIResourceConnector instance
 \subsection{Usage}{
@@ -42,8 +42,8 @@ A DBIResourceConnector object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-DBIResourceConnector-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-DBIResourceConnector-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided parameter is of class "resource".
 \subsection{Usage}{
@@ -62,8 +62,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-createDBIConnection"></a>}}
-\if{latex}{\out{\hypertarget{method-createDBIConnection}{}}}
+\if{html}{\out{<a id="method-DBIResourceConnector-createDBIConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-DBIResourceConnector-createDBIConnection}{}}}
 \subsection{Method \code{createDBIConnection()}}{
 Stub function which subclasses will implement to create a DBI connection object from a resource.
 \subsection{Usage}{
@@ -79,8 +79,8 @@ Stub function which subclasses will implement to create a DBI connection object 
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getTableName"></a>}}
-\if{latex}{\out{\hypertarget{method-getTableName}{}}}
+\if{html}{\out{<a id="method-DBIResourceConnector-getTableName"></a>}}
+\if{latex}{\out{\hypertarget{method-DBIResourceConnector-getTableName}{}}}
 \subsection{Method \code{getTableName()}}{
 Get the SQL table name from the resource URL.
 \subsection{Usage}{
@@ -99,8 +99,8 @@ The SQL table name.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-readDBTable"></a>}}
-\if{latex}{\out{\hypertarget{method-readDBTable}{}}}
+\if{html}{\out{<a id="method-DBIResourceConnector-readDBTable"></a>}}
+\if{latex}{\out{\hypertarget{method-DBIResourceConnector-readDBTable}{}}}
 \subsection{Method \code{readDBTable()}}{
 Read a table as a vanilla tibble using DBI connection object.
 \subsection{Usage}{
@@ -121,8 +121,8 @@ A vanilla tibble.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-readDBTibble"></a>}}
-\if{latex}{\out{\hypertarget{method-readDBTibble}{}}}
+\if{html}{\out{<a id="method-DBIResourceConnector-readDBTibble"></a>}}
+\if{latex}{\out{\hypertarget{method-DBIResourceConnector-readDBTibble}{}}}
 \subsection{Method \code{readDBTibble()}}{
 Read a table as a SQL tibble using DBI connection object.
 \subsection{Usage}{
@@ -143,8 +143,8 @@ A SQL tibble.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-closeDBIConnection"></a>}}
-\if{latex}{\out{\hypertarget{method-closeDBIConnection}{}}}
+\if{html}{\out{<a id="method-DBIResourceConnector-closeDBIConnection"></a>}}
+\if{latex}{\out{\hypertarget{method-DBIResourceConnector-closeDBIConnection}{}}}
 \subsection{Method \code{closeDBIConnection()}}{
 Disconnect the DBI connection.
 \subsection{Usage}{
@@ -160,8 +160,8 @@ Disconnect the DBI connection.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-DBIResourceConnector-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-DBIResourceConnector-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

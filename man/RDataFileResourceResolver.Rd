@@ -21,21 +21,21 @@ The resource is a R data file and data format is the class of the symbol that wi
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-isFor}{\code{RDataFileResourceResolver$isFor()}}
-\item \href{#method-newClient}{\code{RDataFileResourceResolver$newClient()}}
-\item \href{#method-clone}{\code{RDataFileResourceResolver$clone()}}
+\item \href{#method-RDataFileResourceResolver-isFor}{\code{RDataFileResourceResolver$isFor()}}
+\item \href{#method-RDataFileResourceResolver-newClient}{\code{RDataFileResourceResolver$newClient()}}
+\item \href{#method-RDataFileResourceResolver-clone}{\code{RDataFileResourceResolver$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize">}\href{../../resourcer/html/ResourceResolver.html#method-initialize}{\code{resourcer::ResourceResolver$initialize()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-RDataFileResourceResolver-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-RDataFileResourceResolver-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a R data file: the resource can be accessed as a file and
  the resource URL path ends with ".rda" or ".rdata" (case ignored), or the resource format is prefixed with "r:" or "rda:" (a kind of
@@ -56,8 +56,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-newClient"></a>}}
-\if{latex}{\out{\hypertarget{method-newClient}{}}}
+\if{html}{\out{<a id="method-RDataFileResourceResolver-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-RDataFileResourceResolver-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Creates a RDataFileResourceClient instance from provided resource.
 \subsection{Usage}{
@@ -76,8 +76,8 @@ A RDataFileResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-RDataFileResourceResolver-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-RDataFileResourceResolver-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

@@ -21,26 +21,26 @@ Connects to a file and use one of the tidyverse reader.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{TidyFileResourceClient$new()}}
-\item \href{#method-asDataFrame}{\code{TidyFileResourceClient$asDataFrame()}}
-\item \href{#method-clone}{\code{TidyFileResourceClient$clone()}}
+\item \href{#method-TidyFileResourceClient-new}{\code{TidyFileResourceClient$new()}}
+\item \href{#method-TidyFileResourceClient-asDataFrame}{\code{TidyFileResourceClient$asDataFrame()}}
+\item \href{#method-TidyFileResourceClient-clone}{\code{TidyFileResourceClient$clone()}}
 }
 }
-\if{html}{
-\out{<details ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl">}\href{../../resourcer/html/ResourceClient.html#method-asTbl}{\code{resourcer::ResourceClient$asTbl()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec">}\href{../../resourcer/html/ResourceClient.html#method-exec}{\code{resourcer::ResourceClient$exec()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection">}\href{../../resourcer/html/ResourceClient.html#method-getConnection}{\code{resourcer::ResourceClient$getConnection()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource">}\href{../../resourcer/html/ResourceClient.html#method-getResource}{\code{resourcer::ResourceClient$getResource()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="close">}\href{../../resourcer/html/FileResourceClient.html#method-close}{\code{resourcer::FileResourceClient$close()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="downloadFile">}\href{../../resourcer/html/FileResourceClient.html#method-downloadFile}{\code{resourcer::FileResourceClient$downloadFile()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>resourcer::ResourceClient$exec()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>resourcer::ResourceClient$getConnection()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="close"><a href='../../resourcer/html/FileResourceClient.html#method-FileResourceClient-close'><code>resourcer::FileResourceClient$close()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="downloadFile"><a href='../../resourcer/html/FileResourceClient.html#method-FileResourceClient-downloadFile'><code>resourcer::FileResourceClient$downloadFile()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-TidyFileResourceClient-new"></a>}}
+\if{latex}{\out{\hypertarget{method-TidyFileResourceClient-new}{}}}
 \subsection{Method \code{new()}}{
 Create a TidyFileResourceClient instance.
 \subsection{Usage}{
@@ -59,8 +59,8 @@ A TidyFileResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-asDataFrame"></a>}}
-\if{latex}{\out{\hypertarget{method-asDataFrame}{}}}
+\if{html}{\out{<a id="method-TidyFileResourceClient-asDataFrame"></a>}}
+\if{latex}{\out{\hypertarget{method-TidyFileResourceClient-asDataFrame}{}}}
 \subsection{Method \code{asDataFrame()}}{
 Coerce the resource value extracted from the file in tidy format to a data.frame.
 \subsection{Usage}{
@@ -79,8 +79,8 @@ A data.frame (more specifically a tibble).
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-TidyFileResourceClient-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-TidyFileResourceClient-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

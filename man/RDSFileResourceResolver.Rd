@@ -21,21 +21,21 @@ The resource is a RDS file.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-isFor}{\code{RDSFileResourceResolver$isFor()}}
-\item \href{#method-newClient}{\code{RDSFileResourceResolver$newClient()}}
-\item \href{#method-clone}{\code{RDSFileResourceResolver$clone()}}
+\item \href{#method-RDSFileResourceResolver-isFor}{\code{RDSFileResourceResolver$isFor()}}
+\item \href{#method-RDSFileResourceResolver-newClient}{\code{RDSFileResourceResolver$newClient()}}
+\item \href{#method-RDSFileResourceResolver-clone}{\code{RDSFileResourceResolver$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize">}\href{../../resourcer/html/ResourceResolver.html#method-initialize}{\code{resourcer::ResourceResolver$initialize()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-RDSFileResourceResolver-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-RDSFileResourceResolver-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a R object file: the resource can be accessed as a file and
  the resource URL path ends with ".rds" (case ignored), or the resource format is prefixed with "rds:" (a kind of
@@ -56,8 +56,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-newClient"></a>}}
-\if{latex}{\out{\hypertarget{method-newClient}{}}}
+\if{html}{\out{<a id="method-RDSFileResourceResolver-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-RDSFileResourceResolver-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Creates a RDSFileResourceClient instance from provided resource.
 \subsection{Usage}{
@@ -76,8 +76,8 @@ A RDSFileResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-RDSFileResourceResolver-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-RDSFileResourceResolver-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

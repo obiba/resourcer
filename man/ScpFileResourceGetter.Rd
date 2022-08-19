@@ -21,23 +21,23 @@ Access a file that is stored on a server accessible through SSH. Credentials app
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{ScpFileResourceGetter$new()}}
-\item \href{#method-isFor}{\code{ScpFileResourceGetter$isFor()}}
-\item \href{#method-downloadFile}{\code{ScpFileResourceGetter$downloadFile()}}
-\item \href{#method-clone}{\code{ScpFileResourceGetter$clone()}}
+\item \href{#method-ScpFileResourceGetter-new}{\code{ScpFileResourceGetter$new()}}
+\item \href{#method-ScpFileResourceGetter-isFor}{\code{ScpFileResourceGetter$isFor()}}
+\item \href{#method-ScpFileResourceGetter-downloadFile}{\code{ScpFileResourceGetter$downloadFile()}}
+\item \href{#method-ScpFileResourceGetter-clone}{\code{ScpFileResourceGetter$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName">}\href{../../resourcer/html/FileResourceGetter.html#method-extractFileName}{\code{resourcer::FileResourceGetter$extractFileName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir">}\href{../../resourcer/html/FileResourceGetter.html#method-makeDownloadDir}{\code{resourcer::FileResourceGetter$makeDownloadDir()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>resourcer::FileResourceGetter$extractFileName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>resourcer::FileResourceGetter$makeDownloadDir()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-ScpFileResourceGetter-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ScpFileResourceGetter-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a ScpFileResourceGetter instance.
 \subsection{Usage}{
@@ -49,8 +49,8 @@ The ScpFileResourceGetter object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-ScpFileResourceGetter-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-ScpFileResourceGetter-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource is a file accessible by SCP: the resource URL scheme must be "scp".
 \subsection{Usage}{
@@ -69,8 +69,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-downloadFile"></a>}}
-\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
+\if{html}{\out{<a id="method-ScpFileResourceGetter-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-ScpFileResourceGetter-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Download the file described by the resource over an SSH connection.
 \subsection{Usage}{
@@ -91,8 +91,8 @@ The "resource.file" object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-ScpFileResourceGetter-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ScpFileResourceGetter-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

@@ -21,23 +21,23 @@ Access a file that is in the MongoDB file store (GridFS). Credentials may apply.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{GridFsFileResourceGetter$new()}}
-\item \href{#method-isFor}{\code{GridFsFileResourceGetter$isFor()}}
-\item \href{#method-downloadFile}{\code{GridFsFileResourceGetter$downloadFile()}}
-\item \href{#method-clone}{\code{GridFsFileResourceGetter$clone()}}
+\item \href{#method-GridFsFileResourceGetter-new}{\code{GridFsFileResourceGetter$new()}}
+\item \href{#method-GridFsFileResourceGetter-isFor}{\code{GridFsFileResourceGetter$isFor()}}
+\item \href{#method-GridFsFileResourceGetter-downloadFile}{\code{GridFsFileResourceGetter$downloadFile()}}
+\item \href{#method-GridFsFileResourceGetter-clone}{\code{GridFsFileResourceGetter$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName">}\href{../../resourcer/html/FileResourceGetter.html#method-extractFileName}{\code{resourcer::FileResourceGetter$extractFileName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir">}\href{../../resourcer/html/FileResourceGetter.html#method-makeDownloadDir}{\code{resourcer::FileResourceGetter$makeDownloadDir()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>resourcer::FileResourceGetter$extractFileName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>resourcer::FileResourceGetter$makeDownloadDir()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-GridFsFileResourceGetter-new"></a>}}
+\if{latex}{\out{\hypertarget{method-GridFsFileResourceGetter-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new GridFsFileResourceGetter instance.
 \subsection{Usage}{
@@ -49,8 +49,8 @@ A GridFsFileResourceGetter object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-GridFsFileResourceGetter-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-GridFsFileResourceGetter-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a GridFS object: either the URL scheme is "gridfs" or it is "mongodb"/"mongodb+srv" with a query parameter "prefix=fs" (that identifies GridFS collection names).
 \subsection{Usage}{
@@ -69,8 +69,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-downloadFile"></a>}}
-\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
+\if{html}{\out{<a id="method-GridFsFileResourceGetter-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-GridFsFileResourceGetter-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Download the file from the MongoDB file store in a temporary location.
 \subsection{Usage}{
@@ -91,8 +91,8 @@ The "resource.file" object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-GridFsFileResourceGetter-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GridFsFileResourceGetter-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

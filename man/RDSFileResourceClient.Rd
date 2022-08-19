@@ -22,27 +22,27 @@ except that the RDS format stores a single R object.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{RDSFileResourceClient$new()}}
-\item \href{#method-asDataFrame}{\code{RDSFileResourceClient$asDataFrame()}}
-\item \href{#method-getValue}{\code{RDSFileResourceClient$getValue()}}
-\item \href{#method-clone}{\code{RDSFileResourceClient$clone()}}
+\item \href{#method-RDSFileResourceClient-new}{\code{RDSFileResourceClient$new()}}
+\item \href{#method-RDSFileResourceClient-asDataFrame}{\code{RDSFileResourceClient$asDataFrame()}}
+\item \href{#method-RDSFileResourceClient-getValue}{\code{RDSFileResourceClient$getValue()}}
+\item \href{#method-RDSFileResourceClient-clone}{\code{RDSFileResourceClient$clone()}}
 }
 }
-\if{html}{
-\out{<details ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl">}\href{../../resourcer/html/ResourceClient.html#method-asTbl}{\code{resourcer::ResourceClient$asTbl()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec">}\href{../../resourcer/html/ResourceClient.html#method-exec}{\code{resourcer::ResourceClient$exec()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection">}\href{../../resourcer/html/ResourceClient.html#method-getConnection}{\code{resourcer::ResourceClient$getConnection()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource">}\href{../../resourcer/html/ResourceClient.html#method-getResource}{\code{resourcer::ResourceClient$getResource()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="close">}\href{../../resourcer/html/FileResourceClient.html#method-close}{\code{resourcer::FileResourceClient$close()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="downloadFile">}\href{../../resourcer/html/FileResourceClient.html#method-downloadFile}{\code{resourcer::FileResourceClient$downloadFile()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>resourcer::ResourceClient$exec()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>resourcer::ResourceClient$getConnection()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="close"><a href='../../resourcer/html/FileResourceClient.html#method-FileResourceClient-close'><code>resourcer::FileResourceClient$close()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="downloadFile"><a href='../../resourcer/html/FileResourceClient.html#method-FileResourceClient-downloadFile'><code>resourcer::FileResourceClient$downloadFile()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-RDSFileResourceClient-new"></a>}}
+\if{latex}{\out{\hypertarget{method-RDSFileResourceClient-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new RDSFileResourceClient instance.
 \subsection{Usage}{
@@ -61,8 +61,8 @@ A RDSFileResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-asDataFrame"></a>}}
-\if{latex}{\out{\hypertarget{method-asDataFrame}{}}}
+\if{html}{\out{<a id="method-RDSFileResourceClient-asDataFrame"></a>}}
+\if{latex}{\out{\hypertarget{method-RDSFileResourceClient-asDataFrame}{}}}
 \subsection{Method \code{asDataFrame()}}{
 Coerce the resource value extracted from the R object file to a data.frame.
 \subsection{Usage}{
@@ -81,8 +81,8 @@ A data.frame.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getValue"></a>}}
-\if{latex}{\out{\hypertarget{method-getValue}{}}}
+\if{html}{\out{<a id="method-RDSFileResourceClient-getValue"></a>}}
+\if{latex}{\out{\hypertarget{method-RDSFileResourceClient-getValue}{}}}
 \subsection{Method \code{getValue()}}{
 Get the resource value extracted from the R object file.
 \subsection{Usage}{
@@ -101,8 +101,8 @@ The resource value.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-RDSFileResourceClient-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-RDSFileResourceClient-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

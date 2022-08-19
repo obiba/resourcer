@@ -21,23 +21,23 @@ Access a file that is stored in the local file system. No credentials apply.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{LocalFileResourceGetter$new()}}
-\item \href{#method-isFor}{\code{LocalFileResourceGetter$isFor()}}
-\item \href{#method-downloadFile}{\code{LocalFileResourceGetter$downloadFile()}}
-\item \href{#method-clone}{\code{LocalFileResourceGetter$clone()}}
+\item \href{#method-LocalFileResourceGetter-new}{\code{LocalFileResourceGetter$new()}}
+\item \href{#method-LocalFileResourceGetter-isFor}{\code{LocalFileResourceGetter$isFor()}}
+\item \href{#method-LocalFileResourceGetter-downloadFile}{\code{LocalFileResourceGetter$downloadFile()}}
+\item \href{#method-LocalFileResourceGetter-clone}{\code{LocalFileResourceGetter$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName">}\href{../../resourcer/html/FileResourceGetter.html#method-extractFileName}{\code{resourcer::FileResourceGetter$extractFileName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir">}\href{../../resourcer/html/FileResourceGetter.html#method-makeDownloadDir}{\code{resourcer::FileResourceGetter$makeDownloadDir()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>resourcer::FileResourceGetter$extractFileName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>resourcer::FileResourceGetter$makeDownloadDir()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-LocalFileResourceGetter-new"></a>}}
+\if{latex}{\out{\hypertarget{method-LocalFileResourceGetter-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new LocalFileResourceGetter instance.
 \subsection{Usage}{
@@ -49,8 +49,8 @@ A LocalFileResourceGetter object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-LocalFileResourceGetter-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-LocalFileResourceGetter-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a file stored in the local file system.
 \subsection{Usage}{
@@ -69,8 +69,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-downloadFile"></a>}}
-\if{latex}{\out{\hypertarget{method-downloadFile}{}}}
+\if{html}{\out{<a id="method-LocalFileResourceGetter-downloadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-LocalFileResourceGetter-downloadFile}{}}}
 \subsection{Method \code{downloadFile()}}{
 Make a "resource.file" object from a local file resource.
 \subsection{Usage}{
@@ -91,8 +91,8 @@ The "resource.file" object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-LocalFileResourceGetter-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-LocalFileResourceGetter-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

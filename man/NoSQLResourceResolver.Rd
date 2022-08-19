@@ -21,21 +21,21 @@ The resource is NoSQL database such as mongodb (elasticsearch, redis, couchdb, s
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-isFor}{\code{NoSQLResourceResolver$isFor()}}
-\item \href{#method-newClient}{\code{NoSQLResourceResolver$newClient()}}
-\item \href{#method-clone}{\code{NoSQLResourceResolver$clone()}}
+\item \href{#method-NoSQLResourceResolver-isFor}{\code{NoSQLResourceResolver$isFor()}}
+\item \href{#method-NoSQLResourceResolver-newClient}{\code{NoSQLResourceResolver$newClient()}}
+\item \href{#method-NoSQLResourceResolver-clone}{\code{NoSQLResourceResolver$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize">}\href{../../resourcer/html/ResourceResolver.html#method-initialize}{\code{resourcer::ResourceResolver$initialize()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFor"></a>}}
-\if{latex}{\out{\hypertarget{method-isFor}{}}}
+\if{html}{\out{<a id="method-NoSQLResourceResolver-isFor"></a>}}
+\if{latex}{\out{\hypertarget{method-NoSQLResourceResolver-isFor}{}}}
 \subsection{Method \code{isFor()}}{
 Check that the provided resource has a URL that locates a nodbi object: the URL scheme must be one of "mongodb", "mongodb+srv". Other NoSQL databases "elasticsearch", "redis", "couchdb", "sqlite" are not supported yet.
 \subsection{Usage}{
@@ -54,8 +54,8 @@ A logical.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-newClient"></a>}}
-\if{latex}{\out{\hypertarget{method-newClient}{}}}
+\if{html}{\out{<a id="method-NoSQLResourceResolver-newClient"></a>}}
+\if{latex}{\out{\hypertarget{method-NoSQLResourceResolver-newClient}{}}}
 \subsection{Method \code{newClient()}}{
 Creates a NoSQLResourceClient instance from provided resource.
 \subsection{Usage}{
@@ -74,8 +74,8 @@ A NoSQLResourceClient object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-NoSQLResourceResolver-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-NoSQLResourceResolver-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{
