@@ -30,11 +30,11 @@ Base class that connects to a file using a FileResourceGetter.
 \if{html}{\out{
 <details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>resourcer::ResourceClient$asDataFrame()</code></a></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>resourcer::ResourceClient$exec()</code></a></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>resourcer::ResourceClient$getConnection()</code></a></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>resourcer::ResourceClient$asDataFrame()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>resourcer::ResourceClient$exec()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>resourcer::ResourceClient$getConnection()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
 </ul>
 </details>
 }}

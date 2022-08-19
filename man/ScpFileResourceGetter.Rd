@@ -30,8 +30,8 @@ Access a file that is stored on a server accessible through SSH. Credentials app
 \if{html}{\out{
 <details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>resourcer::FileResourceGetter$extractFileName()</code></a></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>resourcer::FileResourceGetter$makeDownloadDir()</code></a></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>resourcer::FileResourceGetter$extractFileName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>resourcer::FileResourceGetter$makeDownloadDir()</code></a></span></li>
 </ul>
 </details>
 }}

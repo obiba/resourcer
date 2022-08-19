@@ -32,9 +32,9 @@ Resource client that connects to a SQL database supported by DBI.
 \if{html}{\out{
 <details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-downloadFile'><code>resourcer::ResourceClient$downloadFile()</code></a></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>resourcer::ResourceClient$exec()</code></a></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-downloadFile'><code>resourcer::ResourceClient$downloadFile()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>resourcer::ResourceClient$exec()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
 </ul>
 </details>
 }}

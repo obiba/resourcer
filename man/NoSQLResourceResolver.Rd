@@ -29,7 +29,7 @@ The resource is NoSQL database such as mongodb (elasticsearch, redis, couchdb, s
 \if{html}{\out{
 <details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
 </ul>
 </details>
 }}

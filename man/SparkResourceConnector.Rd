@@ -31,9 +31,9 @@ Makes a Apache Spark connection object, that is also a DBI connection object, fr
 \if{html}{\out{
 <details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-getTableName'><code>resourcer::DBIResourceConnector$getTableName()</code></a></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTable'><code>resourcer::DBIResourceConnector$readDBTable()</code></a></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTibble'><code>resourcer::DBIResourceConnector$readDBTibble()</code></a></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-getTableName'><code>resourcer::DBIResourceConnector$getTableName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTable'><code>resourcer::DBIResourceConnector$readDBTable()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTibble'><code>resourcer::DBIResourceConnector$readDBTibble()</code></a></span></li>
 </ul>
 </details>
 }}

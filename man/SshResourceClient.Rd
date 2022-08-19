@@ -36,9 +36,9 @@ Connects to a SSH server.
 \if{html}{\out{
 <details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>resourcer::ResourceClient$asDataFrame()</code></a></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>resourcer::ResourceClient$asDataFrame()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
 </ul>
 </details>
 }}
