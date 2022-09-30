@@ -36,7 +36,7 @@ Suggests:
     RMariaDB,
     RPostgres,
     sparklyr,
-    RPresto,
+    RPresto (>= 1.4.0),
     nodbi,
     rmarkdown
 BugReports: https://github.com/obiba/resourcer
