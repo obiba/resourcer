@@ -5,6 +5,8 @@ addons:
     packages:
       - libssh-dev
       - libjq-dev
+      - libharfbuzz-dev
+      - libfribidi-dev
 r_packages:
   - devtools
 warnings_are_errors: true
