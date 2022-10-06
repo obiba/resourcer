@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,23 +33,17 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">resourcer</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.3.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -61,7 +57,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/obiba/resourcer/">
+  <a href="https://github.com/obiba/resourcer/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -76,13 +72,13 @@
 
       
 
-      </header><script src="resources-introduction_files/header-attrs-2.9/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Introduction to Resources</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/obiba/resourcer/blob/master/vignettes/resources-introduction.Rmd"><code>vignettes/resources-introduction.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/obiba/resourcer/blob/HEAD/vignettes/resources-introduction.Rmd" class="external-link"><code>vignettes/resources-introduction.Rmd</code></a></small>
       <div class="hidden name"><code>resources-introduction.Rmd</code></div>
 
     </div>
@@ -101,15 +97,15 @@
 <li>
 <em>FileResourceGetter</em>, connect to a file described by a resource,</li>
 <li>
-<em>DBIResourceConnector</em>, establish a <a href="https://www.r-dbi.org/">DBI</a> connection.</li>
+<em>DBIResourceConnector</em>, establish a <a href="https://www.r-dbi.org/" class="external-link">DBI</a> connection.</li>
 </ul>
-<div id="file-resources" class="section level2">
-<h2 class="hasAnchor">
-<a href="#file-resources" class="anchor"></a>File Resources</h2>
+<div class="section level2">
+<h2 id="file-resources">File Resources<a class="anchor" aria-label="anchor" href="#file-resources"></a>
+</h2>
 <p>These are resources describing a file. If the file is in a remote location, it must be downloaded before being read. The data format specification of the resource helps to find the appropriate file reader.</p>
-<div id="file-getter" class="section level3">
-<h3 class="hasAnchor">
-<a href="#file-getter" class="anchor"></a>File Getter</h3>
+<div class="section level3">
+<h3 id="file-getter">File Getter<a class="anchor" aria-label="anchor" href="#file-getter"></a>
+</h3>
 <p>The file locations supported by default are:</p>
 <ul>
 <li>
@@ -121,18 +117,18 @@
 <li>
 <code>scp</code>, file copy through SSH,</li>
 <li>
-<code>opal</code>, <a href="https://www.obiba.org/pages/products/opal/">Opal</a> file store.</li>
+<code>opal</code>, <a href="https://www.obiba.org/pages/products/opal/" class="external-link">Opal</a> file store.</li>
 </ul>
 <p>This can be easily applied to other file locations by extending the <em>FileResourceGetter</em> class. An instance of the new file resource getter is to be registered so that the <em>FileResourceResolver</em> can operate as expected.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">resourcer</span><span class="fu">::</span><span class="fu"><a href="../reference/registerFileResourceGetter.html">registerFileResourceGetter</a></span><span class="op">(</span><span class="fu">MyFileLocationResourceGetter</span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="file-data-format" class="section level3">
-<h3 class="hasAnchor">
-<a href="#file-data-format" class="anchor"></a>File Data Format</h3>
+<div class="section level3">
+<h3 id="file-data-format">File Data Format<a class="anchor" aria-label="anchor" href="#file-data-format"></a>
+</h3>
 <p>The data format specified within the <em>Resource</em> object, helps at finding the appropriate file reader. Currently supported data formats are:</p>
 <ul>
-<li>the data formats that have a reader in <a href="https://www.tidyverse.org/">tidyverse</a>: <a href="https://readr.tidyverse.org/">readr</a> (<code>csv</code>, <code>csv2</code>, <code>tsv</code>, <code>ssv</code>, <code>delim</code>), <a href="https://haven.tidyverse.org/">haven</a> (<code>spss</code>, <code>sav</code>, <code>por</code>, <code>dta</code>, <code>stata</code>, <code>sas</code>, <code>xpt</code>), <a href="https://readxl.tidyverse.org/">readxl</a> (<code>excel</code>, <code>xls</code>, <code>xlsx</code>). This can be easily applied to other data file formats by extending the <em>FileResourceClient</em> class.</li>
+<li>the data formats that have a reader in <a href="https://www.tidyverse.org/" class="external-link">tidyverse</a>: <a href="https://readr.tidyverse.org/" class="external-link">readr</a> (<code>csv</code>, <code>csv2</code>, <code>tsv</code>, <code>ssv</code>, <code>delim</code>), <a href="https://haven.tidyverse.org/" class="external-link">haven</a> (<code>spss</code>, <code>sav</code>, <code>por</code>, <code>dta</code>, <code>stata</code>, <code>sas</code>, <code>xpt</code>), <a href="https://readxl.tidyverse.org/" class="external-link">readxl</a> (<code>excel</code>, <code>xls</code>, <code>xlsx</code>). This can be easily applied to other data file formats by extending the <em>FileResourceClient</em> class.</li>
 <li>the R data format that can be loaded in a child R environment from which object of interest will be retrieved.</li>
 </ul>
 <p>Usage example that reads a local SPSS file:</p>
@@ -145,19 +141,19 @@
 <span class="op">)</span>
 
 <span class="co"># coerce the csv file in the opal server to a data.frame</span>
-<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></code></pre></div>
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></code></pre></div>
 <p>To support other file data format, extend the <em>FileResourceClient</em> class with the new data format reader implementation. Associate factory class, an extension of the <em>ResourceResolver</em> class is also to be implemented and registered.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">resourcer</span><span class="fu">::</span><span class="fu"><a href="../reference/registerResourceResolver.html">registerResourceResolver</a></span><span class="op">(</span><span class="va">MyFileFormatResourceResolver</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="database-resources" class="section level2">
-<h2 class="hasAnchor">
-<a href="#database-resources" class="anchor"></a>Database Resources</h2>
-<div id="dbi-connectors" class="section level3">
-<h3 class="hasAnchor">
-<a href="#dbi-connectors" class="anchor"></a>DBI Connectors</h3>
-<p><a href="https://www.r-dbi.org/">DBI</a> is a set of virtual classes that are are used to abstract the SQL database connections and operations within R. Then any DBI implementation can be used to access to a SQL table. Which DBI connector to be used is an information that can be extracted from the scheme part of the resource’s URL. For instance a resource URL starting with <code>postgres://</code> will require the <a href="https://rpostgres.r-dbi.org/">RPostgres</a> driver. To separate the DBI connector instanciation from the DBI interface interactions in the <em>SQLResourceClient</em>, a <em>DBIResourceConnector</em> registry is to be populated. The currently supported SQL database connectors are:</p>
+<div class="section level2">
+<h2 id="database-resources">Database Resources<a class="anchor" aria-label="anchor" href="#database-resources"></a>
+</h2>
+<div class="section level3">
+<h3 id="dbi-connectors">DBI Connectors<a class="anchor" aria-label="anchor" href="#dbi-connectors"></a>
+</h3>
+<p><a href="https://www.r-dbi.org/" class="external-link">DBI</a> is a set of virtual classes that are are used to abstract the SQL database connections and operations within R. Then any DBI implementation can be used to access to a SQL table. Which DBI connector to be used is an information that can be extracted from the scheme part of the resource’s URL. For instance a resource URL starting with <code>postgres://</code> will require the <a href="https://rpostgres.r-dbi.org/" class="external-link">RPostgres</a> driver. To separate the DBI connector instanciation from the DBI interface interactions in the <em>SQLResourceClient</em>, a <em>DBIResourceConnector</em> registry is to be populated. The currently supported SQL database connectors are:</p>
 <ul>
 <li>
 <code>mariadb</code> MariaDB connector,</li>
@@ -166,28 +162,28 @@
 <li>
 <code>postgres</code> or <code>postgresql</code> Postgres connector,</li>
 <li>
-<code>presto</code>, <code>presto+http</code> or <code>presto+https</code> <a href="https://prestodb.io/">Presto</a> connector,</li>
+<code>presto</code>, <code>presto+http</code> or <code>presto+https</code> <a href="https://prestodb.io/" class="external-link">Presto</a> connector,</li>
 <li>
-<code>spark</code>, <code>spark+http</code> or <code>spark+https</code> <a href="https://spark.apache.org/">Spark</a> connector.</li>
+<code>spark</code>, <code>spark+http</code> or <code>spark+https</code> <a href="https://spark.apache.org/" class="external-link">Spark</a> connector.</li>
 </ul>
 <p>To support another SQL database having a DBI driver, extend the <em>DBIResourceConnector</em> class and register it:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">resourcer</span><span class="fu">::</span><span class="fu"><a href="../reference/registerDBIResourceConnector.html">registerDBIResourceConnector</a></span><span class="op">(</span><span class="va">MyDBResourceConnector</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="use-dplyr" class="section level3">
-<h3 class="hasAnchor">
-<a href="#use-dplyr" class="anchor"></a>Use dplyr</h3>
-<p>Having the data stored in the database allows to handle large (common SQL databases) to big (PrestoDB, Spark) datasets using <a href="https://dplyr.tidyverse.org/">dplyr</a> which will delegate as much as possible operations to the database.</p>
+<div class="section level3">
+<h3 id="use-dplyr">Use dplyr<a class="anchor" aria-label="anchor" href="#use-dplyr"></a>
+</h3>
+<p>Having the data stored in the database allows to handle large (common SQL databases) to big (PrestoDB, Spark) datasets using <a href="https://dplyr.tidyverse.org/" class="external-link">dplyr</a> which will delegate as much as possible operations to the database.</p>
 </div>
-<div id="document-databases" class="section level3">
-<h3 class="hasAnchor">
-<a href="#document-databases" class="anchor"></a>Document Databases</h3>
-<p>NoSQL databases can be described by a resource. The <a href="https://docs.ropensci.org/nodbi/">nodbi</a> can be used here. Currently only connection to MongoDB database is supported using URL scheme <code>mongodb</code> or <code>mongodb+srv</code>.</p>
+<div class="section level3">
+<h3 id="document-databases">Document Databases<a class="anchor" aria-label="anchor" href="#document-databases"></a>
+</h3>
+<p>NoSQL databases can be described by a resource. The <a href="https://docs.ropensci.org/nodbi/" class="external-link">nodbi</a> can be used here. Currently only connection to MongoDB database is supported using URL scheme <code>mongodb</code> or <code>mongodb+srv</code>.</p>
 </div>
 </div>
-<div id="computation-resources" class="section level2">
-<h2 class="hasAnchor">
-<a href="#computation-resources" class="anchor"></a>Computation Resources</h2>
+<div class="section level2">
+<h2 id="computation-resources">Computation Resources<a class="anchor" aria-label="anchor" href="#computation-resources"></a>
+</h2>
 <p>Computation resources are resources on which tasks/commands can be triggerred and from which resulting data can be retrieved.</p>
 <p>Example of computation resource that connects to a server through SSH:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -208,9 +204,9 @@
 <span class="co"># release connection</span>
 <span class="va">client</span><span class="op">$</span><span class="fu">close</span><span class="op">(</span><span class="op">)</span> <span class="co"># does ssh::ssh_disconnect(session)</span></code></pre></div>
 </div>
-<div id="extending-resources" class="section level2">
-<h2 class="hasAnchor">
-<a href="#extending-resources" class="anchor"></a>Extending Resources</h2>
+<div class="section level2">
+<h2 id="extending-resources">Extending Resources<a class="anchor" aria-label="anchor" href="#extending-resources"></a>
+</h2>
 <p>There are several ways to extend the Resources handling. These are based on different R6 classes having a <code>isFor(resource)</code> function:</p>
 <ul>
 <li>If the resource is a file located at a place not already handled, write a new <em>FileResourceGetter</em> subclass and register an instance of it with the function <code><a href="../reference/registerFileResourceGetter.html">registerFileResourceGetter()</a></code>.</li>
@@ -232,11 +228,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Yannick Marcon.</p>
+  <p></p>
+<p>Developed by Yannick Marcon.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
@@ -244,6 +242,8 @@
 
   
 
+
+  
 
   </body>
 </html>
