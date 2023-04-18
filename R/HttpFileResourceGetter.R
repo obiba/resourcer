@@ -50,7 +50,7 @@ HttpFileResourceGetter <- R6::R6Class(
       if (!is.null(resource$identity) && nchar(resource$identity)>0 && !is.null(resource$secret) && nchar(resource$secret)>0) {
         httr::add_headers(Authorization = jsonlite::base64_enc(paste0("Basic ", resource$identity, ":", resource$secret)))
       } else if(!is.null(resource$secret) && nchar(resource$secret)>0) {
-	        httr::add_headers(Authorization = jsonlite::base64_enc(paste0("Bearer",resource$secret)))
+	httr::add_headers(Authorization = paste0("Bearer", resource$secret))
       } else {
         httr::add_headers()
       }
