@@ -36,8 +36,10 @@ DBIResourceConnector <- R6::R6Class(
       if (is.null(url$path)) {
         stop("No database table name")
       } else {
-        # usually path is made of <db_name>/<table_name>
-        URLdecode(basename(url$path))
+        # path can be made of <db_name>/<table_name> or <db_name>/<schema_name>/<table_name>
+        tokens <- strsplit(url$path, split = "/")[[1]]
+        # remove first token that is the db name
+        URLdecode(tokens[-1])
       }
     },
     
