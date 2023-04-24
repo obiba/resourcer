@@ -34,12 +34,12 @@ Suggests:
     dbplyr,
     DBI,
     RMariaDB,
-    RPostgres,
+    RPostgreSQL,
     sparklyr,
     RPresto (>= 1.4.0),
     nodbi,
     rmarkdown
 BugReports: https://github.com/obiba/resourcer
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 VignetteBuilder: knitr
 Encoding: UTF-8

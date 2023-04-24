@@ -31,7 +31,7 @@ PostgresResourceConnector <- R6::R6Class(
         super$loadDBI()
         private$loadRPostgres()
         url <- super$parseURL(resource)
-        conn <- DBI::dbConnect(RPostgres::Postgres(), host = url$host, port = url$port,
+        conn <- DBI::dbConnect(RPostgreSQL::PostgreSQL(), host = url$host, port = url$port,
                                user = resource$identity, password = resource$secret,
                                dbname = super$getDatabaseName(url))
       } else {
@@ -42,8 +42,8 @@ PostgresResourceConnector <- R6::R6Class(
   ),
   private = list(
     loadRPostgres = function() {
-      if (!require("RPostgres")) {
-        install.packages("RPostgres", repos = "https://cloud.r-project.org", dependencies = TRUE)
+      if (!require("RPostgreSQL")) {
+        install.packages("RPostgreSQL", repos = "https://cloud.r-project.org", dependencies = TRUE)
       }
     }
   )
