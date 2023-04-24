@@ -1464,6 +1464,12 @@ var resourcer = {
               "description": "The database name."
             },
             {
+              "key": "schema",
+              "type": "string",
+              "title": "Schema",
+              "description": "The schema name (optional)."
+            },
+            {
               "key": "table",
               "type": "string",
               "title": "Table",
@@ -1756,9 +1762,13 @@ var resourcer = {
           }
       },
       "sql": function(name, params, credentials) {
+          var table = params.table;
+          if (params.schema) {
+            table = params.schema + "/" + table;
+          }
           return {
               name: name,
-              url: params.driver + "://" + params.host + ":" + params.port + "/" + params.db + "/" + params.table,
+              url: params.driver + "://" + params.host + ":" + params.port + "/" + params.db + "/" + table,
               identity: credentials.username,
               secret: credentials.password
           }
