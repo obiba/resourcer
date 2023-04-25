@@ -1,7 +1,7 @@
 Package: resourcer
 Type: Package
 Title: Resource Resolver
-Version: 1.4.0
+Version: 1.5.0
 Authors@R: 
     c(person(given = "Yannick",
              family = "Marcon",
