@@ -16,7 +16,7 @@ R data file Resource resolver
 The resource is a R data file and data format is the class of the symbol that will be loaded.
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{RDataFileResourceResolver}
+\code{resourcer::ResourceResolver} -> \code{RDataFileResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{

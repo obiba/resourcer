@@ -16,7 +16,7 @@ Shell resource client
 Executes local system shell commands.
 }
 \section{Super classes}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{\link[resourcer:CommandResourceClient]{resourcer::CommandResourceClient}} -> \code{ShellResourceClient}
+\code{resourcer::ResourceClient} -> \code{resourcer::CommandResourceClient} -> \code{ShellResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{

@@ -16,7 +16,7 @@ Shell Resource resolver
 The resource is a computation unit, accessible by issuing local system commands, i.e. which URL scheme is "sh".
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{ShellResourceResolver}
+\code{resourcer::ResourceResolver} -> \code{ShellResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{

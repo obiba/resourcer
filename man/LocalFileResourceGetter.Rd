@@ -16,7 +16,7 @@ Local file resource getter
 Access a file that is stored in the local file system. No credentials apply.
 }
 \section{Super class}{
-\code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{LocalFileResourceGetter}
+\code{resourcer::FileResourceGetter} -> \code{LocalFileResourceGetter}
 }
 \section{Methods}{
 \subsection{Public methods}{

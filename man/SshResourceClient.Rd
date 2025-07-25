@@ -16,7 +16,7 @@ SSH resource client
 Connects to a SSH server.
 }
 \section{Super classes}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{\link[resourcer:CommandResourceClient]{resourcer::CommandResourceClient}} -> \code{SshResourceClient}
+\code{resourcer::ResourceClient} -> \code{resourcer::CommandResourceClient} -> \code{SshResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{

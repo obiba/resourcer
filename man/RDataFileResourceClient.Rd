@@ -16,7 +16,7 @@ R data file resource client
 Connects to a R data file and loads it in a controlled environment.
 }
 \section{Super classes}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{\link[resourcer:FileResourceClient]{resourcer::FileResourceClient}} -> \code{RDataFileResourceClient}
+\code{resourcer::ResourceClient} -> \code{resourcer::FileResourceClient} -> \code{RDataFileResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{

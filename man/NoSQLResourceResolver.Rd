@@ -16,7 +16,7 @@ NoSQL Database Resource resolver
 The resource is NoSQL database such as mongodb (elasticsearch, redis, couchdb, sqlite are not supported yet).
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{NoSQLResourceResolver}
+\code{resourcer::ResourceResolver} -> \code{NoSQLResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{

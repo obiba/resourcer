@@ -16,7 +16,7 @@ R object file Resource resolver
 The resource is a RDS file.
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{RDSFileResourceResolver}
+\code{resourcer::ResourceResolver} -> \code{RDSFileResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{

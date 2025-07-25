@@ -17,7 +17,7 @@ Connects to a RDS file and loads the serialized object. Similar to the R data fi
 except that the RDS format stores a single R object.
 }
 \section{Super classes}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{\link[resourcer:FileResourceClient]{resourcer::FileResourceClient}} -> \code{RDSFileResourceClient}
+\code{resourcer::ResourceClient} -> \code{resourcer::FileResourceClient} -> \code{RDSFileResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{

@@ -16,7 +16,7 @@ SSH Resource resolver
 The resource is a computation unit, accessible through SSH, i.e. which URL scheme is "ssh".
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{SshResourceResolver}
+\code{resourcer::ResourceResolver} -> \code{SshResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{

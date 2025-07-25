@@ -16,7 +16,7 @@ File resource client
 Base class that connects to a file using a FileResourceGetter.
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{FileResourceClient}
+\code{resourcer::ResourceClient} -> \code{FileResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{

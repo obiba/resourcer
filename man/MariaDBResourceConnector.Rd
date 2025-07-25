@@ -16,7 +16,7 @@ MariaDB DBI resource connector
 Makes a MariaDB/MySQL DBI connection from a resource description.
 }
 \section{Super class}{
-\code{\link[resourcer:DBIResourceConnector]{resourcer::DBIResourceConnector}} -> \code{MariaDBResourceConnector}
+\code{resourcer::DBIResourceConnector} -> \code{MariaDBResourceConnector}
 }
 \section{Methods}{
 \subsection{Public methods}{

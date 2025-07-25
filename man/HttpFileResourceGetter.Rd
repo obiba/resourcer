@@ -17,7 +17,7 @@ Access a file that is stored at a HTTP(S) address. Use Basic authentication head
 resource's identity and secret are defined.
 }
 \section{Super class}{
-\code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{HttpFileResourceGetter}
+\code{resourcer::FileResourceGetter} -> \code{HttpFileResourceGetter}
 }
 \section{Methods}{
 \subsection{Public methods}{

@@ -27,7 +27,7 @@ excel, xls, xlsx.
 }
 
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{TidyFileResourceResolver}
+\code{resourcer::ResourceResolver} -> \code{TidyFileResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{

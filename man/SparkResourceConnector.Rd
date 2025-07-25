@@ -16,7 +16,7 @@ Apache Spark DBI resource connector
 Makes a Apache Spark connection object, that is also a DBI connection object, from a resource description.
 }
 \section{Super class}{
-\code{\link[resourcer:DBIResourceConnector]{resourcer::DBIResourceConnector}} -> \code{SparkResourceConnector}
+\code{resourcer::DBIResourceConnector} -> \code{SparkResourceConnector}
 }
 \section{Methods}{
 \subsection{Public methods}{

@@ -16,7 +16,7 @@ Presto DBI resource connector
 Makes a Presto DBI connection from a resource description.
 }
 \section{Super class}{
-\code{\link[resourcer:DBIResourceConnector]{resourcer::DBIResourceConnector}} -> \code{PrestoResourceConnector}
+\code{resourcer::DBIResourceConnector} -> \code{PrestoResourceConnector}
 }
 \section{Methods}{
 \subsection{Public methods}{

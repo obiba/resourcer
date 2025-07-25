@@ -16,7 +16,7 @@ SQL Database Resource resolver
 The resource is SQL database.
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{SQLResourceResolver}
+\code{resourcer::ResourceResolver} -> \code{SQLResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{

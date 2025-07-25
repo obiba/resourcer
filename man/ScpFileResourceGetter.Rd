@@ -16,7 +16,7 @@ SCP file resource getter
 Access a file that is stored on a server accessible through SSH. Credentials apply.
 }
 \section{Super class}{
-\code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{ScpFileResourceGetter}
+\code{resourcer::FileResourceGetter} -> \code{ScpFileResourceGetter}
 }
 \section{Methods}{
 \subsection{Public methods}{

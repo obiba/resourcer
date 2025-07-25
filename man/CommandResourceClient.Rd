@@ -17,7 +17,7 @@ Base class for resource clients issuing commands and get a result with the statu
 the output and the error messages.
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{CommandResourceClient}
+\code{resourcer::ResourceClient} -> \code{CommandResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{

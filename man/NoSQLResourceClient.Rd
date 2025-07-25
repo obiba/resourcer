@@ -16,7 +16,7 @@ NoSQL database resource client
 Resource client that connects to a NoSQL database supported by nodbi.
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{NoSQLResourceClient}
+\code{resourcer::ResourceClient} -> \code{NoSQLResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{

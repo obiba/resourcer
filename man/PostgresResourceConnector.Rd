@@ -16,7 +16,7 @@ Postgres DBI resource connector
 Makes a Postgres DBI connection from a resource description.
 }
 \section{Super class}{
-\code{\link[resourcer:DBIResourceConnector]{resourcer::DBIResourceConnector}} -> \code{PostgresResourceConnector}
+\code{resourcer::DBIResourceConnector} -> \code{PostgresResourceConnector}
 }
 \section{Methods}{
 \subsection{Public methods}{

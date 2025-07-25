@@ -16,7 +16,7 @@ Tidy file resource client
 Connects to a file and use one of the tidyverse reader.
 }
 \section{Super classes}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{\link[resourcer:FileResourceClient]{resourcer::FileResourceClient}} -> \code{TidyFileResourceClient}
+\code{resourcer::ResourceClient} -> \code{resourcer::FileResourceClient} -> \code{TidyFileResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{

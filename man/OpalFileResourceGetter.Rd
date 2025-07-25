@@ -17,7 +17,7 @@ Access a file that is stored in a Opal server. Use Basic authentication header i
 resource's identity and secret are defined, token authentication if secret only is defined.
 }
 \section{Super class}{
-\code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{OpalFileResourceGetter}
+\code{resourcer::FileResourceGetter} -> \code{OpalFileResourceGetter}
 }
 \section{Methods}{
 \subsection{Public methods}{
