@@ -1,7 +1,7 @@
 # Resource R
 
-[![Build Status](https://www.travis-ci.com/obiba/resourcer.svg?branch=master)](https://app.travis-ci.com/github/obiba/resourcer)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/resourcer)](https://cran.r-project.org/package=resourcer)
+[![R-CMD-check](https://github.com/obiba/resourcer/actions/workflows/ci.yml/badge.svg)](https://github.com/obiba/resourcer/actions/workflows/ci.yml)
 
 The `resourcer` package is meant to access resources identified by a URL in a uniform way whether it references a dataset (stored in a file, a SQL table, a MongoDB collection etc.) or a computation unit (system commands, web services etc.). Usually some credentials will be defined, and an additional data format information can be provided to help dataset coercing to a data.frame object.
 
