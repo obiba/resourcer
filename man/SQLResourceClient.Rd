@@ -16,7 +16,7 @@ SQL database resource client
 Resource client that connects to a SQL database supported by DBI.
 }
 \section{Super class}{
-\code{resourcer::ResourceClient} -> \code{SQLResourceClient}
+\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{SQLResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{

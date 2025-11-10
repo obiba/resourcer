@@ -16,7 +16,7 @@ GridFS file resource getter
 Access a file that is in the MongoDB file store (GridFS). Credentials may apply.
 }
 \section{Super class}{
-\code{resourcer::FileResourceGetter} -> \code{GridFsFileResourceGetter}
+\code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{GridFsFileResourceGetter}
 }
 \section{Methods}{
 \subsection{Public methods}{
