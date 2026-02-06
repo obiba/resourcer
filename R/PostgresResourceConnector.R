@@ -31,9 +31,20 @@ PostgresResourceConnector <- R6::R6Class(
         super$loadDBI()
         private$loadRPostgres()
         url <- super$parseURL(resource)
-        conn <- DBI::dbConnect(RPostgreSQL::PostgreSQL(), host = url$host, port = url$port,
+        # path can be made of <db_name>/<table_name> or <db_name>/<schema_name>/<table_name>
+        tokens <- strsplit(url$path, split = "/")[[1]]
+        tokens <- tokens[tokens != ""]
+        schema <- if (length(tokens) > 2) URLdecode(tokens[2]) else NULL
+        options <- NULL
+        if (!is.null(schema)) {
+          options <- paste0("-c search_path=", schema)
+        }
+        conn <- DBI::dbConnect(RPostgres::Postgres(),
+                               host = url$host,
+                               port = url$port,
                                user = resource$identity, password = resource$secret,
-                               dbname = super$getDatabaseName(url))
+                               dbname = super$getDatabaseName(url),
+                               options = options)
       } else {
         stop("Resource is not located in a Postgres database")
       }
@@ -42,8 +53,8 @@ PostgresResourceConnector <- R6::R6Class(
   ),
   private = list(
     loadRPostgres = function() {
-      if (!require("RPostgreSQL")) {
-        install.packages("RPostgreSQL", repos = "https://cloud.r-project.org", dependencies = TRUE)
+      if (!require("RPostgres")) {
+        install.packages("RPostgres", repos = "https://cloud.r-project.org", dependencies = TRUE)
       }
     }
   )

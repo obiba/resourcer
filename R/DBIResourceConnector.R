@@ -38,6 +38,7 @@ DBIResourceConnector <- R6::R6Class(
       } else {
         # path can be made of <db_name>/<table_name> or <db_name>/<schema_name>/<table_name>
         tokens <- strsplit(url$path, split = "/")[[1]]
+        tokens <- tokens[tokens != ""]
         # get last token that is the table name
         URLdecode(tokens[length(tokens)])
       }
@@ -90,7 +91,9 @@ DBIResourceConnector <- R6::R6Class(
       }
     },
     getDatabaseName = function(url) {
-      strsplit(url$path, split = "/")[[1]][1]
+      tokens <- strsplit(url$path, split = "/")[[1]]
+      tokens <- tokens[tokens != ""]
+      URLdecode(tokens[1])
     },
     parseURL = function(resource) {
       httr::parse_url(resource$url)
