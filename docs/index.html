@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">resourcer</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.5.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +67,7 @@
 <li>
 <em>FileResourceGetter</em>, connect to a file described by a resource,</li>
 <li>
-<em>DBIResourceConnector</em>, establish a <a href="https://www.r-dbi.org/" class="external-link">DBI</a> connection.</li>
+<em>DBIResourceConnector</em>, establish a <a href="https://r-dbi.org/" class="external-link">DBI</a> connection.</li>
 </ul>
 <div class="section level2">
 <h2 id="install">Install<a class="anchor" aria-label="anchor" href="#install"></a>
@@ -154,7 +154,7 @@
 </h3>
 <p>The data format specified within the <em>Resource</em> object, helps at finding the appropriate file reader. Currently supported data formats are:</p>
 <ul>
-<li>the data formats that have a reader in <a href="https://www.tidyverse.org/" class="external-link">tidyverse</a>: <a href="https://readr.tidyverse.org/" class="external-link">readr</a> (<code>csv</code>, <code>csv2</code>, <code>tsv</code>, <code>ssv</code>, <code>delim</code>), <a href="https://haven.tidyverse.org/" class="external-link">haven</a> (<code>spss</code>, <code>sav</code>, <code>por</code>, <code>dta</code>, <code>stata</code>, <code>sas</code>, <code>xpt</code>), <a href="https://readxl.tidyverse.org/" class="external-link">readxl</a> (<code>excel</code>, <code>xls</code>, <code>xlsx</code>). This can be easily applied to other data file formats by extending the <em>FileResourceClient</em> class.</li>
+<li>the data formats that have a reader in <a href="https://tidyverse.org/" class="external-link">tidyverse</a>: <a href="https://readr.tidyverse.org/" class="external-link">readr</a> (<code>csv</code>, <code>csv2</code>, <code>tsv</code>, <code>ssv</code>, <code>delim</code>), <a href="https://haven.tidyverse.org/" class="external-link">haven</a> (<code>spss</code>, <code>sav</code>, <code>por</code>, <code>dta</code>, <code>stata</code>, <code>sas</code>, <code>xpt</code>), <a href="https://readxl.tidyverse.org/" class="external-link">readxl</a> (<code>excel</code>, <code>xls</code>, <code>xlsx</code>). This can be easily applied to other data file formats by extending the <em>FileResourceClient</em> class.</li>
 <li>the R data format that can be loaded in a child R environment from which object of interest will be retrieved.</li>
 </ul>
 <p>Usage example that reads a local SPSS file:</p>
@@ -178,7 +178,7 @@
 <div class="section level3">
 <h3 id="dbi-connectors">DBI Connectors<a class="anchor" aria-label="anchor" href="#dbi-connectors"></a>
 </h3>
-<p><a href="https://www.r-dbi.org/" class="external-link">DBI</a> is a set of virtual classes that are are used to abstract the SQL database connections and operations within R. Then any DBI implementation can be used to access to a SQL table. Which DBI connector to be used is an information that can be extracted from the scheme part of the resource’s URL. For instance a resource URL starting with <code>postgres://</code> will require the <a href="https://rpostgres.r-dbi.org/" class="external-link">RPostgres</a> driver. To separate the DBI connector instanciation from the DBI interface interactions in the <em>SQLResourceClient</em>, a <em>DBIResourceConnector</em> registry is to be populated. The currently supported SQL database connectors are:</p>
+<p><a href="https://r-dbi.org/" class="external-link">DBI</a> is a set of virtual classes that are are used to abstract the SQL database connections and operations within R. Then any DBI implementation can be used to access to a SQL table. Which DBI connector to be used is an information that can be extracted from the scheme part of the resource’s URL. For instance a resource URL starting with <code>postgres://</code> will require the <a href="https://rpostgres.r-dbi.org/" class="external-link">RPostgres</a> driver. To separate the DBI connector instanciation from the DBI interface interactions in the <em>SQLResourceClient</em>, a <em>DBIResourceConnector</em> registry is to be populated. The currently supported SQL database connectors are:</p>
 <ul>
 <li>
 <code>mariadb</code> MariaDB connector,</li>
@@ -247,7 +247,7 @@
 <p>The configuration file <code>inst/resources/resource.js</code> is a javascript file which contains an object with the properties:</p>
 <ul>
 <li>
-<code>settings</code>, a JSON object that contains the description and the documentation of the web forms (based on the <a href="http://json-schema.org" class="external-link">json-schema</a> specification).</li>
+<code>settings</code>, a JSON object that contains the description and the documentation of the web forms (based on the <a href="https://json-schema.org" class="external-link">json-schema</a> specification).</li>
 <li>
 <code>asResource</code>, a javascript function that will convert the data captured from one of the declared web forms into a data structure representing the <code>resource</code> object.</li>
 </ul>
@@ -410,12 +410,12 @@
 <tr>
 <td><strong>parameters</strong></td>
 <td><code>object</code></td>
-<td>The form that will be used to capture the parameters to build the <em>url</em> and the <em>format</em> properties of the resource (based on the <a href="http://json-schema.org" class="external-link">json-schema</a> specification). Some specific fields can be used: <code>_package</code> to capture the R package name or <code>_packages</code> to capture an array of R package names to be loaded prior to the resource assignment.</td>
+<td>The form that will be used to capture the parameters to build the <em>url</em> and the <em>format</em> properties of the resource (based on the <a href="https://json-schema.org" class="external-link">json-schema</a> specification). Some specific fields can be used: <code>_package</code> to capture the R package name or <code>_packages</code> to capture an array of R package names to be loaded prior to the resource assignment.</td>
 </tr>
 <tr>
 <td><strong>credentials</strong></td>
 <td><code>object</code></td>
-<td>The form that will be used to capture the access credentials to build the <em>identity</em> and the <em>secret</em> properties of the resource (based on the <a href="http://json-schema.org" class="external-link">json-schema</a> specification).</td>
+<td>The form that will be used to capture the access credentials to build the <em>identity</em> and the <em>secret</em> properties of the resource (based on the <a href="https://json-schema.org" class="external-link">json-schema</a> specification).</td>
 </tr>
 </tbody>
 </table>
@@ -442,7 +442,7 @@
 <ul class="list-unstyled">
 <li><a href="https://cloud.r-project.org/package=resourcer" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/obiba/resourcer/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/obiba/resourcer" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/obiba/resourcer/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 

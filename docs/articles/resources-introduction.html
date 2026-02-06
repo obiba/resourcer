@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">resourcer</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.5.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,7 +86,7 @@ the computation unit described by a <em>Resource</em>,</li>
 <em>FileResourceGetter</em>, connect to a file described by a
 resource,</li>
 <li>
-<em>DBIResourceConnector</em>, establish a <a href="https://www.r-dbi.org/" class="external-link">DBI</a> connection.</li>
+<em>DBIResourceConnector</em>, establish a <a href="https://r-dbi.org/" class="external-link">DBI</a> connection.</li>
 </ul>
 <div class="section level2">
 <h2 id="file-resources">File Resources<a class="anchor" aria-label="anchor" href="#file-resources"></a>
@@ -126,7 +126,7 @@ operate as expected.</p>
 at finding the appropriate file reader. Currently supported data formats
 are:</p>
 <ul>
-<li>the data formats that have a reader in <a href="https://www.tidyverse.org/" class="external-link">tidyverse</a>: <a href="https://readr.tidyverse.org/" class="external-link">readr</a> (<code>csv</code>,
+<li>the data formats that have a reader in <a href="https://tidyverse.org/" class="external-link">tidyverse</a>: <a href="https://readr.tidyverse.org/" class="external-link">readr</a> (<code>csv</code>,
 <code>csv2</code>, <code>tsv</code>, <code>ssv</code>,
 <code>delim</code>), <a href="https://haven.tidyverse.org/" class="external-link">haven</a>
 (<code>spss</code>, <code>sav</code>, <code>por</code>,
@@ -164,17 +164,16 @@ registered.</p>
 <div class="section level3">
 <h3 id="dbi-connectors">DBI Connectors<a class="anchor" aria-label="anchor" href="#dbi-connectors"></a>
 </h3>
-<p><a href="https://www.r-dbi.org/" class="external-link">DBI</a> is a set of virtual classes
-that are are used to abstract the SQL database connections and
-operations within R. Then any DBI implementation can be used to access
-to a SQL table. Which DBI connector to be used is an information that
-can be extracted from the scheme part of the resource’s URL. For
-instance a resource URL starting with <code>postgres://</code> will
-require the <a href="https://rpostgres.r-dbi.org/" class="external-link">RPostgres</a> driver.
-To separate the DBI connector instanciation from the DBI interface
-interactions in the <em>SQLResourceClient</em>, a
-<em>DBIResourceConnector</em> registry is to be populated. The currently
-supported SQL database connectors are:</p>
+<p><a href="https://r-dbi.org/" class="external-link">DBI</a> is a set of virtual classes that
+are are used to abstract the SQL database connections and operations
+within R. Then any DBI implementation can be used to access to a SQL
+table. Which DBI connector to be used is an information that can be
+extracted from the scheme part of the resource’s URL. For instance a
+resource URL starting with <code>postgres://</code> will require the <a href="https://rpostgres.r-dbi.org/" class="external-link">RPostgres</a> driver. To separate
+the DBI connector instanciation from the DBI interface interactions in
+the <em>SQLResourceClient</em>, a <em>DBIResourceConnector</em> registry
+is to be populated. The currently supported SQL database connectors
+are:</p>
 <ul>
 <li>
 <code>mariadb</code> MariaDB connector,</li>
