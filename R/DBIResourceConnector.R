@@ -90,7 +90,7 @@ DBIResourceConnector <- R6::R6Class(
       }
     },
     getDatabaseName = function(url) {
-      strsplit(url$path, split = "/")[[1]][1]
+      URLdecode(strsplit(url$path, split = "/")[[1]][1])
     },
     parseURL = function(resource) {
       httr::parse_url(resource$url)
