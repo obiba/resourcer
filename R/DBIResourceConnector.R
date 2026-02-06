@@ -38,8 +38,8 @@ DBIResourceConnector <- R6::R6Class(
       } else {
         # path can be made of <db_name>/<table_name> or <db_name>/<schema_name>/<table_name>
         tokens <- strsplit(url$path, split = "/")[[1]]
-        # remove first token that is the db name
-        URLdecode(tokens[-1])
+        # get last token that is the table name
+        URLdecode(tokens[length(tokens)])
       }
     },
     
