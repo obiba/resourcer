@@ -22,7 +22,7 @@ The main concepts are:
 * _ResourceResolver_, a _ResourceClient_ factory based on the URL scheme and available in a resolvers registry,
 * _ResourceClient_, realizes the connection with the dataset or the computation unit described by a _Resource_,
 * _FileResourceGetter_, connect to a file described by a resource,
-* _DBIResourceConnector_, establish a [DBI](https://www.r-dbi.org/) connection.
+* _DBIResourceConnector_, establish a [DBI](https://r-dbi.org/) connection.
 
 ## File Resources
 
@@ -48,7 +48,7 @@ resourcer::registerFileResourceGetter(MyFileLocationResourceGetter()$new())
 
 The data format specified within the _Resource_ object, helps at finding the appropriate file reader. Currently supported data formats are:
 
-* the data formats that have a reader in [tidyverse](https://www.tidyverse.org/): [readr](https://readr.tidyverse.org/) (`csv`, `csv2`, `tsv`, `ssv`, `delim`), [haven](https://haven.tidyverse.org/) (`spss`, `sav`, `por`, `dta`, `stata`, `sas`, `xpt`), [readxl](https://readxl.tidyverse.org/) (`excel`, `xls`, `xlsx`). This can be easily applied to other data file formats by extending the _FileResourceClient_ class.
+* the data formats that have a reader in [tidyverse](https://tidyverse.org/): [readr](https://readr.tidyverse.org/) (`csv`, `csv2`, `tsv`, `ssv`, `delim`), [haven](https://haven.tidyverse.org/) (`spss`, `sav`, `por`, `dta`, `stata`, `sas`, `xpt`), [readxl](https://readxl.tidyverse.org/) (`excel`, `xls`, `xlsx`). This can be easily applied to other data file formats by extending the _FileResourceClient_ class.
 * the R data format that can be loaded in a child R environment from which object of interest will be retrieved.
 
 Usage example that reads a local SPSS file:
@@ -75,7 +75,7 @@ resourcer::registerResourceResolver(MyFileFormatResourceResolver$new())
 
 ### DBI Connectors
 
-[DBI](https://www.r-dbi.org/) is a set of virtual classes that are are used to abstract the SQL database connections and operations within R. Then any DBI implementation can be used to access to a SQL table. Which DBI connector to be used is an information that can be extracted from the scheme part of the resource's URL. For instance a resource URL starting with `postgres://` will require the [RPostgres](https://rpostgres.r-dbi.org/) driver. To separate the DBI connector instanciation from the DBI interface interactions in the _SQLResourceClient_, a _DBIResourceConnector_ registry is to be populated. The currently supported SQL database connectors are:
+[DBI](https://r-dbi.org/) is a set of virtual classes that are are used to abstract the SQL database connections and operations within R. Then any DBI implementation can be used to access to a SQL table. Which DBI connector to be used is an information that can be extracted from the scheme part of the resource's URL. For instance a resource URL starting with `postgres://` will require the [RPostgres](https://rpostgres.r-dbi.org/) driver. To separate the DBI connector instanciation from the DBI interface interactions in the _SQLResourceClient_, a _DBIResourceConnector_ registry is to be populated. The currently supported SQL database connectors are:
 
 * `mariadb` MariaDB connector,
 * `mysql` MySQL connector,

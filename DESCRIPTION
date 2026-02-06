@@ -39,6 +39,7 @@ Suggests:
     RPresto (>= 1.4.0),
     nodbi,
     rmarkdown
+URL: https://www.obiba.org/resourcer/
 BugReports: https://github.com/obiba/resourcer/issues
 RoxygenNote: 7.3.3
 VignetteBuilder: knitr

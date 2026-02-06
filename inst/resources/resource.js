@@ -27,7 +27,7 @@ var resourcer = {
       {
         "name": "tidy-format",
         "title": "Tidy format",
-        "description": "Data are structured in a tidy format having a reader in the [tidyverse](https://www.tidyverse.org) ecosystem."
+        "description": "Data are structured in a tidy format having a reader in the [tidyverse](https://tidyverse.org) ecosystem."
       },
       {
         "name": "rdata-format",
@@ -72,7 +72,7 @@ var resourcer = {
         "description": "Default resource form.",
         "tags": ["others"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -99,7 +99,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are optional.",
           "items": [
@@ -125,7 +125,7 @@ var resourcer = {
         "description": "File resource in R data format. The file will be downloaded from the GridFS file store of a MongoDB server.",
         "tags": ["gridfs", "data-file", "rdata-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -165,7 +165,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are optional.",
           "items": [
@@ -191,7 +191,7 @@ var resourcer = {
         "description": "File resource in RDS format (serialized single R object). The file will be downloaded from the GridFS file store of a MongoDB server.",
         "tags": ["gridfs", "data-file", "rdata-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -231,7 +231,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are optional.",
           "items": [
@@ -254,10 +254,10 @@ var resourcer = {
       {
         "name": "gridfs-tidy-file",
         "title": "Tidy data file - MongoDB GridFS",
-        "description": "File resource in tidy format, having a reader in the [tidyverse](https://www.tidyverse.org) ecosystem. The file will be downloaded from the GridFS file store of a MongoDB server.",
+        "description": "File resource in tidy format, having a reader in the [tidyverse](https://tidyverse.org) ecosystem. The file will be downloaded from the GridFS file store of a MongoDB server.",
         "tags": ["gridfs", "data-file", "tidy-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -355,7 +355,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are optional.",
           "items": [
@@ -381,7 +381,7 @@ var resourcer = {
         "description": "File resource in R data format. The file will be downloaded from a HTTP server.",
         "tags": ["http", "data-file", "rdata-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -402,7 +402,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are optional. If provided, `Basic` authorization header is applied.",
           "items": [
@@ -428,7 +428,7 @@ var resourcer = {
         "description": "File resource in RDS format (serialized single R object). The file will be downloaded from a HTTP server.",
         "tags": ["http", "data-file", "rdata-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -449,7 +449,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are optional. If provided, `Basic` authorization header is applied.",
           "items": [
@@ -472,10 +472,10 @@ var resourcer = {
       {
         "name": "http-tidy-file",
         "title": "Tidy data file - HTTP",
-        "description": "File resource in tidy format, having a reader in the [tidyverse](https://www.tidyverse.org) ecosystem. The file will be downloaded from a HTTP server.",
+        "description": "File resource in tidy format, having a reader in the [tidyverse](https://tidyverse.org) ecosystem. The file will be downloaded from a HTTP server.",
         "tags": ["http", "data-file", "tidy-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -554,7 +554,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are optional. If provided, `Basic` authorization header is applied.",
           "items": [
@@ -580,7 +580,7 @@ var resourcer = {
         "description": "File resource in R data format. The file is located in the R server file system.",
         "tags": ["local", "data-file", "rdata-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -601,7 +601,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "description": "No credentials required: the file must be accessible from the R server."
         }
       },
@@ -611,7 +611,7 @@ var resourcer = {
         "description": "File resource in RDS format (serialized single R object). The file is located in the R server file system.",
         "tags": ["local", "data-file", "rdata-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -632,17 +632,17 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "description": "No credentials required: the file must be accessible from the R server."
         }
       },
       {
         "name": "local-tidy-file",
         "title": "Tidy data file - local",
-        "description": "File resource in tidy format, having a reader in the [tidyverse](https://www.tidyverse.org) ecosystem. The file is located in the R server file system.",
+        "description": "File resource in tidy format, having a reader in the [tidyverse](https://tidyverse.org) ecosystem. The file is located in the R server file system.",
         "tags": ["local", "data-file", "tidy-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -721,7 +721,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "description": "No credentials required: the file must be accessible from the R server."
         }
       },
@@ -731,7 +731,7 @@ var resourcer = {
         "description": "File resource is a collection in a NoSQL database accessible using [nodbi](https://docs.ropensci.org/nodbi/).",
         "tags": ["database"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -788,7 +788,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are optional.",
           "items": [
@@ -814,7 +814,7 @@ var resourcer = {
         "description": "File resource in R data format. The file will be downloaded from the file store of a Opal server.",
         "tags": ["opal", "data-file", "rdata-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -841,7 +841,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are required and is a [personal API access token](http://opaldoc.obiba.org/en/latest/web-user-guide/my-profile.html#personal-access-tokens).",
           "items": [
@@ -864,7 +864,7 @@ var resourcer = {
         "description": "File resource in RDS format (serialized single R object). The file will be downloaded from the file store of a Opal server.",
         "tags": ["opal", "data-file", "rdata-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -891,7 +891,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are required and is a [personal API access token](http://opaldoc.obiba.org/en/latest/web-user-guide/my-profile.html#personal-access-tokens).",
           "items": [
@@ -911,10 +911,10 @@ var resourcer = {
       {
         "name": "opal-tidy-file",
         "title": "Tidy data file - Opal",
-        "description": "File resource in tidy format, having a reader in the [tidyverse](https://www.tidyverse.org) ecosystem. The file will be downloaded from the file store of a Opal server.",
+        "description": "File resource in tidy format, having a reader in the [tidyverse](https://tidyverse.org) ecosystem. The file will be downloaded from the file store of a Opal server.",
         "tags": ["opal", "data-file", "tidy-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -999,7 +999,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are required and is a [personal API access token](http://opaldoc.obiba.org/en/latest/web-user-guide/my-profile.html#personal-access-tokens).",
           "items": [
@@ -1019,10 +1019,10 @@ var resourcer = {
       {
         "name": "presto",
         "title": "Presto",
-        "description": "Resource is a distributed SQL table accessible through [PrestoDB](https://prestodb.io) or [Trino](https://trino.io) using [DBI](https://www.r-dbi.org). The data can be read as a standard `data.frame` or as a [dbplyr](https://dbplyr.tidyverse.org/)'s `tbl`.",
+        "description": "Resource is a distributed SQL table accessible through [PrestoDB](https://prestodb.io) or [Trino](https://trino.io) using [DBI](https://r-dbi.org). The data can be read as a standard `data.frame` or as a [dbplyr](https://dbplyr.tidyverse.org/)'s `tbl`.",
         "tags": ["database"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -1071,7 +1071,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "A user name can be provided to the database driver.",
           "items": [
@@ -1090,7 +1090,7 @@ var resourcer = {
         "description": "File resource in R data format. The file will be downloaded from a server accessible through SSH.",
         "tags": ["ssh", "data-file", "rdata-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -1124,7 +1124,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -1152,7 +1152,7 @@ var resourcer = {
         "description": "File resource in RDS format (serialized single R object). The file will be downloaded from a server accessible through SSH.",
         "tags": ["ssh", "data-file", "rdata-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -1186,7 +1186,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -1211,10 +1211,10 @@ var resourcer = {
       {
         "name": "scp-tidy-file",
         "title": "Tidy data file - SSH",
-        "description": "File resource in tidy format, having a reader in the [tidyverse](https://www.tidyverse.org) ecosystem. The file will be downloaded from a server accessible through SSH.",
+        "description": "File resource in tidy format, having a reader in the [tidyverse](https://tidyverse.org) ecosystem. The file will be downloaded from a server accessible through SSH.",
         "tags": ["ssh", "data-file", "tidy-format"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -1306,7 +1306,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -1334,7 +1334,7 @@ var resourcer = {
         "description": "Access to a computation unit through system commands. Work directory and allowed shell commands can be specified.",
         "tags": ["commands"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -1362,17 +1362,17 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "description": "No credentials required: the system commands and working directory must be accessible from the R server."
         }
       },
       {
         "name": "spark",
         "title": "Apache Spark",
-        "description": "Resource is a distributed dataset accessible through [Spark](https://spark.apache.org/). Spark has a SQL interface using [DBI](https://www.r-dbi.org). The data can be read as a standard `data.frame` or as a [dbplyr](https://dbplyr.tidyverse.org/)'s `tbl`. Spark is also a unified analytics engine for large-scale data processing, including many [machine learning functions](https://spark.rstudio.com/mlib/).",
+        "description": "Resource is a distributed dataset accessible through [Spark](https://spark.apache.org/). Spark has a SQL interface using [DBI](https://r-dbi.org). The data can be read as a standard `data.frame` or as a [dbplyr](https://dbplyr.tidyverse.org/)'s `tbl`. Spark is also a unified analytics engine for large-scale data processing, including many [machine learning functions](https://spark.rstudio.com/mlib/).",
         "tags": ["database", "analytics"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -1393,7 +1393,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are required and authentication method is expected to be based on [Livy](https://livy.incubator.apache.org/).",
           "items": [
@@ -1419,17 +1419,17 @@ var resourcer = {
       {
         "name": "sql",
         "title": "SQL table",
-        "description": "Resource is a SQL table in a database accessible using [DBI](https://www.r-dbi.org). The data can be read as a standard `data.frame` or as a [dbplyr](https://dbplyr.tidyverse.org/)'s `tbl`.",
+        "description": "Resource is a SQL table in a database accessible using [DBI](https://r-dbi.org). The data can be read as a standard `data.frame` or as a [dbplyr](https://dbplyr.tidyverse.org/)'s `tbl`.",
         "tags": ["database"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
               "key": "driver",
               "type": "string",
               "title": "Database engine",
-              "description": "Database engine implementing the [DBI](https://www.r-dbi.org).",
+              "description": "Database engine implementing the [DBI](https://r-dbi.org).",
               "enum": [
                 {
                   "key": "mariadb",
@@ -1481,7 +1481,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "description": "Credentials are required.",
           "items": [
@@ -1510,7 +1510,7 @@ var resourcer = {
         "description": "Access to a computation unit through SSH. Credentials are required. Work directory and allowed shell commands can be specified.",
         "tags": ["ssh", "commands"],
         "parameters": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {
@@ -1551,7 +1551,7 @@ var resourcer = {
           ]
         },
         "credentials": {
-          "$schema": "http://json-schema.org/schema#",
+          "$schema": "https://json-schema.org/schema#",
           "type": "array",
           "items": [
             {

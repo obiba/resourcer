@@ -11,7 +11,7 @@ The main concepts are:
 * _ResourceResolver_, a _ResourceClient_ factory based on the URL scheme and available in a resolvers registry,
 * _ResourceClient_, realizes the connection with the dataset or the computation unit described by a _Resource_,
 * _FileResourceGetter_, connect to a file described by a resource,
-* _DBIResourceConnector_, establish a [DBI](https://www.r-dbi.org/) connection.
+* _DBIResourceConnector_, establish a [DBI](https://r-dbi.org/) connection.
 
 ## Install
 
@@ -76,7 +76,7 @@ registerFileResourceGetter(MyFileLocationResourceGetter$new())
 
 The data format specified within the _Resource_ object, helps at finding the appropriate file reader. Currently supported data formats are:
 
-* the data formats that have a reader in [tidyverse](https://www.tidyverse.org/): [readr](https://readr.tidyverse.org/) (`csv`, `csv2`, `tsv`, `ssv`, `delim`), [haven](https://haven.tidyverse.org/) (`spss`, `sav`, `por`, `dta`, `stata`, `sas`, `xpt`), [readxl](https://readxl.tidyverse.org/) (`excel`, `xls`, `xlsx`). This can be easily applied to other data file formats by extending the _FileResourceClient_ class.
+* the data formats that have a reader in [tidyverse](https://tidyverse.org/): [readr](https://readr.tidyverse.org/) (`csv`, `csv2`, `tsv`, `ssv`, `delim`), [haven](https://haven.tidyverse.org/) (`spss`, `sav`, `por`, `dta`, `stata`, `sas`, `xpt`), [readxl](https://readxl.tidyverse.org/) (`excel`, `xls`, `xlsx`). This can be easily applied to other data file formats by extending the _FileResourceClient_ class.
 * the R data format that can be loaded in a child R environment from which object of interest will be retrieved.
 
 Usage example that reads a local SPSS file:
@@ -103,7 +103,7 @@ registerResourceResolver(MyFileFormatResourceResolver$new())
 
 ### DBI Connectors
 
-[DBI](https://www.r-dbi.org/) is a set of virtual classes that are are used to abstract the SQL database connections and operations within R. Then any DBI implementation can be used to access to a SQL table. Which DBI connector to be used is an information that can be extracted from the scheme part of the resource's URL. For instance a resource URL starting with `postgres://` will require the [RPostgres](https://rpostgres.r-dbi.org/) driver. To separate the DBI connector instanciation from the DBI interface interactions in the _SQLResourceClient_, a _DBIResourceConnector_ registry is to be populated. The currently supported SQL database connectors are:
+[DBI](https://r-dbi.org/) is a set of virtual classes that are are used to abstract the SQL database connections and operations within R. Then any DBI implementation can be used to access to a SQL table. Which DBI connector to be used is an information that can be extracted from the scheme part of the resource's URL. For instance a resource URL starting with `postgres://` will require the [RPostgres](https://rpostgres.r-dbi.org/) driver. To separate the DBI connector instanciation from the DBI interface interactions in the _SQLResourceClient_, a _DBIResourceConnector_ registry is to be populated. The currently supported SQL database connectors are:
 
 * `mariadb` MariaDB connector,
 * `mysql` MySQL connector,
@@ -168,7 +168,7 @@ These files are expected to be installed at the root of the package folder (then
 
 The configuration file `inst/resources/resource.js` is a javascript file which contains an object with the properties:
 
-* `settings`, a JSON object that contains the description and the documentation of the web forms (based on the [json-schema](http://json-schema.org) specification).
+* `settings`, a JSON object that contains the description and the documentation of the web forms (based on the [json-schema](https://json-schema.org) specification).
 * `asResource`, a javascript function that will convert the data captured from one of the declared web forms into a data structure representing the `resource` object.
 
 As an example (see also [resourcer's resource.js](https://github.com/obiba/resourcer/blob/master/inst/resources/resource.js)):
@@ -240,8 +240,8 @@ Property | Type | Description
 **title** | `string` | The title of the resource.
 **description** | `string` | The description of the resource form.
 **tags** | `array` of `string` | The `tag` names that are applied to the resource form.
-**parameters** | `object` | The form that will be used to capture the parameters to build the *url* and the *format* properties of the resource (based on the [json-schema](http://json-schema.org) specification). Some specific fields can be used: `_package` to capture the R package name or `_packages` to capture an array of R package names to be loaded prior to the resource assignment. 
-**credentials** | `object` | The form that will be used to capture the access credentials to build the *identity* and the *secret* properties of the resource (based on the [json-schema](http://json-schema.org) specification).
+**parameters** | `object` | The form that will be used to capture the parameters to build the *url* and the *format* properties of the resource (based on the [json-schema](https://json-schema.org) specification). Some specific fields can be used: `_package` to capture the R package name or `_packages` to capture an array of R package names to be loaded prior to the resource assignment. 
+**credentials** | `object` | The form that will be used to capture the access credentials to build the *identity* and the *secret* properties of the resource (based on the [json-schema](https://json-schema.org) specification).
 
 * `asResource` function: a javascript function which signature is `function(type, name, params, credentials)` where:
   * `type`, the form name used to capture the resource parameters and credentials,
