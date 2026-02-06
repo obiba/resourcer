@@ -33,6 +33,7 @@ PostgresResourceConnector <- R6::R6Class(
         url <- super$parseURL(resource)
         # path can be made of <db_name>/<table_name> or <db_name>/<schema_name>/<table_name>
         tokens <- strsplit(url$path, split = "/")[[1]]
+        tokens <- tokens[tokens != ""]
         schema <- if (length(tokens) > 2) URLdecode(tokens[2]) else NULL
         options <- NULL
         if (!is.null(schema)) {
