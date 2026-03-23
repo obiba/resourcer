@@ -1,3 +1,5 @@
+skip_on_cran()
+
 .make_file_resource <- function(path = "/data/CNSIM1.rds", format = "data.frame") {
   newResource(
     name = "test",

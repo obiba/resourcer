@@ -1,3 +1,5 @@
+skip_on_cran()
+
 .make_ssh_resource <- function(host = "localhost", port = 22, path = "/work/dir", exec = "plink,ls", identity = "username", secret = "password") {
   url <- httr::build_url(structure(
     list(
