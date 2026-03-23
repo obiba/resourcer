@@ -1,5 +1,3 @@
-skip_on_cran()
-
 .make_file_resource <- function(path = "/data/CNSIM1.csv", format = "csv") {
   newResource(
     name = "test",
@@ -9,6 +7,7 @@ skip_on_cran()
 }
 
 test_that("file resource resolver works", {
+  skip_on_cran()
   res <- .make_file_resource()
   resolver <- TidyFileResourceResolver$new()
   expect_true(resolver$isFor(res))
@@ -23,6 +22,7 @@ test_that("file resource resolver works", {
 })
 
 test_that("file resource resolver is loaded", {
+  skip_on_cran()
   res <- .make_file_resource()
   registerResourceResolver(TidyFileResourceResolver$new())
   resolver <- resolveResource(res)
@@ -32,6 +32,7 @@ test_that("file resource resolver is loaded", {
 })
 
 test_that("file resource client factory, file not found", {
+  skip_on_cran()
   res <- .make_file_resource()
   resolver <- TidyFileResourceResolver$new()
   client <- resolver$newClient(res)
@@ -42,6 +43,7 @@ test_that("file resource client factory, file not found", {
 })
 
 test_that("file resource client factory, csv file", {
+  skip_on_cran()
   res <- .make_file_resource("./data/dataset.csv")
   resolver <- TidyFileResourceResolver$new()
   client <- resolver$newClient(res)
@@ -55,6 +57,7 @@ test_that("file resource client factory, csv file", {
 })
 
 test_that("file resource client factory, spss file", {
+  skip_on_cran()
   res <- .make_file_resource("./data/dataset.sav", format = "spss")
   resolver <- TidyFileResourceResolver$new()
   client <- resolver$newClient(res)
@@ -68,6 +71,7 @@ test_that("file resource client factory, spss file", {
 })
 
 test_that("csv file resource coercing to data.frame", {
+  skip_on_cran()
   res <- .make_file_resource("./data/dataset.csv")
   registerResourceResolver(TidyFileResourceResolver$new())
   df <- as.data.frame(res)
@@ -77,6 +81,7 @@ test_that("csv file resource coercing to data.frame", {
 })
 
 test_that("csv file resource client coercing to data.frame", {
+  skip_on_cran()
   res <- .make_file_resource("./data/dataset.csv")
   registerResourceResolver(TidyFileResourceResolver$new())
   client <- newResourceClient(res)

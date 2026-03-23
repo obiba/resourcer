@@ -1,5 +1,3 @@
-skip_on_cran()
-
 .make_shell_resource <- function(path = "/work/dir", exec = "plink,ls") {
   url <- httr::build_url(structure(
     list(
@@ -16,6 +14,7 @@ skip_on_cran()
 }
 
 test_that("shell resource resolver works", {
+  skip_on_cran()
   res <- .make_shell_resource()
   resolver <- ShellResourceResolver$new()
   expect_true(resolver$isFor(res))
@@ -24,6 +23,7 @@ test_that("shell resource resolver works", {
 })
 
 test_that("shell resource client factory", {
+  skip_on_cran()
   res <- .make_shell_resource()
   resolver <- ShellResourceResolver$new()
   client <- resolver$newClient(res)
@@ -32,6 +32,7 @@ test_that("shell resource client factory", {
 })
 
 test_that("shell resource client commands", {
+  skip_on_cran()
   res <- .make_shell_resource()
   resolver <- ShellResourceResolver$new()
   client <- resolver$newClient(res)
@@ -49,6 +50,7 @@ test_that("shell resource client commands", {
 })
 
 test_that("shell resource client unknown command", {
+  skip_on_cran()
   res <- .make_shell_resource(path = "/", exec = "unknown")
   resolver <- ShellResourceResolver$new()
   client <- resolver$newClient(res)
@@ -59,6 +61,7 @@ test_that("shell resource client unknown command", {
 })
 
 test_that("shell resource client exec output", {
+  skip_on_cran()
   res <- .make_shell_resource(path = "/", exec = "pwd")
   resolver <- ShellResourceResolver$new()
   client <- resolver$newClient(res)

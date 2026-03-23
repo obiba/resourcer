@@ -1,5 +1,3 @@
-skip_on_cran()
-
 .make_ssh_resource <- function(host = "localhost", port = 22, path = "/work/dir", exec = "plink,ls", identity = "username", secret = "password") {
   url <- httr::build_url(structure(
     list(
@@ -21,6 +19,7 @@ skip_on_cran()
 }
 
 test_that("ssh resource resolver works", {
+  skip_on_cran()
   res <- .make_ssh_resource()
   resolver <- SshResourceResolver$new()
   expect_true(resolver$isFor(res))
@@ -29,6 +28,7 @@ test_that("ssh resource resolver works", {
 })
 
 test_that("ssh resource client factory, connection refused", {
+  skip_on_cran()
   res <- .make_ssh_resource()
   resolver <- SshResourceResolver$new()
   client <- resolver$newClient(res)
@@ -38,6 +38,7 @@ test_that("ssh resource client factory, connection refused", {
 })
 
 test_that("ssh resource client factory, connection refused", {
+  skip_on_cran()
   res <- .make_ssh_resource()
   resolver <- SshResourceResolver$new()
   client <- resolver$newClient(res)
