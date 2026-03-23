@@ -1,3 +1,5 @@
+skip_on_cran()
+
 .make_shell_resource <- function(path = "/work/dir", exec = "plink,ls") {
   url <- httr::build_url(structure(
     list(

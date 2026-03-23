@@ -1,3 +1,5 @@
+skip_on_cran()
+
 .make_file_resource <- function(path = "/data/CNSIM1.csv", format = "csv") {
   newResource(
     name = "test",
