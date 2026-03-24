@@ -19,7 +19,7 @@
 }
 
 test_that("ssh resource resolver works", {
-  skip_on_cran()
+  skip_if_not(identical(Sys.getenv("RUN_RESOURCE_TESTS"), "true"))
   res <- .make_ssh_resource()
   resolver <- SshResourceResolver$new()
   expect_true(resolver$isFor(res))
@@ -28,7 +28,7 @@ test_that("ssh resource resolver works", {
 })
 
 test_that("ssh resource client factory, connection refused", {
-  skip_on_cran()
+  skip_if_not(identical(Sys.getenv("RUN_RESOURCE_TESTS"), "true"))
   res <- .make_ssh_resource()
   resolver <- SshResourceResolver$new()
   client <- resolver$newClient(res)
@@ -38,7 +38,7 @@ test_that("ssh resource client factory, connection refused", {
 })
 
 test_that("ssh resource client factory, connection refused", {
-  skip_on_cran()
+  skip_if_not(identical(Sys.getenv("RUN_RESOURCE_TESTS"), "true"))
   res <- .make_ssh_resource()
   resolver <- SshResourceResolver$new()
   client <- resolver$newClient(res)

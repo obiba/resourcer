@@ -7,7 +7,7 @@
 }
 
 test_that("file resource resolver works", {
-  skip_on_cran()
+  skip_if_not(identical(Sys.getenv("RUN_RESOURCE_TESTS"), "true"))
   res <- .make_file_resource()
   resolver <- RDSFileResourceResolver$new()
   expect_true(resolver$isFor(res))
@@ -22,7 +22,7 @@ test_that("file resource resolver works", {
 })
 
 test_that("file resource resolver is loaded", {
-  skip_on_cran()
+  skip_if_not(identical(Sys.getenv("RUN_RESOURCE_TESTS"), "true"))
   res <- .make_file_resource()
   registerResourceResolver(RDSFileResourceResolver$new())
   resolver <- resolveResource(res)
@@ -32,7 +32,7 @@ test_that("file resource resolver is loaded", {
 })
 
 test_that("file resource client factory, file not found", {
-  skip_on_cran()
+  skip_if_not(identical(Sys.getenv("RUN_RESOURCE_TESTS"), "true"))
   res <- .make_file_resource()
   resolver <- RDSFileResourceResolver$new()
   client <- resolver$newClient(res)
@@ -43,7 +43,7 @@ test_that("file resource client factory, file not found", {
 })
 
 test_that("file resource client factory, RDS file", {
-  skip_on_cran()
+  skip_if_not(identical(Sys.getenv("RUN_RESOURCE_TESTS"), "true"))
   res <- .make_file_resource("./data/dataset.rds")
   resolver <- RDSFileResourceResolver$new()
   client <- resolver$newClient(res)
@@ -56,7 +56,7 @@ test_that("file resource client factory, RDS file", {
 })
 
 test_that("RDS file resource coercing to data.frame", {
-  skip_on_cran()
+  skip_if_not(identical(Sys.getenv("RUN_RESOURCE_TESTS"), "true"))
   res <- .make_file_resource("./data/dataset.rds")
   registerResourceResolver(RDSFileResourceResolver$new())
   df <- as.data.frame(res)
@@ -65,7 +65,7 @@ test_that("RDS file resource coercing to data.frame", {
 })
 
 test_that("RDS file resource client coercing to data.frame", {
-  skip_on_cran()
+  skip_if_not(identical(Sys.getenv("RUN_RESOURCE_TESTS"), "true"))
   res <- .make_file_resource("./data/dataset.rds")
   registerResourceResolver(RDSFileResourceResolver$new())
   client <- newResourceClient(res)
