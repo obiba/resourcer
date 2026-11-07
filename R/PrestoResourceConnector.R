@@ -29,7 +29,7 @@ PrestoResourceConnector <- R6::R6Class(
     createDBIConnection = function(resource) {
       if (self$isFor(resource)) {
         super$loadDBI()
-        private$loadRPresto()
+        driver <- private$newPrestoDriver()
         url <- super$parseURL(resource)
         dbname <- strsplit(super$getDatabaseName(url), split = "\\.")[[1]]
         protocol <- "http"
@@ -45,7 +45,7 @@ PrestoResourceConnector <- R6::R6Class(
           user <- "x" # better anything than nothing
         }
         if (!is.null(url$query) && url$query$flavor == "prestodb") {
-          conn <- DBI::dbConnect(RPresto::Presto(), 
+          conn <- DBI::dbConnect(driver, 
                                  host = paste0(protocol, "://", url$host), 
                                  port = url$port,
                                  user = user, 
@@ -53,7 +53,7 @@ PrestoResourceConnector <- R6::R6Class(
                                  schema = dbname[2]) 
         } 
         else {
-          conn <- DBI::dbConnect(RPresto::Presto(), 
+          conn <- DBI::dbConnect(driver, 
                                  host = paste0(protocol, "://", url$host), 
                                  port = url$port,
                                  use.trino.headers=TRUE,
@@ -68,10 +68,15 @@ PrestoResourceConnector <- R6::R6Class(
 
   ),
   private = list(
-    loadRPresto = function() {
-      if (!require("RPresto")) {
-        install.packages("RPresto", repos = "https://cloud.r-project.org", dependencies = TRUE)
+    # RPresto is not on CRAN anymore, so it cannot be declared in Suggests: the
+    # package name is kept in a variable to avoid an undeclared dependency in R CMD check.
+    newPrestoDriver = function() {
+      pkg <- "RPresto"
+      if (!requireNamespace(pkg, quietly = TRUE)) {
+        stop("Package RPresto is required but is not available from CRAN, ",
+             "install it with: remotes::install_github('prestodb/RPresto')", call. = FALSE)
       }
+      getExportedValue(pkg, "Presto")()
     }
   )
 )

@@ -32,3 +32,10 @@ test_that("default asTbl coerces data.frame to tibble", {
   expect_s3_class(tbl, "tbl_df")
   expect_equal(tbl$a, 1:2)
 })
+
+test_that("presto connector reports missing RPresto", {
+  skip_if_not_installed("DBI")
+  skip_if(requireNamespace("RPresto", quietly = TRUE))
+  res <- newResource(name = "test", url = "presto://localhost:8080/hive.default/test")
+  expect_error(PrestoResourceConnector$new()$createDBIConnection(res), "install_github")
+})

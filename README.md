@@ -38,7 +38,7 @@ the kind of resource that will be accessed at runtime.
 * [RMariaDB](https://cran.r-project.org/package=RMariaDB): Database Interface and 'MariaDB' Driver
 * [RPostgres](https://cran.r-project.org/package=RPostgres): 'Rcpp' Interface to 'PostgreSQL'
 * [sparklyr](https://cran.r-project.org/package=sparklyr): R Interface to Apache Spark
-* [RPresto](https://cran.r-project.org/package=RPresto): DBI Connector to Presto
+* [RPresto](https://github.com/prestodb/RPresto): DBI Connector to Presto
 * [nodbi](https://cran.r-project.org/package=nodbi): 'NoSQL' Database Connector
 * [mongolite](https://cran.r-project.org/package=mongolite): Fast and Simple 'MongoDB' Client for R
 
