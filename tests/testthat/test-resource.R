@@ -21,3 +21,14 @@ test_that("resource builder works", {
   )
   expect_null(res$identity)
 })
+
+test_that("default asTbl coerces data.frame to tibble", {
+  skip_if_not_installed("dplyr")
+  Client <- R6::R6Class("Client", inherit = ResourceClient, public = list(
+    asDataFrame = function(...) data.frame(a = 1:2)
+  ))
+  client <- Client$new(newResource(name = "test", url = "file:///tmp/test.csv", format = "csv"))
+  tbl <- as.resource.tbl(client)
+  expect_s3_class(tbl, "tbl_df")
+  expect_equal(tbl$a, 1:2)
+})
