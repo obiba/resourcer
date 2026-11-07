@@ -1,0 +1,449 @@
+# Resource R
+
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/resourcer)](https://cran.r-project.org/package=resourcer)
+[![R-CMD-check](https://github.com/obiba/resourcer/actions/workflows/ci.yml/badge.svg)](https://github.com/obiba/resourcer/actions/workflows/ci.yml)
+
+The `resourcer` package is meant to access resources identified by a URL
+in a uniform way whether it references a dataset (stored in a file, a
+SQL table, a MongoDB collection etc.) or a computation unit (system
+commands, web services etc.). Usually some credentials will be defined,
+and an additional data format information can be provided to help
+dataset coercing to a data.frame object.
+
+The main concepts are:
+
+- *Resource*, access to a resource (dataset or computation unit) is
+  described by an object with URL, optional credentials and optional
+  data format properties,
+- *ResourceResolver*, a *ResourceClient* factory based on the URL scheme
+  and available in a resolvers registry,
+- *ResourceClient*, realizes the connection with the dataset or the
+  computation unit described by a *Resource*,
+- *FileResourceGetter*, connect to a file described by a resource,
+- *DBIResourceConnector*, establish a [DBI](https://r-dbi.org/)
+  connection.
+
+## Install
+
+Install from CRAN:
+
+    install.packages("resourcer")
+
+The resourcer has quite some suggested dependencies. These are only
+suggestions, meaning that it will depend on the kind of resource that
+will be accessed at runtime.
+
+### Tidy files
+
+- [haven](https://cran.r-project.org/package=haven): Import and Export
+  ‘SPSS’, ‘Stata’ and ‘SAS’ Files
+- [readr](https://cran.r-project.org/package=readr): Read Rectangular
+  Text Data
+- [readxl](https://cran.r-project.org/package=readxl): Read Excel Files
+- [dplyr](https://cran.r-project.org/package=dplyr): A Grammar of Data
+  Manipulation
+
+### Databases
+
+- [dbplyr](https://cran.r-project.org/package=dbplyr): A ‘dplyr’ Back
+  End for Databases
+- [DBI](https://cran.r-project.org/package=DBI): R Database Interface
+- [RMariaDB](https://cran.r-project.org/package=RMariaDB): Database
+  Interface and ‘MariaDB’ Driver
+- [RPostgres](https://cran.r-project.org/package=RPostgres): ‘Rcpp’
+  Interface to ‘PostgreSQL’
+- [sparklyr](https://cran.r-project.org/package=sparklyr): R Interface
+  to Apache Spark
+- [RPresto](https://github.com/prestodb/RPresto): DBI Connector to
+  Presto
+- [nodbi](https://cran.r-project.org/package=nodbi): ‘NoSQL’ Database
+  Connector
+- [mongolite](https://cran.r-project.org/package=mongolite): Fast and
+  Simple ‘MongoDB’ Client for R
+
+### Remote computation server
+
+- [ssh](https://cran.r-project.org/package=ssh): Secure Shell (SSH)
+  Client for R
+
+### System dependencies
+
+R packages often depend on system libraries or other software external
+to R. These dependencies are not automatically installed.
+
+See the provided example script for installing the system requirements,
+per R package, for a Ubuntu 18.04 system:
+[install-system-requirements-ubuntu18.sh](https://github.com/obiba/resourcer/blob/master/inst/system/install-system-requirements-ubuntu18.sh)
+
+## File Resources
+
+These are resources describing a file. If the file is in a remote
+location, it must be downloaded before being read. The data format
+specification of the resource helps to find the appropriate file reader.
+
+### File Getter
+
+The file locations supported by default are:
+
+- `file`, local file system,
+- `http`(s), web address, basic authentication,
+- `gridfs`, MongoDB file store,
+- `scp`, file copy through SSH,
+- `opal`, [Opal](https://www.obiba.org/pages/products/opal/) file store.
+
+This can be easily applied to other file locations by extending the
+*FileResourceGetter* class. An instance of the new file resource getter
+is to be registered so that the *FileResourceResolver* can operate as
+expected.
+
+    registerFileResourceGetter(MyFileLocationResourceGetter$new())
+
+### File Data Format
+
+The data format specified within the *Resource* object, helps at finding
+the appropriate file reader. Currently supported data formats are:
+
+- the data formats that have a reader in
+  [tidyverse](https://tidyverse.org/):
+  [readr](https://readr.tidyverse.org/) (`csv`, `csv2`, `tsv`, `ssv`,
+  `delim`), [haven](https://haven.tidyverse.org/) (`spss`, `sav`, `por`,
+  `dta`, `stata`, `sas`, `xpt`), [readxl](https://readxl.tidyverse.org/)
+  (`excel`, `xls`, `xlsx`). This can be easily applied to other data
+  file formats by extending the *FileResourceClient* class.
+- the R data format that can be loaded in a child R environment from
+  which object of interest will be retrieved.
+
+Usage example that reads a local SPSS file:
+
+``` r
+
+# make a SPSS file resource
+res <- resourcer::newResource(
+  name = "CNSIM1",
+  url = "file:///data/CNSIM1.sav",
+  format = "spss"
+)
+
+# coerce the csv file in the opal server to a data.frame
+df <- as.data.frame(res)
+```
+
+To support other file data format, extend the *FileResourceClient* class
+with the new data format reader implementation. Associate factory class,
+an extension of the *ResourceResolver* class is also to be implemented
+and registered.
+
+    registerResourceResolver(MyFileFormatResourceResolver$new())
+
+## Database Resources
+
+### DBI Connectors
+
+[DBI](https://r-dbi.org/) is a set of virtual classes that are are used
+to abstract the SQL database connections and operations within R. Then
+any DBI implementation can be used to access to a SQL table. Which DBI
+connector to be used is an information that can be extracted from the
+scheme part of the resource’s URL. For instance a resource URL starting
+with `postgres://` will require the
+[RPostgres](https://rpostgres.r-dbi.org/) driver. To separate the DBI
+connector instanciation from the DBI interface interactions in the
+*SQLResourceClient*, a *DBIResourceConnector* registry is to be
+populated. The currently supported SQL database connectors are:
+
+- `mariadb` MariaDB connector,
+- `mysql` MySQL connector,
+- `postgres` or `postgresql` Postgres connector,
+- `presto`, `presto+http` or `presto+https`
+  [Presto](https://prestodb.io/) connector,
+- `spark`, `spark+http` or `spark+https`
+  [Spark](https://spark.apache.org/) connector.
+
+To support another SQL database having a DBI driver, extend the
+*DBIResourceConnector* class and register it:
+
+    registerDBIResourceConnector(MyDBResourceConnector$new())
+
+### Use dplyr
+
+Having the data stored in the database allows to handle large (common
+SQL databases) to big (PrestoDB, Spark) datasets using
+[dplyr](https://dplyr.tidyverse.org/) which will delegate as much as
+possible operations to the database.
+
+### Document Databases
+
+NoSQL databases can be described by a resource. The
+[nodbi](https://docs.ropensci.org/nodbi/) can be used here. Currently
+only connection to MongoDB database is supported using URL scheme
+`mongodb` or `mongodb+srv`.
+
+## Computation Resources
+
+Computation resources are resources on which tasks/commands can be
+triggerred and from which resulting data can be retrieved.
+
+Example of computation resource that connects to a server through SSH:
+
+``` r
+
+# make an application resource on a ssh server
+res <- resourcer::newResource(
+  name = "supercomp1",
+  url = "ssh://server1.example.org/work/dir?exec=plink,ls",
+  identity = "sshaccountid",
+  secret = "sshaccountpwd"
+)
+
+# get ssh client from resource object
+client <- resourcer::newResourceClient(res) # does a ssh::ssh_connect()
+
+# execute commands
+files <- client$exec("ls") # exec 'cd /work/dir && ls'
+
+# release connection
+client$close() # does ssh::ssh_disconnect(session)
+```
+
+## Extending Resources
+
+There are several ways to extend the Resources handling. These are based
+on different R6 classes having a `isFor(resource)` function:
+
+- If the resource is a file located at a place not already handled,
+  write a new *FileResourceGetter* subclass and register an instance of
+  it with the function
+  [`registerFileResourceGetter()`](https://www.obiba.org/resourcer/reference/registerFileResourceGetter.md).
+- If the resource is a SQL engine having a DBI connector defined, write
+  a new *DBIResourceConnector* subclass and register an instance of it
+  with the function
+  [`registerDBIResourceConnector()`](https://www.obiba.org/resourcer/reference/registerDBIResourceConnector.md).
+- If the resource is in a domain specific web application or database,
+  write a new *ResourceResolver* subclass and register an instance of it
+  with the function
+  [`registerResourceResolver()`](https://www.obiba.org/resourcer/reference/registerResourceResolver.md).
+  This *ResourceResolver* object will create the appropriate
+  *ResourceClient* object that matches your needs.
+
+The design of the URL that will describe your new resource should not
+overlap an existing one, otherwise the different registries will return
+the first instance for which the `isFor(resource)` is `TRUE`. In order
+to distinguish resource locations, the URL’s scheme can be extended, for
+instance the scheme for accessing a file in a Opal server is
+`opal+https` so that the credentials be applied as needed by Opal.
+
+## Resource Forms
+
+As it can be error prone to define a new resource, when a URL is
+complex, or when there is a limited choice of formats or when
+credentials can be on different types, it is recommended to declare the
+resources forms and factory functions within the R package. This
+resource declaration is to be done in javascript, as this is a very
+commonly used language for building graphical user interfaces.
+
+These files are expected to be installed at the root of the package
+folder (then in the source code of the R package, they will be declared
+in the `inst/resources` folder), so that an external application can
+lookup statically the packages having declared some resources.
+
+The configuration file `inst/resources/resource.js` is a javascript file
+which contains an object with the properties:
+
+- `settings`, a JSON object that contains the description and the
+  documentation of the web forms (based on the
+  [json-schema](https://json-schema.org) specification).
+- `asResource`, a javascript function that will convert the data
+  captured from one of the declared web forms into a data structure
+  representing the `resource` object.
+
+As an example (see also [resourcer’s
+resource.js](https://github.com/obiba/resourcer/blob/master/inst/resources/resource.js)):
+
+``` javascript
+var myPackage = {
+  settings: {
+    "title": "MyPackage resources",
+    "description": "MyPackage resources are for etc.",
+    "web": "https://github.com/org/myPackage",
+    "categories": [
+      {
+        "name": "my-format",
+        "title": "My data format",
+        "description": "Data are files in my format, that will be read by myPackage etc."
+      }
+    ],
+    "types": [
+      {
+        "name": "my-format-http",
+        "title": "My data format - HTTP",
+        "description": "Data are files in my format, that will be downloaded from a HTTP server etc.",
+        "tags": ["my-format", "http"],
+        "parameters": {},
+        "credentials": {}
+      }
+    ]
+  },
+  asResource: function(type, name, params, credentials) {
+    // make a resource object from arguments, using type to drive 
+    // what params/credentials properties are to be used
+    // a basic example of resource object:
+    return {
+      "name": name,
+      "url": params.url,
+      "format": params.format,
+      "identity": credentials.username,
+      "secret": credentials.password
+    };
+  }
+}
+```
+
+The specifications for the `resource.js` file are the following:
+
+- `settings` object:
+
+| Property | Type | Description |
+|----|----|----|
+| **title** | `string` | The title of the set of resources. |
+| **description** | `string` | The description of the set of resources. |
+| **web** | `string` | A web link that describes the resources. |
+| **categories** | `array` of `object` | A list of `category` objects which are used to categorize the declared resources in terms of resource location, format, usage etc. |
+| **types** | `array` of `object` | A list of `type` objects which contains a description of the parameters and credentials forms for each type of resource. |
+
+- `category` object:
+
+| Property | Type | Description |
+|----|----|----|
+| **name** | `string` | The name of the category that will be applied to each resource `type`, must be unique. |
+| **title** | `string` | The title of the category. |
+| **description** | `string` | The description of the category. |
+
+- `type` object:
+
+| Property | Type | Description |
+|----|----|----|
+| **name** | `string` | The identifying name of the resource, must be unique. |
+| **title** | `string` | The title of the resource. |
+| **description** | `string` | The description of the resource form. |
+| **tags** | `array` of `string` | The `tag` names that are applied to the resource form. |
+| **parameters** | `object` | The form that will be used to capture the parameters to build the *url* and the *format* properties of the resource (based on the [json-schema](https://json-schema.org) specification). Some specific fields can be used: `_package` to capture the R package name or `_packages` to capture an array of R package names to be loaded prior to the resource assignment. |
+| **credentials** | `object` | The form that will be used to capture the access credentials to build the *identity* and the *secret* properties of the resource (based on the [json-schema](https://json-schema.org) specification). |
+
+- `asResource` function: a javascript function which signature is
+  `function(type, name, params, credentials)` where:
+  - `type`, the form name used to capture the resource parameters and
+    credentials,
+  - `name`, the name to apply to the resource,
+  - `params`, the captured parameters,
+  - `credentials`, the captured credentials.
+
+The name of the root object must follow the pattern: `<R package>` (note
+that any dots (`.`) in the R package name are to be replaced by
+underscores (`_`)).
+
+# Package index
+
+## All functions
+
+- [`CommandResourceClient`](https://www.obiba.org/resourcer/reference/CommandResourceClient.md)
+  : Command resource client
+- [`DBIResourceConnector`](https://www.obiba.org/resourcer/reference/DBIResourceConnector.md)
+  : DBI resource connector
+- [`FileResourceClient`](https://www.obiba.org/resourcer/reference/FileResourceClient.md)
+  : File resource client
+- [`FileResourceGetter`](https://www.obiba.org/resourcer/reference/FileResourceGetter.md)
+  : File resource getter
+- [`GridFsFileResourceGetter`](https://www.obiba.org/resourcer/reference/GridFsFileResourceGetter.md)
+  : GridFS file resource getter
+- [`HttpFileResourceGetter`](https://www.obiba.org/resourcer/reference/HttpFileResourceGetter.md)
+  : HTTP file resource getter
+- [`LocalFileResourceGetter`](https://www.obiba.org/resourcer/reference/LocalFileResourceGetter.md)
+  : Local file resource getter
+- [`MariaDBResourceConnector`](https://www.obiba.org/resourcer/reference/MariaDBResourceConnector.md)
+  : MariaDB DBI resource connector
+- [`NoSQLResourceClient`](https://www.obiba.org/resourcer/reference/NoSQLResourceClient.md)
+  : NoSQL database resource client
+- [`NoSQLResourceResolver`](https://www.obiba.org/resourcer/reference/NoSQLResourceResolver.md)
+  : NoSQL Database Resource resolver
+- [`OpalFileResourceGetter`](https://www.obiba.org/resourcer/reference/OpalFileResourceGetter.md)
+  : Opal file resource getter
+- [`PostgresResourceConnector`](https://www.obiba.org/resourcer/reference/PostgresResourceConnector.md)
+  : Postgres DBI resource connector
+- [`PrestoResourceConnector`](https://www.obiba.org/resourcer/reference/PrestoResourceConnector.md)
+  : Presto DBI resource connector
+- [`RDSFileResourceClient`](https://www.obiba.org/resourcer/reference/RDSFileResourceClient.md)
+  : R object file resource client
+- [`RDSFileResourceResolver`](https://www.obiba.org/resourcer/reference/RDSFileResourceResolver.md)
+  : R object file Resource resolver
+- [`RDataFileResourceClient`](https://www.obiba.org/resourcer/reference/RDataFileResourceClient.md)
+  : R data file resource client
+- [`RDataFileResourceResolver`](https://www.obiba.org/resourcer/reference/RDataFileResourceResolver.md)
+  : R data file Resource resolver
+- [`ResourceClient`](https://www.obiba.org/resourcer/reference/ResourceClient.md)
+  : Resource client
+- [`ResourceResolver`](https://www.obiba.org/resourcer/reference/ResourceResolver.md)
+  : Resource resolver
+- [`SQLResourceClient`](https://www.obiba.org/resourcer/reference/SQLResourceClient.md)
+  : SQL database resource client
+- [`SQLResourceResolver`](https://www.obiba.org/resourcer/reference/SQLResourceResolver.md)
+  : SQL Database Resource resolver
+- [`ScpFileResourceGetter`](https://www.obiba.org/resourcer/reference/ScpFileResourceGetter.md)
+  : SCP file resource getter
+- [`ShellResourceClient`](https://www.obiba.org/resourcer/reference/ShellResourceClient.md)
+  : Shell resource client
+- [`ShellResourceResolver`](https://www.obiba.org/resourcer/reference/ShellResourceResolver.md)
+  : Shell Resource resolver
+- [`SparkResourceConnector`](https://www.obiba.org/resourcer/reference/SparkResourceConnector.md)
+  : Apache Spark DBI resource connector
+- [`SshResourceClient`](https://www.obiba.org/resourcer/reference/SshResourceClient.md)
+  : SSH resource client
+- [`SshResourceResolver`](https://www.obiba.org/resourcer/reference/SshResourceResolver.md)
+  : SSH Resource resolver
+- [`TidyFileResourceClient`](https://www.obiba.org/resourcer/reference/TidyFileResourceClient.md)
+  : Tidy file resource client
+- [`TidyFileResourceResolver`](https://www.obiba.org/resourcer/reference/TidyFileResourceResolver.md)
+  : Tidy file Resource resolver
+- [`as.data.frame(`*`<ResourceClient>`*`)`](https://www.obiba.org/resourcer/reference/as.data.frame.ResourceClient.md)
+  : Coerce a ResourceClient object to a data.frame
+- [`as.data.frame(`*`<resource>`*`)`](https://www.obiba.org/resourcer/reference/as.data.frame.resource.md)
+  : Coerce a resource to a data.frame
+- [`as.resource.data.frame()`](https://www.obiba.org/resourcer/reference/as.resource.data.frame.md)
+  : Coerce resource client to a data.frame
+- [`as.resource.object()`](https://www.obiba.org/resourcer/reference/as.resource.object.md)
+  : Coerce resource client to the internal data object
+- [`as.resource.tbl()`](https://www.obiba.org/resourcer/reference/as.resource.tbl.md)
+  : Coerce resource client to a tbl
+- [`findDBIResourceConnector()`](https://www.obiba.org/resourcer/reference/findDBIResourceConnector.md)
+  : Find a DBI resource connector
+- [`findFileResourceGetter()`](https://www.obiba.org/resourcer/reference/findFileResourceGetter.md)
+  : Find a file resource getter
+- [`getDBIResourceConnectors()`](https://www.obiba.org/resourcer/reference/getDBIResourceConnectors.md)
+  : Get DBI resource connectors registry
+- [`getFileResourceGetters()`](https://www.obiba.org/resourcer/reference/getFileResourceGetters.md)
+  : Get file resource getters registry
+- [`getResourceResolvers()`](https://www.obiba.org/resourcer/reference/getResourceResolvers.md)
+  : Get resource resolvers registry
+- [`newResource()`](https://www.obiba.org/resourcer/reference/newResource.md)
+  : Create a Resource
+- [`newResourceClient()`](https://www.obiba.org/resourcer/reference/newResourceClient.md)
+  : Creates a resource client
+- [`registerDBIResourceConnector()`](https://www.obiba.org/resourcer/reference/registerDBIResourceConnector.md)
+  : Register a DBI resource connector
+- [`registerFileResourceGetter()`](https://www.obiba.org/resourcer/reference/registerFileResourceGetter.md)
+  : Register a file resource getter
+- [`registerResourceResolver()`](https://www.obiba.org/resourcer/reference/registerResourceResolver.md)
+  : Register a resource resolver
+- [`resolveResource()`](https://www.obiba.org/resourcer/reference/resolveResource.md)
+  : Find a resource resolver
+- [`unregisterDBIResourceConnector()`](https://www.obiba.org/resourcer/reference/unregisterDBIResourceConnector.md)
+  : Remove a DBI resource connector from the registry
+- [`unregisterFileResourceGetter()`](https://www.obiba.org/resourcer/reference/unregisterFileResourceGetter.md)
+  : Remove a file resource getter from the registry
+- [`unregisterResourceResolver()`](https://www.obiba.org/resourcer/reference/unregisterResourceResolver.md)
+  : Remove a resource resolver from the registry
+
+# Articles
+
+### All vignettes
+
+- [Introduction to
+  Resources](https://www.obiba.org/resourcer/articles/resources-introduction.md):
