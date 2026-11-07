@@ -8,11 +8,6 @@
 A R6 object of class TidyFileResourceResolver
 }
 \description{
-Tidy file Resource resolver
-
-Tidy file Resource resolver
-}
-\details{
 The resource is a file and data format is handled by a reader from tidyverse.
 The data format is one of: csv (comma delimiter), csv2 (semicolon delimiter), tsv (tab delimiter), ssv (space delimiter),
 delim (delim parameter to be specified in the URL, default is space char), spss, sav, por, stata, dta, sas, xpt,
@@ -27,80 +22,84 @@ excel, xls, xlsx.
 }
 
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{TidyFileResourceResolver}
+\code{\link[resourcer:ResourceResolver]{ResourceResolver}} -> \code{TidyFileResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-TidyFileResourceResolver-isFor}{\code{TidyFileResourceResolver$isFor()}}
-\item \href{#method-TidyFileResourceResolver-newClient}{\code{TidyFileResourceResolver$newClient()}}
-\item \href{#method-TidyFileResourceResolver-clone}{\code{TidyFileResourceResolver$clone()}}
+  \itemize{
+    \item \href{#method-TidyFileResourceResolver-isFor}{\code{TidyFileResourceResolver$isFor()}}
+    \item \href{#method-TidyFileResourceResolver-newClient}{\code{TidyFileResourceResolver$newClient()}}
+    \item \href{#method-TidyFileResourceResolver-clone}{\code{TidyFileResourceResolver$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>ResourceResolver$initialize()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-TidyFileResourceResolver-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-TidyFileResourceResolver-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource has a URL that locates a tidy data file: the resource can be accessed as a file and
+\subsection{\code{TidyFileResourceResolver$isFor()}}{
+  Check that the provided resource has a URL that locates a tidy data file: the resource can be accessed as a file and
  the resource format is one of "csv", "csv2", "tsv", "delim", "ssv", "spss", "sav", "por", "stata", "dta", "sas", "xpt",
  "excel", "xls" or "xlsx" (case is ignored).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{TidyFileResourceResolver$isFor(x)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{TidyFileResourceResolver$isFor(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{The resource object to validate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{The resource object to validate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-TidyFileResourceResolver-newClient"></a>}}
 \if{latex}{\out{\hypertarget{method-TidyFileResourceResolver-newClient}{}}}
-\subsection{Method \code{newClient()}}{
-Creates a TidyFileResourceClient instance from provided resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{TidyFileResourceResolver$newClient(x)}\if{html}{\out{</div>}}
+\subsection{\code{TidyFileResourceResolver$newClient()}}{
+  Creates a TidyFileResourceClient instance from provided resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{TidyFileResourceResolver$newClient(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A TidyFileResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A TidyFileResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-TidyFileResourceResolver-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-TidyFileResourceResolver-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{TidyFileResourceResolver$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{TidyFileResourceResolver$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{TidyFileResourceResolver$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

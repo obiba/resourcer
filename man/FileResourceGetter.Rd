@@ -8,129 +8,135 @@
 A R6 object of class FileResourceGetter
 }
 \description{
-File resource getter
-
-File resource getter
-}
-\details{
 Helper base class for getting the file described by the resource object. ResourceClient class implementations
 can use this utility to retrieve files from any locations before processing them according to the declared
 data format.
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-FileResourceGetter-new}{\code{FileResourceGetter$new()}}
-\item \href{#method-FileResourceGetter-isFor}{\code{FileResourceGetter$isFor()}}
-\item \href{#method-FileResourceGetter-downloadFile}{\code{FileResourceGetter$downloadFile()}}
-\item \href{#method-FileResourceGetter-extractFileName}{\code{FileResourceGetter$extractFileName()}}
-\item \href{#method-FileResourceGetter-makeDownloadDir}{\code{FileResourceGetter$makeDownloadDir()}}
-\item \href{#method-FileResourceGetter-clone}{\code{FileResourceGetter$clone()}}
-}
+  \itemize{
+    \item \href{#method-FileResourceGetter-initialize}{\code{FileResourceGetter$new()}}
+    \item \href{#method-FileResourceGetter-isFor}{\code{FileResourceGetter$isFor()}}
+    \item \href{#method-FileResourceGetter-downloadFile}{\code{FileResourceGetter$downloadFile()}}
+    \item \href{#method-FileResourceGetter-extractFileName}{\code{FileResourceGetter$extractFileName()}}
+    \item \href{#method-FileResourceGetter-makeDownloadDir}{\code{FileResourceGetter$makeDownloadDir()}}
+    \item \href{#method-FileResourceGetter-clone}{\code{FileResourceGetter$clone()}}
+  }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-FileResourceGetter-new"></a>}}
-\if{latex}{\out{\hypertarget{method-FileResourceGetter-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new FileResourceGetter instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$new()}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-FileResourceGetter-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-FileResourceGetter-initialize}{}}}
+\subsection{\code{FileResourceGetter$new()}}{
+  Creates a new FileResourceGetter instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{FileResourceGetter$new()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A FileResourceGetter object.
+  }
 }
 
-\subsection{Returns}{
-A FileResourceGetter object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-FileResourceGetter-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-FileResourceGetter-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided parameter is of class "resource" and has a format defined.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$isFor(resource)}\if{html}{\out{</div>}}
+\subsection{\code{FileResourceGetter$isFor()}}{
+  Check that the provided parameter is of class "resource" and has a format defined.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{FileResourceGetter$isFor(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource object to validate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource object to validate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-FileResourceGetter-downloadFile"></a>}}
 \if{latex}{\out{\hypertarget{method-FileResourceGetter-downloadFile}{}}}
-\subsection{Method \code{downloadFile()}}{
-Stub function which subclasses will implement to make a "resource.file" object from a resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$downloadFile(resource, ...)}\if{html}{\out{</div>}}
+\subsection{\code{FileResourceGetter$downloadFile()}}{
+  Stub function which subclasses will implement to make a "resource.file" object from a resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{FileResourceGetter$downloadFile(resource, ...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+      \item{\code{...}}{Additional parameters that may be relevant for FileResourceGetter subclasses.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A "resource.file" object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-
-\item{\code{...}}{Additional parameters that may be relevant for FileResourceGetter subclasses.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A "resource.file" object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-FileResourceGetter-extractFileName"></a>}}
 \if{latex}{\out{\hypertarget{method-FileResourceGetter-extractFileName}{}}}
-\subsection{Method \code{extractFileName()}}{
-Utility to get the base name from the file path.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$extractFileName(resource)}\if{html}{\out{</div>}}
+\subsection{\code{FileResourceGetter$extractFileName()}}{
+  Utility to get the base name from the file path.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{FileResourceGetter$extractFileName(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The file base name.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The file base name.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-FileResourceGetter-makeDownloadDir"></a>}}
 \if{latex}{\out{\hypertarget{method-FileResourceGetter-makeDownloadDir}{}}}
-\subsection{Method \code{makeDownloadDir()}}{
-Creates a directory where to download file in the R session's temporary directory. This directory will be flushed when the R session ends.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$makeDownloadDir()}\if{html}{\out{</div>}}
+\subsection{\code{FileResourceGetter$makeDownloadDir()}}{
+  Creates a directory where to download file in the R session's temporary directory. This directory will be flushed when the R session ends.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{FileResourceGetter$makeDownloadDir()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The path to the download directory.
+  }
 }
 
-\subsection{Returns}{
-The path to the download directory.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-FileResourceGetter-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-FileResourceGetter-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{FileResourceGetter$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{FileResourceGetter$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{FileResourceGetter$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

@@ -8,88 +8,87 @@
 A R6 object of class RDataFileResourceResolver
 }
 \description{
-R data file Resource resolver
-
-R data file Resource resolver
-}
-\details{
 The resource is a R data file and data format is the class of the symbol that will be loaded.
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{RDataFileResourceResolver}
+\code{\link[resourcer:ResourceResolver]{ResourceResolver}} -> \code{RDataFileResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-RDataFileResourceResolver-isFor}{\code{RDataFileResourceResolver$isFor()}}
-\item \href{#method-RDataFileResourceResolver-newClient}{\code{RDataFileResourceResolver$newClient()}}
-\item \href{#method-RDataFileResourceResolver-clone}{\code{RDataFileResourceResolver$clone()}}
+  \itemize{
+    \item \href{#method-RDataFileResourceResolver-isFor}{\code{RDataFileResourceResolver$isFor()}}
+    \item \href{#method-RDataFileResourceResolver-newClient}{\code{RDataFileResourceResolver$newClient()}}
+    \item \href{#method-RDataFileResourceResolver-clone}{\code{RDataFileResourceResolver$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>ResourceResolver$initialize()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-RDataFileResourceResolver-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-RDataFileResourceResolver-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource has a URL that locates a R data file: the resource can be accessed as a file and
+\subsection{\code{RDataFileResourceResolver$isFor()}}{
+  Check that the provided resource has a URL that locates a R data file: the resource can be accessed as a file and
  the resource URL path ends with ".rda" or ".rdata" (case ignored), or the resource format is prefixed with "r:" or "rda:" (a kind of
  namespace to qualify the R object class).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceResolver$isFor(x)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{RDataFileResourceResolver$isFor(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{The resource object to validate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{The resource object to validate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-RDataFileResourceResolver-newClient"></a>}}
 \if{latex}{\out{\hypertarget{method-RDataFileResourceResolver-newClient}{}}}
-\subsection{Method \code{newClient()}}{
-Creates a RDataFileResourceClient instance from provided resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceResolver$newClient(x)}\if{html}{\out{</div>}}
+\subsection{\code{RDataFileResourceResolver$newClient()}}{
+  Creates a RDataFileResourceClient instance from provided resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{RDataFileResourceResolver$newClient(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A RDataFileResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A RDataFileResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-RDataFileResourceResolver-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-RDataFileResourceResolver-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{RDataFileResourceResolver$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{RDataFileResourceResolver$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{RDataFileResourceResolver$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

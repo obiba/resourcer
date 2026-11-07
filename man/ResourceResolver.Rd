@@ -8,91 +8,94 @@
 A R6 object of class ResourceResolver
 }
 \description{
-Resource resolver
-
-Resource resolver
-}
-\details{
 Helper class for building a Client that implements the access to the data or the
 computation unit.
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-ResourceResolver-new}{\code{ResourceResolver$new()}}
-\item \href{#method-ResourceResolver-isFor}{\code{ResourceResolver$isFor()}}
-\item \href{#method-ResourceResolver-newClient}{\code{ResourceResolver$newClient()}}
-\item \href{#method-ResourceResolver-clone}{\code{ResourceResolver$clone()}}
-}
+  \itemize{
+    \item \href{#method-ResourceResolver-initialize}{\code{ResourceResolver$new()}}
+    \item \href{#method-ResourceResolver-isFor}{\code{ResourceResolver$isFor()}}
+    \item \href{#method-ResourceResolver-newClient}{\code{ResourceResolver$newClient()}}
+    \item \href{#method-ResourceResolver-clone}{\code{ResourceResolver$clone()}}
+  }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ResourceResolver-new"></a>}}
-\if{latex}{\out{\hypertarget{method-ResourceResolver-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new ResourceResolver instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceResolver$new()}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-ResourceResolver-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-ResourceResolver-initialize}{}}}
+\subsection{\code{ResourceResolver$new()}}{
+  Creates a new ResourceResolver instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceResolver$new()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A ResourceResolver object.
+  }
 }
 
-\subsection{Returns}{
-A ResourceResolver object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ResourceResolver-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-ResourceResolver-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided object is of class "resource".
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceResolver$isFor(x)}\if{html}{\out{</div>}}
+\subsection{\code{ResourceResolver$isFor()}}{
+  Check that the provided object is of class "resource".
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceResolver$isFor(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{The resource object to evaluate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{The resource object to evaluate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ResourceResolver-newClient"></a>}}
 \if{latex}{\out{\hypertarget{method-ResourceResolver-newClient}{}}}
-\subsection{Method \code{newClient()}}{
-Stub function to be implemented by subclasses. Makes an object which class inherits from ResourceClient.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceResolver$newClient(x)}\if{html}{\out{</div>}}
+\subsection{\code{ResourceResolver$newClient()}}{
+  Stub function to be implemented by subclasses. Makes an object which class inherits from ResourceClient.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceResolver$newClient(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{The resource object to evaluate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The ResourceClient object that will access the provided resource.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{The resource object to evaluate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The ResourceClient object that will access the provided resource.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ResourceResolver-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-ResourceResolver-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceResolver$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{ResourceResolver$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceResolver$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

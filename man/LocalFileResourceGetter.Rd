@@ -8,103 +8,103 @@
 A R6 object of class LocalFileResourceGetter
 }
 \description{
-Local file resource getter
-
-Local file resource getter
-}
-\details{
 Access a file that is stored in the local file system. No credentials apply.
 }
 \section{Super class}{
-\code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{LocalFileResourceGetter}
+\code{\link[resourcer:FileResourceGetter]{FileResourceGetter}} -> \code{LocalFileResourceGetter}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-LocalFileResourceGetter-new}{\code{LocalFileResourceGetter$new()}}
-\item \href{#method-LocalFileResourceGetter-isFor}{\code{LocalFileResourceGetter$isFor()}}
-\item \href{#method-LocalFileResourceGetter-downloadFile}{\code{LocalFileResourceGetter$downloadFile()}}
-\item \href{#method-LocalFileResourceGetter-clone}{\code{LocalFileResourceGetter$clone()}}
+  \itemize{
+    \item \href{#method-LocalFileResourceGetter-initialize}{\code{LocalFileResourceGetter$new()}}
+    \item \href{#method-LocalFileResourceGetter-isFor}{\code{LocalFileResourceGetter$isFor()}}
+    \item \href{#method-LocalFileResourceGetter-downloadFile}{\code{LocalFileResourceGetter$downloadFile()}}
+    \item \href{#method-LocalFileResourceGetter-clone}{\code{LocalFileResourceGetter$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>resourcer::FileResourceGetter$extractFileName()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>resourcer::FileResourceGetter$makeDownloadDir()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>FileResourceGetter$extractFileName()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>FileResourceGetter$makeDownloadDir()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-LocalFileResourceGetter-new"></a>}}
-\if{latex}{\out{\hypertarget{method-LocalFileResourceGetter-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new LocalFileResourceGetter instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{LocalFileResourceGetter$new()}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-LocalFileResourceGetter-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-LocalFileResourceGetter-initialize}{}}}
+\subsection{\code{LocalFileResourceGetter$new()}}{
+  Creates a new LocalFileResourceGetter instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{LocalFileResourceGetter$new()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A LocalFileResourceGetter object.
+  }
 }
 
-\subsection{Returns}{
-A LocalFileResourceGetter object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-LocalFileResourceGetter-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-LocalFileResourceGetter-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource has a URL that locates a file stored in the local file system.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{LocalFileResourceGetter$isFor(resource)}\if{html}{\out{</div>}}
+\subsection{\code{LocalFileResourceGetter$isFor()}}{
+  Check that the provided resource has a URL that locates a file stored in the local file system.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{LocalFileResourceGetter$isFor(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource object to validate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource object to validate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-LocalFileResourceGetter-downloadFile"></a>}}
 \if{latex}{\out{\hypertarget{method-LocalFileResourceGetter-downloadFile}{}}}
-\subsection{Method \code{downloadFile()}}{
-Make a "resource.file" object from a local file resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{LocalFileResourceGetter$downloadFile(resource, ...)}\if{html}{\out{</div>}}
+\subsection{\code{LocalFileResourceGetter$downloadFile()}}{
+  Make a "resource.file" object from a local file resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{LocalFileResourceGetter$downloadFile(resource, ...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+      \item{\code{...}}{Unused additional parameters.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The "resource.file" object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-
-\item{\code{...}}{Unused additional parameters.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The "resource.file" object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-LocalFileResourceGetter-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-LocalFileResourceGetter-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{LocalFileResourceGetter$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{LocalFileResourceGetter$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{LocalFileResourceGetter$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

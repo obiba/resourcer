@@ -8,103 +8,103 @@
 A R6 object of class GridFsFileResourceGetter
 }
 \description{
-GridFS file resource getter
-
-GridFS file resource getter
-}
-\details{
 Access a file that is in the MongoDB file store (GridFS). Credentials may apply.
 }
 \section{Super class}{
-\code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{GridFsFileResourceGetter}
+\code{\link[resourcer:FileResourceGetter]{FileResourceGetter}} -> \code{GridFsFileResourceGetter}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-GridFsFileResourceGetter-new}{\code{GridFsFileResourceGetter$new()}}
-\item \href{#method-GridFsFileResourceGetter-isFor}{\code{GridFsFileResourceGetter$isFor()}}
-\item \href{#method-GridFsFileResourceGetter-downloadFile}{\code{GridFsFileResourceGetter$downloadFile()}}
-\item \href{#method-GridFsFileResourceGetter-clone}{\code{GridFsFileResourceGetter$clone()}}
+  \itemize{
+    \item \href{#method-GridFsFileResourceGetter-initialize}{\code{GridFsFileResourceGetter$new()}}
+    \item \href{#method-GridFsFileResourceGetter-isFor}{\code{GridFsFileResourceGetter$isFor()}}
+    \item \href{#method-GridFsFileResourceGetter-downloadFile}{\code{GridFsFileResourceGetter$downloadFile()}}
+    \item \href{#method-GridFsFileResourceGetter-clone}{\code{GridFsFileResourceGetter$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>resourcer::FileResourceGetter$extractFileName()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>resourcer::FileResourceGetter$makeDownloadDir()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>FileResourceGetter$extractFileName()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>FileResourceGetter$makeDownloadDir()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-GridFsFileResourceGetter-new"></a>}}
-\if{latex}{\out{\hypertarget{method-GridFsFileResourceGetter-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new GridFsFileResourceGetter instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{GridFsFileResourceGetter$new()}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-GridFsFileResourceGetter-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-GridFsFileResourceGetter-initialize}{}}}
+\subsection{\code{GridFsFileResourceGetter$new()}}{
+  Creates a new GridFsFileResourceGetter instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{GridFsFileResourceGetter$new()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A GridFsFileResourceGetter object.
+  }
 }
 
-\subsection{Returns}{
-A GridFsFileResourceGetter object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-GridFsFileResourceGetter-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-GridFsFileResourceGetter-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource has a URL that locates a GridFS object: either the URL scheme is "gridfs" or it is "mongodb"/"mongodb+srv" with a query parameter "prefix=fs" (that identifies GridFS collection names).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{GridFsFileResourceGetter$isFor(resource)}\if{html}{\out{</div>}}
+\subsection{\code{GridFsFileResourceGetter$isFor()}}{
+  Check that the provided resource has a URL that locates a GridFS object: either the URL scheme is "gridfs" or it is "mongodb"/"mongodb+srv" with a query parameter "prefix=fs" (that identifies GridFS collection names).
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{GridFsFileResourceGetter$isFor(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource object to validate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource object to validate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-GridFsFileResourceGetter-downloadFile"></a>}}
 \if{latex}{\out{\hypertarget{method-GridFsFileResourceGetter-downloadFile}{}}}
-\subsection{Method \code{downloadFile()}}{
-Download the file from the MongoDB file store in a temporary location.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{GridFsFileResourceGetter$downloadFile(resource, ...)}\if{html}{\out{</div>}}
+\subsection{\code{GridFsFileResourceGetter$downloadFile()}}{
+  Download the file from the MongoDB file store in a temporary location.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{GridFsFileResourceGetter$downloadFile(resource, ...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+      \item{\code{...}}{Unused additional parameters.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The "resource.file" object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-
-\item{\code{...}}{Unused additional parameters.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The "resource.file" object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-GridFsFileResourceGetter-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-GridFsFileResourceGetter-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{GridFsFileResourceGetter$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{GridFsFileResourceGetter$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{GridFsFileResourceGetter$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

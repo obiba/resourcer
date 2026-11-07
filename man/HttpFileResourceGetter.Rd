@@ -8,104 +8,104 @@
 A R6 object of class HttpFileResourceGetter
 }
 \description{
-HTTP file resource getter
-
-HTTP file resource getter
-}
-\details{
 Access a file that is stored at a HTTP(S) address. Use Basic authentication header if both
 resource's identity and secret are defined.
 }
 \section{Super class}{
-\code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{HttpFileResourceGetter}
+\code{\link[resourcer:FileResourceGetter]{FileResourceGetter}} -> \code{HttpFileResourceGetter}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-HttpFileResourceGetter-new}{\code{HttpFileResourceGetter$new()}}
-\item \href{#method-HttpFileResourceGetter-isFor}{\code{HttpFileResourceGetter$isFor()}}
-\item \href{#method-HttpFileResourceGetter-downloadFile}{\code{HttpFileResourceGetter$downloadFile()}}
-\item \href{#method-HttpFileResourceGetter-clone}{\code{HttpFileResourceGetter$clone()}}
+  \itemize{
+    \item \href{#method-HttpFileResourceGetter-initialize}{\code{HttpFileResourceGetter$new()}}
+    \item \href{#method-HttpFileResourceGetter-isFor}{\code{HttpFileResourceGetter$isFor()}}
+    \item \href{#method-HttpFileResourceGetter-downloadFile}{\code{HttpFileResourceGetter$downloadFile()}}
+    \item \href{#method-HttpFileResourceGetter-clone}{\code{HttpFileResourceGetter$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>resourcer::FileResourceGetter$extractFileName()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>resourcer::FileResourceGetter$makeDownloadDir()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>FileResourceGetter$extractFileName()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>FileResourceGetter$makeDownloadDir()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-HttpFileResourceGetter-new"></a>}}
-\if{latex}{\out{\hypertarget{method-HttpFileResourceGetter-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new HttpFileResourceGetter instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{HttpFileResourceGetter$new()}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-HttpFileResourceGetter-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-HttpFileResourceGetter-initialize}{}}}
+\subsection{\code{HttpFileResourceGetter$new()}}{
+  Creates a new HttpFileResourceGetter instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{HttpFileResourceGetter$new()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A HttpFileResourceGetter object.
+  }
 }
 
-\subsection{Returns}{
-A HttpFileResourceGetter object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-HttpFileResourceGetter-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-HttpFileResourceGetter-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource has a URL that locates a file accessible through "http" or "https".
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{HttpFileResourceGetter$isFor(resource)}\if{html}{\out{</div>}}
+\subsection{\code{HttpFileResourceGetter$isFor()}}{
+  Check that the provided resource has a URL that locates a file accessible through "http" or "https".
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{HttpFileResourceGetter$isFor(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource object to validate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource object to validate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-HttpFileResourceGetter-downloadFile"></a>}}
 \if{latex}{\out{\hypertarget{method-HttpFileResourceGetter-downloadFile}{}}}
-\subsection{Method \code{downloadFile()}}{
-Download the file from the remote address in a temporary location. Applies Basic authentication if credentials are provided in the resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{HttpFileResourceGetter$downloadFile(resource, ...)}\if{html}{\out{</div>}}
+\subsection{\code{HttpFileResourceGetter$downloadFile()}}{
+  Download the file from the remote address in a temporary location. Applies Basic authentication if credentials are provided in the resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{HttpFileResourceGetter$downloadFile(resource, ...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+      \item{\code{...}}{Unused additional parameters.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The "resource.file" object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-
-\item{\code{...}}{Unused additional parameters.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The "resource.file" object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-HttpFileResourceGetter-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-HttpFileResourceGetter-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{HttpFileResourceGetter$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{HttpFileResourceGetter$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{HttpFileResourceGetter$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

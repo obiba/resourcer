@@ -8,121 +8,124 @@
 A R6 object of class SparkResourceConnector
 }
 \description{
-Apache Spark DBI resource connector
-
-Apache Spark DBI resource connector
-}
-\details{
 Makes a Apache Spark connection object, that is also a DBI connection object, from a resource description.
 }
 \section{Super class}{
-\code{\link[resourcer:DBIResourceConnector]{resourcer::DBIResourceConnector}} -> \code{SparkResourceConnector}
+\code{\link[resourcer:DBIResourceConnector]{DBIResourceConnector}} -> \code{SparkResourceConnector}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-SparkResourceConnector-new}{\code{SparkResourceConnector$new()}}
-\item \href{#method-SparkResourceConnector-isFor}{\code{SparkResourceConnector$isFor()}}
-\item \href{#method-SparkResourceConnector-createDBIConnection}{\code{SparkResourceConnector$createDBIConnection()}}
-\item \href{#method-SparkResourceConnector-closeDBIConnection}{\code{SparkResourceConnector$closeDBIConnection()}}
-\item \href{#method-SparkResourceConnector-clone}{\code{SparkResourceConnector$clone()}}
+  \itemize{
+    \item \href{#method-SparkResourceConnector-initialize}{\code{SparkResourceConnector$new()}}
+    \item \href{#method-SparkResourceConnector-isFor}{\code{SparkResourceConnector$isFor()}}
+    \item \href{#method-SparkResourceConnector-createDBIConnection}{\code{SparkResourceConnector$createDBIConnection()}}
+    \item \href{#method-SparkResourceConnector-closeDBIConnection}{\code{SparkResourceConnector$closeDBIConnection()}}
+    \item \href{#method-SparkResourceConnector-clone}{\code{SparkResourceConnector$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-getTableName'><code>resourcer::DBIResourceConnector$getTableName()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTable'><code>resourcer::DBIResourceConnector$readDBTable()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTibble'><code>resourcer::DBIResourceConnector$readDBTibble()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-getTableName'><code>DBIResourceConnector$getTableName()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTable'><code>DBIResourceConnector$readDBTable()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTibble'><code>DBIResourceConnector$readDBTibble()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-SparkResourceConnector-new"></a>}}
-\if{latex}{\out{\hypertarget{method-SparkResourceConnector-new}{}}}
-\subsection{Method \code{new()}}{
-Create a SparkResourceConnector instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$new()}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-SparkResourceConnector-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-SparkResourceConnector-initialize}{}}}
+\subsection{\code{SparkResourceConnector$new()}}{
+  Create a SparkResourceConnector instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SparkResourceConnector$new()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A SparkResourceConnector object.
+  }
 }
 
-\subsection{Returns}{
-A SparkResourceConnector object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SparkResourceConnector-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-SparkResourceConnector-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check if the provided resource applies to a Apache Spark server.
+\subsection{\code{SparkResourceConnector$isFor()}}{
+  Check if the provided resource applies to a Apache Spark server.
   The resource URL scheme must be one of "spark", "spark+http" or "spark+https".
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$isFor(resource)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SparkResourceConnector$isFor(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource object to validate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource object to validate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SparkResourceConnector-createDBIConnection"></a>}}
 \if{latex}{\out{\hypertarget{method-SparkResourceConnector-createDBIConnection}{}}}
-\subsection{Method \code{createDBIConnection()}}{
-Creates a DBI connection object from a Apache Spark resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$createDBIConnection(resource)}\if{html}{\out{</div>}}
+\subsection{\code{SparkResourceConnector$createDBIConnection()}}{
+  Creates a DBI connection object from a Apache Spark resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SparkResourceConnector$createDBIConnection(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A DBI connection object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A DBI connection object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SparkResourceConnector-closeDBIConnection"></a>}}
 \if{latex}{\out{\hypertarget{method-SparkResourceConnector-closeDBIConnection}{}}}
-\subsection{Method \code{closeDBIConnection()}}{
-Close the DBI connection to Apache Spark.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$closeDBIConnection(conn)}\if{html}{\out{</div>}}
+\subsection{\code{SparkResourceConnector$closeDBIConnection()}}{
+  Close the DBI connection to Apache Spark.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SparkResourceConnector$closeDBIConnection(conn)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{conn}}{A DBI connection object.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{conn}}{A DBI connection object.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SparkResourceConnector-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-SparkResourceConnector-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SparkResourceConnector$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{SparkResourceConnector$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SparkResourceConnector$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

@@ -8,172 +8,181 @@
 A R6 object of class DBIResourceConnector
 }
 \description{
-DBI resource connector
-
-DBI resource connector
-}
-\details{
 Makes a DBI connection from a resource description, used in SQLResourceClient that is based on DBI.
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-DBIResourceConnector-new}{\code{DBIResourceConnector$new()}}
-\item \href{#method-DBIResourceConnector-isFor}{\code{DBIResourceConnector$isFor()}}
-\item \href{#method-DBIResourceConnector-createDBIConnection}{\code{DBIResourceConnector$createDBIConnection()}}
-\item \href{#method-DBIResourceConnector-getTableName}{\code{DBIResourceConnector$getTableName()}}
-\item \href{#method-DBIResourceConnector-readDBTable}{\code{DBIResourceConnector$readDBTable()}}
-\item \href{#method-DBIResourceConnector-readDBTibble}{\code{DBIResourceConnector$readDBTibble()}}
-\item \href{#method-DBIResourceConnector-closeDBIConnection}{\code{DBIResourceConnector$closeDBIConnection()}}
-\item \href{#method-DBIResourceConnector-clone}{\code{DBIResourceConnector$clone()}}
-}
+  \itemize{
+    \item \href{#method-DBIResourceConnector-initialize}{\code{DBIResourceConnector$new()}}
+    \item \href{#method-DBIResourceConnector-isFor}{\code{DBIResourceConnector$isFor()}}
+    \item \href{#method-DBIResourceConnector-createDBIConnection}{\code{DBIResourceConnector$createDBIConnection()}}
+    \item \href{#method-DBIResourceConnector-getTableName}{\code{DBIResourceConnector$getTableName()}}
+    \item \href{#method-DBIResourceConnector-readDBTable}{\code{DBIResourceConnector$readDBTable()}}
+    \item \href{#method-DBIResourceConnector-readDBTibble}{\code{DBIResourceConnector$readDBTibble()}}
+    \item \href{#method-DBIResourceConnector-closeDBIConnection}{\code{DBIResourceConnector$closeDBIConnection()}}
+    \item \href{#method-DBIResourceConnector-clone}{\code{DBIResourceConnector$clone()}}
+  }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-DBIResourceConnector-new"></a>}}
-\if{latex}{\out{\hypertarget{method-DBIResourceConnector-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new DBIResourceConnector instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$new()}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-DBIResourceConnector-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-DBIResourceConnector-initialize}{}}}
+\subsection{\code{DBIResourceConnector$new()}}{
+  Creates a new DBIResourceConnector instance
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{DBIResourceConnector$new()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A DBIResourceConnector object.
+  }
 }
 
-\subsection{Returns}{
-A DBIResourceConnector object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-DBIResourceConnector-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-DBIResourceConnector-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided parameter is of class "resource".
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$isFor(resource)}\if{html}{\out{</div>}}
+\subsection{\code{DBIResourceConnector$isFor()}}{
+  Check that the provided parameter is of class "resource".
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{DBIResourceConnector$isFor(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource object to validate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource object to validate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-DBIResourceConnector-createDBIConnection"></a>}}
 \if{latex}{\out{\hypertarget{method-DBIResourceConnector-createDBIConnection}{}}}
-\subsection{Method \code{createDBIConnection()}}{
-Stub function which subclasses will implement to create a DBI connection object from a resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$createDBIConnection(resource)}\if{html}{\out{</div>}}
+\subsection{\code{DBIResourceConnector$createDBIConnection()}}{
+  Stub function which subclasses will implement to create a DBI connection object from a resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{DBIResourceConnector$createDBIConnection(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-DBIResourceConnector-getTableName"></a>}}
 \if{latex}{\out{\hypertarget{method-DBIResourceConnector-getTableName}{}}}
-\subsection{Method \code{getTableName()}}{
-Get the SQL table name from the resource URL.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$getTableName(resource)}\if{html}{\out{</div>}}
+\subsection{\code{DBIResourceConnector$getTableName()}}{
+  Get the SQL table name from the resource URL.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{DBIResourceConnector$getTableName(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The SQL table name.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The SQL table name.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-DBIResourceConnector-readDBTable"></a>}}
 \if{latex}{\out{\hypertarget{method-DBIResourceConnector-readDBTable}{}}}
-\subsection{Method \code{readDBTable()}}{
-Read a table as a vanilla tibble using DBI connection object.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$readDBTable(conn, resource)}\if{html}{\out{</div>}}
+\subsection{\code{DBIResourceConnector$readDBTable()}}{
+  Read a table as a vanilla tibble using DBI connection object.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{DBIResourceConnector$readDBTable(conn, resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{conn}}{A DBI connection object.}
+      \item{\code{resource}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A vanilla tibble.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{conn}}{A DBI connection object.}
-
-\item{\code{resource}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A vanilla tibble.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-DBIResourceConnector-readDBTibble"></a>}}
 \if{latex}{\out{\hypertarget{method-DBIResourceConnector-readDBTibble}{}}}
-\subsection{Method \code{readDBTibble()}}{
-Read a table as a SQL tibble using DBI connection object.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$readDBTibble(conn, resource)}\if{html}{\out{</div>}}
+\subsection{\code{DBIResourceConnector$readDBTibble()}}{
+  Read a table as a SQL tibble using DBI connection object.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{DBIResourceConnector$readDBTibble(conn, resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{conn}}{A DBI connection object.}
+      \item{\code{resource}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A SQL tibble.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{conn}}{A DBI connection object.}
-
-\item{\code{resource}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A SQL tibble.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-DBIResourceConnector-closeDBIConnection"></a>}}
 \if{latex}{\out{\hypertarget{method-DBIResourceConnector-closeDBIConnection}{}}}
-\subsection{Method \code{closeDBIConnection()}}{
-Disconnect the DBI connection.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$closeDBIConnection(conn)}\if{html}{\out{</div>}}
+\subsection{\code{DBIResourceConnector$closeDBIConnection()}}{
+  Disconnect the DBI connection.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{DBIResourceConnector$closeDBIConnection(conn)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{conn}}{A DBI connection object.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{conn}}{A DBI connection object.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-DBIResourceConnector-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-DBIResourceConnector-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DBIResourceConnector$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{DBIResourceConnector$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{DBIResourceConnector$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

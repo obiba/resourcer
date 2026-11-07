@@ -8,113 +8,114 @@
 A R6 object of class RDSFileResourceClient
 }
 \description{
-R object file resource client
-
-R object file resource client
-}
-\details{
 Connects to a RDS file and loads the serialized object. Similar to the R data file resource,
 except that the RDS format stores a single R object.
 }
 \section{Super classes}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{\link[resourcer:FileResourceClient]{resourcer::FileResourceClient}} -> \code{RDSFileResourceClient}
+\code{\link[resourcer:ResourceClient]{ResourceClient}} -> \code{\link[resourcer:FileResourceClient]{FileResourceClient}} -> \code{RDSFileResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-RDSFileResourceClient-new}{\code{RDSFileResourceClient$new()}}
-\item \href{#method-RDSFileResourceClient-asDataFrame}{\code{RDSFileResourceClient$asDataFrame()}}
-\item \href{#method-RDSFileResourceClient-getValue}{\code{RDSFileResourceClient$getValue()}}
-\item \href{#method-RDSFileResourceClient-clone}{\code{RDSFileResourceClient$clone()}}
+  \itemize{
+    \item \href{#method-RDSFileResourceClient-initialize}{\code{RDSFileResourceClient$new()}}
+    \item \href{#method-RDSFileResourceClient-asDataFrame}{\code{RDSFileResourceClient$asDataFrame()}}
+    \item \href{#method-RDSFileResourceClient-getValue}{\code{RDSFileResourceClient$getValue()}}
+    \item \href{#method-RDSFileResourceClient-clone}{\code{RDSFileResourceClient$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details><summary>Inherited methods</summary>
+\if{html}{\out{<details><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>resourcer::ResourceClient$exec()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>resourcer::ResourceClient$getConnection()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="close"><a href='../../resourcer/html/FileResourceClient.html#method-FileResourceClient-close'><code>resourcer::FileResourceClient$close()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="downloadFile"><a href='../../resourcer/html/FileResourceClient.html#method-FileResourceClient-downloadFile'><code>resourcer::FileResourceClient$downloadFile()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>ResourceClient$asTbl()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>ResourceClient$exec()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>ResourceClient$getConnection()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>ResourceClient$getResource()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="close"><a href='../../resourcer/html/FileResourceClient.html#method-FileResourceClient-close'><code>FileResourceClient$close()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceClient" data-id="downloadFile"><a href='../../resourcer/html/FileResourceClient.html#method-FileResourceClient-downloadFile'><code>FileResourceClient$downloadFile()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-RDSFileResourceClient-new"></a>}}
-\if{latex}{\out{\hypertarget{method-RDSFileResourceClient-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new RDSFileResourceClient instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{RDSFileResourceClient$new(resource)}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-RDSFileResourceClient-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-RDSFileResourceClient-initialize}{}}}
+\subsection{\code{RDSFileResourceClient$new()}}{
+  Creates a new RDSFileResourceClient instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{RDSFileResourceClient$new(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A RDSFileResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A RDSFileResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-RDSFileResourceClient-asDataFrame"></a>}}
 \if{latex}{\out{\hypertarget{method-RDSFileResourceClient-asDataFrame}{}}}
-\subsection{Method \code{asDataFrame()}}{
-Coerce the resource value extracted from the R object file to a data.frame.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{RDSFileResourceClient$asDataFrame(...)}\if{html}{\out{</div>}}
+\subsection{\code{RDSFileResourceClient$asDataFrame()}}{
+  Coerce the resource value extracted from the R object file to a data.frame.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{RDSFileResourceClient$asDataFrame(...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{...}}{Additional parameters to as.data.frame (not used yet).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A data.frame.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{...}}{Additional parameters to as.data.frame (not used yet).}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A data.frame.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-RDSFileResourceClient-getValue"></a>}}
 \if{latex}{\out{\hypertarget{method-RDSFileResourceClient-getValue}{}}}
-\subsection{Method \code{getValue()}}{
-Get the resource value extracted from the R object file.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{RDSFileResourceClient$getValue(...)}\if{html}{\out{</div>}}
+\subsection{\code{RDSFileResourceClient$getValue()}}{
+  Get the resource value extracted from the R object file.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{RDSFileResourceClient$getValue(...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{...}}{Additional parameters to get the value object (not used yet).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The resource value.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{...}}{Additional parameters to get the value object (not used yet).}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The resource value.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-RDSFileResourceClient-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-RDSFileResourceClient-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{RDSFileResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{RDSFileResourceClient$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{RDSFileResourceClient$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

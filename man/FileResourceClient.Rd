@@ -8,96 +8,96 @@
 A R6 object of class FileResourceClient
 }
 \description{
-File resource client
-
-File resource client
-}
-\details{
 Base class that connects to a file using a FileResourceGetter.
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{FileResourceClient}
+\code{\link[resourcer:ResourceClient]{ResourceClient}} -> \code{FileResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-FileResourceClient-new}{\code{FileResourceClient$new()}}
-\item \href{#method-FileResourceClient-downloadFile}{\code{FileResourceClient$downloadFile()}}
-\item \href{#method-FileResourceClient-close}{\code{FileResourceClient$close()}}
-\item \href{#method-FileResourceClient-clone}{\code{FileResourceClient$clone()}}
+  \itemize{
+    \item \href{#method-FileResourceClient-initialize}{\code{FileResourceClient$new()}}
+    \item \href{#method-FileResourceClient-downloadFile}{\code{FileResourceClient$downloadFile()}}
+    \item \href{#method-FileResourceClient-close}{\code{FileResourceClient$close()}}
+    \item \href{#method-FileResourceClient-clone}{\code{FileResourceClient$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>resourcer::ResourceClient$asDataFrame()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>resourcer::ResourceClient$exec()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>resourcer::ResourceClient$getConnection()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>ResourceClient$asDataFrame()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>ResourceClient$asTbl()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>ResourceClient$exec()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>ResourceClient$getConnection()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>ResourceClient$getResource()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-FileResourceClient-new"></a>}}
-\if{latex}{\out{\hypertarget{method-FileResourceClient-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new FileResourceClient instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{FileResourceClient$new(resource, file.getter = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-FileResourceClient-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-FileResourceClient-initialize}{}}}
+\subsection{\code{FileResourceClient$new()}}{
+  Creates a new FileResourceClient instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{FileResourceClient$new(resource, file.getter = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+      \item{\code{file.getter}}{A FileResourceGetter object, optional. If not provided, it will be looked up in the FileResourceGetters registry. The operation will fail if none can be found.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A FileResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-
-\item{\code{file.getter}}{A FileResourceGetter object, optional. If not provided, it will be looked up in the FileResourceGetters registry. The operation will fail if none can be found.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A FileResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-FileResourceClient-downloadFile"></a>}}
 \if{latex}{\out{\hypertarget{method-FileResourceClient-downloadFile}{}}}
-\subsection{Method \code{downloadFile()}}{
-Performs the file download, if it does not already exists locally.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{FileResourceClient$downloadFile()}\if{html}{\out{</div>}}
+\subsection{\code{FileResourceClient$downloadFile()}}{
+  Performs the file download, if it does not already exists locally.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{FileResourceClient$downloadFile()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The local path to the downloaded file.
+  }
 }
 
-\subsection{Returns}{
-The local path to the downloaded file.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-FileResourceClient-close"></a>}}
 \if{latex}{\out{\hypertarget{method-FileResourceClient-close}{}}}
-\subsection{Method \code{close()}}{
-Removes the file if it was downloaded. A local file resource will remain untouched.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{FileResourceClient$close()}\if{html}{\out{</div>}}
+\subsection{\code{FileResourceClient$close()}}{
+  Removes the file if it was downloaded. A local file resource will remain untouched.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{FileResourceClient$close()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-FileResourceClient-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-FileResourceClient-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{FileResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{FileResourceClient$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{FileResourceClient$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

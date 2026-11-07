@@ -8,103 +8,103 @@
 A R6 object of class ScpFileResourceGetter
 }
 \description{
-SCP file resource getter
-
-SCP file resource getter
-}
-\details{
 Access a file that is stored on a server accessible through SSH. Credentials apply.
 }
 \section{Super class}{
-\code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{ScpFileResourceGetter}
+\code{\link[resourcer:FileResourceGetter]{FileResourceGetter}} -> \code{ScpFileResourceGetter}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-ScpFileResourceGetter-new}{\code{ScpFileResourceGetter$new()}}
-\item \href{#method-ScpFileResourceGetter-isFor}{\code{ScpFileResourceGetter$isFor()}}
-\item \href{#method-ScpFileResourceGetter-downloadFile}{\code{ScpFileResourceGetter$downloadFile()}}
-\item \href{#method-ScpFileResourceGetter-clone}{\code{ScpFileResourceGetter$clone()}}
+  \itemize{
+    \item \href{#method-ScpFileResourceGetter-initialize}{\code{ScpFileResourceGetter$new()}}
+    \item \href{#method-ScpFileResourceGetter-isFor}{\code{ScpFileResourceGetter$isFor()}}
+    \item \href{#method-ScpFileResourceGetter-downloadFile}{\code{ScpFileResourceGetter$downloadFile()}}
+    \item \href{#method-ScpFileResourceGetter-clone}{\code{ScpFileResourceGetter$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>resourcer::FileResourceGetter$extractFileName()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>resourcer::FileResourceGetter$makeDownloadDir()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>FileResourceGetter$extractFileName()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>FileResourceGetter$makeDownloadDir()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ScpFileResourceGetter-new"></a>}}
-\if{latex}{\out{\hypertarget{method-ScpFileResourceGetter-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a ScpFileResourceGetter instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ScpFileResourceGetter$new()}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-ScpFileResourceGetter-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-ScpFileResourceGetter-initialize}{}}}
+\subsection{\code{ScpFileResourceGetter$new()}}{
+  Creates a ScpFileResourceGetter instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ScpFileResourceGetter$new()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The ScpFileResourceGetter object.
+  }
 }
 
-\subsection{Returns}{
-The ScpFileResourceGetter object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ScpFileResourceGetter-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-ScpFileResourceGetter-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource is a file accessible by SCP: the resource URL scheme must be "scp".
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ScpFileResourceGetter$isFor(resource)}\if{html}{\out{</div>}}
+\subsection{\code{ScpFileResourceGetter$isFor()}}{
+  Check that the provided resource is a file accessible by SCP: the resource URL scheme must be "scp".
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ScpFileResourceGetter$isFor(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource object to evaluate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource object to evaluate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ScpFileResourceGetter-downloadFile"></a>}}
 \if{latex}{\out{\hypertarget{method-ScpFileResourceGetter-downloadFile}{}}}
-\subsection{Method \code{downloadFile()}}{
-Download the file described by the resource over an SSH connection.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ScpFileResourceGetter$downloadFile(resource, ...)}\if{html}{\out{</div>}}
+\subsection{\code{ScpFileResourceGetter$downloadFile()}}{
+  Download the file described by the resource over an SSH connection.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ScpFileResourceGetter$downloadFile(resource, ...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource that identifies the file.}
+      \item{\code{...}}{Additional parameters (not used).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The "resource.file" object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource that identifies the file.}
-
-\item{\code{...}}{Additional parameters (not used).}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The "resource.file" object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ScpFileResourceGetter-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-ScpFileResourceGetter-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ScpFileResourceGetter$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{ScpFileResourceGetter$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ScpFileResourceGetter$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

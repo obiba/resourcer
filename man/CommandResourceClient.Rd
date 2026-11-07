@@ -8,72 +8,69 @@
 A R6 object of class CommandResourceClient
 }
 \description{
-Command resource client
-
-Command resource client
-}
-\details{
 Base class for resource clients issuing commands and get a result with the status of the execution,
 the output and the error messages.
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{CommandResourceClient}
+\code{\link[resourcer:ResourceClient]{ResourceClient}} -> \code{CommandResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-CommandResourceClient-new}{\code{CommandResourceClient$new()}}
-\item \href{#method-CommandResourceClient-clone}{\code{CommandResourceClient$clone()}}
+  \itemize{
+    \item \href{#method-CommandResourceClient-initialize}{\code{CommandResourceClient$new()}}
+    \item \href{#method-CommandResourceClient-clone}{\code{CommandResourceClient$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details><summary>Inherited methods</summary>
+\if{html}{\out{<details><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>resourcer::ResourceClient$asDataFrame()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="close"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-close'><code>resourcer::ResourceClient$close()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-downloadFile'><code>resourcer::ResourceClient$downloadFile()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>resourcer::ResourceClient$exec()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>resourcer::ResourceClient$getConnection()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>ResourceClient$asDataFrame()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>ResourceClient$asTbl()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="close"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-close'><code>ResourceClient$close()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-downloadFile'><code>ResourceClient$downloadFile()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>ResourceClient$exec()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>ResourceClient$getConnection()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>ResourceClient$getResource()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-CommandResourceClient-new"></a>}}
-\if{latex}{\out{\hypertarget{method-CommandResourceClient-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new CommandResourceClient instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{CommandResourceClient$new(resource)}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-CommandResourceClient-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-CommandResourceClient-initialize}{}}}
+\subsection{\code{CommandResourceClient$new()}}{
+  Creates a new CommandResourceClient instance
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{CommandResourceClient$new(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A CommandResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A CommandResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-CommandResourceClient-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-CommandResourceClient-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{CommandResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{CommandResourceClient$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{CommandResourceClient$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

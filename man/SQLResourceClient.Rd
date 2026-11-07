@@ -8,129 +8,133 @@
 A R6 object of class SQLResourceClient
 }
 \description{
-SQL database resource client
-
-SQL database resource client
-}
-\details{
 Resource client that connects to a SQL database supported by DBI.
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{SQLResourceClient}
+\code{\link[resourcer:ResourceClient]{ResourceClient}} -> \code{SQLResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-SQLResourceClient-new}{\code{SQLResourceClient$new()}}
-\item \href{#method-SQLResourceClient-getConnection}{\code{SQLResourceClient$getConnection()}}
-\item \href{#method-SQLResourceClient-asDataFrame}{\code{SQLResourceClient$asDataFrame()}}
-\item \href{#method-SQLResourceClient-asTbl}{\code{SQLResourceClient$asTbl()}}
-\item \href{#method-SQLResourceClient-close}{\code{SQLResourceClient$close()}}
-\item \href{#method-SQLResourceClient-clone}{\code{SQLResourceClient$clone()}}
+  \itemize{
+    \item \href{#method-SQLResourceClient-initialize}{\code{SQLResourceClient$new()}}
+    \item \href{#method-SQLResourceClient-getConnection}{\code{SQLResourceClient$getConnection()}}
+    \item \href{#method-SQLResourceClient-asDataFrame}{\code{SQLResourceClient$asDataFrame()}}
+    \item \href{#method-SQLResourceClient-asTbl}{\code{SQLResourceClient$asTbl()}}
+    \item \href{#method-SQLResourceClient-close}{\code{SQLResourceClient$close()}}
+    \item \href{#method-SQLResourceClient-clone}{\code{SQLResourceClient$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-downloadFile'><code>resourcer::ResourceClient$downloadFile()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>resourcer::ResourceClient$exec()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-downloadFile'><code>ResourceClient$downloadFile()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>ResourceClient$exec()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>ResourceClient$getResource()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-SQLResourceClient-new"></a>}}
-\if{latex}{\out{\hypertarget{method-SQLResourceClient-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a SQLResourceClient from a resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$new(resource, dbi.connector = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-SQLResourceClient-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-SQLResourceClient-initialize}{}}}
+\subsection{\code{SQLResourceClient$new()}}{
+  Creates a SQLResourceClient from a resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SQLResourceClient$new(resource, dbi.connector = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource object.}
+      \item{\code{dbi.connector}}{An optional DBIResourceConnector object. If not provided, it will be looked up in the DBIResourceConnector registry.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The SQLResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource object.}
-
-\item{\code{dbi.connector}}{An optional DBIResourceConnector object. If not provided, it will be looked up in the DBIResourceConnector registry.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The SQLResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SQLResourceClient-getConnection"></a>}}
 \if{latex}{\out{\hypertarget{method-SQLResourceClient-getConnection}{}}}
-\subsection{Method \code{getConnection()}}{
-Get or create the DBI connection object that will access the resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$getConnection()}\if{html}{\out{</div>}}
+\subsection{\code{SQLResourceClient$getConnection()}}{
+  Get or create the DBI connection object that will access the resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SQLResourceClient$getConnection()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The DBI connection object.
+  }
 }
 
-\subsection{Returns}{
-The DBI connection object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SQLResourceClient-asDataFrame"></a>}}
 \if{latex}{\out{\hypertarget{method-SQLResourceClient-asDataFrame}{}}}
-\subsection{Method \code{asDataFrame()}}{
-Coerce the SQL table to a data.frame.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$asDataFrame(...)}\if{html}{\out{</div>}}
+\subsection{\code{SQLResourceClient$asDataFrame()}}{
+  Coerce the SQL table to a data.frame.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SQLResourceClient$asDataFrame(...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{...}}{Additional parameters (not used).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A data.frame (more specifically a tibble).
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{...}}{Additional parameters (not used).}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A data.frame (more specifically a tibble).
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SQLResourceClient-asTbl"></a>}}
 \if{latex}{\out{\hypertarget{method-SQLResourceClient-asTbl}{}}}
-\subsection{Method \code{asTbl()}}{
-Get the SQL table as a dplyr's tbl.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$asTbl()}\if{html}{\out{</div>}}
+\subsection{\code{SQLResourceClient$asTbl()}}{
+  Get the SQL table as a dplyr's tbl.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SQLResourceClient$asTbl()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A dplyr's tbl object.
+  }
 }
 
-\subsection{Returns}{
-A dplyr's tbl object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SQLResourceClient-close"></a>}}
 \if{latex}{\out{\hypertarget{method-SQLResourceClient-close}{}}}
-\subsection{Method \code{close()}}{
-Silently close the DBI connection.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$close()}\if{html}{\out{</div>}}
+\subsection{\code{SQLResourceClient$close()}}{
+  Silently close the DBI connection.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SQLResourceClient$close()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SQLResourceClient-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-SQLResourceClient-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SQLResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{SQLResourceClient$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SQLResourceClient$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

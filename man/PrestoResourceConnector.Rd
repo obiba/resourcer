@@ -8,103 +8,104 @@
 A R6 object of class PrestoResourceConnector
 }
 \description{
-Presto DBI resource connector
-
-Presto DBI resource connector
-}
-\details{
 Makes a Presto DBI connection from a resource description.
 }
 \section{Super class}{
-\code{\link[resourcer:DBIResourceConnector]{resourcer::DBIResourceConnector}} -> \code{PrestoResourceConnector}
+\code{\link[resourcer:DBIResourceConnector]{DBIResourceConnector}} -> \code{PrestoResourceConnector}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-PrestoResourceConnector-new}{\code{PrestoResourceConnector$new()}}
-\item \href{#method-PrestoResourceConnector-isFor}{\code{PrestoResourceConnector$isFor()}}
-\item \href{#method-PrestoResourceConnector-createDBIConnection}{\code{PrestoResourceConnector$createDBIConnection()}}
-\item \href{#method-PrestoResourceConnector-clone}{\code{PrestoResourceConnector$clone()}}
+  \itemize{
+    \item \href{#method-PrestoResourceConnector-initialize}{\code{PrestoResourceConnector$new()}}
+    \item \href{#method-PrestoResourceConnector-isFor}{\code{PrestoResourceConnector$isFor()}}
+    \item \href{#method-PrestoResourceConnector-createDBIConnection}{\code{PrestoResourceConnector$createDBIConnection()}}
+    \item \href{#method-PrestoResourceConnector-clone}{\code{PrestoResourceConnector$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="closeDBIConnection"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-closeDBIConnection'><code>resourcer::DBIResourceConnector$closeDBIConnection()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-getTableName'><code>resourcer::DBIResourceConnector$getTableName()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTable'><code>resourcer::DBIResourceConnector$readDBTable()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTibble'><code>resourcer::DBIResourceConnector$readDBTibble()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="closeDBIConnection"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-closeDBIConnection'><code>DBIResourceConnector$closeDBIConnection()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-getTableName'><code>DBIResourceConnector$getTableName()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTable'><code>DBIResourceConnector$readDBTable()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTibble'><code>DBIResourceConnector$readDBTibble()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-PrestoResourceConnector-new"></a>}}
-\if{latex}{\out{\hypertarget{method-PrestoResourceConnector-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new PrestoResourceConnector instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{PrestoResourceConnector$new()}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-PrestoResourceConnector-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-PrestoResourceConnector-initialize}{}}}
+\subsection{\code{PrestoResourceConnector$new()}}{
+  Creates a new PrestoResourceConnector instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{PrestoResourceConnector$new()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A PrestoResourceConnector object.
+  }
 }
 
-\subsection{Returns}{
-A PrestoResourceConnector object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-PrestoResourceConnector-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-PrestoResourceConnector-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource has a URL that locates a Presto object: the URL scheme must be "presto", "presto+http" or "presto+https".
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{PrestoResourceConnector$isFor(resource)}\if{html}{\out{</div>}}
+\subsection{\code{PrestoResourceConnector$isFor()}}{
+  Check that the provided resource has a URL that locates a Presto object: the URL scheme must be "presto", "presto+http" or "presto+https".
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{PrestoResourceConnector$isFor(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource object to validate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource object to validate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-PrestoResourceConnector-createDBIConnection"></a>}}
 \if{latex}{\out{\hypertarget{method-PrestoResourceConnector-createDBIConnection}{}}}
-\subsection{Method \code{createDBIConnection()}}{
-Creates a DBI connection object from a resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{PrestoResourceConnector$createDBIConnection(resource)}\if{html}{\out{</div>}}
+\subsection{\code{PrestoResourceConnector$createDBIConnection()}}{
+  Creates a DBI connection object from a resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{PrestoResourceConnector$createDBIConnection(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A DBI connection object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A DBI connection object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-PrestoResourceConnector-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-PrestoResourceConnector-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{PrestoResourceConnector$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{PrestoResourceConnector$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{PrestoResourceConnector$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

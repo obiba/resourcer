@@ -8,206 +8,213 @@
 A R6 object of class SshResourceClient
 }
 \description{
-SSH resource client
-
-SSH resource client
-}
-\details{
 Connects to a SSH server.
 }
 \section{Super classes}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{\link[resourcer:CommandResourceClient]{resourcer::CommandResourceClient}} -> \code{SshResourceClient}
+\code{\link[resourcer:ResourceClient]{ResourceClient}} -> \code{\link[resourcer:CommandResourceClient]{CommandResourceClient}} -> \code{SshResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-SshResourceClient-new}{\code{SshResourceClient$new()}}
-\item \href{#method-SshResourceClient-getAllowedCommands}{\code{SshResourceClient$getAllowedCommands()}}
-\item \href{#method-SshResourceClient-getConnection}{\code{SshResourceClient$getConnection()}}
-\item \href{#method-SshResourceClient-downloadFile}{\code{SshResourceClient$downloadFile()}}
-\item \href{#method-SshResourceClient-uploadFile}{\code{SshResourceClient$uploadFile()}}
-\item \href{#method-SshResourceClient-tempDir}{\code{SshResourceClient$tempDir()}}
-\item \href{#method-SshResourceClient-removeTempDir}{\code{SshResourceClient$removeTempDir()}}
-\item \href{#method-SshResourceClient-exec}{\code{SshResourceClient$exec()}}
-\item \href{#method-SshResourceClient-close}{\code{SshResourceClient$close()}}
-\item \href{#method-SshResourceClient-clone}{\code{SshResourceClient$clone()}}
+  \itemize{
+    \item \href{#method-SshResourceClient-initialize}{\code{SshResourceClient$new()}}
+    \item \href{#method-SshResourceClient-getAllowedCommands}{\code{SshResourceClient$getAllowedCommands()}}
+    \item \href{#method-SshResourceClient-getConnection}{\code{SshResourceClient$getConnection()}}
+    \item \href{#method-SshResourceClient-downloadFile}{\code{SshResourceClient$downloadFile()}}
+    \item \href{#method-SshResourceClient-uploadFile}{\code{SshResourceClient$uploadFile()}}
+    \item \href{#method-SshResourceClient-tempDir}{\code{SshResourceClient$tempDir()}}
+    \item \href{#method-SshResourceClient-removeTempDir}{\code{SshResourceClient$removeTempDir()}}
+    \item \href{#method-SshResourceClient-exec}{\code{SshResourceClient$exec()}}
+    \item \href{#method-SshResourceClient-close}{\code{SshResourceClient$close()}}
+    \item \href{#method-SshResourceClient-clone}{\code{SshResourceClient$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>resourcer::ResourceClient$asDataFrame()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>ResourceClient$asDataFrame()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>ResourceClient$asTbl()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>ResourceClient$getResource()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-SshResourceClient-new"></a>}}
-\if{latex}{\out{\hypertarget{method-SshResourceClient-new}{}}}
-\subsection{Method \code{new()}}{
-Create a SshResourceClient instance. This client will interact wtih a computation resource using ssh commands.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$new(resource)}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-SshResourceClient-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-SshResourceClient-initialize}{}}}
+\subsection{\code{SshResourceClient$new()}}{
+  Create a SshResourceClient instance. This client will interact wtih a computation resource using ssh commands.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceClient$new(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The computation resource.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The SshResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The computation resource.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The SshResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SshResourceClient-getAllowedCommands"></a>}}
 \if{latex}{\out{\hypertarget{method-SshResourceClient-getAllowedCommands}{}}}
-\subsection{Method \code{getAllowedCommands()}}{
-Get the command names that can be executed.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$getAllowedCommands()}\if{html}{\out{</div>}}
+\subsection{\code{SshResourceClient$getAllowedCommands()}}{
+  Get the command names that can be executed.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceClient$getAllowedCommands()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A character vector
+  }
 }
 
-\subsection{Returns}{
-A character vector
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SshResourceClient-getConnection"></a>}}
 \if{latex}{\out{\hypertarget{method-SshResourceClient-getConnection}{}}}
-\subsection{Method \code{getConnection()}}{
-Get or create the SSH connection object, for raw interaction.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$getConnection()}\if{html}{\out{</div>}}
+\subsection{\code{SshResourceClient$getConnection()}}{
+  Get or create the SSH connection object, for raw interaction.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceClient$getConnection()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The SSH connection object.
+  }
 }
 
-\subsection{Returns}{
-The SSH connection object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SshResourceClient-downloadFile"></a>}}
 \if{latex}{\out{\hypertarget{method-SshResourceClient-downloadFile}{}}}
-\subsection{Method \code{downloadFile()}}{
-Download one or more files (wilcard * is supported in the file name (which can be a directory))
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$downloadFile(file, to = ".", verbose = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{SshResourceClient$downloadFile()}}{
+  Download one or more files (wilcard * is supported in the file name (which can be a directory))
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceClient$downloadFile(file, to = ".", verbose = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{file}}{The file path(s) to download, either absolute or relative to the working directory.}
+      \item{\code{to}}{The download destination.}
+      \item{\code{verbose}}{If TRUE, details the file operations on the console output.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The paths of the files having been downloaded.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{file}}{The file path(s) to download, either absolute or relative to the working directory.}
-
-\item{\code{to}}{The download destination.}
-
-\item{\code{verbose}}{If TRUE, details the file operations on the console output.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The paths of the files having been downloaded.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SshResourceClient-uploadFile"></a>}}
 \if{latex}{\out{\hypertarget{method-SshResourceClient-uploadFile}{}}}
-\subsection{Method \code{uploadFile()}}{
-Upload one or more files
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$uploadFile(file, to = ".", verbose = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{SshResourceClient$uploadFile()}}{
+  Upload one or more files
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceClient$uploadFile(file, to = ".", verbose = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{file}}{The file or vector of files to upload.}
+      \item{\code{to}}{The upload destination, either absolute or relative to working directory.}
+      \item{\code{verbose}}{If TRUE, details the file operations on the console output.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The paths of the files having been uploaded.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{file}}{The file or vector of files to upload.}
-
-\item{\code{to}}{The upload destination, either absolute or relative to working directory.}
-
-\item{\code{verbose}}{If TRUE, details the file operations on the console output.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The paths of the files having been uploaded.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SshResourceClient-tempDir"></a>}}
 \if{latex}{\out{\hypertarget{method-SshResourceClient-tempDir}{}}}
-\subsection{Method \code{tempDir()}}{
-Get connection's temporary directory in the remote server, create it if it does not exists.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$tempDir()}\if{html}{\out{</div>}}
+\subsection{\code{SshResourceClient$tempDir()}}{
+  Get connection's temporary directory in the remote server, create it if it does not exists.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceClient$tempDir()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The path to the temporary directory.
+  }
 }
 
-\subsection{Returns}{
-The path to the temporary directory.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SshResourceClient-removeTempDir"></a>}}
 \if{latex}{\out{\hypertarget{method-SshResourceClient-removeTempDir}{}}}
-\subsection{Method \code{removeTempDir()}}{
-Remove the connection's temporary directory from the remote server, if it was defined.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$removeTempDir()}\if{html}{\out{</div>}}
+\subsection{\code{SshResourceClient$removeTempDir()}}{
+  Remove the connection's temporary directory from the remote server, if it was defined.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceClient$removeTempDir()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SshResourceClient-exec"></a>}}
 \if{latex}{\out{\hypertarget{method-SshResourceClient-exec}{}}}
-\subsection{Method \code{exec()}}{
-Executes a ssh command.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$exec(command, params = NULL, test = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{SshResourceClient$exec()}}{
+  Executes a ssh command.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceClient$exec(command, params = NULL, test = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{command}}{The command name.}
+      \item{\code{params}}{A character vector of arguments to pass.}
+      \item{\code{test}}{If TRUE, the command is printed but not executed (for debugging).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The command execution result object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{command}}{The command name.}
-
-\item{\code{params}}{A character vector of arguments to pass.}
-
-\item{\code{test}}{If TRUE, the command is printed but not executed (for debugging).}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The command execution result object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SshResourceClient-close"></a>}}
 \if{latex}{\out{\hypertarget{method-SshResourceClient-close}{}}}
-\subsection{Method \code{close()}}{
-Close the SSH connection.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$close()}\if{html}{\out{</div>}}
+\subsection{\code{SshResourceClient$close()}}{
+  Close the SSH connection.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceClient$close()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SshResourceClient-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-SshResourceClient-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{SshResourceClient$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceClient$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

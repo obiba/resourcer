@@ -8,86 +8,85 @@
 A R6 object of class NoSQLResourceResolver
 }
 \description{
-NoSQL Database Resource resolver
-
-NoSQL Database Resource resolver
-}
-\details{
 The resource is NoSQL database such as mongodb (elasticsearch, redis, couchdb, sqlite are not supported yet).
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{NoSQLResourceResolver}
+\code{\link[resourcer:ResourceResolver]{ResourceResolver}} -> \code{NoSQLResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-NoSQLResourceResolver-isFor}{\code{NoSQLResourceResolver$isFor()}}
-\item \href{#method-NoSQLResourceResolver-newClient}{\code{NoSQLResourceResolver$newClient()}}
-\item \href{#method-NoSQLResourceResolver-clone}{\code{NoSQLResourceResolver$clone()}}
+  \itemize{
+    \item \href{#method-NoSQLResourceResolver-isFor}{\code{NoSQLResourceResolver$isFor()}}
+    \item \href{#method-NoSQLResourceResolver-newClient}{\code{NoSQLResourceResolver$newClient()}}
+    \item \href{#method-NoSQLResourceResolver-clone}{\code{NoSQLResourceResolver$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>ResourceResolver$initialize()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-NoSQLResourceResolver-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-NoSQLResourceResolver-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource has a URL that locates a nodbi object: the URL scheme must be one of "mongodb", "mongodb+srv". Other NoSQL databases "elasticsearch", "redis", "couchdb", "sqlite" are not supported yet.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceResolver$isFor(x)}\if{html}{\out{</div>}}
+\subsection{\code{NoSQLResourceResolver$isFor()}}{
+  Check that the provided resource has a URL that locates a nodbi object: the URL scheme must be one of "mongodb", "mongodb+srv". Other NoSQL databases "elasticsearch", "redis", "couchdb", "sqlite" are not supported yet.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{NoSQLResourceResolver$isFor(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{The resource object to validate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{The resource object to validate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-NoSQLResourceResolver-newClient"></a>}}
 \if{latex}{\out{\hypertarget{method-NoSQLResourceResolver-newClient}{}}}
-\subsection{Method \code{newClient()}}{
-Creates a NoSQLResourceClient instance from provided resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceResolver$newClient(x)}\if{html}{\out{</div>}}
+\subsection{\code{NoSQLResourceResolver$newClient()}}{
+  Creates a NoSQLResourceClient instance from provided resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{NoSQLResourceResolver$newClient(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A NoSQLResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A NoSQLResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-NoSQLResourceResolver-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-NoSQLResourceResolver-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceResolver$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{NoSQLResourceResolver$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{NoSQLResourceResolver$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

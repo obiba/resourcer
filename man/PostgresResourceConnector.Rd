@@ -8,103 +8,104 @@
 A R6 object of class PostgresResourceConnector
 }
 \description{
-Postgres DBI resource connector
-
-Postgres DBI resource connector
-}
-\details{
 Makes a Postgres DBI connection from a resource description.
 }
 \section{Super class}{
-\code{\link[resourcer:DBIResourceConnector]{resourcer::DBIResourceConnector}} -> \code{PostgresResourceConnector}
+\code{\link[resourcer:DBIResourceConnector]{DBIResourceConnector}} -> \code{PostgresResourceConnector}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-PostgresResourceConnector-new}{\code{PostgresResourceConnector$new()}}
-\item \href{#method-PostgresResourceConnector-isFor}{\code{PostgresResourceConnector$isFor()}}
-\item \href{#method-PostgresResourceConnector-createDBIConnection}{\code{PostgresResourceConnector$createDBIConnection()}}
-\item \href{#method-PostgresResourceConnector-clone}{\code{PostgresResourceConnector$clone()}}
+  \itemize{
+    \item \href{#method-PostgresResourceConnector-initialize}{\code{PostgresResourceConnector$new()}}
+    \item \href{#method-PostgresResourceConnector-isFor}{\code{PostgresResourceConnector$isFor()}}
+    \item \href{#method-PostgresResourceConnector-createDBIConnection}{\code{PostgresResourceConnector$createDBIConnection()}}
+    \item \href{#method-PostgresResourceConnector-clone}{\code{PostgresResourceConnector$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="closeDBIConnection"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-closeDBIConnection'><code>resourcer::DBIResourceConnector$closeDBIConnection()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-getTableName'><code>resourcer::DBIResourceConnector$getTableName()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTable'><code>resourcer::DBIResourceConnector$readDBTable()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTibble'><code>resourcer::DBIResourceConnector$readDBTibble()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="closeDBIConnection"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-closeDBIConnection'><code>DBIResourceConnector$closeDBIConnection()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-getTableName'><code>DBIResourceConnector$getTableName()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTable'><code>DBIResourceConnector$readDBTable()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTibble'><code>DBIResourceConnector$readDBTibble()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-PostgresResourceConnector-new"></a>}}
-\if{latex}{\out{\hypertarget{method-PostgresResourceConnector-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new PostgresResourceConnector instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{PostgresResourceConnector$new()}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-PostgresResourceConnector-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-PostgresResourceConnector-initialize}{}}}
+\subsection{\code{PostgresResourceConnector$new()}}{
+  Creates a new PostgresResourceConnector instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{PostgresResourceConnector$new()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A PostgresResourceConnector object.
+  }
 }
 
-\subsection{Returns}{
-A PostgresResourceConnector object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-PostgresResourceConnector-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-PostgresResourceConnector-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource has a URL that locates a Postgres object: the URL scheme must be "postgres" or "postgresql".
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{PostgresResourceConnector$isFor(resource)}\if{html}{\out{</div>}}
+\subsection{\code{PostgresResourceConnector$isFor()}}{
+  Check that the provided resource has a URL that locates a Postgres object: the URL scheme must be "postgres" or "postgresql".
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{PostgresResourceConnector$isFor(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource object to validate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource object to validate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-PostgresResourceConnector-createDBIConnection"></a>}}
 \if{latex}{\out{\hypertarget{method-PostgresResourceConnector-createDBIConnection}{}}}
-\subsection{Method \code{createDBIConnection()}}{
-Creates a DBI connection object from a resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{PostgresResourceConnector$createDBIConnection(resource)}\if{html}{\out{</div>}}
+\subsection{\code{PostgresResourceConnector$createDBIConnection()}}{
+  Creates a DBI connection object from a resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{PostgresResourceConnector$createDBIConnection(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A DBI connection object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A DBI connection object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-PostgresResourceConnector-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-PostgresResourceConnector-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{PostgresResourceConnector$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{PostgresResourceConnector$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{PostgresResourceConnector$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

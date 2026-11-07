@@ -8,178 +8,191 @@
 A R6 object of class ResourceClient
 }
 \description{
-Resource client
-
-Resource client
-}
-\details{
 Helper class for connecting to a resource data store or a computation unit.
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-ResourceClient-new}{\code{ResourceClient$new()}}
-\item \href{#method-ResourceClient-getResource}{\code{ResourceClient$getResource()}}
-\item \href{#method-ResourceClient-getConnection}{\code{ResourceClient$getConnection()}}
-\item \href{#method-ResourceClient-downloadFile}{\code{ResourceClient$downloadFile()}}
-\item \href{#method-ResourceClient-asDataFrame}{\code{ResourceClient$asDataFrame()}}
-\item \href{#method-ResourceClient-asTbl}{\code{ResourceClient$asTbl()}}
-\item \href{#method-ResourceClient-exec}{\code{ResourceClient$exec()}}
-\item \href{#method-ResourceClient-close}{\code{ResourceClient$close()}}
-\item \href{#method-ResourceClient-clone}{\code{ResourceClient$clone()}}
-}
+  \itemize{
+    \item \href{#method-ResourceClient-initialize}{\code{ResourceClient$new()}}
+    \item \href{#method-ResourceClient-getResource}{\code{ResourceClient$getResource()}}
+    \item \href{#method-ResourceClient-getConnection}{\code{ResourceClient$getConnection()}}
+    \item \href{#method-ResourceClient-downloadFile}{\code{ResourceClient$downloadFile()}}
+    \item \href{#method-ResourceClient-asDataFrame}{\code{ResourceClient$asDataFrame()}}
+    \item \href{#method-ResourceClient-asTbl}{\code{ResourceClient$asTbl()}}
+    \item \href{#method-ResourceClient-exec}{\code{ResourceClient$exec()}}
+    \item \href{#method-ResourceClient-close}{\code{ResourceClient$close()}}
+    \item \href{#method-ResourceClient-clone}{\code{ResourceClient$clone()}}
+  }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ResourceClient-new"></a>}}
-\if{latex}{\out{\hypertarget{method-ResourceClient-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a ResourceClient instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$new(resource)}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-ResourceClient-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-ResourceClient-initialize}{}}}
+\subsection{\code{ResourceClient$new()}}{
+  Creates a ResourceClient instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceClient$new(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource object to be interprated.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A ResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource object to be interprated.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A ResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ResourceClient-getResource"></a>}}
 \if{latex}{\out{\hypertarget{method-ResourceClient-getResource}{}}}
-\subsection{Method \code{getResource()}}{
-Get the resource object.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$getResource()}\if{html}{\out{</div>}}
+\subsection{\code{ResourceClient$getResource()}}{
+  Get the resource object.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceClient$getResource()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The resource object.
+  }
 }
 
-\subsection{Returns}{
-The resource object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ResourceClient-getConnection"></a>}}
 \if{latex}{\out{\hypertarget{method-ResourceClient-getConnection}{}}}
-\subsection{Method \code{getConnection()}}{
-Get the implementation-specific object that connects to the resource
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$getConnection()}\if{html}{\out{</div>}}
+\subsection{\code{ResourceClient$getConnection()}}{
+  Get the implementation-specific object that connects to the resource
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceClient$getConnection()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The connection object.
+  }
 }
 
-\subsection{Returns}{
-The connection object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ResourceClient-downloadFile"></a>}}
 \if{latex}{\out{\hypertarget{method-ResourceClient-downloadFile}{}}}
-\subsection{Method \code{downloadFile()}}{
-Stub function to be implemented by subclasses if relevant. Get the resource as a local file.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$downloadFile(...)}\if{html}{\out{</div>}}
+\subsection{\code{ResourceClient$downloadFile()}}{
+  Stub function to be implemented by subclasses if relevant. Get the resource as a local file.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceClient$downloadFile(...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{...}}{Additional parameters.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The path to the local file.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{...}}{Additional parameters.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The path to the local file.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ResourceClient-asDataFrame"></a>}}
 \if{latex}{\out{\hypertarget{method-ResourceClient-asDataFrame}{}}}
-\subsection{Method \code{asDataFrame()}}{
-Stub function to be implemented by subclasses if relevant. Coerce the resource as a data.frame.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$asDataFrame(...)}\if{html}{\out{</div>}}
+\subsection{\code{ResourceClient$asDataFrame()}}{
+  Stub function to be implemented by subclasses if relevant. Coerce the resource as a data.frame.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceClient$asDataFrame(...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{...}}{Additional parameters.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A data.frame object (can also be a tibble).
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{...}}{Additional parameters.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A data.frame object (can also be a tibble).
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ResourceClient-asTbl"></a>}}
 \if{latex}{\out{\hypertarget{method-ResourceClient-asTbl}{}}}
-\subsection{Method \code{asTbl()}}{
-Stub function to be implemented by subclasses if relevant. Coerce the resource as a dplyr's tbl.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$asTbl(...)}\if{html}{\out{</div>}}
+\subsection{\code{ResourceClient$asTbl()}}{
+  Stub function to be implemented by subclasses if relevant. Coerce the resource as a dplyr's tbl.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceClient$asTbl(...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{...}}{Additional parameters.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A dplyr's tbl object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{...}}{Additional parameters.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A dplyr's tbl object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ResourceClient-exec"></a>}}
 \if{latex}{\out{\hypertarget{method-ResourceClient-exec}{}}}
-\subsection{Method \code{exec()}}{
-Stub function to be implemented by subclasses if relevant. Executes a command on a computation resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$exec(...)}\if{html}{\out{</div>}}
+\subsection{\code{ResourceClient$exec()}}{
+  Stub function to be implemented by subclasses if relevant. Executes a command on a computation resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceClient$exec(...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{...}}{Additional parameters that will represent the command to execute.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A command execution result object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{...}}{Additional parameters that will represent the command to execute.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A command execution result object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ResourceClient-close"></a>}}
 \if{latex}{\out{\hypertarget{method-ResourceClient-close}{}}}
-\subsection{Method \code{close()}}{
-Silently closes the connection to the resource
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$close()}\if{html}{\out{</div>}}
+\subsection{\code{ResourceClient$close()}}{
+  Silently closes the connection to the resource
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceClient$close()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ResourceClient-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-ResourceClient-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{ResourceClient$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ResourceClient$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

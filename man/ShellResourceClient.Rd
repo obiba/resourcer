@@ -8,134 +8,133 @@
 A R6 object of class ShellResourceClient
 }
 \description{
-Shell resource client
-
-Shell resource client
-}
-\details{
 Executes local system shell commands.
 }
 \section{Super classes}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{\link[resourcer:CommandResourceClient]{resourcer::CommandResourceClient}} -> \code{ShellResourceClient}
+\code{\link[resourcer:ResourceClient]{ResourceClient}} -> \code{\link[resourcer:CommandResourceClient]{CommandResourceClient}} -> \code{ShellResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-ShellResourceClient-new}{\code{ShellResourceClient$new()}}
-\item \href{#method-ShellResourceClient-getAllowedCommands}{\code{ShellResourceClient$getAllowedCommands()}}
-\item \href{#method-ShellResourceClient-copyFile}{\code{ShellResourceClient$copyFile()}}
-\item \href{#method-ShellResourceClient-exec}{\code{ShellResourceClient$exec()}}
-\item \href{#method-ShellResourceClient-clone}{\code{ShellResourceClient$clone()}}
+  \itemize{
+    \item \href{#method-ShellResourceClient-initialize}{\code{ShellResourceClient$new()}}
+    \item \href{#method-ShellResourceClient-getAllowedCommands}{\code{ShellResourceClient$getAllowedCommands()}}
+    \item \href{#method-ShellResourceClient-copyFile}{\code{ShellResourceClient$copyFile()}}
+    \item \href{#method-ShellResourceClient-exec}{\code{ShellResourceClient$exec()}}
+    \item \href{#method-ShellResourceClient-clone}{\code{ShellResourceClient$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details><summary>Inherited methods</summary>
+\if{html}{\out{<details><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>resourcer::ResourceClient$asDataFrame()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="close"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-close'><code>resourcer::ResourceClient$close()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-downloadFile'><code>resourcer::ResourceClient$downloadFile()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>resourcer::ResourceClient$getConnection()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asDataFrame"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asDataFrame'><code>ResourceClient$asDataFrame()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>ResourceClient$asTbl()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="close"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-close'><code>ResourceClient$close()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-downloadFile'><code>ResourceClient$downloadFile()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getConnection"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getConnection'><code>ResourceClient$getConnection()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>ResourceClient$getResource()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ShellResourceClient-new"></a>}}
-\if{latex}{\out{\hypertarget{method-ShellResourceClient-new}{}}}
-\subsection{Method \code{new()}}{
-Create a ShellResourceClient instance. This client will interact wtih a computation resource using shell commands.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$new(resource)}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-ShellResourceClient-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-ShellResourceClient-initialize}{}}}
+\subsection{\code{ShellResourceClient$new()}}{
+  Create a ShellResourceClient instance. This client will interact wtih a computation resource using shell commands.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ShellResourceClient$new(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The computation resource.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The ShellResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The computation resource.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The ShellResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ShellResourceClient-getAllowedCommands"></a>}}
 \if{latex}{\out{\hypertarget{method-ShellResourceClient-getAllowedCommands}{}}}
-\subsection{Method \code{getAllowedCommands()}}{
-Get the command names that can be executed.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$getAllowedCommands()}\if{html}{\out{</div>}}
+\subsection{\code{ShellResourceClient$getAllowedCommands()}}{
+  Get the command names that can be executed.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ShellResourceClient$getAllowedCommands()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A character vector
+  }
 }
 
-\subsection{Returns}{
-A character vector
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ShellResourceClient-copyFile"></a>}}
 \if{latex}{\out{\hypertarget{method-ShellResourceClient-copyFile}{}}}
-\subsection{Method \code{copyFile()}}{
-Copy one or more files (wilcard * is supported in the file name (which can be a directory))
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$copyFile(file, to = ".", verbose = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{ShellResourceClient$copyFile()}}{
+  Copy one or more files (wilcard * is supported in the file name (which can be a directory))
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ShellResourceClient$copyFile(file, to = ".", verbose = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{file}}{The file to copy.}
+      \item{\code{to}}{The copy destination.}
+      \item{\code{verbose}}{If TRUE, details the file operations on the console output.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The path to the files having been copied.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{file}}{The file to copy.}
-
-\item{\code{to}}{The copy destination.}
-
-\item{\code{verbose}}{If TRUE, details the file operations on the console output.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The path to the files having been copied.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ShellResourceClient-exec"></a>}}
 \if{latex}{\out{\hypertarget{method-ShellResourceClient-exec}{}}}
-\subsection{Method \code{exec()}}{
-Executes a shell command in the working directory specified in the resource's URL.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$exec(command, params = NULL, test = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{ShellResourceClient$exec()}}{
+  Executes a shell command in the working directory specified in the resource's URL.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ShellResourceClient$exec(command, params = NULL, test = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{command}}{The command name.}
+      \item{\code{params}}{A character vector of arguments to pass.}
+      \item{\code{test}}{If TRUE, the command is printed but not executed (for debugging).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The command execution result object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{command}}{The command name.}
-
-\item{\code{params}}{A character vector of arguments to pass.}
-
-\item{\code{test}}{If TRUE, the command is printed but not executed (for debugging).}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The command execution result object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ShellResourceClient-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-ShellResourceClient-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ShellResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{ShellResourceClient$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ShellResourceClient$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

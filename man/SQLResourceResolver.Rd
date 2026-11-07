@@ -8,86 +8,85 @@
 A R6 object of class SQLResourceResolver
 }
 \description{
-SQL Database Resource resolver
-
-SQL Database Resource resolver
-}
-\details{
 The resource is SQL database.
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{SQLResourceResolver}
+\code{\link[resourcer:ResourceResolver]{ResourceResolver}} -> \code{SQLResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-SQLResourceResolver-isFor}{\code{SQLResourceResolver$isFor()}}
-\item \href{#method-SQLResourceResolver-newClient}{\code{SQLResourceResolver$newClient()}}
-\item \href{#method-SQLResourceResolver-clone}{\code{SQLResourceResolver$clone()}}
+  \itemize{
+    \item \href{#method-SQLResourceResolver-isFor}{\code{SQLResourceResolver$isFor()}}
+    \item \href{#method-SQLResourceResolver-newClient}{\code{SQLResourceResolver$newClient()}}
+    \item \href{#method-SQLResourceResolver-clone}{\code{SQLResourceResolver$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>ResourceResolver$initialize()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SQLResourceResolver-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-SQLResourceResolver-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource has a registered DBIResourceConnector.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SQLResourceResolver$isFor(x)}\if{html}{\out{</div>}}
+\subsection{\code{SQLResourceResolver$isFor()}}{
+  Check that the provided resource has a registered DBIResourceConnector.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SQLResourceResolver$isFor(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{The resource object to evaluate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{The resource object to evaluate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SQLResourceResolver-newClient"></a>}}
 \if{latex}{\out{\hypertarget{method-SQLResourceResolver-newClient}{}}}
-\subsection{Method \code{newClient()}}{
-Creates a SQLResourceClient instance from provided resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SQLResourceResolver$newClient(x)}\if{html}{\out{</div>}}
+\subsection{\code{SQLResourceResolver$newClient()}}{
+  Creates a SQLResourceClient instance from provided resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SQLResourceResolver$newClient(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A SQLResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A SQLResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SQLResourceResolver-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-SQLResourceResolver-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SQLResourceResolver$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{SQLResourceResolver$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SQLResourceResolver$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

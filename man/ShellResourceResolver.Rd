@@ -8,86 +8,85 @@
 A R6 object of class ShellResourceResolver
 }
 \description{
-Shell Resource resolver
-
-Shell Resource resolver
-}
-\details{
 The resource is a computation unit, accessible by issuing local system commands, i.e. which URL scheme is "sh".
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{ShellResourceResolver}
+\code{\link[resourcer:ResourceResolver]{ResourceResolver}} -> \code{ShellResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-ShellResourceResolver-isFor}{\code{ShellResourceResolver$isFor()}}
-\item \href{#method-ShellResourceResolver-newClient}{\code{ShellResourceResolver$newClient()}}
-\item \href{#method-ShellResourceResolver-clone}{\code{ShellResourceResolver$clone()}}
+  \itemize{
+    \item \href{#method-ShellResourceResolver-isFor}{\code{ShellResourceResolver$isFor()}}
+    \item \href{#method-ShellResourceResolver-newClient}{\code{ShellResourceResolver$newClient()}}
+    \item \href{#method-ShellResourceResolver-clone}{\code{ShellResourceResolver$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>ResourceResolver$initialize()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ShellResourceResolver-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-ShellResourceResolver-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource is a computation resource accessible by shell commands. The resource URL scheme must be "sh" or "shell".
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ShellResourceResolver$isFor(x)}\if{html}{\out{</div>}}
+\subsection{\code{ShellResourceResolver$isFor()}}{
+  Check that the provided resource is a computation resource accessible by shell commands. The resource URL scheme must be "sh" or "shell".
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ShellResourceResolver$isFor(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{The resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{The resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ShellResourceResolver-newClient"></a>}}
 \if{latex}{\out{\hypertarget{method-ShellResourceResolver-newClient}{}}}
-\subsection{Method \code{newClient()}}{
-Create a ShellResourceClient instance from the provided resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ShellResourceResolver$newClient(x)}\if{html}{\out{</div>}}
+\subsection{\code{ShellResourceResolver$newClient()}}{
+  Create a ShellResourceClient instance from the provided resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ShellResourceResolver$newClient(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A ShellResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A ShellResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ShellResourceResolver-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-ShellResourceResolver-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ShellResourceResolver$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{ShellResourceResolver$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ShellResourceResolver$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

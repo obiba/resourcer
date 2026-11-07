@@ -8,104 +8,104 @@
 A R6 object of class OpalFileResourceGetter
 }
 \description{
-Opal file resource getter
-
-Opal file resource getter
-}
-\details{
 Access a file that is stored in a Opal server. Use Basic authentication header if both
 resource's identity and secret are defined, token authentication if secret only is defined.
 }
 \section{Super class}{
-\code{\link[resourcer:FileResourceGetter]{resourcer::FileResourceGetter}} -> \code{OpalFileResourceGetter}
+\code{\link[resourcer:FileResourceGetter]{FileResourceGetter}} -> \code{OpalFileResourceGetter}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-OpalFileResourceGetter-new}{\code{OpalFileResourceGetter$new()}}
-\item \href{#method-OpalFileResourceGetter-isFor}{\code{OpalFileResourceGetter$isFor()}}
-\item \href{#method-OpalFileResourceGetter-downloadFile}{\code{OpalFileResourceGetter$downloadFile()}}
-\item \href{#method-OpalFileResourceGetter-clone}{\code{OpalFileResourceGetter$clone()}}
+  \itemize{
+    \item \href{#method-OpalFileResourceGetter-initialize}{\code{OpalFileResourceGetter$new()}}
+    \item \href{#method-OpalFileResourceGetter-isFor}{\code{OpalFileResourceGetter$isFor()}}
+    \item \href{#method-OpalFileResourceGetter-downloadFile}{\code{OpalFileResourceGetter$downloadFile()}}
+    \item \href{#method-OpalFileResourceGetter-clone}{\code{OpalFileResourceGetter$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>resourcer::FileResourceGetter$extractFileName()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>resourcer::FileResourceGetter$makeDownloadDir()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="extractFileName"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-extractFileName'><code>FileResourceGetter$extractFileName()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="FileResourceGetter" data-id="makeDownloadDir"><a href='../../resourcer/html/FileResourceGetter.html#method-FileResourceGetter-makeDownloadDir'><code>FileResourceGetter$makeDownloadDir()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-OpalFileResourceGetter-new"></a>}}
-\if{latex}{\out{\hypertarget{method-OpalFileResourceGetter-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new OpalFileResourceGetter instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{OpalFileResourceGetter$new()}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-OpalFileResourceGetter-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-OpalFileResourceGetter-initialize}{}}}
+\subsection{\code{OpalFileResourceGetter$new()}}{
+  Creates a new OpalFileResourceGetter instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{OpalFileResourceGetter$new()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A OpalFileResourceGetter object.
+  }
 }
 
-\subsection{Returns}{
-A OpalFileResourceGetter object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-OpalFileResourceGetter-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-OpalFileResourceGetter-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource has a URL that locates a Opal file: the URL scheme must be "opal+http" or "opal+https" and the path must designate a file web service entry point (i.e. starts with "ws/files/").
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{OpalFileResourceGetter$isFor(resource)}\if{html}{\out{</div>}}
+\subsection{\code{OpalFileResourceGetter$isFor()}}{
+  Check that the provided resource has a URL that locates a Opal file: the URL scheme must be "opal+http" or "opal+https" and the path must designate a file web service entry point (i.e. starts with "ws/files/").
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{OpalFileResourceGetter$isFor(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{The resource object to validate.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{The resource object to validate.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-OpalFileResourceGetter-downloadFile"></a>}}
 \if{latex}{\out{\hypertarget{method-OpalFileResourceGetter-downloadFile}{}}}
-\subsection{Method \code{downloadFile()}}{
-Download the file from the Opal file system in a temporary location.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{OpalFileResourceGetter$downloadFile(resource, ...)}\if{html}{\out{</div>}}
+\subsection{\code{OpalFileResourceGetter$downloadFile()}}{
+  Download the file from the Opal file system in a temporary location.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{OpalFileResourceGetter$downloadFile(resource, ...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+      \item{\code{...}}{Unused additional parameters.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The "resource.file" object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-
-\item{\code{...}}{Unused additional parameters.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The "resource.file" object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-OpalFileResourceGetter-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-OpalFileResourceGetter-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{OpalFileResourceGetter$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{OpalFileResourceGetter$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{OpalFileResourceGetter$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

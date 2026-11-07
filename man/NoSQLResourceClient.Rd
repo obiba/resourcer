@@ -8,135 +8,142 @@
 A R6 object of class NoSQLResourceClient
 }
 \description{
-NoSQL database resource client
-
-NoSQL database resource client
-}
-\details{
 Resource client that connects to a NoSQL database supported by nodbi.
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceClient]{resourcer::ResourceClient}} -> \code{NoSQLResourceClient}
+\code{\link[resourcer:ResourceClient]{ResourceClient}} -> \code{NoSQLResourceClient}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-NoSQLResourceClient-new}{\code{NoSQLResourceClient$new()}}
-\item \href{#method-NoSQLResourceClient-getConnection}{\code{NoSQLResourceClient$getConnection()}}
-\item \href{#method-NoSQLResourceClient-asDataFrame}{\code{NoSQLResourceClient$asDataFrame()}}
-\item \href{#method-NoSQLResourceClient-getDatabaseName}{\code{NoSQLResourceClient$getDatabaseName()}}
-\item \href{#method-NoSQLResourceClient-getTableName}{\code{NoSQLResourceClient$getTableName()}}
-\item \href{#method-NoSQLResourceClient-close}{\code{NoSQLResourceClient$close()}}
-\item \href{#method-NoSQLResourceClient-clone}{\code{NoSQLResourceClient$clone()}}
+  \itemize{
+    \item \href{#method-NoSQLResourceClient-initialize}{\code{NoSQLResourceClient$new()}}
+    \item \href{#method-NoSQLResourceClient-getConnection}{\code{NoSQLResourceClient$getConnection()}}
+    \item \href{#method-NoSQLResourceClient-asDataFrame}{\code{NoSQLResourceClient$asDataFrame()}}
+    \item \href{#method-NoSQLResourceClient-getDatabaseName}{\code{NoSQLResourceClient$getDatabaseName()}}
+    \item \href{#method-NoSQLResourceClient-getTableName}{\code{NoSQLResourceClient$getTableName()}}
+    \item \href{#method-NoSQLResourceClient-close}{\code{NoSQLResourceClient$close()}}
+    \item \href{#method-NoSQLResourceClient-clone}{\code{NoSQLResourceClient$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>resourcer::ResourceClient$asTbl()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-downloadFile'><code>resourcer::ResourceClient$downloadFile()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>resourcer::ResourceClient$exec()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>resourcer::ResourceClient$getResource()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="asTbl"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-asTbl'><code>ResourceClient$asTbl()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="downloadFile"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-downloadFile'><code>ResourceClient$downloadFile()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="exec"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-exec'><code>ResourceClient$exec()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceClient" data-id="getResource"><a href='../../resourcer/html/ResourceClient.html#method-ResourceClient-getResource'><code>ResourceClient$getResource()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-NoSQLResourceClient-new"></a>}}
-\if{latex}{\out{\hypertarget{method-NoSQLResourceClient-new}{}}}
-\subsection{Method \code{new()}}{
-Creates a new NoSQLResourceClient instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$new(resource)}\if{html}{\out{</div>}}
+\if{html}{\out{<a id="method-NoSQLResourceClient-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-NoSQLResourceClient-initialize}{}}}
+\subsection{\code{NoSQLResourceClient$new()}}{
+  Creates a new NoSQLResourceClient instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{NoSQLResourceClient$new(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A NoSQLResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resource}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A NoSQLResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-NoSQLResourceClient-getConnection"></a>}}
 \if{latex}{\out{\hypertarget{method-NoSQLResourceClient-getConnection}{}}}
-\subsection{Method \code{getConnection()}}{
-Creates the nodbi connection object if it does not exist.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$getConnection()}\if{html}{\out{</div>}}
+\subsection{\code{NoSQLResourceClient$getConnection()}}{
+  Creates the nodbi connection object if it does not exist.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{NoSQLResourceClient$getConnection()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The nodbi connection object.
+  }
 }
 
-\subsection{Returns}{
-The nodbi connection object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-NoSQLResourceClient-asDataFrame"></a>}}
 \if{latex}{\out{\hypertarget{method-NoSQLResourceClient-asDataFrame}{}}}
-\subsection{Method \code{asDataFrame()}}{
-Makes a data.frame from the remote database table.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$asDataFrame()}\if{html}{\out{</div>}}
+\subsection{\code{NoSQLResourceClient$asDataFrame()}}{
+  Makes a data.frame from the remote database table.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{NoSQLResourceClient$asDataFrame()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A tibble.
+  }
 }
 
-\subsection{Returns}{
-A tibble.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-NoSQLResourceClient-getDatabaseName"></a>}}
 \if{latex}{\out{\hypertarget{method-NoSQLResourceClient-getDatabaseName}{}}}
-\subsection{Method \code{getDatabaseName()}}{
-Extract the database name from the resource URL.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$getDatabaseName()}\if{html}{\out{</div>}}
+\subsection{\code{NoSQLResourceClient$getDatabaseName()}}{
+  Extract the database name from the resource URL.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{NoSQLResourceClient$getDatabaseName()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The database name.
+  }
 }
 
-\subsection{Returns}{
-The database name.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-NoSQLResourceClient-getTableName"></a>}}
 \if{latex}{\out{\hypertarget{method-NoSQLResourceClient-getTableName}{}}}
-\subsection{Method \code{getTableName()}}{
-Extract the database table name from the resource URL.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$getTableName()}\if{html}{\out{</div>}}
+\subsection{\code{NoSQLResourceClient$getTableName()}}{
+  Extract the database table name from the resource URL.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{NoSQLResourceClient$getTableName()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The database table name.
+  }
 }
 
-\subsection{Returns}{
-The database table name.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-NoSQLResourceClient-close"></a>}}
 \if{latex}{\out{\hypertarget{method-NoSQLResourceClient-close}{}}}
-\subsection{Method \code{close()}}{
-Close the nodbi connection.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$close()}\if{html}{\out{</div>}}
+\subsection{\code{NoSQLResourceClient$close()}}{
+  Close the nodbi connection.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{NoSQLResourceClient$close()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-NoSQLResourceClient-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-NoSQLResourceClient-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{NoSQLResourceClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{NoSQLResourceClient$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{NoSQLResourceClient$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

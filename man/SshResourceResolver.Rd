@@ -8,86 +8,85 @@
 A R6 object of class SshResourceResolver
 }
 \description{
-SSH Resource resolver
-
-SSH Resource resolver
-}
-\details{
 The resource is a computation unit, accessible through SSH, i.e. which URL scheme is "ssh".
 }
 \section{Super class}{
-\code{\link[resourcer:ResourceResolver]{resourcer::ResourceResolver}} -> \code{SshResourceResolver}
+\code{\link[resourcer:ResourceResolver]{ResourceResolver}} -> \code{SshResourceResolver}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-SshResourceResolver-isFor}{\code{SshResourceResolver$isFor()}}
-\item \href{#method-SshResourceResolver-newClient}{\code{SshResourceResolver$newClient()}}
-\item \href{#method-SshResourceResolver-clone}{\code{SshResourceResolver$clone()}}
+  \itemize{
+    \item \href{#method-SshResourceResolver-isFor}{\code{SshResourceResolver$isFor()}}
+    \item \href{#method-SshResourceResolver-newClient}{\code{SshResourceResolver$newClient()}}
+    \item \href{#method-SshResourceResolver-clone}{\code{SshResourceResolver$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>resourcer::ResourceResolver$initialize()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="resourcer" data-topic="ResourceResolver" data-id="initialize"><a href='../../resourcer/html/ResourceResolver.html#method-ResourceResolver-initialize'><code>ResourceResolver$initialize()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SshResourceResolver-isFor"></a>}}
 \if{latex}{\out{\hypertarget{method-SshResourceResolver-isFor}{}}}
-\subsection{Method \code{isFor()}}{
-Check that the provided resource is a computation resource accessible by ssh commands. The resource URL scheme is expected to be "ssh".
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceResolver$isFor(x)}\if{html}{\out{</div>}}
+\subsection{\code{SshResourceResolver$isFor()}}{
+  Check that the provided resource is a computation resource accessible by ssh commands. The resource URL scheme is expected to be "ssh".
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceResolver$isFor(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{The resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A logical.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{The resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A logical.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SshResourceResolver-newClient"></a>}}
 \if{latex}{\out{\hypertarget{method-SshResourceResolver-newClient}{}}}
-\subsection{Method \code{newClient()}}{
-Create a SshResourceClient instance from the provided resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceResolver$newClient(x)}\if{html}{\out{</div>}}
+\subsection{\code{SshResourceResolver$newClient()}}{
+  Create a SshResourceClient instance from the provided resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceResolver$newClient(x)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A SshResourceClient object.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{A valid resource object.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-A SshResourceClient object.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SshResourceResolver-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-SshResourceResolver-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{SshResourceResolver$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{SshResourceResolver$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{SshResourceResolver$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }
