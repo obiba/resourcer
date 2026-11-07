@@ -49,7 +49,7 @@ ResourceClient <- R6::R6Class(
     #' @return A dplyr's tbl object.
     asTbl = function(...) {
       private$loadDPlyr()
-      dplyr::as.tbl(self$asDataFrame())
+      dplyr::as_tibble(self$asDataFrame())
     },
 
     #' @description Stub function to be implemented by subclasses if relevant. Executes a command on a computation resource.
