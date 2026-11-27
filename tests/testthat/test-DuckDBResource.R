@@ -5,8 +5,9 @@ test_that("duckdb resource works", {
   conn <- DBI::dbConnect(duckdb::duckdb(), dbdir = file)
   DBI::dbWriteTable(conn, "cars", mtcars)
   DBI::dbDisconnect(conn, shutdown = TRUE)
+  file <- normalizePath(file, winslash = "/")
 
-  res <- newResource(name = "cars", url = paste0("duckdb://", file, "/cars"))
+  res <- newResource(name = "cars", url = paste0("duckdb://", if (startsWith(file, "/")) "" else "/", file, "/cars"))
   connector <- DuckDBResourceConnector$new()
   expect_true(connector$isFor(res))
   expect_equal(connector$getDatabaseFile(res), file)

@@ -2,7 +2,7 @@
 #'
 #' Makes a DuckDB DBI connection from a resource description. The DuckDB database
 #' file must be in the R server's local file system. The resource URL is
-#' \code{duckdb:///path/to/file.duckdb/table}: the last path token is the table name,
+#' \code{duckdb:///path/to/file.duckdb/table} (or \code{duckdb:///C:/path/to/file.duckdb/table} on Windows): the last path token is the table name,
 #' the preceding ones are the database file path. The connection is read-only.
 #'
 #' @docType class
@@ -48,7 +48,12 @@ DuckDBResourceConnector <- R6::R6Class(
       if (length(tokens) < 2) {
         stop("DuckDB resource URL must be duckdb:///path/to/file.duckdb/table")
       }
-      URLdecode(paste0("/", paste(tokens[-length(tokens)], collapse = "/")))
+      path <- paste(tokens[-length(tokens)], collapse = "/")
+      # windows drive letter (duckdb:///C:/path/to/file.duckdb/table)
+      if (!grepl("^[A-Za-z]:$", tokens[1])) {
+        path <- paste0("/", path)
+      }
+      URLdecode(path)
     },
 
     #' @description Disconnect the DBI connection and shutdown the DuckDB instance.

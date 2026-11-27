@@ -10,7 +10,7 @@ A R6 object of class DuckDBResourceConnector
 \description{
 Makes a DuckDB DBI connection from a resource description. The DuckDB database
 file must be in the R server's local file system. The resource URL is
-\code{duckdb:///path/to/file.duckdb/table}: the last path token is the table name,
+\code{duckdb:///path/to/file.duckdb/table} (or \code{duckdb:///C:/path/to/file.duckdb/table} on Windows): the last path token is the table name,
 the preceding ones are the database file path. The connection is read-only.
 }
 \section{Super class}{
