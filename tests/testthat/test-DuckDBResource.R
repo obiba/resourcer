@@ -1,0 +1,24 @@
+test_that("duckdb resource works", {
+  skip_if_not_installed("duckdb")
+  skip_if_not_installed("dbplyr")
+  file <- tempfile(fileext = ".duckdb")
+  conn <- DBI::dbConnect(duckdb::duckdb(), dbdir = file)
+  DBI::dbWriteTable(conn, "cars", mtcars)
+  DBI::dbDisconnect(conn, shutdown = TRUE)
+
+  res <- newResource(name = "cars", url = paste0("duckdb://", file, "/cars"))
+  connector <- DuckDBResourceConnector$new()
+  expect_true(connector$isFor(res))
+  expect_equal(connector$getDatabaseFile(res), file)
+  expect_false(connector$isFor(newResource(name = "x", url = "mysql://host/db/cars")))
+
+  registerDBIResourceConnector(connector)
+  client <- newResourceClient(res)
+  expect_true("SQLResourceClient" %in% class(client))
+  expect_equal(nrow(client$asDataFrame()), nrow(mtcars))
+  n <- dplyr::collect(dplyr::count(dplyr::filter(client$asTbl(), cyl == 4)))$n
+  expect_equal(as.integer(n), sum(mtcars$cyl == 4))
+  expect_error(DBI::dbExecute(client$getConnection(), "DELETE FROM cars"))
+  client$close()
+  unlink(file)
+})

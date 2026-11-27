@@ -1,7 +1,7 @@
 Package: resourcer
 Type: Package
 Title: Resource Resolver
-Version: 1.5.2
+Version: 1.6.0
 Authors@R: 
     c(person(given = "Yannick",
              family = "Marcon",
@@ -34,6 +34,7 @@ Suggests:
     dbplyr,
     DBI,
     RMariaDB,
+    duckdb,
     RPostgres,
     sparklyr,
     nodbi,
