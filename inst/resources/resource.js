@@ -1506,8 +1506,8 @@ var resourcer = {
       },
       {
         "name": "duckdb",
-        "title": "DuckDB table",
-        "description": "Resource is a table in a [DuckDB](https://duckdb.org) database file located in the R server file system, opened read-only. The data can be read as a standard `data.frame` or as a [dbplyr](https://dbplyr.tidyverse.org/)'s `tbl`.",
+        "title": "DuckDB database",
+        "description": "Resource is a [DuckDB](https://duckdb.org) database file located in the R server file system, opened read-only. When a table is specified, the data can be read as a standard `data.frame` or as a [dbplyr](https://dbplyr.tidyverse.org/)'s `tbl`. Otherwise the DuckDB connection is to be used directly.",
         "tags": ["local", "database"],
         "parameters": {
           "$schema": "https://json-schema.org/schema#",
@@ -1523,11 +1523,11 @@ var resourcer = {
               "key": "table",
               "type": "string",
               "title": "Table",
-              "description": "The table name."
+              "description": "The table name (optional)."
             }
           ],
           "required": [
-            "path", "table"
+            "path"
           ]
         },
         "credentials": {
@@ -1811,7 +1811,7 @@ var resourcer = {
           }
           return {
               name: name,
-              url: "duckdb://" + path + "/" + params.table
+              url: "duckdb://" + path + (params.table ? "/" + params.table : "")
           }
       },
       "ssh": function(name, params, credentials) {

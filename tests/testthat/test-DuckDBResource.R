@@ -21,5 +21,14 @@ test_that("duckdb resource works", {
   expect_equal(as.integer(n), sum(mtcars$cyl == 4))
   expect_error(DBI::dbExecute(client$getConnection(), "DELETE FROM cars"))
   client$close()
+
+  # no table: general DuckDB connection
+  res <- newResource(name = "db", url = paste0("duckdb://", if (startsWith(file, "/")) "" else "/", file))
+  expect_equal(connector$getDatabaseFile(res), file)
+  expect_error(connector$getTableName(res), "No table")
+  client <- newResourceClient(res)
+  expect_equal(DBI::dbGetQuery(client$getConnection(), "SELECT count(*) AS n FROM cars")$n, nrow(mtcars))
+  expect_error(client$asDataFrame(), "No table")
+  client$close()
   unlink(file)
 })

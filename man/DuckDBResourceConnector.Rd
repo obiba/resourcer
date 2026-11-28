@@ -10,8 +10,10 @@ A R6 object of class DuckDBResourceConnector
 \description{
 Makes a DuckDB DBI connection from a resource description. The DuckDB database
 file must be in the R server's local file system. The resource URL is
-\code{duckdb:///path/to/file.duckdb/table} (or \code{duckdb:///C:/path/to/file.duckdb/table} on Windows): the last path token is the table name,
-the preceding ones are the database file path. The connection is read-only.
+\code{duckdb:///path/to/file.duckdb} (or \code{duckdb:///C:/path/to/file.duckdb} on Windows),
+optionally followed by \code{/table}: when the URL path is not an existing file, its last token
+is the table name. Without a table, the resource is a general DuckDB connection (to be used with
+the client's \code{getConnection()}). The connection is read-only.
 }
 \section{Super class}{
 \code{\link[resourcer:DBIResourceConnector]{DBIResourceConnector}} -> \code{DuckDBResourceConnector}
@@ -23,13 +25,13 @@ the preceding ones are the database file path. The connection is read-only.
     \item \href{#method-DuckDBResourceConnector-isFor}{\code{DuckDBResourceConnector$isFor()}}
     \item \href{#method-DuckDBResourceConnector-createDBIConnection}{\code{DuckDBResourceConnector$createDBIConnection()}}
     \item \href{#method-DuckDBResourceConnector-getDatabaseFile}{\code{DuckDBResourceConnector$getDatabaseFile()}}
+    \item \href{#method-DuckDBResourceConnector-getTableName}{\code{DuckDBResourceConnector$getTableName()}}
     \item \href{#method-DuckDBResourceConnector-closeDBIConnection}{\code{DuckDBResourceConnector$closeDBIConnection()}}
     \item \href{#method-DuckDBResourceConnector-clone}{\code{DuckDBResourceConnector$clone()}}
   }
 }
 \if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-  <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="getTableName"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-getTableName'><code>DBIResourceConnector$getTableName()</code></a></span></li>
   <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTable"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTable'><code>DBIResourceConnector$readDBTable()</code></a></span></li>
   <li><span class="pkg-link" data-pkg="resourcer" data-topic="DBIResourceConnector" data-id="readDBTibble"><a href='../../resourcer/html/DBIResourceConnector.html#method-DBIResourceConnector-readDBTibble'><code>DBIResourceConnector$readDBTibble()</code></a></span></li>
 </ul>
@@ -97,7 +99,7 @@ the preceding ones are the database file path. The connection is read-only.
 \if{html}{\out{<a id="method-DuckDBResourceConnector-getDatabaseFile"></a>}}
 \if{latex}{\out{\hypertarget{method-DuckDBResourceConnector-getDatabaseFile}{}}}
 \subsection{\code{DuckDBResourceConnector$getDatabaseFile()}}{
-  Get the DuckDB database file path from the resource URL (all path tokens but the last one).
+  Get the DuckDB database file path from the resource URL.
   \subsection{Usage}{
     \if{html}{\out{<div class="r">}}
     \preformatted{DuckDBResourceConnector$getDatabaseFile(resource)}
@@ -112,6 +114,28 @@ the preceding ones are the database file path. The connection is read-only.
   }
   \subsection{Returns}{
     The database file path.
+  }
+}
+
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DuckDBResourceConnector-getTableName"></a>}}
+\if{latex}{\out{\hypertarget{method-DuckDBResourceConnector-getTableName}{}}}
+\subsection{\code{DuckDBResourceConnector$getTableName()}}{
+  Get the table name from the resource URL, fails if there is none.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{DuckDBResourceConnector$getTableName(resource)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resource}}{A valid resource object.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The table name.
   }
 }
 
