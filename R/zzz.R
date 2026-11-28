@@ -20,6 +20,7 @@
   doRegisterDBIConnector(PostgresResourceConnector$new())
   doRegisterDBIConnector(SparkResourceConnector$new())
   doRegisterDBIConnector(PrestoResourceConnector$new())
+  doRegisterDBIConnector(DuckDBResourceConnector$new())
 
   doRegisterResolver <- function(res) {
     clazz <- class(res)[[1]]

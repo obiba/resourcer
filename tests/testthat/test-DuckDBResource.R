@@ -1,0 +1,34 @@
+test_that("duckdb resource works", {
+  skip_if_not_installed("duckdb")
+  skip_if_not_installed("dbplyr")
+  file <- tempfile(fileext = ".duckdb")
+  conn <- DBI::dbConnect(duckdb::duckdb(), dbdir = file)
+  DBI::dbWriteTable(conn, "cars", mtcars)
+  DBI::dbDisconnect(conn, shutdown = TRUE)
+  file <- normalizePath(file, winslash = "/")
+
+  res <- newResource(name = "cars", url = paste0("duckdb://", if (startsWith(file, "/")) "" else "/", file, "/cars"))
+  connector <- DuckDBResourceConnector$new()
+  expect_true(connector$isFor(res))
+  expect_equal(connector$getDatabaseFile(res), file)
+  expect_false(connector$isFor(newResource(name = "x", url = "mysql://host/db/cars")))
+
+  registerDBIResourceConnector(connector)
+  client <- newResourceClient(res)
+  expect_true("SQLResourceClient" %in% class(client))
+  expect_equal(nrow(client$asDataFrame()), nrow(mtcars))
+  n <- dplyr::collect(dplyr::count(dplyr::filter(client$asTbl(), cyl == 4)))$n
+  expect_equal(as.integer(n), sum(mtcars$cyl == 4))
+  expect_error(DBI::dbExecute(client$getConnection(), "DELETE FROM cars"))
+  client$close()
+
+  # no table: general DuckDB connection
+  res <- newResource(name = "db", url = paste0("duckdb://", if (startsWith(file, "/")) "" else "/", file))
+  expect_equal(connector$getDatabaseFile(res), file)
+  expect_error(connector$getTableName(res), "No table")
+  client <- newResourceClient(res)
+  expect_equal(DBI::dbGetQuery(client$getConnection(), "SELECT count(*) AS n FROM cars")$n, nrow(mtcars))
+  expect_error(client$asDataFrame(), "No table")
+  client$close()
+  unlink(file)
+})

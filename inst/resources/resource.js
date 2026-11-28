@@ -1,7 +1,7 @@
 var resourcer = {
   settings: {
     "title": "Base Resources",
-    "description": "Provides some of the most common resources: file, mysql, mariadb, postgresql, mongodb, ssh, scp and more.",
+    "description": "Provides some of the most common resources: file, mysql, mariadb, postgresql, duckdb, mongodb, ssh, scp and more.",
     "web": "https://github.com/obiba/resourcer",
     "categories": [
       {
@@ -1505,6 +1505,37 @@ var resourcer = {
         }
       },
       {
+        "name": "duckdb",
+        "title": "DuckDB database",
+        "description": "Resource is a [DuckDB](https://duckdb.org) database file located in the R server file system, opened read-only. When a table is specified, the data can be read as a standard `data.frame` or as a [dbplyr](https://dbplyr.tidyverse.org/)'s `tbl`. Otherwise the DuckDB connection is to be used directly.",
+        "tags": ["local", "database"],
+        "parameters": {
+          "$schema": "https://json-schema.org/schema#",
+          "type": "array",
+          "items": [
+            {
+              "key": "path",
+              "type": "string",
+              "title": "Path",
+              "description": "Path to the DuckDB database file."
+            },
+            {
+              "key": "table",
+              "type": "string",
+              "title": "Table",
+              "description": "The table name (optional)."
+            }
+          ],
+          "required": [
+            "path"
+          ]
+        },
+        "credentials": {
+          "$schema": "https://json-schema.org/schema#",
+          "description": "No credentials required: the file must be accessible from the R server."
+        }
+      },
+      {
         "name": "ssh",
         "title": "SSH",
         "description": "Access to a computation unit through SSH. Credentials are required. Work directory and allowed shell commands can be specified.",
@@ -1771,6 +1802,16 @@ var resourcer = {
               url: params.driver + "://" + params.host + ":" + params.port + "/" + params.db + "/" + table,
               identity: credentials.username,
               secret: credentials.password
+          }
+      },
+      "duckdb": function(name, params, credentials) {
+          var path = params.path;
+          if (!path.startsWith("/")) {
+              path = "/" + path;
+          }
+          return {
+              name: name,
+              url: "duckdb://" + path + (params.table ? "/" + params.table : "")
           }
       },
       "ssh": function(name, params, credentials) {
